@@ -1,0 +1,2 @@
+class PursuitsController < ApplicationController
+end
