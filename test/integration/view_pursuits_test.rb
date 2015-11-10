@@ -43,6 +43,5 @@ class ViewPursuitsTest < ActionDispatch::IntegrationTest
     within("h2") do
       assert page.has_content?("$1,001")
     end
-
   end
 end
