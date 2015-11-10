@@ -1,5 +1,5 @@
 class PursuitsController < ApplicationController
   def index
-    @pursuits = Pursuit.all
+    @activities = Activity.all
   end
 end
