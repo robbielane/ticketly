@@ -6,7 +6,7 @@ class ViewPursuitsTest < ActionDispatch::IntegrationTest
       i += 1
       Pursuit.create(name: "Hiking the Alps #{i}",
                      description: "Go hike the alps! #{i}",
-                     price: 1000+i) #rou, activity_id: i, location_id: i)
+                     price: 1000 + i) # rou, activity_id: i, location_id: i)
     end
   end
 
