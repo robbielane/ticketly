@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class ViewPursuitsTest < ActionDispatch::IntegrationTest
   def create_pursuits(num)
@@ -8,7 +8,7 @@ class ViewPursuitsTest < ActionDispatch::IntegrationTest
     end
   end
 
-  test 'visitor can see pursuits' do
+  test "visitor can see pursuits" do
     create_pursuits(2)
     visit pursuits_path
 
@@ -17,7 +17,7 @@ class ViewPursuitsTest < ActionDispatch::IntegrationTest
     within("h1") do
       assert page.has_content?("Pursuit")
     end
-    
+
     within("#hiking_the_alps_1") do
       assert page.has_content?("Hiking the Alps 1")
       assert page.has_content?("Go hike the alps! 1")
