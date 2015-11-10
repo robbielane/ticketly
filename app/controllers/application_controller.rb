@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_activity_by_name(name)
-    formatted_name = name.capitalize.gsub("_", " ")
+    formatted_name = name.tr("_"," ").titleize
     Activity.find_by_name(formatted_name)
   end
 end
