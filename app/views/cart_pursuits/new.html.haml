@@ -1,0 +1,6 @@
+%h1 Your Order
+
+= form_tag(cart_pursuits_path, method: :post) do
+  = text_field_tag "Travellers"
+  = hidden_field_tag "pursuit_id", params[:id]
+  = submit_tag "Place Order"

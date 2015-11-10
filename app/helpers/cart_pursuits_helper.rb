@@ -1,0 +1,2 @@
+module CartPursuitsHelper
+end
