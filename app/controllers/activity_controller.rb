@@ -1,0 +1,3 @@
+def ActivityController < ApplicationController
+
+end
