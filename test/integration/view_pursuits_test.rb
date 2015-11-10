@@ -17,7 +17,7 @@ class ViewPursuitsTest < ActionDispatch::IntegrationTest
     within("h1") do
       assert page.has_content?("Pursuit")
     end
-    save_and_open_page
+    
     within("#hiking_the_alps_1") do
       assert page.has_content?("Hiking the Alps 1")
       assert page.has_content?("Go hike the alps! 1")
