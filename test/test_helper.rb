@@ -4,12 +4,19 @@ require "rails/test_help"
 require "capybara/rails"
 
 class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-  fixtures :all
 
-  # Add more helper methods to be used by all tests here...
 end
 
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
+
+  def create_pursuits(num, activity)
+    num.times do |i|
+      i += 1
+      activity = Activity.find_or_create_by(name: activity)
+      activity.pursuits.create(name: "Hiking the Alps #{i}",
+                               description: "Go hike the alps! #{i}",
+                               price: 1000 + i)
+    end
+  end
 end

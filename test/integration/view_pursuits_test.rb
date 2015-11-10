@@ -1,17 +1,8 @@
 require "test_helper"
 
 class ViewPursuitsTest < ActionDispatch::IntegrationTest
-  def create_pursuits(num)
-    num.times do |i|
-      i += 1
-      Pursuit.create(name: "Hiking the Alps #{i}",
-                     description: "Go hike the alps! #{i}",
-                     price: 1000 + i) # rou, activity_id: i, location_id: i)
-    end
-  end
-
   test "visitor can see pursuits" do
-    create_pursuits(2)
+    create_pursuits(2, "Hiking")
     visit pursuits_path
 
     assert_equal pursuits_path, current_path
