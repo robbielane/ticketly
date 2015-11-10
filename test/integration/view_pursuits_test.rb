@@ -2,7 +2,7 @@ require "test_helper"
 
 class ViewPursuitsTest < ActionDispatch::IntegrationTest
   test "visitor can see pursuits" do
-    create_pursuits(2)
+    create_pursuits(2, "Hiking")
     visit pursuits_path
 
     assert_equal pursuits_path, current_path

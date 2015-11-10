@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
   def format_url_name(name)
     name.downcase.gsub(" ", "_")
   end
+
+  def find_activity_by_name(name)
+    formatted_name = name.capitalize.gsub("_", " ")
+    Activity.find_by_name(formatted_name)
+  end
 end
