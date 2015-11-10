@@ -1,0 +1,7 @@
+%h1 Pursuits
+
+- @pursuits.each do |pursuit|
+  .pursuit{ :id => "#{pursuit.name.downcase.gsub(" ", "_")}" }
+    = "#{ pursuit.name}"
+    = "#{pursuit.description}"
+    = "#{number_to_currency(pursuit.price, unit: "$")[0...-3]}"

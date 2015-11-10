@@ -1,0 +1,2 @@
+module PursuitsHelper
+end
