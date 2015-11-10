@@ -8,6 +8,6 @@
         .card-content
           %p= "#{pursuit.description}"
           %br
-          = "#{number_to_currency(pursuit.price, unit: "$")[0...-3]}"
+          = "#{format_currency(pursuit.price)}"
         .card-action
-          = link_to "All Pursuits", pursuits_path
+          = link_to "Details", pursuit_path(pursuit)
