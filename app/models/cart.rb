@@ -13,4 +13,8 @@ class Cart
   def total_trips
     trips.to_a.count
   end
+
+  def count_of(pursuit_id)
+    trips[pursuit_id.to_s]
+  end
 end
