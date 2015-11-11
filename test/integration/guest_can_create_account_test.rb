@@ -15,7 +15,8 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     click_button "Pursue Your Passion"
     assert_equal new_user_path, current_path
 
-    fill_in "Username", with: "Nicole"
+    fill_in "Username", with: "Nicole@gmail.com"
+    fill_in "Name", with: "Nicole"
     fill_in "Password", with: "password"
 
     click_button "Create Account"
