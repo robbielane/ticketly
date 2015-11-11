@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   # resources :activity, only: [:show] do
   #   resources :pursuits, only: [:index]
   # end
+  get "/cart", to: "cart_pursuits#show"
   get "/:activity_name", to: "activity#show"
 end

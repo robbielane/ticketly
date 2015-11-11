@@ -16,23 +16,35 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     click_button "Place Order"
 
     assert page.has_content?("Trips: 1")
-
     assert_equal pursuits_path, current_path
-    assert page.has_content?("You have 1 Hiking the Alps 1.")
+    assert page.has_content?("You have added Hiking the Alps 1 to your cart.")
   end
 
   test "user can view cart" do
-    skip
-
-#     As a visitor
-# When I visit any page with an item on it
-# I should see a link or button for "Add to Cart"
-# When I click "Add to cart" for that item
-# And I click a link or button to view cart
-# And my current path should be "/cart"
-# And I should see a small image, title, description and price for the item I just added
-# And there should be a "total" price for the cart that should be the sum of all items in the cart
+    visit pursuits_path
+    add_items_to_cart(2)
+    click_link "View Cart"
 
     assert_equal "/cart", current_path
+
+    assert page.has_content?("Hiking the Alps 1")
+    assert page.has_content?("Go hike the alps! 1")
+    assert page.has_content?("$1,001")
+
+    assert page.has_content?("Total: $2,002") # And I should see a small image
+  end
+
+  def add_items_to_cart(num)
+    num.times do |i|
+      i += 1
+      create_pursuits(1, "Hiking #{i}")
+      pursuit = Activity.find_by_name("Hiking #{i}").pursuits.first
+
+      visit pursuit_path(pursuit)
+      click_link "Purchase Trip"
+
+      fill_in "Travellers", with: i
+      click_button "Place Order"
+    end
   end
 end
