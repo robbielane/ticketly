@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   resources :pursuits, only: [:index, :show]
   resources :cart_pursuits, only: [:new, :create]
 
-
   # resources :activity, only: [:show] do
   #   resources :pursuits, only: [:index]
   # end

@@ -16,9 +16,9 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     click_button "Place Order"
 
     assert page.has_content?("Trips: 1")
-    assert_equal cart_path, current_path
-    assert page.has_content?("Hiking in the Alps 1")
-    assert page.has_content?("Travellers: 2")
+
+    assert_equal pursuits_path, current_path
+    assert page.has_content?("You have 1 Hiking the Alps 1.")
   end
 
   test "user can view cart" do
