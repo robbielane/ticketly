@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # end
   get "/cart", to: "cart_pursuits#show"
   put "/cart", to: "cart_pursuits#update"
+  delete "/cart", to: "cart_pursuits#delete"
 
   get "/:activity_name", to: "activity#show"
 end
