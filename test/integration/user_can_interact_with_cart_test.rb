@@ -56,6 +56,30 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     assert_equal pursuit_path(removed_pursuit), current_path
   end
 
+  test "user can edit the number of travellers in cart" do
+    visit pursuits_path
+    add_items_to_cart(1)
+    click_link "View Cart"
+
+    assert_equal "/cart", current_path
+    assert page.has_content?("Hiking the Alps 1")
+    assert page.has_content?("$1,001")
+
+    assert_equal "/cart", current_path
+    fill_in "travellers", with: 5
+    click_button "Update"
+
+    assert_equal "/cart", current_path
+    assert page.has_content?("$5,005")
+
+    assert_equal "/cart", current_path
+    fill_in "travellers", with: 2
+    click_button "Update"
+
+    assert_equal "/cart", current_path
+    assert page.has_content?("$2,002")
+  end
+
   def add_items_to_cart(num)
     num.times do |i|
       i += 1
