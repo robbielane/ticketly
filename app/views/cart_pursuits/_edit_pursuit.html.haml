@@ -1,0 +1,9 @@
+- @pursuits.each do |pursuit|
+  = render pursuit
+
+  = form_tag(cart_path, method: :put) do
+    = label_tag "Travellers: "
+    = text_field_tag "travellers", @cart.count_of(pursuit.id)
+
+    = hidden_field_tag "pursuit_id", pursuit.id
+    = submit_tag "Update"

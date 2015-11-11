@@ -43,23 +43,19 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Hiking the Alps 1")
     assert page.has_content?("$1,001")
 
-    click_link "Edit Travellers"
     assert_equal "/cart", current_path
-    fill_in "Travellers", with: 5
-    click_link "Update"
+    fill_in "travellers", with: 5
+    click_button "Update"
 
     assert_equal "/cart", current_path
     assert page.has_content?("$5,005")
-    assert page.has_content?("Travellers: 5")
 
-    click_link "Edit Travellers"
     assert_equal "/cart", current_path
-    fill_in "Travellers", with: 2
-    click_link "Update"
+    fill_in "travellers", with: 2
+    click_button "Update"
 
     assert_equal "/cart", current_path
     assert page.has_content?("$2,002")
-    assert page.has_content?("Travellers: 2")
   end
 
   def add_items_to_cart(num)
