@@ -34,6 +34,28 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Total: $2,002") # And I should see a small image
   end
 
+  test "user can delete item from cart" do
+    add_items_to_cart(1)
+    removed_pursuit = Pursuit.find_by_name("Hiking the Alps 1")
+    visit "/cart"
+    first(".trip").click_link("Remove")
+
+    assert_equal "/cart", current_path
+
+    message = page.find(:css, "flash_notices")
+    message_color = message.native.style("background-color")
+
+    assert_equal "rgba(0, 10, 0, 1)", message_color # I should see a message styled in green
+    assert page.has_content?("Successfully removed Hiking the Alps 1 from your cart.")
+
+    within(".cart") do
+      refute page.has_content?("Hiking the Alps 1")
+    end
+
+    click_link("Hiking the Alps 1")
+    assert_equal pursuit_path(removed_pursuit), current_path
+  end
+
   def add_items_to_cart(num)
     num.times do |i|
       i += 1
