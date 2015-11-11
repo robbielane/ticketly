@@ -34,6 +34,34 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Total: $2,002") # And I should see a small image
   end
 
+  test "user can edit the number of travellers in cart" do
+    visit pursuits_path
+    add_items_to_cart(1)
+    click_link "View Cart"
+
+    assert_equal "/cart", current_path
+    assert page.has_content?("Hiking the Alps 1")
+    assert page.has_content?("$1,001")
+
+    click_link "Edit Travellers"
+    assert_equal "/cart", current_path
+    fill_in "Travellers", with: 5
+    click_link "Update"
+
+    assert_equal "/cart", current_path
+    assert page.has_content?("$5,005")
+    assert page.has_content?("Travellers: 5")
+
+    click_link "Edit Travellers"
+    assert_equal "/cart", current_path
+    fill_in "Travellers", with: 2
+    click_link "Update"
+
+    assert_equal "/cart", current_path
+    assert page.has_content?("$2,002")
+    assert page.has_content?("Travellers: 2")
+  end
+
   def add_items_to_cart(num)
     num.times do |i|
       i += 1
