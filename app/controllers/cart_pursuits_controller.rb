@@ -2,6 +2,7 @@ class CartPursuitsController < ApplicationController
   def create
     pursuit = Pursuit.find(params[:pursuit_id])
     @cart.add_trip(pursuit.id)
+    @cart.trips[pursuit.id.to_s] = params[:travellers].to_i
     session[:cart] = @cart.trips
 
     flash[:notice] = "You have added #{pursuit.name} to your cart."
