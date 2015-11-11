@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+  root to: "home#index"
   resources :pursuits, only: [:index, :show]
+  resources :cart_pursuits, only: [:new, :create]
 
   # resources :activity, only: [:show] do
   #   resources :pursuits, only: [:index]
   # end
-  root to: "home#index"
-
+  get "/cart", to: "cart_pursuits#show"
   get "/:activity_name", to: "activity#show"
 end

@@ -19,4 +19,8 @@ class ActionDispatch::IntegrationTest
                                price: 1000 + i)
     end
   end
+
+  def teardown
+    reset_session!
+  end
 end

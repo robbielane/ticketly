@@ -3,3 +3,5 @@
 %h2= format_currency(@pursuit.price)
 
 %p.pursuit-description= @pursuit.description
+
+= link_to "Purchase Trip", new_cart_pursuit_path(id: @pursuit.id)
