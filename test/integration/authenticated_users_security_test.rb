@@ -15,14 +15,16 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
     assert_equal "/login", current_path
   end
 
-  test "authenticated user cannot access an admin dashboard or create trips" do
+  test "authenticated user cannot access admin dashboard and create/update/delete trips" do
     user = User.create(name: "Nicole", username: "cole", password: "password", role: 0)
     admin = User.create(name: "Aaron", username: "AaronC", password: "password", role: 1)
     visit admin_login_path
-    refute 
+    refute
   end
 
   test "authenticated user cannot make themself an admin" do
     skip
   end
+
+  
 end
