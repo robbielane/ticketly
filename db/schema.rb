@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151111214535) do
+ActiveRecord::Schema.define(version: 20151112185147) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,28 @@ ActiveRecord::Schema.define(version: 20151111214535) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "ordered_trips", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "travellers"
+    t.integer  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "order_id"
+  end
+
+  add_index "ordered_trips", ["order_id"], name: "index_ordered_trips_on_order_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "status"
+    t.integer  "sub_total"
+    t.integer  "total"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
   create_table "pursuits", force: :cascade do |t|
     t.text     "name"
@@ -42,5 +64,7 @@ ActiveRecord::Schema.define(version: 20151111214535) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "ordered_trips", "orders"
+  add_foreign_key "orders", "users"
   add_foreign_key "pursuits", "activities"
 end

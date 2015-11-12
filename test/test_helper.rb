@@ -20,6 +20,20 @@ class ActionDispatch::IntegrationTest
     end
   end
 
+  def add_items_to_cart(num)
+    num.times do |i|
+      i += 1
+      create_pursuits(1, "Hiking #{i}")
+      pursuit = Activity.find_by_name("Hiking #{i}").pursuits.first
+
+      visit pursuit_path(pursuit)
+      click_link "Purchase Trip"
+
+      fill_in "travellers", with: i
+      click_button "Place Order"
+    end
+  end
+
   def teardown
     reset_session!
   end

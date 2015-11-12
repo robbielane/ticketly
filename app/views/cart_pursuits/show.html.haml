@@ -1,3 +1,5 @@
 = render partial: "edit_pursuit", locals: { :pursuits => @pursuits }
 
 = "Total: #{format_currency(total_cost_of_trips)}"
+
+= button_to "Checkout", checkout_path, method: :post
