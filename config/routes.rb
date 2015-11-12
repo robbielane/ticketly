@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#dashboard"
 
   get "/:activity_name", to: "activity#show"
+
+  post "/checkout", to: "orders#create"
 end

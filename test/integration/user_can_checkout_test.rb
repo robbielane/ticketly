@@ -15,19 +15,14 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   end
 
   test "user must be logged in to checkout" do
-    skip
     visit "/cart"
     click_button "Checkout"
 
     assert page.has_content?("You must be logged in to checkout")
-
-    click_button("Click here to login")
-
     assert_equal login_path, current_path
   end
 
   test "logged in user can checkout" do
-    skip
     create_and_login_user
     add_items_to_cart(1)
     visit "/cart"
