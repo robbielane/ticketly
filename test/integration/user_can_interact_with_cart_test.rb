@@ -78,6 +78,23 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("$2,002")
   end
 
+  test "user can view items in cart after they log back in" do
+    add_items_to_cart(2)
+
+    User.create(name: "Nicole", username: "cole", password: "password")
+
+    visit pursuits_path
+    click_link "Login"
+    fill_in "Username", with: "cole"
+    fill_in "Password", with: "password"
+    click_button "Login"
+
+    assert page.has_content?("Trips: 2")
+    click_link "Logout"
+    assert page.has_content?("Login")
+    refute page.has_content?("Logout")
+  end
+
   def add_items_to_cart(num)
     num.times do |i|
       i += 1
