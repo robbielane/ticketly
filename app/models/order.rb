@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   has_many :ordered_trip
 
   def self.make_new(cart, current_user)
-    order = current_user.order.create
+    order = current_user.orders.create
     cart.trips.each do |trip, travellers|
       trip_price = Pursuit.find(trip.to_i).price
       trip_name = Pursuit.find(trip.to_i).name
