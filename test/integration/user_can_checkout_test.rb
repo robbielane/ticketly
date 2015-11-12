@@ -23,7 +23,6 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   end
 
   test "logged in user can checkout" do
-    skip
     create_and_login_user
     add_items_to_cart(1)
     visit "/cart"

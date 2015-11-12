@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   def create
     if current_user
       Order.make_new(@cart, current_user)
-      flash[:notice] = "You have ordered #{@cart.trips}"
+      flash[:notice] = "Order was successfully placed"
       redirect_to orders_path
     else
       flash[:notice] = "You must be logged in to checkout"

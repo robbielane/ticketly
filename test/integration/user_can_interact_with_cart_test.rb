@@ -23,7 +23,7 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
   test "user can view cart" do
     visit pursuits_path
     add_items_to_cart(2)
-    click_link "View Cart"
+    click_link "Trips: 2"
 
     assert_equal "/cart", current_path
 
@@ -57,7 +57,7 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
   test "user can edit the number of travellers in cart" do
     visit pursuits_path
     add_items_to_cart(1)
-    click_link "View Cart"
+    click_link "Trips: 1"
 
     assert_equal "/cart", current_path
     assert page.has_content?("Hiking the Alps 1")
