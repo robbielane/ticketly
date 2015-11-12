@@ -20,21 +20,44 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
 
     click_button "Create Account"
-    assert_equal user_path(user.id), current_path
-    assert page.has_content?("Welcome, Nicole")
+
+    assert_equal "/dashboard", current_path
+    assert page.has_content?("Logged in as Nicole")
+    assert page.has_content?("Username: Nicole@gmail.com")
+    assert page.has_content?("Name: Nicole")
+
+    refute page.has_content?("Login")
+    assert page.has_content?("Logout")
   end
 
-  test "a registered user can log in" do
-    skip
-    user = User.create(username: "Nicole", password: "password")
+  test "a registered user can login" do
+    user = User.create(username: "cole", name: "Nicole", password: "password")
 
-    visit login_path
+    visit root_path
+    click_link "Login"
+
+    assert_equal login_path, current_path
 
     fill_in "Username", with: user.username
     fill_in "Password", with: "password"
 
     click_button "Login"
 
-    assert page.has_content?("Welcome, Nicole")
+    assert_equal "/dashboard", current_path
+    assert page.has_content?("Logged in as Nicole")
+  end
+
+  test "a registered user can logout" do
+    User.create(name: "Nicole", username: "cole", password: "password")
+
+    visit pursuits_path
+    click_link "Login"
+    fill_in "Username", with: "cole"
+    fill_in "Password", with: "password"
+    click_button "Login"
+
+    click_link "Logout"
+    assert page.has_content?("Login")
+    refute page.has_content?("Logout")
   end
 end
