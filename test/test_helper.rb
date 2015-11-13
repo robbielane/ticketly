@@ -10,6 +10,10 @@ end
 class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
+  def create_user
+    User.create(username: "cole", name: "Nicole", password: "password")
+  end
+
   def create_pursuits(num, activity)
     num.times do |i|
       i += 1
