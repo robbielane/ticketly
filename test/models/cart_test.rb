@@ -50,5 +50,6 @@ class CartTest < ActiveSupport::TestCase
 
   test "cart can update trips" do
     skip
+    
   end
 end

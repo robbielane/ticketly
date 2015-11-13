@@ -18,8 +18,12 @@ class Cart
     trips[pursuit_id.to_s]
   end
 
-  def remove(trip)
-    trips.delete(trip.id.to_s)
+  def remove(pursuit)
+    trips.delete(pursuit.id.to_s)
+  end
+
+  def update(pursuit_id, travellers)
+    trips[pursuit_id] = travellers.to_i
   end
 
   def ordered_pursuits
