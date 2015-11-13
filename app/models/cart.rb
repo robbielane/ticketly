@@ -23,9 +23,9 @@ class Cart
   end
 
   def ordered_pursuits
-    trips.map do |trip_id, travellers|
-      pursuit = Pursuit.find(trip_id.to_i)
-      OrderedPursuit.new(trip_id, travellers, pursuit.name, pursuit.price)
+    trips.map do |pursuit_id, travellers|
+      pursuit = Pursuit.find(pursuit_id.to_i)
+      OrderedPursuit.new(pursuit_id, travellers, pursuit.price)
     end
   end
 end
