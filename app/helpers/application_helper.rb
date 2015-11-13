@@ -14,4 +14,12 @@ module ApplicationHelper
       link_to "Join", new_user_path
     end
   end
+
+  def format_currency(price)
+    number_to_currency(price, unit: "$")[0...-3]
+  end
+
+  def format_date(date)
+    date.strftime("%B %d, %Y")
+  end
 end

@@ -1,5 +1,4 @@
 class OrdersController < ApplicationController
-
   def create
     if current_user
       Order.make_new(@cart, current_user)
@@ -12,6 +11,6 @@ class OrdersController < ApplicationController
   end
 
   def index
-    current_user.orders.all
+    @orders = current_user.orders
   end
 end

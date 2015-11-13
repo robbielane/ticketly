@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
-
   test "guest can view the homepage" do
     visit '/'
 
@@ -31,8 +30,7 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
   end
 
   test "a registered user can login" do
-    user = User.create(username: "cole", name: "Nicole", password: "password")
-
+    user = create_user
     visit root_path
     click_link "Login"
 
@@ -48,11 +46,11 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
   end
 
   test "a registered user can logout" do
-    User.create(name: "Nicole", username: "cole", password: "password")
-
+    user = create_user
     visit pursuits_path
     click_link "Login"
-    fill_in "Username", with: "cole"
+
+    fill_in "Username", with: user.username
     fill_in "Password", with: "password"
     click_button "Login"
 

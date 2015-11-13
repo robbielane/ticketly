@@ -1,4 +1,4 @@
 class OrderedTrip < ActiveRecord::Base
-  has_many :ordered_trips
-  has_many :orders, through: :ordered_trips
+  belongs_to :order
+  belongs_to :pursuit
 end
