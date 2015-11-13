@@ -4,12 +4,11 @@ class Order < ActiveRecord::Base
 
   def self.make_new(cart, current_user)
     order = current_user.orders.create
-    cart.trips.each do |trip, travellers|
-      trip_price = Pursuit.find(trip.to_i).price
-      trip_name = Pursuit.find(trip.to_i).name
-      travellers = cart.trips.values.first
-      subtotal = trip_price * travellers
-      order.ordered_trip.create(id: trip.to_i, name: trip_name, travellers: travellers, price: subtotal)
+    cart.ordered_pursuits.each do |pursuit|
+      order.ordered_trip.create(id: pursuit.trip_id,
+                                name: pursuit.name,
+                                travellers: pursuit.travellers,
+                                price: pursuit.price)
     end
   end
 end

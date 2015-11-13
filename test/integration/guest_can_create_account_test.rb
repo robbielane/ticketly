@@ -6,13 +6,13 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     visit '/'
 
     assert page.has_content?("Global Pursuit")
-    assert page.has_button?("Pursue Your Passion")
+    assert page.has_button?("Apply for Membership")
   end
 
   test "account can be created" do
     visit root_path
     assert page.has_content?("Global Pursuit")
-    click_button "Pursue Your Passion"
+    click_button "Apply for Membership"
     assert_equal new_user_path, current_path
 
     fill_in "Username", with: "Nicole@gmail.com"
