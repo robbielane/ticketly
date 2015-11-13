@@ -6,9 +6,9 @@ class Order < ActiveRecord::Base
   def self.make_new(cart, current_user)
     order = current_user.orders.create
     cart.ordered_pursuits.each do |pursuit|
-      order.ordered_trip.create(pursuit_id: pursuit.pursuit_id,
-                                travellers: pursuit.travellers,
-                                price: pursuit.price)
+      order.ordered_trips.create(pursuit_id: pursuit.pursuit_id,
+                                 travellers: pursuit.travellers,
+                                 price: pursuit.price)
     end
   end
 end
