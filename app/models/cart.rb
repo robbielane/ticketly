@@ -32,4 +32,15 @@ class Cart
       OrderedPursuit.new(pursuit_id, travellers, pursuit.price)
     end
   end
+
+  def pursuits_in_cart
+    trips.keys.map { |trip_id| Pursuit.find(trip_id.to_i) }
+  end
+
+  def total_cost
+    prices = pursuits_in_cart.reduce([]) do |prices, pursuit|
+      prices << (pursuit.price * trips[pursuit.id.to_s])
+    end
+    prices.sum
+  end
 end

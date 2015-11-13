@@ -13,7 +13,7 @@ class CartPursuitsController < ApplicationController
   end
 
   def show
-    @pursuits = pursuits_in_cart
+    @pursuits = @cart.pursuits_in_cart
   end
 
   def update
@@ -21,7 +21,7 @@ class CartPursuitsController < ApplicationController
     session[:cart] = @cart.trips
 
     trip_name = Pursuit.find(params[:pursuit_id]).name
-    
+
     flash[:notice] = "You have updated Travellers for the trip #{trip_name} in your cart."
     redirect_to cart_path
   end

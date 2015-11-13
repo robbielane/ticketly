@@ -3,5 +3,5 @@
 .row
   .col.s12.m12
     .card-panel.grey.lighten-5
-      = "Total: #{format_currency(total_cost_of_trips)}"
+      = "Total: #{format_currency(@cart.total_cost)}"
       = button_to "Checkout", checkout_path, method: :post

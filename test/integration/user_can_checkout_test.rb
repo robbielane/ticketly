@@ -14,7 +14,6 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   end
 
   test "logged in user can checkout" do
-    skip
     create_and_login_user
     add_items_to_cart(1)
     visit "/cart"
@@ -23,8 +22,9 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     assert_equal "/orders", current_path
     assert page.has_content?("Order was successfully placed")
 
-    within(".table") do
-      assert page.has_content?("Hiking 1 for 1 traveller")
+    save_and_open_page
+    within(".cart-table") do
+      assert page.has_content?("Hiking the Alps 1 (Travellers: 1)")
     end
   end
 end
