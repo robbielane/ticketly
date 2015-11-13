@@ -48,8 +48,19 @@ class CartTest < ActiveSupport::TestCase
     assert_equal 1, original_total - current_total
   end
 
-  test "cart can update trips" do
+  test "cart can return number of travellers for each trip" do
     skip
-    
+  end
+
+  test "cart can update trips" do
+    add_trips_to_cart(2)
+    original_count = @cart.count_of(1)
+
+    assert_equal 1, original_count
+
+    @cart.update("1", 7)
+    updated_count = @cart.count_of(1)
+
+    assert_equal 7, updated_count
   end
 end
