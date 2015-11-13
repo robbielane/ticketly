@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :user
-  has_many :ordered_trip
+  has_many :ordered_trips
+  has_many :pursuits, through: :ordered_trips
 
   def self.make_new(cart, current_user)
     order = current_user.orders.create

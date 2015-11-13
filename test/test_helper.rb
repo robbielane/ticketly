@@ -13,6 +13,15 @@ class ActionDispatch::IntegrationTest
   def create_user
     User.create(username: "cole", name: "Nicole", password: "password")
   end
+  
+  def create_and_login_user
+    user = create_user
+
+    visit login_path
+    fill_in "Username", with: user.username
+    fill_in "Password", with: "password"
+    click_button "Login"
+  end
 
   def create_pursuits(num, activity)
     num.times do |i|

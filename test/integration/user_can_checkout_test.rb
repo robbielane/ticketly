@@ -5,15 +5,6 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     add_items_to_cart(1)
   end
 
-  def create_and_login_user
-    user = create_user
-
-    visit login_path
-    fill_in "Username", with: user.username
-    fill_in "Password", with: "password"
-    click_button "Login"
-  end
-
   test "user must be logged in to checkout" do
     visit "/cart"
     click_button "Checkout"
