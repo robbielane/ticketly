@@ -42,12 +42,6 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     add_items_to_cart(2)
     visit "/cart"
     click_button "Checkout"
-    #   num.times do |i|
-    #     i += 1
-    #     create_pursuits(1, "Hiking #{i}")
-    #     pursuit = Activity.find_by_name("Hiking #{i}").pursuits.first    #
-    #     fill_in "travellers", with: i
-    #   end
 
     visit orders_path
 
@@ -60,7 +54,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
       # assert find('tr', text: "Trips Ordered").has_content?("Hiking")
       assert page.has_content?("Hiking 1 (Travellers: 1)")
-      assert page.has_content?("Hiking 2 (Travellers: 2)")
+      assert page.has_content?("Hiking 1 (Travellers: 2)")
       assert page.has_content?("$2,003")
       assert page.has_content?("#{Time.now.strftime("%B %d, %Y")}")
     end
