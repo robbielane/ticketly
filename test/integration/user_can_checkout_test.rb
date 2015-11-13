@@ -22,7 +22,6 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     assert_equal "/orders", current_path
     assert page.has_content?("Order was successfully placed")
 
-    save_and_open_page
     within(".cart-table") do
       assert page.has_content?("Hiking the Alps 1 (Travellers: 1)")
     end
