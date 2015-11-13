@@ -1,10 +1,9 @@
 class OrderedPursuit
-  attr_reader :trip_id, :travellers, :name, :price
+  attr_reader :pursuit_id, :travellers, :price
 
-  def initialize(trip_id, travellers, name, price)
-    @trip_id = trip_id
+  def initialize(pursuit_id, travellers, price)
+    @pursuit_id = pursuit_id
     @travellers = travellers
-    @name = name
     @price = price
   end
 end

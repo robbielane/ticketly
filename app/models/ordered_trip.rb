@@ -1,4 +1,4 @@
 class OrderedTrip < ActiveRecord::Base
-  belongs_to :order
-
+  has_many :ordered_trips
+  has_many :orders, through: :ordered_trips
 end
