@@ -1,14 +1,17 @@
 .cart
   - @pursuits.each do |pursuit|
-    .pursuit_card
-      = render pursuit
+    .row
+      .col.s12.m7
+        .card-panel.teal.white-text
+          .pursuit_card
+            = render pursuit
 
-      = form_tag(cart_path, method: :put) do
-        = label_tag "Travellers: "
-        = text_field_tag "travellers", @cart.count_of(pursuit.id)
+            = form_tag(cart_path, method: :put) do
+              = label_tag "Travellers: "
+              = text_field_tag "travellers", @cart.count_of(pursuit.id)
 
-        = hidden_field_tag "pursuit_id", pursuit.id
-        = submit_tag "Update"
-        %br
+              = hidden_field_tag "pursuit_id", pursuit.id
+              = submit_tag "Update"
+              %br
 
-      = button_to "Remove", cart_path( { pursuit_id: pursuit.id }), method: :delete
+            = button_to "Remove", cart_path( { pursuit_id: pursuit.id }), method: :delete
