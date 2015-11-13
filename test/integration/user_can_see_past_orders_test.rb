@@ -59,13 +59,10 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Date Ordered")
 
       # assert find('tr', text: "Trips Ordered").has_content?("Hiking")
-      assert page.has_content?("Hiking (Travellers: 1)")
-      assert page.has_content?("$1,001")
-      assert page.has_content?("November 10, 2011")
-
-      assert page.has_content?("Jet Skiing (Travellers: 1)")
-      assert page.has_content?("$200")
-      assert page.has_content?("November 12, 2012")
+      assert page.has_content?("Hiking 1 (Travellers: 1)")
+      assert page.has_content?("Hiking 2 (Travellers: 2)")
+      assert page.has_content?("$2,003")
+      assert page.has_content?("#{Time.now.strftime("%B %d, %Y")}")
     end
   end
 end
