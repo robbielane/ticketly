@@ -49,7 +49,10 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can return number of travellers for each trip" do
-    skip
+    add_trips_to_cart(2)
+    @cart.update("1", 4)
+
+    assert_equal 4, @cart.count_of(1)
   end
 
   test "cart can update trips" do
