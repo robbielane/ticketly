@@ -7,7 +7,7 @@ class UnathenticatedUserSecurityTest < ActionDispatch::IntegrationTest
 
     click_button "Login"
 
-    fill_in "Username:", with: "Nicole"
+    fill_in "Username", with: "Nicole"
     fill_in "Password", with: "pass"
     click_button "Login"
 
@@ -16,26 +16,31 @@ class UnathenticatedUserSecurityTest < ActionDispatch::IntegrationTest
   end
 
   test "unathenticated user cannot make themself an admin account" do
-    visit "/"
+    visit root_path
 
-    click_button "Follow Your Pursuit"
+    click_button "Apply for Membership"
 
     assert_equal new_user_path, current_path
     refute page.has_content?("role")
 
     fill_in "Username", with: "Nicole"
     fill_in "Password", with: "pass"
-    fill_in "Name", with: "Cole Hall"
-    fill_in "Interests", with: "Jetskiing"
+    fill_in "Name", with: "Cole"
 
     click_button ("Create Account")
-    click_button("Login")
 
-    fill_in "Username", with: "Nicole"
-    fill_in "Password", with: "pass"
+    assert page.has_content?("Welcome, Cole!")
+    refute page.has_content?("Admin Dashboard")
+    refute page.has_content?("Create Pursuit")
+    refute page.has_content?("Create User")
+  end
 
-    assert page.has_content("You are loggin in as Nicole")
-    refute page.has_content("Create Pursuit")
-    refute page.has_content("Create User")
+  test "unathenticated user is redirected to login page when they try checkout" do
+    add_items_to_cart(2)
+    visit "/cart"
+    click_button "Checkout"
+
+    assert_equal login_path, current_path
+    assert page.has_content?("Login to Your Account")
   end
 end
