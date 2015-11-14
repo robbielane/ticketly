@@ -3,6 +3,7 @@ class OrdersController < ApplicationController
     if current_user
       Order.make_new(@cart, current_user)
       flash[:notice] = "Order was successfully placed"
+      session[:cart].clear
       redirect_to orders_path
     else
       flash[:notice] = "You must be logged in to checkout"

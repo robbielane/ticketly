@@ -43,8 +43,6 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     visit "/cart"
     click_button "Checkout"
 
-    visit orders_path
-
     assert page.has_content?("Order History")
 
     within(".cart-table") do # within() vs. within_table() ?!
@@ -56,7 +54,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Hiking the Alps 1 (Travellers: 1)")
       assert page.has_content?("Hiking the Alps 1 (Travellers: 2)")
       assert page.has_content?("$3,003")
-      assert page.has_content?("#{Time.now.strftime("%B %d, %Y")}")
+      assert page.has_content?("#{Order.first.created_at.strftime("%B %d, %Y")}")
     end
   end
 end
