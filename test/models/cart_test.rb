@@ -35,10 +35,35 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can remove trips" do
-    skip
+    add_trips_to_cart(1)
+    pursuit = Pursuit.create(name: "Jetskiing",
+                             description: "words",
+                             price: 100,
+                             id: @cart.trips.keys.first.to_i)
+
+    original_total = @cart.total_trips
+    @cart.remove(pursuit)
+    current_total = @cart.total_trips
+
+    assert_equal 1, original_total - current_total
+  end
+
+  test "cart can return number of travellers for each trip" do
+    add_trips_to_cart(2)
+    @cart.update("1", 4)
+
+    assert_equal 4, @cart.count_of(1)
   end
 
   test "cart can update trips" do
-    skip
+    add_trips_to_cart(2)
+    original_count = @cart.count_of(1)
+
+    assert_equal 1, original_count
+
+    @cart.update("1", 7)
+    updated_count = @cart.count_of(1)
+
+    assert_equal 7, updated_count
   end
 end

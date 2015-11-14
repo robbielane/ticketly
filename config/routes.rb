@@ -15,6 +15,9 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#delete"
   get "/dashboard", to: "users#dashboard"
+  get "/orders", to: "orders#index"
 
-  get "/:activity_name", to: "activity#show"
+  post "/checkout", to: "orders#create"
+
+  get "/:activity_name", to: "activity#show" # keep at bottom of routes
 end

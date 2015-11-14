@@ -15,21 +15,13 @@
             <a href="/" class="brand-logo">GlobalPursuit</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <li><%= link_to "Pursuits", pursuits_path %></li>
+              <li><%= join_dashboard_path %></li>
               <li><%= login_logout_path %></li>
-              <li><%= link_to "View Cart", "/cart" %></li>
+              <li><%= link_to "Trips: #{count_of_trips}", cart_path %></li>
             </ul>
           </div>
         </nav>
       </header>
-  ​
-      <main>
-        <div class="row">
-          <div class="col s5 offset-s6 m7 offset-m10">
-            <div class="card-panel btn-large waves-effect waves-light orange">
-              <%= link_to "Trips: #{count_of_trips}", cart_path %>
-            </div>
-          </div>
-        </div>
 
         <div class="row">
           <div class="col s5 offset-s3 m10 offset-m3">
