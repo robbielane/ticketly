@@ -6,9 +6,13 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
 
     visit root_path
-    click_button "Login"
 
+    fill_in "Username", with: "aaron"
+    fill_in "Password", with: "pass"
+
+    click_button "Login"
     assert admin_dashboard_path, current_path
+    assert page.has_content?("Admin Dashboard")
   end
 
   test "Admin sees content on admin dashboard" do

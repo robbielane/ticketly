@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   # resources :activity, only: [:show] do
   #   resources :pursuits, only: [:index]
   # end
+
+  get "/admin/dashboard", to: "admin#dashboard"
+
   get "/cart", to: "cart_pursuits#show"
   put "/cart", to: "cart_pursuits#update"
   delete "/cart", to: "cart_pursuits#delete"
