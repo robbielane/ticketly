@@ -37,11 +37,9 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "user can place an order and is redirected to the order history page" do
-    create_and_login_user
+    # create_and_login_user
+    checkout_user(2)
     user = User.first
-    add_items_to_cart(2)
-    visit "/cart"
-    click_button "Checkout"
 
     assert page.has_content?("Order History")
 
@@ -60,13 +58,14 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
   test "authenticated user can see individual past orders" do
     # Background: An existing user that has one previous order
+    skip
     checkout_user(1)
     #   As an authenticated user
     #   When I visit "/orders"
     visit_path orders_path
 
     click_link "View order details"
-    assert_equal  , current_path
+    # assert_equal  , current_path
 
     #   Then I should see each item that was order with the quantity and line-item subtotals
     #   And I should see links to each item's show page

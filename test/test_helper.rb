@@ -48,6 +48,13 @@ class ActionDispatch::IntegrationTest
     end
   end
 
+  def checkout_user(num_items)
+    create_and_login_user
+    add_items_to_cart(num_items)
+    visit "/cart"
+    click_button "Checkout"
+  end
+
   def teardown
     reset_session!
   end
