@@ -36,7 +36,12 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Paid")
 
     click_link("Completed")
-  save_and_open_page
     assert page.has_content?("1001")
+
+  #   And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")
+  #   And I have links to transition the status
+  # - I can click on "cancel" on individual orders which are "paid" or "ordered"
+  # - I can click on "mark as paid" on orders that are "ordered"
+  # - I can click on "mark as completed" on orders that are "paid"
   end
 end
