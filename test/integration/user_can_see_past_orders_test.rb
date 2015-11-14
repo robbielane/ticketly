@@ -37,18 +37,16 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "user can place an order and is redirected to the order history page" do
-    # create_and_login_user
     checkout_user(2)
     user = User.first
 
     assert page.has_content?("Order History")
 
-    within(".cart-table") do # within() vs. within_table() ?!
+    within(".cart-table") do
       assert page.has_content?("Trips Ordered")
       assert page.has_content?("Total Price")
       assert page.has_content?("Date Ordered")
 
-      # assert find('tr', text: "Trips Ordered").has_content?("Hiking")
       assert page.has_content?("Hiking the Alps 1 (Travellers: 1)")
       assert page.has_content?("Hiking the Alps 1 (Travellers: 2)")
       assert page.has_content?("$3,003")
@@ -57,25 +55,48 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user can see individual past orders" do
-    # Background: An existing user that has one previous order
     skip
-    checkout_user(1)
-    #   As an authenticated user
-    #   When I visit "/orders"
-    visit_path orders_path
+    checkout_user(2)
+    order = Order.first
+    order_timestamp = order.created_at
+    formatted_timestamp = "#{order_timestamp.strftime("%B %d, %Y")} at #{order_timestamp.strftime("%H:%M")}"
+
+    visit orders_path
 
     click_link "View order details"
-    # assert_equal  , current_path
+    assert_equal  order_path(order), current_path
 
-    #   Then I should see each item that was order with the quantity and line-item subtotals
-    #   And I should see links to each item's show page
-    #   And I should see the current status of the order (ordered, paid, cancelled, completed)
-    #   And I should see the total price for the order
-    #   And I should see the date/time that the order was submitted
+    assert page.has_content?("Hiking 1 (Travellers: 1)")
+    assert page.has_content?("Sub-total: $1,001")
+    assert page.has_content?("Hiking 2 (Travellers: 2)")
+    assert page.has_content?("Sub-total: $2,004")
+
+    assert page.has_content?("Status: Ordered")
+    assert page.has_content?("Total price: $3,005")
+
+    assert page.has_content?("Order submitted on #{formatted_timestamp}")
+
     #   If the order was completed or cancelled
-    #   Then I should see a timestamp when the action took place
-    #   And if any of the items in the order were retired from the menu
-    #   Then they should still be able to access the item page
-    #   But they should not be able to add the item to their cart
+    # ^ same as ordered vs paid etc no?
+
+    assert page.has_content?("Last order status update: #{formatted_timestamp}")
+    assert page.has_content?("Retired Pursuit?")
+    assert page.has_content?("No")
+
+    first(:pursuit).click_link("View pursuit details")
+    assert_equal pursuit_path(Pursuit.find_by_name("Hiking 1")), current_path
+  end
+
+  test "user can access a retired pursuit page from their order history" do
+    skip
+    checkout_user(1)
+    pursuit = Pursuit.first
+    pursuit.retire
+
+    visit orders_path
+    click_link("View pursuit details")
+
+    assert_equal pursuit_path(pursuit), current_path
+    refute page.has_content?("Purchase Trip")
   end
 end
