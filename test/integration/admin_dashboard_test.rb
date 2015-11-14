@@ -29,7 +29,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     assert '/dashboard', current_path
 
     visit admin_dashboard_path
-save_and_open_page
+
     assert page.has_content?("404")
   end
 

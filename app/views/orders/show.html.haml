@@ -1,17 +1,15 @@
-%h1= "Admin Dashboard"
-
-%h2= "Orders"
+%h2= Order Details
 
 %table.cart-table.highlight
   %tr
-    %th Trips Ordered
+    %th Name
     %th Total Price
     %th Date Ordered
     %th Status
 
-  - Order.all.each do |order|
+  - @order.each do |order|
     %tr
       = content_tag :td, sanitize(order_pursuits_list(order))
       = content_tag :td, format_currency(order.total || 0)
       = content_tag :td, format_date(order.created_at)
-      = content_tag :td, link_to("#{order.status}", orders_path(order.id))
+      = content_tag :td, order.status
