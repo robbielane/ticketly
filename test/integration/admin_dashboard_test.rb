@@ -20,14 +20,16 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
     visit root_path
 
+    click_button "Login"
     fill_in "Username", with: "cole"
     fill_in "Password", with: "password"
+    click_button "Login"
 
-    assert page.has_content?("Welcome, Cole!")
+    assert page.has_content?("Welcome, Cole Hall!")
     assert '/dashboard', current_path
 
     visit admin_dashboard_path
-
+save_and_open_page
     assert page.has_content?("404")
   end
 
