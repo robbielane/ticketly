@@ -7,6 +7,10 @@ module ApplicationHelper
     end
   end
 
+  def trips_cart_display
+    link_to "Trips: #{count_of_trips}", cart_path
+  end
+
   def join_dashboard_path
     if current_user
       link_to "Logged in as #{current_user.name}", dashboard_path
