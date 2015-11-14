@@ -1,7 +1,6 @@
-require 'test_helper'
+require "test_helper"
 
 class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
-
   test "authenticated user cannot access another users dashboard" do
     User.create(name: "Nicole", username: "cole", password: "password")
     User.create(name: "Torie", username: "torie", password: "pass")
@@ -28,7 +27,7 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user cannot access admin dashboard and create/update/delete trips" do
-    user = User.create(name: "Nicole", username: "cole", password: "password")
+    User.create(name: "Nicole", username: "cole", password: "password")
 
     visit root_path
     fill_in "Username", with: "cole"
