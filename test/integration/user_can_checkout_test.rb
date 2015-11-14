@@ -32,10 +32,10 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
   end
 
   test "cart resets to empty when user checks out" do
-    skip
-    create_and_login_user
-    add_items_to_cart(1)
-    visit "/cart"
-    click_button "Checkout"
+    checkout_user(1)
+    visit pursuits_path
+
+    assert page.has_content?("Trips: 0")
+    refute page.has_content?("Trips: 1")
   end
 end
