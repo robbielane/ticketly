@@ -19,6 +19,27 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
+  def edit
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update(user_params)
+      flash.notice = "Account Updated!"
+    else
+      flash.now[:errors] = @user.errors.full_messages.join(" ,")
+      render :edit
+    end
+  end
+
+  def destroy
+    @user = current_user
+    @user.destroy
+    session.clear
+    redirect_to root_path
+  end
+
   private
 
   def user_params

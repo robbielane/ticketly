@@ -29,7 +29,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     assert '/dashboard', current_path
 
     visit admin_dashboard_path
-save_and_open_page
     assert page.has_content?("404")
   end
 
@@ -41,5 +40,21 @@ save_and_open_page
     visit '/admin/dashboard'
 
     assert page.has_content?("404")
+  end
+
+  test "admin can update their account details but not other user accounts" do
+    User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
+
+    visit root_path
+
+    fill_in "Username", with: "aaron"
+    fill_in "Password", with: "pass"
+
+    click_button "Login"
+    click_button "Edit Account"
+
+    assert user_path, current_path
+    fill_in "Username", with: "acareaga"
+    fill_in "Password", with: "passord"
   end
 end
