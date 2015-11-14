@@ -1,3 +1,9 @@
-%h1 Global Pursuit
+.row.col.s12.m4.l8
+    %h1 Global Pursuit
+    %h4 Pursue Your Passion
+    %br
+    %br
 
-= button_to "Pursue Your Passion", new_user_path, method: :get
+    = button_to "Apply for Membership", new_user_path, method: :get
+
+= render partial: "sessions/form"

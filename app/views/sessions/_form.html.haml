@@ -1,0 +1,11 @@
+
+.row
+  .col.s12.m7
+    .card-panel.teal.white-text
+      %h3 Login to Your Account
+      = form_for(:session, url: login_path) do |f|
+        = f.label :username
+        = f.text_field :username
+        = f.label :password
+        = f.password_field :password
+        = f.submit "Login"
