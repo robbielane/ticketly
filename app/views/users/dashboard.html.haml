@@ -2,3 +2,5 @@
 
 %p= "Username: #{current_user.username}"
 %p= "Name: #{current_user.name}"
+
+%p= link_to "Edit Account", edit_user_path(@user)

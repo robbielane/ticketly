@@ -58,4 +58,19 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Login")
     refute page.has_content?("Logout")
   end
+
+  test "user can edit account details and password" do
+    create_and_login_user
+
+    assert page.has_content?("Welcome, ")
+    click_link "Edit Account"
+
+    fill_in "Username", with: "aaron"
+    fill_in "Password", with: "pass"
+
+    click_button "Update Account"
+save_and_open_page
+    assert dashboard_path, current_path
+    assert page.has_content?("Welcome, aaron!")
+  end
 end
