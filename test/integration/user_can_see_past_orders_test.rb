@@ -38,7 +38,6 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
   test "user can place an order and is redirected to the order history page" do
     checkout_user(2)
-    user = User.first
 
     assert page.has_content?("Order History")
 
