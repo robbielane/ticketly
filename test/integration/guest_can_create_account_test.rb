@@ -73,4 +73,14 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     assert dashboard_path, current_path
     assert page.has_content?("aaron")
   end
+
+  test "user can delete their account" do
+    create_and_login_user
+
+    assert page.has_content?("Welcome, ")
+    click_link "Delete Account"
+
+    assert root_path, current_path
+    assert page.has_content?("Pursue Your Passion")
+  end
 end
