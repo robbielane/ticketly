@@ -8,6 +8,10 @@ class Pursuit < ActiveRecord::Base
   validates :price, presence: true
 
   def retire
-    status = "retired"
+    self.update(status: "retired")
+  end
+
+  def retired?
+    status == "retired"
   end
 end
