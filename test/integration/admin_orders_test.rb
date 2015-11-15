@@ -2,23 +2,7 @@ require 'test_helper'
 
 class AdminOrdersTest < ActionDispatch::IntegrationTest
   test "admin can see all orders on dasboard page and link to order show page" do
-    create_and_login_user
-    user = User.first
-
-    order1 = user.orders.create(total: 1001,
-                                created_at: Time.new(2011, 11, 10, 15, 25, 0),
-                                status: "Completed")
-    order2 = user.orders.create(total: 200,
-                                created_at: Time.new(2012, 11, 12, 15, 25, 0),
-                                status: "Paid")
-
-    order1.pursuits.create(name: "Hiking",
-                           description: "Hike the Alps",
-                           price: 1001)
-
-    order2.pursuits.create(name: "Jet Skiing",
-                           description: "Jet Skiing in Jamaica",
-                           price: 200)
+    checkout_user(2)
 
     click_link "Logout"
 
@@ -32,12 +16,11 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
 
     assert admin_dashboard_path, current_path
     assert page.has_content?("Hiking")
-    assert page.has_content?("Completed")
-    assert page.has_content?("Paid")
+    assert page.has_content?("Pending")
 
-    click_link("Completed")
-    assert page.has_content?("1001")
-
+    click_link("Pending")
+    assert_equal "/orders/#{Order.first.id}", current_path
+    assert page.has_content?("Details")
   #   And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")
   #   And I have links to transition the status
   # - I can click on "cancel" on individual orders which are "paid" or "ordered"

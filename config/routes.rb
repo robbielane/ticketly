@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :pursuits, only: [:index, :show]
   resources :cart_pursuits, only: [:new, :create]
   resources :users, only: [:new, :create, :show]
-
+  resources :orders, only: [:index, :show]
   # resources :activity, only: [:show] do
   #   resources :pursuits, only: [:index]
   # end
@@ -19,8 +19,8 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#delete"
   get "/dashboard", to: "users#dashboard"
 
-  get "/orders", to: "orders#index"
-  get "/orders/:id", to: "orders#show"
+  # get "/orders", to: "orders#index"
+  # get "/orders/:id", to: "orders#show"
   post "/checkout", to: "orders#create"
 
   get "/:activity_name", to: "activity#show" # keep at bottom of routes
