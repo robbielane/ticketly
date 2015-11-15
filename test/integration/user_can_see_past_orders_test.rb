@@ -79,11 +79,10 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Order submitted on #{formatted_timestamp}")
 
     assert page.has_content?("Last order status update: #{formatted_timestamp}")
-    assert page.has_content?("Retired Pursuit?")
-    assert page.has_content?("No")
+    assert page.has_content?("Retired?")
 
-    first(:pursuit).click_link("View pursuit details")
-    assert_equal pursuit_path(Pursuit.find_by_name("Hiking 1")), current_path
+    click_link("Hiking the Alps 1 (Travellers: 1)")
+    assert_equal pursuit_path(Pursuit.find_by_name("Hiking the Alps 1")), current_path
   end
 
   test "user can access a retired pursuit page from their order history" do

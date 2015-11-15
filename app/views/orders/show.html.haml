@@ -4,13 +4,14 @@
   %tr
     %th Name
     %th Sub-total
+    %th Retired?
 
   - @order.pursuits.each do |pursuit|
     %tr
-      = content_tag :td, pursuit_name_and_travellers(@order, pursuit)
+      = content_tag :td, link_to(pursuit_name_and_travellers(@order, pursuit), pursuit_path(pursuit))
       = content_tag :td, format_currency(pursuit.price * @order.ordered_trips.find_by(pursuit_id: pursuit.id).travellers)
       -# number of travellers method
-      
+
 = sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
 = sanitize("Order status: #{content_tag :td, @order.status}")
 = "Order submitted on #{format_date_and_time(@order.created_at)}"
