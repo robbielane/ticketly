@@ -69,7 +69,7 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "pass"
 
     click_button "Update Account"
-save_and_open_page
+
     assert dashboard_path, current_path
     assert page.has_content?("Welcome, aaron!")
   end
