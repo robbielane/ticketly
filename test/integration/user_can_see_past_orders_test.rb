@@ -86,7 +86,6 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "user can access a retired pursuit page from their order history" do
-    skip
     checkout_user(1)
     pursuit = Pursuit.first
     pursuit.retire
