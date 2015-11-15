@@ -8,6 +8,5 @@ class ActivityPursuitTest < ActiveSupport::TestCase
     pursuit_in_mexico = Pursuit.create(name: "hike the Pico de Orizaba", description: "hike in mexico!", activity_id: hiking.id)
 
     assert_equal "hiking", pursuit_in_germany.activity.name
-
   end
 end

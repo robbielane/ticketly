@@ -28,4 +28,12 @@ module ApplicationHelper
   def format_date(date)
     date.strftime("%B %d, %Y")
   end
+
+  def format_time(date)
+    date.strftime("%H:%M")
+  end
+
+  def format_date_and_time(date)
+    "#{format_date(date)} at #{format_time(date)}"
+  end
 end
