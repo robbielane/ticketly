@@ -90,8 +90,8 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     pursuit = Pursuit.first
     pursuit.retire
 
-    visit orders_path
-    click_link("View pursuit details")
+    visit order_path(Order.first)
+    click_link("Hiking the Alps 1 (Travellers: 1)")
 
     assert_equal pursuit_path(pursuit), current_path
     refute page.has_content?("Purchase Trip")
