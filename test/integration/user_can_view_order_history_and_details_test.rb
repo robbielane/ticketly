@@ -3,9 +3,11 @@ require 'test_helper'
 class UserCanViewOrderHistoryAndDetailsTest < ActionDispatch::IntegrationTest
 
   test "existing user can view past order details" do
-    visit "/orders"
+    skip
+    checkout_user(1)
+    visit orders_path
 
-    assert page.has_content?("Hiking in the Alps 1")
+    assert page.has_content?("Hiking the Alps 1")
     assert page.has_content?("Order Details")
 
     click_link "Order Details"

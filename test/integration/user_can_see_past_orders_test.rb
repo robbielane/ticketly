@@ -3,6 +3,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     create_and_login_user
     user = User.first
 
+    # TO DO: MOCHA GEM STUB DATE
     order1 = user.orders.create(total: 1001,
                                 created_at: Time.new(2011, 11, 10, 15, 25, 0))
     order2 = user.orders.create(total: 200,
@@ -54,7 +55,6 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user can see individual past orders" do
-    skip
     checkout_user(2)
     order = Order.first
     order_timestamp = order.created_at
@@ -63,20 +63,20 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     visit orders_path
 
     click_link "View order details"
-    assert_equal  order_path(order), current_path
+    assert_equal order_path(order), current_path
 
-    assert page.has_content?("Hiking 1 (Travellers: 1)")
-    assert page.has_content?("Sub-total: $1,001")
-    assert page.has_content?("Hiking 2 (Travellers: 2)")
-    assert page.has_content?("Sub-total: $2,004")
+    assert page.has_content?("Sub-total")
+    assert page.has_content?("Name")
 
-    assert page.has_content?("Status: Ordered")
-    assert page.has_content?("Total price: $3,005")
+    assert page.has_content?("Hiking the Alps 1 (Travellers: 1)")
+    assert page.has_content?("$1,001")
+    assert page.has_content?("Hiking the Alps 1 (Travellers: 2)")
+    assert page.has_content?("$2,002")
+
+    assert page.has_content?("Order status: Pending")
+    assert page.has_content?("Total price: $3,003")
 
     assert page.has_content?("Order submitted on #{formatted_timestamp}")
-
-    #   If the order was completed or cancelled
-    # ^ same as ordered vs paid etc no?
 
     assert page.has_content?("Last order status update: #{formatted_timestamp}")
     assert page.has_content?("Retired Pursuit?")
