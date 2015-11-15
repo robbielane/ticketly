@@ -59,4 +59,18 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("acareaga")
   end
+
+  test "admin can delete their account" do
+    User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
+
+    visit root_path
+
+    fill_in "Username", with: "aaron"
+    fill_in "Password", with: "pass"
+
+    click_button "Login"
+    click_link "Delete Account"
+
+    assert root_path, current_path
+  end
 end
