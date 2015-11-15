@@ -38,7 +38,11 @@ main {
 .icon-block .material-icons {
 	font-size: inherit;
 }
-​
+
+.header-bg{
+  background: image-url('http://iwillmakeyousmile.gq/kar/12325.jpg') no-repeat;
+}
+
 #nav-mobile {
   margin-right: 20px;
 }
