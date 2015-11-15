@@ -92,7 +92,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
     visit order_path(Order.first)
     click_link("Hiking the Alps 1 (Travellers: 1)")
-    save_and_open_page
+    
     assert_equal pursuit_path(pursuit), current_path
     refute page.has_content?("Purchase Trip")
   end

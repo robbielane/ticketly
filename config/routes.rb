@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :pursuits, only: [:index, :show]
   resources :cart_pursuits, only: [:new, :create]
-  resources :users, only: [:new, :create, :show, :update, :destroy]
+  resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :orders, only: [:index, :show]
 
   get "/admin/dashboard", to: "admin#dashboard"
