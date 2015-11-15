@@ -71,6 +71,6 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     click_button "Update Account"
 
     assert dashboard_path, current_path
-    assert page.has_content?("Welcome, aaron!")
+    assert page.has_content?("aaron")
   end
 end
