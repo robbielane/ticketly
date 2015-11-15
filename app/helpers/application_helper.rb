@@ -12,7 +12,9 @@ module ApplicationHelper
   end
 
   def join_dashboard_path
-    if current_user
+    if current_admin
+      link_to "Logged in as #{current_user.name}", admin_dashboard_path
+    elsif current_user
       link_to "Logged in as #{current_user.name}", dashboard_path
     else
       link_to "Join", new_user_path

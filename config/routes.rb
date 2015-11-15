@@ -2,11 +2,8 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :pursuits, only: [:index, :show]
   resources :cart_pursuits, only: [:new, :create]
-  resources :users, only: [:new, :create, :show]
-
-  # resources :activity, only: [:show] do
-  #   resources :pursuits, only: [:index]
-  # end
+  resources :users, only: [:new, :create, :show, :update, :destroy]
+  resources :orders, only: [:index, :show]
 
   get "/admin/dashboard", to: "admin#dashboard"
 
@@ -18,8 +15,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#delete"
   get "/dashboard", to: "users#dashboard"
-  get "/orders", to: "orders#index"
-
   post "/checkout", to: "orders#create"
 
   get "/:activity_name", to: "activity#show" # keep at bottom of routes
