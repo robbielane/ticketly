@@ -3,20 +3,16 @@
 %table.cart-table.highlight
   %tr
     %th Name
-    %th Total Price
-    %th Date Ordered
-    %th Status
+    %th Sub-total
+    %th Retired?
 
-  - @order.ordered_trips.each do |trip|
+  - @order.pursuits.each do |pursuit|
     %tr
-      = content_tag :td, format_date(trip.created_at) # purchaser's full name and address
-      = content_tag :td, sanitize(order_pursuits_list(@order)) # link to Pursuit
-      = content_tag :td, trip.travellers
-      = content_tag :td, format_currency(@order.total || 0)
+      = content_tag :td, link_to(pursuit_name_and_travellers(@order, pursuit), pursuit_path(pursuit))
+      = content_tag :td, format_currency(pursuit.price * @order.ordered_trips.find_by(pursuit_id: pursuit.id).travellers)
+      -# number of travellers method
 
-      = content_tag :td, sanitize(order_pursuits_list(@order))
-      = content_tag :td, format_currency(@order.total || 0)
-      = content_tag :td, format_date(@order.created_at)
-
-      = content_tag :td, @order.total
-      = content_tag :td, @order.status
+= sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
+= sanitize("Order status: #{content_tag :td, @order.status}")
+= "Order submitted on #{format_date_and_time(@order.created_at)}"
+= "Last order status update: #{format_date_and_time(@order.updated_at)}"

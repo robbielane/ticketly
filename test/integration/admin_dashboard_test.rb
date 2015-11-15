@@ -4,7 +4,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "admin can login and access admin dashboard path" do
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
-
     visit root_path
 
     fill_in "Username", with: "aaron"
@@ -17,7 +16,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "user cannot access admin dashboard" do
     User.create(username: "cole", name: "Cole Hall", password: "password", role: 0)
-
     visit root_path
 
     click_button "Login"

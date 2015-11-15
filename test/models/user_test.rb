@@ -21,7 +21,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user is invalid with missing name" do
-
     user = User.new(
     username: "Torie@gmail.com",
     password: "password",
@@ -31,7 +30,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user is invalid with missing username" do
-
     user = User.new(name: "Torie",
     password: "password",
     interests: "Hiking")
@@ -40,11 +38,10 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user is invalid with missing password" do
-
     user = User.new(name: "Torie",
     username: "Torie@gmail.com",
     interests: "Hiking")
-    
+
     refute user.valid?
   end
 end

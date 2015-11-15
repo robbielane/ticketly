@@ -4,4 +4,4 @@
 
 %p.pursuit-description= @pursuit.description
 
-= link_to "Purchase Trip", new_cart_pursuit_path(id: @pursuit.id)
+= purchase_link_or_retired_notice

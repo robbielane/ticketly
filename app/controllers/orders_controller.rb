@@ -12,10 +12,19 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders
+    if current_user.admin?
+      @orders = Order.all
+    else
+      @orders = current_user.orders
+    end
   end
 
   def show
     @order = Order.find(params[:id])
+    if current_user.admin?
+      render "admin/show"
+    else
+      @order = Order.find(params[:id])
+    end
   end
 end
