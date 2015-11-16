@@ -11,3 +11,5 @@
           = "#{format_currency(pursuit.price)}"
         .card-action
           = link_to "Details", pursuit_path(pursuit)
+          = link_to "Edit Pursuit", edit_admin_pursuit_path
+          = link_to "Delete", admin_pursuit_path

@@ -9,6 +9,9 @@ class Admin::PursuitsController < Admin::BaseController
   def new
   end
 
+  def index
+  end
+
   private
 
   def pursuit_params
