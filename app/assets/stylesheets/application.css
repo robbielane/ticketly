@@ -54,3 +54,7 @@ main {
 #app-detail-padding {
   padding-bottom: 15px
 }
+
+.card-panel h3 {
+  font-size: 110%;
+}
