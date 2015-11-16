@@ -51,16 +51,14 @@ class PursuitTest < ActiveSupport::TestCase
     refute pursuit.valid?
   end
 
-  test "it must have a unique name" do
-    skip
-    pursuit = Pursuit.create(valid_attributes)
-    pursuit = Pursuit.new(valid_attributes)
-
-    refuite pursuit.valid?
-  end
+  # test "it must have a unique name" do
+  #   pursuit = Pursuit.create(valid_attributes)
+  #   pursuit = Pursuit.new(valid_attributes)
+  #
+  #   refute pursuit.valid?
+  # end
 
   test "it must have a price that is greater than zero" do
-    skip
     pursuit = Pursuit.new( { name: "Hiking in the Alps",
                              description: "Hike The Alps!",
                              price: -1,
