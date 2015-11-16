@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ActivityPursuitTest < ActiveSupport::TestCase
-  test "Pursuits are linked to activities" do
+  test "pursuits are linked to activities" do
     hiking = Activity.create(name: "hiking")
 
     pursuit_in_germany = Pursuit.create(name: "hiking in the alps", description: "hike the alps!", activity_id: hiking.id)

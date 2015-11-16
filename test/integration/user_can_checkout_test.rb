@@ -28,4 +28,12 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Trips: 0")
     refute page.has_content?("Trips: 1")
   end
+
+  test "user can't checkout with no items in cart" do
+    create_and_login_user
+    visit "/cart"
+
+    assert page.has_content?("No items in cart.")
+    refute page.has_content?("Checkout")
+  end
 end
