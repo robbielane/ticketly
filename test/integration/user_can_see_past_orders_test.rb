@@ -1,3 +1,5 @@
+require "test_helper"
+
 class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   test "user can see past orders" do
     create_and_login_user
