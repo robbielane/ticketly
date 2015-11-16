@@ -45,10 +45,7 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
 
     assert_equal "/cart", current_path
     assert page.has_content?("You have removed the trip Hiking the Alps 1 from your cart.")
-
-    within(".cart") do
-      refute page.has_content?("Hiking the Alps 1")
-    end
+    assert page.has_content?("No items in cart.")
 
     click_link("Hiking the Alps 1")
     assert_equal pursuit_path(removed_pursuit), current_path
