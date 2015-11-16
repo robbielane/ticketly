@@ -1,18 +1,8 @@
 require "test_helper"
 
 class UserCanCheckoutTest < ActionDispatch::IntegrationTest
-  def setup
-    add_items_to_cart(1)
-  end
-
-  def checkout_user(num_items)
-    create_and_login_user
-    add_items_to_cart(num_items)
-    visit "/cart"
-    click_button "Checkout"
-  end
-
   test "user must be logged in to checkout" do
+    add_items_to_cart(1)
     visit "/cart"
     click_button "Checkout"
 
@@ -37,5 +27,13 @@ class UserCanCheckoutTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Trips: 0")
     refute page.has_content?("Trips: 1")
+  end
+
+  test "user can't checkout with no items in cart" do
+    create_and_login_user
+    visit "/cart"
+
+    assert page.has_content?("No items in cart.")
+    refute page.has_content?("Checkout")
   end
 end

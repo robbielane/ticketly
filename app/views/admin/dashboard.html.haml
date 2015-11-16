@@ -15,3 +15,6 @@
       = content_tag :td, format_currency(order.total || 0)
       = content_tag :td, format_date(order.created_at)
       = content_tag :td, link_to("#{order.status}", order_path(order.id))
+
+%p= link_to "Edit Account", edit_user_path(@user)
+%p= link_to "Delete Account", user_path(@user), method: :delete

@@ -1,7 +1,6 @@
 require "test_helper"
 
 class PursuitTest < ActiveSupport::TestCase
-
   def valid_attributes
     {
       name: "Hiking in the Alps",
@@ -32,6 +31,4 @@ class PursuitTest < ActiveSupport::TestCase
 
     refute pursuit.valid?
   end
-
-
 end

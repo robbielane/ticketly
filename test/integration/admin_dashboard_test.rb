@@ -4,7 +4,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "admin can login and access admin dashboard path" do
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
-
     visit root_path
 
     fill_in "Username", with: "aaron"
@@ -17,7 +16,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "user cannot access admin dashboard" do
     User.create(username: "cole", name: "Cole Hall", password: "password", role: 0)
-
     visit root_path
 
     click_button "Login"
@@ -29,7 +27,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     assert '/dashboard', current_path
 
     visit admin_dashboard_path
-    
+
     assert page.has_content?("404")
   end
 
@@ -43,7 +41,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     assert page.has_content?("404")
   end
 
-  test "admin can update their account details but not other user accounts" do
+  test "admin can update account details but not other users" do
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
 
     visit root_path
@@ -52,10 +50,27 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "pass"
 
     click_button "Login"
-    click_button "Edit Account"
+    click_link "Edit Account"
 
-    assert user_path, current_path
+    assert admin_dashboard_path, current_path
     fill_in "Username", with: "acareaga"
-    fill_in "Password", with: "passord"
+    fill_in "Password", with: "password"
+    click_button "Update Account"
+
+    assert page.has_content?("acareaga")
+  end
+
+  test "admin can delete their account" do
+    User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
+
+    visit root_path
+
+    fill_in "Username", with: "aaron"
+    fill_in "Password", with: "pass"
+
+    click_button "Login"
+    click_link "Delete Account"
+
+    assert root_path, current_path
   end
 end

@@ -21,7 +21,6 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "user is invalid with missing name" do
-
     user = User.new(
     username: "Torie@gmail.com",
     password: "password",

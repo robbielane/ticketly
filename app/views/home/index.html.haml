@@ -10,4 +10,5 @@
       = button_to "Apply for Membership", new_user_path, method: :get
 
   .col.s5
-    = render partial: "sessions/form"
+    - if !current_user
+      = render partial: "sessions/form"

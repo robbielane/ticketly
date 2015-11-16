@@ -1,7 +1,11 @@
-= render partial: "edit_pursuit", locals: { :pursuits => @pursuits }
+- if @pursuits.empty?
+  %p No items in cart.
 
-.row
-  .col.s12.m12
-    .card-panel.grey.lighten-5
-      = "Total: #{format_currency(@cart.total_cost)}"
-      = button_to "Checkout", checkout_path, method: :post
+- if !@pursuits.empty?
+  = render partial: "edit_pursuit", locals: { :pursuits => @pursuits }
+
+  .row
+    .col.s12.m12
+      .card-panel.grey.lighten-5
+        = "Total: #{format_currency(@cart.total_cost)}"
+        = button_to "Checkout", checkout_path, method: :post

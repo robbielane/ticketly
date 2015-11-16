@@ -27,6 +27,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash.notice = "Account Updated!"
+      redirect_to dashboard_path
     else
       flash.now[:errors] = @user.errors.full_messages.join(" ,")
       render :edit

@@ -1,7 +1,6 @@
 require 'test_helper'
 
 class OrderedTripTest < ActiveSupport::TestCase
-
   def valid_attributes
     {
       travellers: 2,
@@ -13,5 +12,4 @@ class OrderedTripTest < ActiveSupport::TestCase
     ordered_trip = OrderedTrip.new(valid_attributes)
     assert ordered_trip.valid?
   end
-
 end
