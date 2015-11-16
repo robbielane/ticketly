@@ -55,7 +55,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user can see individual past orders" do
-    checkout_user(2)
+    checkout_user(1)
     order = Order.first
     order_timestamp = order.created_at
     formatted_timestamp = "#{order_timestamp.strftime("%B %d, %Y")} at #{order_timestamp.strftime("%H:%M")}"
@@ -70,11 +70,9 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Hiking the Alps 1 (Travellers: 1)")
     assert page.has_content?("$1,001")
-    assert page.has_content?("Hiking the Alps 1 (Travellers: 2)")
-    assert page.has_content?("$2,002")
 
     assert page.has_content?("Order status: Pending")
-    assert page.has_content?("Total price: $3,003")
+    assert page.has_content?("Total price: $1,001")
 
     assert page.has_content?("Order submitted on #{formatted_timestamp}")
 
@@ -92,7 +90,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
     visit order_path(Order.first)
     click_link("Hiking the Alps 1 (Travellers: 1)")
-    
+
     assert_equal pursuit_path(pursuit), current_path
     refute page.has_content?("Purchase Trip")
   end
