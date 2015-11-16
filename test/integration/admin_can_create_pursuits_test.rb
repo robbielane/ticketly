@@ -12,12 +12,18 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
     fill_in "Name", with: "Hiking in the Alps"
     fill_in "Description", with: "Have a ball hiking in the alps!"
     fill_in "Price", with: "1000"
+    fill_in "Activity", with: "Hiking"
     click_button "Create Pursuit"
 
+    assert_equal pursuit_path(Pursuit.first), current_path
     assert page.has_content?("The pursuit 'Hiking in the Alps' has been created")
 
     visit pursuits_path
     assert page.has_content?("Hiking in the Alps")
+  end
+
+  test "admin can upload photo for pursuit" do
+    skip
   end
 
   test "user cannot access new pursuit path" do
