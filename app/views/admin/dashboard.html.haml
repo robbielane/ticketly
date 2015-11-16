@@ -17,6 +17,9 @@
       = content_tag :td, link_to("#{order.status}", order_path(order.id))
 
 = link_to "Edit Account", edit_user_path(@user)
+%br
 = link_to "Delete Account", user_path(@user), method: :delete
+%br
 = link_to "View All Pursuits", "/admin/pursuits"
+%br
 = link_to "Add Pursuit", new_pursuit_path
