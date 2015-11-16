@@ -67,4 +67,10 @@ class PursuitTest < ActiveSupport::TestCase
 
     refute pursuit.valid?
   end
+
+  test "default photo is provided if no photo is specified" do
+    skip
+    #       - The photo is optional. If not present, a stand-in photo is used.
+
+  end
 end
