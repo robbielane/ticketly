@@ -1,0 +1,12 @@
+%h1 Add a New Pursuit:
+
+= form_for(@pursuit) do |f|
+  = f.label :name
+  = f.text_field :name
+  = f.label :activity
+  = f.text_field :activity
+  = f.label :description
+  = f.text_area :description
+  = f.label :price
+  = f.text_field :price
+  = f.submit "Create Pursuit"

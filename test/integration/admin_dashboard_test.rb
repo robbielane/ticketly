@@ -1,7 +1,6 @@
-require 'test_helper'
+require "test_helper"
 
 class AdminDashboardTest < ActionDispatch::IntegrationTest
-
   test "admin can login and access admin dashboard path" do
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
     visit root_path
@@ -43,7 +42,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "admin can update account details but not other users" do
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
-
     visit root_path
 
     fill_in "Username", with: "aaron"
@@ -62,7 +60,6 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "admin can delete their account" do
     User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
-
     visit root_path
 
     fill_in "Username", with: "aaron"
