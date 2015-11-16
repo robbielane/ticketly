@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show]
 
   get "/admin/dashboard", to: "admin#dashboard"
+  get "/admin/order/:id", to: "admin#show"
 
   get "/cart", to: "cart_pursuits#show"
   put "/cart", to: "cart_pursuits#update"
