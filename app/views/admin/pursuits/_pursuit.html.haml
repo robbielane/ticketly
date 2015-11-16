@@ -11,3 +11,9 @@
           = "#{format_currency(pursuit.price)}"
         .card-action
           = link_to "Details", pursuit_path(pursuit)
+          %br
+          %br
+          = "Status: #{pursuit.status.upcase}"
+          %br
+          %br
+          = button_to "Edit", edit_pursuit_path(pursuit)
