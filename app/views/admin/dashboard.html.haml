@@ -15,3 +15,5 @@
       = content_tag :td, format_currency(order.total || 0)
       = content_tag :td, format_date(order.created_at)
       = content_tag :td, link_to("#{order.status}", order_path(order.id))
+
+%p= link_to "View All Items", "/admin/items"
