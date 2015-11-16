@@ -3,7 +3,7 @@ require 'test_helper'
 class AdminEditsPursuitTest < ActionDispatch::IntegrationTest
 
   test "admin can edit an existing pursuit" do
-    create_pursuits("Hiking")
+    create_pursuits(1, "Hiking")
     User.create(username: "acareaga", password: "pass", name: "Aaron", role: 1)
 
     visit root_path
@@ -19,7 +19,7 @@ class AdminEditsPursuitTest < ActionDispatch::IntegrationTest
     assert "/admin/pursuits", current_path
     assert page.has_content?("Hiking")
 
-    click_link "Hiking"
+    click_button "Edit"
 
     assert "/admin/pursuits/#{pursuit}/edit", current_path
 
