@@ -1,10 +1,21 @@
-.row.col.s12.m4.l8
-  %h1 Global Pursuit
-  %h4 Pursue Your Passion
-  %br
-  %br
+%section.row.header-bg
 
-  = button_to "Apply for Membership", new_user_path, method: :get
+.row.center-align
+  .col.s12
+    %h1.white-text.bold Global Pursuit
+    %h4.white-text.thin Pursue Your Passion
+    %br
+    %br
+    .waves-effect.waves-light.btn.white-text
+      = button_to "Apply for Membership", new_user_path, method: :get
 
-- if !current_user
-  = render partial: "sessions/form"
+    - if !current_user
+      .waves-effect.waves-light.btn.white-text
+        = button_to "Login to Your Account", login_path
+
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br
