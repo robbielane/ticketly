@@ -9,6 +9,6 @@
     .waves-effect.waves-light.btn
       = button_to "Apply for Membership", new_user_path, method: :get
 
-  .col.s5
     - if !current_user
-      = render partial: "sessions/form"
+      .waves-effect.waves-light.btn
+        = button_to "Login to Your Account", login_path
