@@ -13,6 +13,20 @@
  *= require_tree .
  *= require_self
  */
+//
+// @font-face {
+//   font-family: "Roboto";
+//   src: url("assets/fonts/roboto/Roboto-Light.ttf");
+// }
+//
+// @font-face {
+//   font-family: "Roboto-bold";
+//   src: url("assets/fonts/Roboto-Bold.ttf");
+// }
+//
+// * {
+//   font-family: Roboto;
+// }
 
 body {
   display: flex;
@@ -22,6 +36,10 @@ body {
 
 main {
   flex: 1 0 auto;
+}
+
+nav {
+  color: black;
 }
 
 .brand-logo {
