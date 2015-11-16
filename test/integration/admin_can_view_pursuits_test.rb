@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class AdminItemsTest < ActionDispatch::IntegrationTest
+class AdminCanViewPursuitsTest < ActionDispatch::IntegrationTest
 
   test "Admin can view all items" do
     create_pursuits(2, "Hiking")
@@ -14,14 +14,14 @@ class AdminItemsTest < ActionDispatch::IntegrationTest
 
     assert admin_dashboard_path, current_path
 
-    click_link ("View All Items")
+    click_link ("View All Pursuits")
 
-    assert "/admin/items", current_path
+    assert "/admin/pursuits", current_path
 
     assert page.has_content?("Pursuits")
     assert page.has_content?("Hiking")
     assert page.has_content?("Go hike the alps")
-    assert page.has_content?("Pending")
+    assert page.has_content?("active")
     assert page.has_content?("Edit")
   end
 end
