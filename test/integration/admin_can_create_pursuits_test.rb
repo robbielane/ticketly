@@ -27,6 +27,10 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
   end
 
   test "user cannot access new pursuit path" do
-    skip
+    create_and_login_user
+    visit new_pursuit_path
+
+    assert page.has_content?("The page you were looking for doesn't exist")
+    refute page.has_content?("Add a New Pursuit")
   end
 end
