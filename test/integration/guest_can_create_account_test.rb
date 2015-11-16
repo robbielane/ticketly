@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
   test "guest can view the homepage" do

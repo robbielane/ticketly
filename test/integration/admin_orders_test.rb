@@ -1,4 +1,4 @@
-require 'test_helper'
+require "test_helper"
 
 class AdminOrdersTest < ActionDispatch::IntegrationTest
   test "admin can see all orders on dasboard page and link to order show page" do

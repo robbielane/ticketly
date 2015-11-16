@@ -58,4 +58,13 @@ class ActionDispatch::IntegrationTest
   def teardown
     reset_session!
   end
+
+  def login_admin
+    User.create(username: "admin", name: "Admin", password: "password", role: 1)
+
+    visit login_path
+    fill_in "Username", with: "admin"
+    fill_in "Password", with: "password"
+    click_button "Login"
+  end
 end
