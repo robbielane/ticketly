@@ -6,5 +6,6 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
     # As an authenticated Admin:
     #     I can create an item.
     #       - The photo is optional. If not present, a stand-in photo is used.
+    
   end
 end

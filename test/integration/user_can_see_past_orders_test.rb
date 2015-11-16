@@ -5,6 +5,9 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
     create_and_login_user
     user = User.first
 
+    Activity.create(name: "General")
+    activity_id = Activity.first.id
+
     # TO DO: MOCHA GEM STUB DATE
     order1 = user.orders.create(total: 1001,
                                 created_at: Time.new(2011, 11, 10, 15, 25, 0))
@@ -13,11 +16,13 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
     order1.pursuits.create(name: "Hiking",
                            description: "Hike the Alps",
-                           price: 1001)
+                           price: 1001,
+                           activity_id: activity_id)
 
     order2.pursuits.create(name: "Jet Skiing",
                            description: "Jet Skiing in Jamaica",
-                           price: 200)
+                           price: 200,
+                           activity_id: activity_id)
 
     visit orders_path
 
@@ -28,7 +33,6 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Total Price")
       assert page.has_content?("Date Ordered")
 
-      # assert find('tr', text: "Trips Ordered").has_content?("Hiking")
       assert page.has_content?("Hiking (Travellers: 1)")
       assert page.has_content?("$1,001")
       assert page.has_content?("November 10, 2011")
