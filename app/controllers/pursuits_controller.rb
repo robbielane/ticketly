@@ -6,4 +6,8 @@ class PursuitsController < ApplicationController
   def show
     @pursuit = Pursuit.find(params[:id])
   end
+
+  def new
+    @pursuit = Pursuit.new
+  end
 end
