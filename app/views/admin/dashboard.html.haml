@@ -16,8 +16,7 @@
       = content_tag :td, format_date(order.created_at)
       = content_tag :td, link_to("#{order.status}", order_path(order.id))
 
-
-%p= link_to "View All Items", "/admin/items"
-
-%p= link_to "Edit Account", edit_user_path(@user)
-%p= link_to "Delete Account", user_path(@user), method: :delete
+= link_to "Edit Account", edit_user_path(@user)
+= link_to "Delete Account", user_path(@user), method: :delete
+= link_to "View All Pursuits", "/admin/pursuits"
+= link_to "Add Pursuit", new_pursuit_path
