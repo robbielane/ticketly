@@ -25,6 +25,27 @@ class PursuitsController < ApplicationController
     end
   end
 
+  def edit
+    @pursuit = Pursuit.find(params[:id])
+  end
+
+  def update
+    @pursuit = Pursuit.find(params[:id])
+    if @pursuit.update(pursuit_params)
+      flash.notice = "Pursuit Updated!"
+      redirect_to admin_pursuits_path
+    else
+      flash.now[:errors] = @pursuit.errors.full_messages.join(" ,")
+      render :edit
+    end
+  end
+
+  def destroy
+    @pursuit = Pursuit.find(params[:id])
+    @pursuit.destroy
+    redirect_to admin_pursuits_path
+  end
+
   private
 
   def pursuit_params

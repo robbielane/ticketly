@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "/admin/dashboard", to: "admin#dashboard"
   get "/admin/pursuits", to: "pursuits#index"
+  put "/admin/pursuits/:id/edit", to: "pursuits#edit"
 
   get "/cart", to: "cart_pursuits#show"
   put "/cart", to: "cart_pursuits#update"
