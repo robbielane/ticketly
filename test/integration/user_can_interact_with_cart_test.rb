@@ -91,4 +91,22 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Login")
     refute page.has_content?("Logout")
   end
+
+  test "if user adds negative number of travellers the absolute value is taken instead" do
+    create_pursuits(1, "Hiking")
+    create_and_login_user
+
+    pursuit = Activity.find_by_name("Hiking").pursuits.first
+    visit pursuit_path(pursuit)
+
+    click_link "Purchase Trip"
+    fill_in "travellers", with: -2
+    click_button "Place Order"
+
+    visit "/cart"
+    click_button "Checkout"
+    save_and_open_page
+    refute page.has_content?("-2")
+    refute page.has_content?("-$2,002")
+  end
 end

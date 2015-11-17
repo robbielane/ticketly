@@ -9,6 +9,7 @@ class Order < ActiveRecord::Base
       order.ordered_trips.create(pursuit_id: pursuit.pursuit_id,
                                  travellers: pursuit.travellers,
                                  price: pursuit.price)
+
     end
   end
 end

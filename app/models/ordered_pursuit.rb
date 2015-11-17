@@ -3,7 +3,7 @@ class OrderedPursuit
 
   def initialize(pursuit_id, travellers, price)
     @pursuit_id = pursuit_id
-    @travellers = travellers
+    @travellers = travellers.abs
     @price = price
   end
 end
