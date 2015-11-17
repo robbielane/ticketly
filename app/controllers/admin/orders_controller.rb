@@ -1,4 +1,4 @@
-class Admin::PursuitsController < Admin::BaseController
+class Admin::OrdersController < Admin::BaseController
   before_action :set_up
 
   def set_up

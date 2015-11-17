@@ -6,7 +6,7 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
 
     click_link("Add Pursuit")
 
-    assert_equal new_pursuit_path, current_path
+    assert_equal new_admin_pursuit_path, current_path
     assert page.has_content?("Add a New Pursuit")
 
     fill_in "Name", with: "Hiking in the Alps"

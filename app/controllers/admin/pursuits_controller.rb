@@ -1,10 +1,4 @@
-class Admin::OrdersController < Admin::BaseController
-  before_action :set_up
-
-  def set_up
-    @admin = current_user
-    @order = Order.new
-  end
+class Admin::PursuitsController < Admin::BaseController
 
   def index
     @activities = Activity.all

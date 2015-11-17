@@ -16,7 +16,7 @@ class AdminEditsPursuitTest < ActionDispatch::IntegrationTest
 
     click_link ("View All Pursuits")
 
-    assert "/admin/pursuits", current_path
+    assert admin_pursuits_path, current_path
     assert page.has_content?("Hiking")
 
     click_button "Edit"
