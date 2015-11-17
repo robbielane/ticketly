@@ -1,6 +1,11 @@
+%br
+%br
+%br
+
 .row
-  .col.s12.m7
-    .card-panel.teal.white-text
+  .col.s6
+  .col.s6
+    .card-panel.blue-grey.lighten-5.black-text
       %h3 Login to Your Account
       = form_for(:session, url: login_path) do |f|
         = f.label :username
@@ -9,3 +14,5 @@
         = f.password_field :password
         .waves-effect.waves-light.btn
           = f.submit "Login"
+
+%br
