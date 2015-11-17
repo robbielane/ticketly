@@ -105,7 +105,7 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
 
     visit "/cart"
     click_button "Checkout"
-    save_and_open_page
+    
     refute page.has_content?("-2")
     refute page.has_content?("-$2,002")
   end
