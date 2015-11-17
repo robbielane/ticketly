@@ -6,7 +6,7 @@ class AdminEditsPursuitTest < ActionDispatch::IntegrationTest
     create_pursuits(1, "Hiking")
     User.create(username: "acareaga", password: "pass", name: "Aaron", role: 1)
 
-    visit root_path
+    visit login_path
 
     fill_in "Username", with: "acareaga"
     fill_in "Password", with: "pass"
