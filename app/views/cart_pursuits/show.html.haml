@@ -1,5 +1,7 @@
 - if @pursuits.empty?
-  %p No items in cart.
+  .white-text.center-align.no-items
+    %h3 No items in cart.
+    = link_to "View Pursuits", pursuits_path
 
 - if !@pursuits.empty?
   = render partial: "edit_pursuit", locals: { :pursuits => @pursuits }
