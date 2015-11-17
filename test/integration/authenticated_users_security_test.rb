@@ -5,8 +5,8 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
     User.create(name: "Nicole", username: "cole", password: "password")
     User.create(name: "Torie", username: "torie", password: "pass")
 
-    visit root_path
-    click_link "Login"
+    visit login_path
+
     fill_in "Username", with: "cole"
     fill_in "Password", with: "pass"
     click_button "Login"
@@ -29,7 +29,8 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
   test "authenticated user cannot access admin dashboard and create/update/delete trips" do
     User.create(name: "Nicole", username: "cole", password: "password")
 
-    visit root_path
+    visit login_path
+
     fill_in "Username", with: "cole"
     fill_in "Password", with: "pass"
     click_button "Login"
