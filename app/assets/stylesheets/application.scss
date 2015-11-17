@@ -32,7 +32,7 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #3949ab;
+  background-color: #303030;
 }
 
 main {
@@ -41,6 +41,10 @@ main {
 
 nav {
   color: black;
+}
+
+h3 {
+  font-size: 200%;
 }
 
 .brand-logo {
