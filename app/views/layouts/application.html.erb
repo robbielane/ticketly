@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GlobalPursuit</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
+  <head>
+    <title>GlobalPursuit</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+
 <body>
   <div class = "<%= params[:controller] %>">
     <header class="nav">
@@ -33,42 +34,45 @@
       </div>
     </div>
 
-    <%= content_tag :div, yield, class: "container" %>
-
+    <div class='container'>
+      <%= yield %>
+    </div>
+    ​
     <footer class="page-footer white">
-        <div class="container">
-          <div class="row">
-            <div class="col l6 s12">
-              <h5 class="black-text">Company Bio</h5>
-              <p class="black-text">We are a team of Turing students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="black-text">Company Bio</h5>
+            <p class="black-text">We are a team of Turing students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+          </div>
 
-            <div class="col l3 s12">
-              <h5 class="black-text">About</h5>
-              <ul>
-                <li><a class="black-text" href="#!">Company</a></li>
-                <li><a class="black-text" href="#!">Regions</a></li>
-                <li><a class="black-text" href="#!">Activities</a></li>
-                <li><a class="black-text" href="http://www.turing.io" target="_blank">Contact</a></li>
-              </ul>
-            </div>
-            <div class="col l3 s12">
-              <h5 class="black-text">Destinations</h5>
-              <ul>
-                <li><a class="black-text" href="#!">Asia Pacific</a></li>
-                <li><a class="black-text" href="#!">Europe</a></li>
-                <li><a class="black-text" href="#!">Americas</a></li>
-                <li><a class="black-text" href="#!">Middle East</a></li>
-              </ul>
-            </div>
+          <div class="col l3 s12">
+            <h5 class="black-text">About</h5>
+            <ul>
+              <li><a class="black-text" href="#!">Company</a></li>
+              <li><a class="black-text" href="#!">Regions</a></li>
+              <li><a class="black-text" href="#!">Activities</a></li>
+              <li><a class="black-text" href="http://www.turing.io" target="_blank">Contact</a></li>
+            </ul>
+          </div>
+
+          <div class="col l3 s12">
+            <h5 class="black-text">Destinations</h5>
+            <ul>
+              <li><a class="black-text" href="#!">Asia Pacific</a></li>
+              <li><a class="black-text" href="#!">Europe</a></li>
+              <li><a class="black-text" href="#!">Americas</a></li>
+              <li><a class="black-text" href="#!">Middle East</a></li>
+            </ul>
           </div>
         </div>
-        <div class="footer-copyright">
-          <div class="container black-text">
-          Made by <a class="blue-text" href="https://github.com/nicolehall" target="_blank">Cole Hall</a> & <a class="blue-text" href="https://github.com/acareaga" target="_blank">Aaron Careaga</a> & <a class="blue-text" href="https://github.com/toriejw" target="_blank">Torie Joy-Warren</a>
-          </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container black-text">
+        Made by <a class="blue-text" href="https://github.com/nicolehall" target="_blank">Cole Hall</a> & <a class="blue-text" href="https://github.com/acareaga" target="_blank">Aaron Careaga</a> & <a class="blue-text" href="https://github.com/toriejw" target="_blank">Torie Joy-Warren</a>
         </div>
+      </div>
     </footer>
-  </div>
-</body>
+  </body>
 </html>

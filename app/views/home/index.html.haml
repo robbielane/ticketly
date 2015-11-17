@@ -8,14 +8,13 @@
       %br
       %br
       .waves-effect.waves-light.btn.white-text
+        = button_to "Login to Your Account", login_path, method: :get
         = button_to "Apply for Membership", new_user_path, method: :get
 
       - if !current_user
         .waves-effect.waves-light.btn.white-text
           = button_to "Login to Your Account", login_path
 
-      %br
-      %br
       %br
       %br
       %br
