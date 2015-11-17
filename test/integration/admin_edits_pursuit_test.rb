@@ -21,7 +21,7 @@ class AdminEditsPursuitTest < ActionDispatch::IntegrationTest
 
     click_button "Edit"
 
-    assert "/admin/pursuits/#{pursuit}/edit", current_path
+    assert "/admin/pursuits/#{Pursuit.first.id}/edit", current_path
 
     fill_in "Name", with: "Skiing"
     fill_in "Price", with: "650"
