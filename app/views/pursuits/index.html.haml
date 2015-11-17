@@ -2,4 +2,5 @@
 
 - @activities.each do |activity|
   %h2= link_to("#{activity.name}", "/#{format_url_name(activity.name)}")
-  = render activity.pursuits
+  .row
+    = render activity.pursuits
