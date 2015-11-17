@@ -14,7 +14,7 @@
       = content_tag :td, sanitize(order_pursuits_list(order))
       = content_tag :td, format_currency(order.total || 0)
       = content_tag :td, format_date(order.created_at)
-      = content_tag :td, link_to("#{order.status}", order_path(order.id))
+      = content_tag :td, link_to("#{order.status}", admin_order_path(order.id))
 
 = link_to "Edit Account", edit_user_path(@user)
 %br

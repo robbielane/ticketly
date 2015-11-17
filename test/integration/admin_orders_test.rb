@@ -12,7 +12,7 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Pending")
     click_link("Pending")
 
-    assert_equal "/orders/#{Order.first.id}", current_path
+    assert_equal "/admin/orders/#{Order.first.id}", current_path
     assert page.has_content?("Details")
   #   And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")
   #   And I have links to transition the status
@@ -26,25 +26,20 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
 
     click_link "Logout"
 
-    User.create(username: "acareaga", password: "pass", name: "Aaron", role: 1)
+    login_admin
 
-    visit root_path
-
-    fill_in "Username", with: "acareaga"
-    fill_in "Password", with: "pass"
-    click_button "Login"
     assert admin_dashboard_path, current_path
 
     assert page.has_link?("Pending")
     click_link("Pending")
-    assert_equal admin_order_path(:id), current_path
-    assert_equal "/orders/#{Order.first.id}", current_path
-    assert page.has_content?("November 16, 2015")
-    assert page.has_content?(#time the order was placed)
-    assert page.has_link?("#{Activity.find_by_name("Hiking #{i}"}")#The item's name, which is linked to the item page.
-    assert page.has_content?("Total Travellers")
-    assert page.has_content?("Price")
-    assert page.has_content("Line item subtotal")
+    assert_equal "/admin/orders/#{Order.first.id}", current_path
+
+    # assert page.has_content?("November 16, 2015")
+    # assert page.has_content?(#time the order was placed)
+    # # assert page.has_link?("#{Activity.find_by_name("Hiking #{i}"}")#The item's name, which is linked to the item page.
+    # assert page.has_content?("Total Travellers")
+    # # assert page.has_content?("Price")
+    # assert page.has_content("Line item subtotal")
 
 # And I can see the total for the order.
 # And I can see the status for the order.
