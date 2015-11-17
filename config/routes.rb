@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :pursuits
-    resources :orders
+    resources :orders, only: [:new]
   end
 
   get "/cart", to: "cart_pursuits#show"

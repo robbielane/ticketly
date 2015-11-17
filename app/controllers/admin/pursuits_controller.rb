@@ -17,10 +17,10 @@ class Admin::PursuitsController < Admin::BaseController
     @pursuit = activity.pursuits.new(pursuit_params)
     if @pursuit.save
       flash[:notice] = "The pursuit '#{@pursuit.name}' has been created"
-      redirect_to @pursuit
+      redirect_to admin_pursuits_path
     else
       flash[:notice] = @pursuit.errors.full_messages.join(", ")
-      redirect_to new_pursuit_path
+      redirect_to new_admin_pursuit_path
     end
   end
 
