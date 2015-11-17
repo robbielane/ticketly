@@ -1,42 +1,43 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>GlobalPursuit</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-</head>
-<body>
-  <header class="nav">
-    <nav>
-      <div class="nav-wrapper white">
-        <a href="/" class="brand-logo black-text">GlobalPursuit</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><%= link_to "Pursuits", pursuits_path %></li>
-          <li><%= join_dashboard_path %></li>
-          <li><%= login_logout_path %></li>
-          <li><%= trips_cart_display %></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+  <head>
+    <title>GlobalPursuit</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
 
-  <div class="row">
-    <div class="col s5 offset-s3 m10 offset-m3">
-      <% flash.each do |type, msg| %>
-      <div class="card-panel btn-large waves-effect waves-light green" >
-        <h5><%= content_tag :div, sanitize(msg), class: "flash_#{type}" %></h5>
+  <body>
+    <header class="nav">
+      <nav>
+        <div class="nav-wrapper white">
+          <a href="/" class="brand-logo black-text">GlobalPursuit</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><%= link_to "Pursuits", pursuits_path %></li>
+            <li><%= join_dashboard_path %></li>
+            <li><%= login_logout_path %></li>
+            <li><%= trips_cart_display %></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="row">
+      <div class="col s5 offset-s3 m10 offset-m3">
+        <% flash.each do |type, msg| %>
+        <div class="card-panel btn-large waves-effect waves-light green" >
+          <h5><%= content_tag :div, sanitize(msg), class: "flash_#{type}" %></h5>
+        </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
-  </div>
 
-  <div class='container'>
-    <%= yield %>
-  </div>
-  ​
-  <footer class="page-footer white">
+    <div class='container'>
+      <%= yield %>
+    </div>
+    ​
+    <footer class="page-footer white">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
@@ -53,6 +54,7 @@
               <li><a class="black-text" href="http://www.turing.io" target="_blank">Contact</a></li>
             </ul>
           </div>
+
           <div class="col l3 s12">
             <h5 class="black-text">Destinations</h5>
             <ul>
@@ -64,12 +66,13 @@
           </div>
         </div>
       </div>
+
       <div class="footer-copyright">
         <div class="container black-text">
         Made by <a class="orange-text text-lighten-2" href="https://github.com/nicolehall" target="_blank">Cole Hall</a> & <a class="orange-text text-lighten-3" href="https://github.com/acareaga" target="_blank">Aaron Careaga</a> & <a class="orange-text text-lighten-3" href="https://github.com/toriejw" target="_blank">Torie Joy-Warren</a>
         </div>
       </div>
-  </footer>
+    </footer>
 
-</body>
+  </body>
 </html>
