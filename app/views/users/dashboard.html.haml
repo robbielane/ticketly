@@ -3,5 +3,6 @@
 %p= "Username: #{current_user.username}"
 %p= "Name: #{current_user.name}"
 
-%p= link_to "Edit Account", edit_user_path(@user)
-%p= link_to "Delete Account", user_path(@user), method: :delete
+= link_to "Order History", orders_path
+= link_to "Edit Account", edit_user_path(@user)
+= link_to "Delete Account", user_path(@user), method: :delete

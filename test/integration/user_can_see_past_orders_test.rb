@@ -68,7 +68,7 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
     visit orders_path
 
-    click_link "View order details"
+    click_link "View"
     assert_equal order_path(order), current_path
 
     assert page.has_content?("Sub-total")
@@ -99,5 +99,12 @@ class UserCanSeePastOrdersTest < ActionDispatch::IntegrationTest
 
     assert_equal pursuit_path(pursuit), current_path
     refute page.has_content?("Purchase Trip")
+  end
+
+  test "user can access order history from user dashboard" do
+    create_and_login_user
+
+    click_link("Order History")
+    assert_equal orders_path, current_path
   end
 end
