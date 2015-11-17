@@ -5,10 +5,11 @@
     %th Trips Ordered
     %th Total Price
     %th Date Ordered
+    %th Order Details
 
   - @orders.each do |order|
     %tr
       = content_tag :td, sanitize(order_pursuits_list(order))
       = content_tag :td, format_currency(order.total || 0)
       = content_tag :td, format_date(order.created_at)
-      = link_to "View order details", order_path(order)
+      = link_to "View", order_path(order)
