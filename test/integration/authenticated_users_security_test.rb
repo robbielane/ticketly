@@ -6,6 +6,7 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
     User.create(name: "Torie", username: "torie", password: "pass")
 
     visit login_path
+
     fill_in "Username", with: "cole"
     fill_in "Password", with: "pass"
     click_button "Login"
@@ -29,6 +30,7 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
     User.create(name: "Nicole", username: "cole", password: "password")
 
     visit login_path
+
     fill_in "Username", with: "cole"
     fill_in "Password", with: "pass"
     click_button "Login"

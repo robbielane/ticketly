@@ -6,7 +6,7 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
 
     click_link("Add Pursuit")
 
-    assert_equal new_pursuit_path, current_path
+    assert_equal new_admin_pursuit_path, current_path
     assert page.has_content?("Add a New Pursuit")
 
     fill_in "Name", with: "Hiking in the Alps"
@@ -15,7 +15,7 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
     fill_in "Activity", with: "Hiking"
     click_button "Create Pursuit"
 
-    assert_equal pursuit_path(Pursuit.first), current_path
+    assert_equal "/admin/pursuits", current_path
     assert page.has_content?("The pursuit 'Hiking in the Alps' has been created")
 
     visit pursuits_path
@@ -28,7 +28,7 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
 
   test "user cannot access new pursuit path" do
     create_and_login_user
-    visit new_pursuit_path
+    visit new_admin_pursuit_path
 
     assert page.has_content?("The page you were looking for doesn't exist")
     refute page.has_content?("Add a New Pursuit")
