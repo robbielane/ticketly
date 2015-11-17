@@ -1,6 +1,6 @@
 %h1 Update Pursuit:
 
-= form_for(@pursuit) do |f|
+= form_for(@pursuit, url: admin_pursuit_path) do |f|
   = f.label :name
   = f.text_field :name
   = f.label :activity
@@ -9,4 +9,6 @@
   = f.text_area :description
   = f.label :price
   = f.text_field :price
+  = f.label :status
+  = f.text_field :status
   = f.submit "Update Pursuit"
