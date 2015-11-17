@@ -28,6 +28,8 @@
 //   font-family: Roboto;
 // }
 
+@import "materialize";
+
 body {
   display: flex;
   min-height: 100vh;
@@ -45,6 +47,10 @@ nav {
 
 h3 {
   font-size: 200%;
+}
+
+.btn a {
+  color: white;
 }
 
 .brand-logo {

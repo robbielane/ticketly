@@ -1,25 +1,33 @@
-%h1 Admin Dashboard
+%h1.white-text.center-align Admin Dashboard
 
-%h2 Orders
+.center-align
+  .waves-effect.waves-light.btn
+    = link_to "Edit Account", edit_user_path(@user)
+  .waves-effect.waves-light.btn
+    = link_to "Delete Account", user_path(@user), method: :delete
+  %br
+  %br
+  .waves-effect.waves-light.btn
+    = link_to "View All Pursuits", admin_pursuits_path
+  .waves-effect.waves-light.btn
+    = link_to "Add Pursuit",  new_admin_pursuit_path
 
-%table.cart-table.highlight
-  %tr
-    %th Trips Ordered
-    %th Total Price
-    %th Date Ordered
-    %th Status
+%br
+%br
 
-  - Order.all.each do |order|
+%h2.white-text.center-align Orders
+
+.white
+  %table.cart-table.highlight
     %tr
-      = content_tag :td, sanitize(order_pursuits_list(order))
-      = content_tag :td, format_currency(order.total || 0)
-      = content_tag :td, format_date(order.created_at)
-      = content_tag :td, link_to("#{order.status}", order_path(order.id))
+      %th Trips Ordered
+      %th Total Price
+      %th Date Ordered
+      %th Status
 
-= link_to "Edit Account", edit_user_path(@user)
-%br
-= link_to "Delete Account", user_path(@user), method: :delete
-%br
-= link_to "View All Pursuits", admin_pursuits_path
-%br
-= link_to "Add Pursuit",  new_admin_pursuit_path
+    - Order.all.each do |order|
+      %tr
+        = content_tag :td, sanitize(order_pursuits_list(order))
+        = content_tag :td, format_currency(order.total || 0)
+        = content_tag :td, format_date(order.created_at)
+        = content_tag :td, link_to("#{order.status}", order_path(order.id))
