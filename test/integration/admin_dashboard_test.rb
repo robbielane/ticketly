@@ -30,7 +30,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "unregistered user cannot access admin dashboard" do
-    visit root_path
+    visit login_path
 
     assert page.has_content?("Login")
 

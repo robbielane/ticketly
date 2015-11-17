@@ -1,16 +1,10 @@
 require 'test_helper'
 
 class AdminCanViewPursuitsTest < ActionDispatch::IntegrationTest
-
   test "Admin can view all items" do
     create_pursuits(2, "Hiking")
-    User.create(username: "acareaga", password: "pass", name: "Aaron", role: 1)
 
-    visit login_path
-
-    fill_in "Username", with: "acareaga"
-    fill_in "Password", with: "pass"
-    click_button "Login"
+    login_admin
 
     assert admin_dashboard_path, current_path
 
