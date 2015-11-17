@@ -1,0 +1,26 @@
+%h2 Order Details
+
+%table.cart-table.highlight
+  %tr
+    %th Date Ordered
+    %th Purchaser
+    %th Status
+    %th Total
+
+  %tr
+    = content_tag :td, format_date(@order.created_at)
+    = content_tag :td, @order.user_id
+    = content_tag :td, @order.status
+    = content_tag :td, format_currency(@order.total || 0)
+
+%table.cart-table.highlight
+  %tr
+    %th Pursuit Name
+    %th Travellers
+    %th Subtotal
+
+  - @order.ordered_trips.each do |trip|
+    %tr
+      = content_tag :td, sanitize(order_pursuits_list(@order)) # link to Pursuit
+      = content_tag :td, trip.travellers
+      = content_tag :td, trip.price
