@@ -3,16 +3,8 @@ require "test_helper"
 class AdminOrdersTest < ActionDispatch::IntegrationTest
   test "admin can see all orders on dasboard page and link to order show page" do
     checkout_user(2)
-
     click_link "Logout"
-
-    User.create(username: "acareaga", password: "pass", name: "Aaron", role: 1)
-
-    visit root_path
-
-    fill_in "Username", with: "acareaga"
-    fill_in "Password", with: "pass"
-    click_button "Login"
+    login_admin
 
     assert admin_dashboard_path, current_path
     assert page.has_content?("Hiking")
