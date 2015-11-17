@@ -2,9 +2,7 @@ require "test_helper"
 
 class UnathenticatedUserSecurityTest < ActionDispatch::IntegrationTest
   test "unathenticated user cannot see another users dashboard or orders" do
-    visit root_path
-
-    click_button "Login"
+    visit login_path
 
     fill_in "Username", with: "Nicole"
     fill_in "Password", with: "pass"
