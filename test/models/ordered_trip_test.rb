@@ -12,4 +12,11 @@ class OrderedTripTest < ActiveSupport::TestCase
     ordered_trip = OrderedTrip.new(valid_attributes)
     assert ordered_trip.valid?
   end
+
+  test "it can't have a negative number of travellers" do
+    ordered_trip = OrderedTrip.new(travellers: -1,
+                                   price: 100)
+
+    refute ordered_trip.valid?
+  end
 end

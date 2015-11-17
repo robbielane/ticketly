@@ -4,6 +4,7 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
   test "admin can see all orders on dasboard page and link to order show page" do
     checkout_user(2)
     click_link "Logout"
+
     login_admin
 
     assert admin_dashboard_path, current_path

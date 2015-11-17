@@ -23,7 +23,7 @@ class Cart
   end
 
   def update(pursuit_id, travellers)
-    trips[pursuit_id] = travellers.to_i
+    trips[pursuit_id] = travellers.to_i.abs
   end
 
   def ordered_pursuits
@@ -39,7 +39,7 @@ class Cart
 
   def total_cost
     prices = pursuits_in_cart.reduce([]) do |prices, pursuit|
-      prices << (pursuit.price * trips[pursuit.id.to_s])
+      prices << (pursuit.price * trips[pursuit.id.to_s]).abs
     end
     prices.sum
   end
