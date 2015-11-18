@@ -1,19 +1,18 @@
 .pursuit{ :id => "#{format_url_name(pursuit.name)}" }
-  .row
-    .col.s12.m7
-      .card
-        .card-image
-          %img(src="http://www.fantasiavillas.com/wp-content/uploads/2012/03/caribbean-grenada-calivigny-island-8.jpg")
-          %span.card-title= "#{ pursuit.name}"
-        .card-content
-          %p= "#{pursuit.description}"
-          %br
-          = "#{format_currency(pursuit.price)}"
-        .card-action
-          = link_to "Details", pursuit_path(pursuit)
-          %br
-          %br
-          = "Status: #{pursuit.status.upcase}"
-          %br
-          %br
-          = button_to "Edit", edit_admin_pursuit_path(pursuit), method: :get
+  .col.s12.m4
+    .card
+      .card-image
+        %img(src="http://www.fantasiavillas.com/wp-content/uploads/2012/03/caribbean-grenada-calivigny-island-8.jpg")
+        %span.card-title= "#{ pursuit.name}"
+      .card-content
+        %p= "#{pursuit.description}"
+        %br
+        = "#{format_currency(pursuit.price)}"
+      .card-action
+        = link_to "Details", pursuit_path(pursuit)
+        %br
+        %br
+        = "Status: #{pursuit.status.upcase}"
+        %br
+        %br
+        = button_to "Edit", edit_admin_pursuit_path(pursuit), method: :get

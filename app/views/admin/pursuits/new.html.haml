@@ -2,16 +2,26 @@
 
 .white-text
   = form_for(@pursuit, url: admin_pursuits_path)  do |f|
-    = f.label :name
-    = f.text_field :name
-    = f.label :description
-    = f.text_area :description
-    = f.label :activity
-    = f.text_field :activity
-    = f.label :price
-    = f.text_field :price
-    = f.label :status
-    = f.text_field :status
+    .input-field
+      = f.label :name
+      = f.text_field :name
+
+    .input-field
+      = f.label :description
+      = f.text_area :description
+
+    .input-field
+      = f.label :activity
+      = f.text_field :activity
+
+    .input-field
+      = f.label :price
+      = f.text_field :price
+
+    .input-field
+      = f.label :status
+      = f.text_field :status
+
     = f.label :image, "Attach an Image"
     = f.file_field :image
     .waves-effect.waves-light.btn
