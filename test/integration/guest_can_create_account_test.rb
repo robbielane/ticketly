@@ -46,13 +46,7 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
   end
 
   test "a registered user can logout" do
-    user = create_user
-    visit pursuits_path
-    click_link "Login"
-
-    fill_in "Username", with: user.username
-    fill_in "Password", with: "password"
-    click_button "Login"
+    create_and_login_user
 
     click_link "Logout"
     assert page.has_content?("Login")

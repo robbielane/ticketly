@@ -27,13 +27,7 @@ class AuthenticatedUsersSecurityTest < ActionDispatch::IntegrationTest
   end
 
   test "authenticated user cannot access admin dashboard and create/update/delete trips" do
-    User.create(name: "Nicole", username: "cole", password: "password")
-
-    visit login_path
-
-    fill_in "Username", with: "cole"
-    fill_in "Password", with: "pass"
-    click_button "Login"
+    create_and_login_user
 
     refute page.has_content?("Admin Dashboard")
     refute page.has_content?("Create Pursuits")
