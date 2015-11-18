@@ -10,6 +10,7 @@
               %h2= pursuit.name
               %p= "Price: #{format_currency(pursuit.price)}"
               %p= "Travellers: #{@cart.count_of(pursuit.id)}"
+              %p= "Sub-total: #{format_currency(pursuit.price * @cart.count_of(pursuit.id))}"
               %p= pursuit.description
 
               = form_tag(cart_path, method: :put) do
