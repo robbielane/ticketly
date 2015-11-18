@@ -4,10 +4,11 @@
     = link_to "View Pursuits", pursuits_path
 
 - if !@pursuits.empty?
+  %h2.center-align.white-text Checkout
   = render partial: "edit_pursuit", locals: { :pursuits => @pursuits }
 
-  .row
-    .col.s12.m12
-      .card-panel.grey.lighten-5
-        = "Total: #{format_currency(@cart.total_cost)}"
+  .card-panel.grey.lighten-5.right-align
+    .col.s6.offset-s6
+      = "Total: #{format_currency(@cart.total_cost)}"
+      .waves-effect.waves-light.btn.white-text
         = button_to "Checkout", checkout_path, method: :post
