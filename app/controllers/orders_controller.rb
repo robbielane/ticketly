@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
 
   def show
-    @order = current_user.orders.find(params[:id])
+    @order = current_user.orders.find_by(id: params[:id])
+    render file: "./test/public/404" if @order.nil?
   end
 
   def create
