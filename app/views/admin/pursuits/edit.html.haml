@@ -1,4 +1,4 @@
-%h1 Update Pursuit
+%h1.white-text.center-align Update Pursuit
 
 = form_for(@pursuit, url: admin_pursuit_path) do |f|
   = f.label :name
@@ -9,4 +9,5 @@
   = f.text_field :price
   = f.label :status
   = f.text_field :status
-  = f.submit "Update Pursuit"
+  .waves-effect.waves-light.btn
+    = f.submit "Update Pursuit"
