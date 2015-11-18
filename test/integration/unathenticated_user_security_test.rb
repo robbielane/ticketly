@@ -13,7 +13,19 @@ class UnathenticatedUserSecurityTest < ActionDispatch::IntegrationTest
   end
 
   test "unathenticated user cannot see another users orders" do
-    skip
+    checkout_user(1)
+    click_link "Logout"
+
+    User.create(name: "Torie", username: "tjw", password: "password")
+    visit login_path
+    fill_in "Username", with: "tjw"
+    fill_in "Password", with: "password"
+    click_button "Login"
+
+    other_users_order_id = Order.first.id
+
+    visit order_path(other_users_order_id)
+    assert page.has_content?("The page you were looking for doesn't exist")
   end
 
   test "unathenticated user cannot make themself an admin account" do
