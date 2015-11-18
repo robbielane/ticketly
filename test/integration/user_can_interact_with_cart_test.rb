@@ -52,7 +52,6 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
   end
 
   test "user can edit the number of travellers in cart" do
-    visit pursuits_path
     add_items_to_cart(1)
     click_link "Trips: 1"
 
@@ -77,14 +76,7 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
 
   test "user can view items in cart after they log back in" do
     add_items_to_cart(2)
-
-    User.create(name: "Nicole", username: "cole", password: "password")
-
-    visit pursuits_path
-    click_link "Login"
-    fill_in "Username", with: "cole"
-    fill_in "Password", with: "password"
-    click_button "Login"
+    create_and_login_user
 
     assert page.has_content?("Trips: 2")
     click_link "Logout"
@@ -105,7 +97,7 @@ class UserCanInteractWithCartTest < ActionDispatch::IntegrationTest
 
     visit "/cart"
     click_button "Checkout"
-    
+
     refute page.has_content?("-2")
     refute page.has_content?("-$2,002")
   end

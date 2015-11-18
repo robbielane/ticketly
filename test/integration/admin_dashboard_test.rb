@@ -22,7 +22,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
     click_button "Login"
 
     assert page.has_content?("Welcome, Cole Hall!")
-    assert '/dashboard', current_path
+    assert "/dashboard", current_path
 
     visit admin_dashboard_path
 
@@ -40,16 +40,11 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can update account details but not other users" do
-    User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
-    visit login_path
-
-    fill_in "Username", with: "aaron"
-    fill_in "Password", with: "pass"
-
-    click_button "Login"
+    login_admin
     click_link "Edit Account"
 
     assert admin_dashboard_path, current_path
+
     fill_in "Username", with: "acareaga"
     fill_in "Password", with: "password"
     click_button "Update Account"
@@ -58,13 +53,7 @@ class AdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can delete their account" do
-    User.create(username: "aaron", name: "Aaron", password: "pass", role: 1)
-    visit login_path
-
-    fill_in "Username", with: "aaron"
-    fill_in "Password", with: "pass"
-
-    click_button "Login"
+    login_admin
     click_link "Delete Account"
 
     assert root_path, current_path

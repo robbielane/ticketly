@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class AdminCanViewPursuitsTest < ActionDispatch::IntegrationTest
-  test "Admin can view all items" do
+  test "admin can view all items" do
     create_pursuits(2, "Hiking")
 
     login_admin
