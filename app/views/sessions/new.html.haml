@@ -1,4 +1,4 @@
 - if current_user
-  %p= "You are already logged in as #{current_user.name}."
+  = render partial: "shared/already_logged_in"
 - if !current_user
   = render partial: "form"
