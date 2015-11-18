@@ -1,16 +1,17 @@
-var $orders = $('.order');
+$(document).ready(function() {
 
-function orderFilter () {
-  $('#order_filter_status').on('change', function () {
-    var currentStatus = this.value;
-    $orders.each(function (index, order) {
-      $order = $(order);
-      if ($order.data('status') === currentStatus) {
-        $order.show();
-      } else {
-        $order.hide();
-      }
+    var $orders = $('.order');
+
+    $('#order_filter_status').on('change', function () {
+      var currentStatus = this.value;
+      $orders.each(function (index, order) {
+        $order = $(order);
+        if ($order.data('status') === currentStatus) {
+          $order.show();
+        } else {
+          $order.hide();
+        }
+      });
     });
-  });
 
-}
+});

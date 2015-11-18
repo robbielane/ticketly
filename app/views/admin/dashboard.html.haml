@@ -18,9 +18,9 @@
 %h2.white-text.center-align Orders
 
 = render partial: "/admin/orders/filter"
-
+%br
 .white
-  %table.cart-table.highlight.order
+  %table.cart-table.highlight
     %tr
       %th Order ID
       %th Date Ordered
@@ -28,8 +28,7 @@
       %th Total
 
     - Order.all.each do |order|
-      %tr
-      %td{ data: {status: "#{order.status}"} }
+      %tr.order{ data: {status: "#{order.status}"} }
         = content_tag :td, link_to("#{order.id}", admin_order_path(order.id))
         = content_tag :td, format_date(order.created_at)
         = content_tag :td, link_to("#{order.status}", admin_order_path(order.id))
