@@ -1,7 +1,7 @@
 require "test_helper"
 
 class UnathenticatedUserSecurityTest < ActionDispatch::IntegrationTest
-  test "unathenticated user cannot see another users dashboard or orders" do
+  test "unathenticated user cannot see another users dashboard" do
     visit login_path
 
     fill_in "Username", with: "Nicole"
@@ -10,6 +10,10 @@ class UnathenticatedUserSecurityTest < ActionDispatch::IntegrationTest
 
     assert_equal login_path, current_path
     assert page.has_content?("Login")
+  end
+
+  test "unathenticated user cannot see another users orders" do
+    skip
   end
 
   test "unathenticated user cannot make themself an admin account" do

@@ -31,7 +31,14 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can return total price of all trips" do
-    skip
+    activity = Activity.create(name: "Hiking")
+    activity.pursuits.create(name: "Hiking in FL", description: "hiking", price: 10)
+    activity.pursuits.create(name: "Hiking in LA", description: "hiking", price: 1)
+
+    @cart.add_trip(Pursuit.first.id)
+    @cart.add_trip(Pursuit.last.id)
+
+    assert_equal 11, @cart.total_cost
   end
 
   test "cart can remove trips" do

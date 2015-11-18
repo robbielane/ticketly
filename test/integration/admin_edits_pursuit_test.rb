@@ -1,18 +1,9 @@
 require 'test_helper'
 
 class AdminEditsPursuitTest < ActionDispatch::IntegrationTest
-
   test "admin can edit an existing pursuit" do
     create_pursuits(1, "Hiking")
-    User.create(username: "acareaga", password: "pass", name: "Aaron", role: 1)
-
-    visit login_path
-
-    fill_in "Username", with: "acareaga"
-    fill_in "Password", with: "pass"
-    click_button "Login"
-
-    assert admin_dashboard_path, current_path
+    login_admin
 
     click_link ("View All Pursuits")
 
