@@ -10,10 +10,5 @@ class Admin::OrdersController < Admin::BaseController
 
   def show
     @order = Order.find(params[:id])
-    if current_user.admin?
-      render "admin/show"
-    else
-      @order = Order.find(params[:id])
-    end
   end
 end
