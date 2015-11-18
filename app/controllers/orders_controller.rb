@@ -1,4 +1,9 @@
 class OrdersController < ApplicationController
+
+  def show
+    @order = current_user.orders.find(params[:id])
+  end
+
   def create
     if current_user
       Order.make_new(@cart, current_user)
@@ -16,15 +21,6 @@ class OrdersController < ApplicationController
       @orders = Order.all
     else
       @orders = current_user.orders
-    end
-  end
-
-  def show
-    @order = Order.find(params[:id])
-    if current_user.admin?
-      render "admin/show"
-    else
-      @order = Order.find(params[:id])
     end
   end
 end

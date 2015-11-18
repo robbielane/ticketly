@@ -14,8 +14,10 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     click_link("Pending")
     assert_equal "/orders/#{Order.first.id}", current_path
     assert page.has_content?("Details")
+
   #   And I can filter orders to display by each status type  ("Ordered", "Paid", "Cancelled", "Completed")
-  #   And I have links to transition the status
+  #   And I can see the total number of orders for each status ("Ordered", "Paid", "Cancelled", "Completed")
+
   # - I can click on "cancel" on individual orders which are "paid" or "ordered"
   # - I can click on "mark as paid" on orders that are "ordered"
   # - I can click on "mark as completed" on orders that are "paid"
