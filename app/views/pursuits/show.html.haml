@@ -1,7 +1,16 @@
-%h1= @pursuit.name
+.white-text
+  .center-align
+    %h1= @pursuit.name
 
-%h2= format_currency(@pursuit.price)
+    .waves-effect.waves-light.btn.white-text
+      = purchase_link_or_retired_notice
 
-%p.pursuit-description= @pursuit.description
+  %p.center-align= "Trip price: #{format_currency(@pursuit.price)}"
 
-= purchase_link_or_retired_notice
+  %br
+
+  .row
+    .col.s4
+      %img.responsive-img(src="http://www.fantasiavillas.com/wp-content/uploads/2012/03/caribbean-grenada-calivigny-island-8.jpg")
+    .col.s8
+      %p.pursuit-description= @pursuit.description
