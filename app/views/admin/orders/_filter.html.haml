@@ -1,0 +1,3 @@
+.filter
+  %label Filter By Status
+  = select :order, :filter_status, @statuses, {include_blank: true}, :class => "browser-default"

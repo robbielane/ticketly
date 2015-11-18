@@ -17,14 +17,10 @@
 
 %h2.white-text.center-align Orders
 
-%h4 Status:
-= content_tag :td, link_to("Ordered", "#")
-= content_tag :td, link_to("Paid", "#")
-= content_tag :td, link_to("Cancelled", "#")
-= content_tag :td, link_to("Completed", "#")
+= render partial: "/admin/orders/filter"
 
 .white
-  %table.cart-table.highlight
+  %table.cart-table.highlight.order
     %tr
       %th Order ID
       %th Date Ordered
@@ -33,6 +29,7 @@
 
     - Order.all.each do |order|
       %tr
+      %td{ data: {status: "#{order.status}"} }
         = content_tag :td, link_to("#{order.id}", admin_order_path(order.id))
         = content_tag :td, format_date(order.created_at)
         = content_tag :td, link_to("#{order.status}", admin_order_path(order.id))
