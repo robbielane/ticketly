@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'haml'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mocha'
+gem 'materialize-sass'
 # Use ActiveModel has_secure_password
 
 # Use Unicorn as the app server

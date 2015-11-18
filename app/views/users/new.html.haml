@@ -1,11 +1,21 @@
-= form_for @user do |f|
-  = f.label :username
-  = f.text_field :username
-  %br
-  = f.label :name
-  = f.text_field :name
-  %br
-  = f.label :password
-  = f.password_field :password
-  %br
-  = f.submit "Create Account"
+%br
+
+%h3 Create Account
+
+.row
+  .col.s6
+    = form_for @user do |f|
+      .input-field
+        = f.label :username
+        = f.text_field :username
+      %br
+      .input-field
+        = f.label :name
+        = f.text_field :name
+      %br
+      .input-field
+        = f.label :password
+        = f.password_field :password
+      %br
+      .waves-effect.waves-light.btn
+        = f.submit "Create Account"

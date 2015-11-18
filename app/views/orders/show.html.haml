@@ -1,18 +1,31 @@
-%h2 Order Details
+.white-text.center-align
+  %br
+  %h2 Order Details
 
-%table.cart-table.highlight
-  %tr
-    %th Name
-    %th Sub-total
-    %th Retired?
+  = sanitize("Order status: #{content_tag :td, @order.status || 'N/A'}")
+  %br
+  %br
+  = sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
+  %br
+  = "Order submitted on #{format_date_and_time(@order.created_at)}"
+  %br
+  = "Last order status update: #{format_date_and_time(@order.updated_at)}"
+  %br
+  %br
+  %br
 
-  - @order.pursuits.each do |pursuit|
-    %tr
-      = content_tag :td, link_to(pursuit_name_and_travellers(@order, pursuit), pursuit_path(pursuit))
-      = content_tag :td, format_currency(pursuit.price * @order.ordered_trips.find_by(pursuit_id: pursuit.id).travellers)
-      -# number of travellers method
+  .white.black-text
+    %table.cart-table.highlight
+      %tr
+        %th Name
+        %th Sub-total
+        %th Retired?
 
-= sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
-= sanitize("Order status: #{content_tag :td, @order.status}")
-= "Order submitted on #{format_date_and_time(@order.created_at)}"
-= "Last order status update: #{format_date_and_time(@order.updated_at)}"
+      - @order.pursuits.each do |pursuit|
+        %tr
+          = content_tag :td, link_to(pursuit_name_and_travellers(@order, pursuit), pursuit_path(pursuit))
+          = content_tag :td, format_currency(pursuit.price * @order.ordered_trips.find_by(pursuit_id: pursuit.id).travellers)
+          -# number of travellers method
+  %br
+  %br
+  %br

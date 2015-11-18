@@ -1,8 +1,26 @@
-%h1= "Welcome, #{current_user.name}!"
+%br
+%br
 
-%p= "Username: #{current_user.username}"
-%p= "Name: #{current_user.name}"
+.center-align.white-text
+  %h1= "Welcome, #{current_user.name}!"
 
-= link_to "Order History", orders_path
-= link_to "Edit Account", edit_user_path(@user)
-= link_to "Delete Account", user_path(@user), method: :delete
+  %p= "Username: #{current_user.username}"
+  %p= "Name: #{current_user.name}"
+  %br
+  %br
+
+  .waves-effect.waves-light.btn.white-text
+    = link_to "Order History", orders_path
+  %br
+  %br
+  %br
+  .waves-effect.waves-light.btn.white-text
+    = link_to "Edit Account", edit_user_path(@user)
+  .waves-effect.waves-light.btn.white-text
+    = link_to "Delete Account", user_path(@user), method: :delete
+
+  %br
+  %br
+  %br
+  %br
+  %br

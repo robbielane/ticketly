@@ -40,8 +40,6 @@ class ViewPursuitsTest < ActionDispatch::IntegrationTest
       assert page.has_content?("Go hike the alps! 1")
     end
 
-    within("h2") do
-      assert page.has_content?("$1,001")
-    end
+    assert page.has_content?("$1,001")
   end
 end
