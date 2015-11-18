@@ -88,10 +88,21 @@ class GuestCanCreateAccountTest < ActionDispatch::IntegrationTest
     create_and_login_user
 
     visit root_path
+
     refute page.has_content?("Login to Your Account")
 
     visit login_path
+
     refute page.has_content?("Login to Your Account")
+    assert page.has_content?("You are already logged in as Nicole.")
+  end
+
+  test "user cannot create an account if already logged in" do
+    create_and_login_user
+
+    visit new_user_path
+
+    refute page.has_content?("Create Account")
     assert page.has_content?("You are already logged in as Nicole.")
   end
 end
