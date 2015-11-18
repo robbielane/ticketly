@@ -33,5 +33,3 @@
         = content_tag :td, format_date(order.created_at)
         = content_tag :td, link_to("#{order.status}", admin_order_path(order.id))
         = content_tag :td, format_currency(order.total || 0)
-
-%h4 Total: #{Order.all.count}
