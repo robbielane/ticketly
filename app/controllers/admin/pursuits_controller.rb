@@ -48,6 +48,6 @@ class Admin::PursuitsController < Admin::BaseController
   private
 
   def pursuit_params
-    params.require(:pursuit).permit(:name, :description, :price)
+    params.require(:pursuit).permit(:name, :description, :price, :image)
   end
 end

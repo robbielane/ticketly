@@ -26,6 +26,9 @@ gem 'haml'
 gem 'bcrypt', '~> 3.1.7'
 gem 'mocha'
 gem 'materialize-sass'
+gem "paperclip"
+gem "aws-sdk-v1"
+gem "figaro"
 # Use ActiveModel has_secure_password
 
 # Use Unicorn as the app server
