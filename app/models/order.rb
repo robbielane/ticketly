@@ -11,4 +11,8 @@ class Order < ActiveRecord::Base
                                  price: pursuit.price)
     end
   end
+
+  def update_status(status)
+    update(status: status)
+  end
 end
