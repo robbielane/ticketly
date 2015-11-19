@@ -10,7 +10,7 @@ class Admin::OrdersController < Admin::BaseController
   def update
     @order = Order.find(params[:id])
     valid = ["Paid", "Cancelled", "Completed", "Pending"]
-    if valid.includes?(params[:order_status])
+    if valid.include?(params[:order_status])
       @order.update_status(params[:order_status])
     else
       flash[:notice] = "Invalid Order Status"
