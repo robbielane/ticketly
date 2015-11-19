@@ -2,7 +2,7 @@
   .col.s12.m4
     .card
       .card-image
-        %img(src="http://www.fantasiavillas.com/wp-content/uploads/2012/03/caribbean-grenada-calivigny-island-8.jpg")
+        = image_tag(pursuit.image.url)
         %span.card-title= "#{ pursuit.name}"
       .card-content
         %p= "#{pursuit.description}"
