@@ -1,6 +1,4 @@
 class PursuitsController < ApplicationController
-  # before_action :require_admin, only: [:new, :create]
-
   def index
     @activities = Activity.all
   end
