@@ -1,10 +1,11 @@
 class CartPursuitsController < ApplicationController
   def create
     trip = Pursuit.find(params[:pursuit_id])
-    @cart.add_trip(trip.id)
-    @cart.trips[trip.id.to_s] = params[:travellers].to_i
-    session[:cart] = @cart.trips
 
+    @cart.add_trip(trip.id)
+    @cart.update(trip.id, params[:travellers])
+
+    session[:cart] = @cart.trips
     flash[:notice] = "You have added #{trip.name} to your cart."
     redirect_to pursuits_path
   end
