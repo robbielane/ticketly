@@ -22,10 +22,6 @@ class AdminCanCreatePursuitsTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Hiking in the Alps")
   end
 
-  test "admin can upload photo for pursuit" do
-    skip
-  end
-
   test "user cannot access new pursuit path" do
     create_and_login_user
     visit new_admin_pursuit_path

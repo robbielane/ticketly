@@ -5,6 +5,10 @@ class PursuitTest < ActiveSupport::TestCase
     Activity.create(name: "Hiking")
   end
 
+  def default_image_url
+    "http://robbielane.net/works/haines/photos/HainesLutakRoad.jpg"
+  end
+
   def valid_attributes
     {
       name: "Hiking in the Alps",
@@ -69,8 +73,8 @@ class PursuitTest < ActiveSupport::TestCase
   end
 
   test "default photo is provided if no photo is specified" do
-    skip
-    #       - The photo is optional. If not present, a stand-in photo is used.
+    pursuit = Pursuit.new(valid_attributes)
 
+    assert_equal default_image_url, pursuit.image.url
   end
 end
