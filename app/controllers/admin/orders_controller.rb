@@ -1,11 +1,7 @@
 class Admin::OrdersController < Admin::BaseController
 
   def index
-    if current_user.admin?
-      @orders = Order.all
-    else
-      @orders = current_user.orders
-    end
+    @orders = Order.all
   end
 
   def show

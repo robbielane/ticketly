@@ -21,4 +21,8 @@ module OrdersHelper
     num_travellers = OrderedTrip.find_by(pursuit_id: pursuit.id, order_id: order.id).travellers
     "#{pursuit.name} (Travellers: #{num_travellers || 1})"
   end
+
+  def filter_by_status
+    Order.all.each { |order| order.status == "#{status}" }
+  end
 end

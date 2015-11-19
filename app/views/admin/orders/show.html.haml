@@ -1,28 +1,41 @@
-%h2 Order Details
+%h2.white-text.center-align Order Details
 
-%table.cart-table.highlight
-  %tr
-    %th Date Ordered
-    %th Time
-    %th Status
-    %th Purchaser
-    %th Total
+%br
+%br
 
-  %tr
-    = content_tag :td, format_date(@order.created_at)
-    = content_tag :td, format_time(@order.created_at)
-    = content_tag :td, @order.status
-    = content_tag :td, User.find(@order.user_id).name
-    = content_tag :td, format_currency(@order.total || 0)
-
-%table.cart-table.highlight
-  %tr
-    %th Pursuit Name
-    %th Travellers
-    %th Subtotal
-
-  - @order.ordered_trips.each do |trip|
+.white
+  %table.cart-table.highlight
     %tr
-      = content_tag :td, link_to( Pursuit.find(trip.pursuit_id).name, admin_pursuit_path(trip.pursuit_id))
-      = content_tag :td, trip.travellers
-      = content_tag :td, trip.price
+      %th Date Ordered
+      %th Time
+      %th Status
+      %th Purchaser
+      %th Total
+
+    %tr
+      = content_tag :td, format_date(@order.created_at)
+      = content_tag :td, format_time(@order.created_at)
+      = content_tag :td, @order.status
+      = content_tag :td, User.find(@order.user_id).name
+      = content_tag :td, format_currency(@order.total || 0)
+
+%br
+%br
+
+.white
+
+  %table.cart-table.highlight
+    %tr
+      %th Pursuit Name
+      %th Travellers
+      %th Subtotal
+
+    - @order.ordered_trips.each do |trip|
+      %tr
+        = content_tag :td, link_to( Pursuit.find(trip.pursuit_id).name, admin_pursuit_path(trip.pursuit_id))
+        = content_tag :td, trip.travellers
+        = content_tag :td, trip.price
+
+%br
+%br
+%br
