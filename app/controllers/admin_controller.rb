@@ -3,5 +3,6 @@ class AdminController < ApplicationController
 
   def dashboard
     @admin = current_user
+    @statuses = ["Completed", "Pending", "Paid", "Cancelled"]
   end
 end
