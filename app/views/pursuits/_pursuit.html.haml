@@ -10,8 +10,11 @@
         = "#{format_currency(pursuit.price)}"
       .card-action
         = link_to "Details", pursuit_path(pursuit)
-
-      - if current_admin
-        = "#{pursuit.status}"
         %br
-        = link_to "Edit", edit_admin_pursuit_path(pursuit)
+        %br
+
+        - if current_admin
+          = "Status: #{pursuit.status.upcase}"
+          %br
+          %br
+          = button_to "Edit", edit_admin_pursuit_path(pursuit), method: :get
