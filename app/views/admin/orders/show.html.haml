@@ -1,8 +1,16 @@
 %h2.white-text.center-align Order Details
-
-%br
 %br
 
+.row
+  .col.s3.offset-s4
+    = form_tag(admin_order_path, method: :put) do
+      .white-text.input-field
+        = label_tag :order_status
+        = text_field_tag :order_status
+
+        = submit_tag "Update order status", class: "waves-effect waves-light btn"
+
+%br
 .white
   %table.cart-table.highlight
     %tr
@@ -23,7 +31,6 @@
 %br
 
 .white
-
   %table.cart-table.highlight
     %tr
       %th Pursuit Name

@@ -1,12 +1,14 @@
 require "test_helper"
 
 class AdminOrdersTest < ActionDispatch::IntegrationTest
-  test "admin can see all orders on dasboard and filter by status" do
+  def checkout_user_and_login_admin
     checkout_user(2)
-
     click_link "Logout"
-
     login_admin
+  end
+
+  test "admin can see all orders on dasboard and filter by status" do
+    checkout_user_and_login_admin
 
     assert admin_dashboard_path, current_path
 
@@ -18,11 +20,7 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
   end
 
   test "admin can view an individual order" do
-    checkout_user(2)
-
-    click_link "Logout"
-
-    login_admin
+    checkout_user_and_login_admin
 
     assert admin_dashboard_path, current_path
     assert page.has_link?("Pending")
@@ -35,5 +33,16 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Travellers")
     assert page.has_content?("Total")
     assert page.has_content?("1001")
+  end
+
+  test "admin can update order status" do
+    checkout_user_and_login_admin
+    click_link "Pending"
+
+    fill_in "Order status", with: "Completed"
+    click_button "Update order status"
+
+    assert page.has_content?("Completed")
+    refute page.has_content?("Pending")
   end
 end
