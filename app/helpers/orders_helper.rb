@@ -1,5 +1,4 @@
 module OrdersHelper
-
   def order_pursuits_list(order)
     pursuits = pursuits_names_and_travellers(order)
     pursuits.join(",  <br>")
