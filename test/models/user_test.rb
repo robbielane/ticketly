@@ -5,8 +5,7 @@ class UserTest < ActiveSupport::TestCase
     {
       name: "Torie",
       username: "Torie@gmail.com",
-      password: "password",
-      interests: "Hiking"
+      password: "password"
     }
   end
 
@@ -17,30 +16,25 @@ class UserTest < ActiveSupport::TestCase
     assert_equal "Torie", user.name
     assert_equal "Torie@gmail.com", user.username
     assert_equal "password", user.password
-    assert_equal "Hiking", user.interests
   end
 
   test "user is invalid with missing name" do
-    user = User.new(
-    username: "Torie@gmail.com",
-    password: "password",
-    interests: "Hiking")
+    user = User.new(username: "Torie@gmail.com",
+                    password: "password")
 
     refute user.valid?
   end
 
   test "user is invalid with missing username" do
     user = User.new(name: "Torie",
-    password: "password",
-    interests: "Hiking")
+                    password: "password")
 
     refute user.valid?
   end
 
   test "user is invalid with missing password" do
     user = User.new(name: "Torie",
-    username: "Torie@gmail.com",
-    interests: "Hiking")
+                    username: "Torie@gmail.com")
 
     refute user.valid?
   end

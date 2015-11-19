@@ -1,5 +1,4 @@
 class Admin::PursuitsController < Admin::BaseController
-
   def index
     @activities = Activity.all
   end

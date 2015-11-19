@@ -38,7 +38,7 @@ class AdminOrdersTest < ActionDispatch::IntegrationTest
     click_link("Pending")
 
     assert_equal "/admin/orders/#{Order.first.id}", current_path
-    assert page.has_content?("November 18, 2015")
+    assert page.has_content?("#{Time.now.strftime("%B %d, %Y")}")
     assert page.has_content?("Travellers")
     assert page.has_content?("Total")
     assert page.has_content?("1001")

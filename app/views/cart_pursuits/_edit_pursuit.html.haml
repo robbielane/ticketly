@@ -5,7 +5,7 @@
         %tr
           .row
             .col.s3
-              %img.responsive-img(src="http://www.fantasiavillas.com/wp-content/uploads/2012/03/caribbean-grenada-calivigny-island-8.jpg")
+              = image_tag(pursuit.image.url, class: "responsive-img")
             .col.s6
               %h2= pursuit.name
               %p= "Price: #{format_currency(pursuit.price)}"
