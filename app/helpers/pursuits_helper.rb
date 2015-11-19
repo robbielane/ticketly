@@ -4,14 +4,14 @@ module PursuitsHelper
       if current_user.admin?
         link_to "Edit Pursuit", edit_admin_pursuit_path(@pursuit.id)
       else
-        purchase_link_or_retired_notice
+        get_purchase_link_or_retired_notice
       end
     else
-      purchase_link_or_retired_notice
+      get_purchase_link_or_retired_notice
     end
   end
 
-  def purchase_link_or_retired_notice
+  def get_purchase_link_or_retired_notice
     if @pursuit.retired?
       content_tag :p, "This pursuit has been retired and may no longer be purchased."
     else
