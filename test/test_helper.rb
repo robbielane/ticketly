@@ -3,7 +3,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require "rails/test_help"
 require "capybara/rails"
 require "mocha/mini_test"
-require "minitest/pride"
+require "minitest/emoji"
 
 class ActiveSupport::TestCase
 end
