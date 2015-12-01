@@ -1,9 +1,9 @@
 class Ticket < ActiveRecord::Base
-  belongs_to :activity
+  belongs_to :category
   has_many :ordered_trips
   has_many :orders, through: :ordered_trips
 
-  validates :name, :price, :activity_id, presence: true
+  validates :name, :price, :category_id, presence: true
   validates_numericality_of :price, greater_than: 0
 
   def retire
