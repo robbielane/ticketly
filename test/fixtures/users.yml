@@ -1,0 +1,10 @@
+one:
+  name: Fred Flintstone
+  username: bigfred 
+  password_digest: password
+
+two: 
+  name: Adam Ki 
+  username: adamcuppycake
+  password_digest: password
+
