@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :orders
   has_secure_password
+  has_many :orders
 
   validates :username, presence: true
   validates :name, presence: true
