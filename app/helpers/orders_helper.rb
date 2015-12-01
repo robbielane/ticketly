@@ -1,24 +1,24 @@
 module OrdersHelper
-  def order_pursuits_list(order)
-    pursuits = pursuits_names_and_travellers(order)
-    pursuits.join(",  <br>")
+  def order_tickets_list(order)
+    tickets = tickets_names_and_travellers(order)
+    tickets.join(",  <br>")
   end
 
-  def pursuits_names_and_travellers(order)
-    order.pursuits.map { |pursuit| format_name_and_travellers(order, pursuit) }
+  def tickets_names_and_travellers(order)
+    order.tickets.map { |ticket| format_name_and_travellers(order, ticket) }
   end
 
-  def pursuit_name_and_travellers(order, target_pursuit)
-    pursuit_name = order.pursuits.map do |pursuit|
-      next unless target_pursuit.id.to_i == pursuit.id
-      format_name_and_travellers(order, pursuit)
+  def ticket_name_and_travellers(order, target_ticket)
+    ticket_name = order.ticketse.map do |ticket|
+      next unless target_ticket.id.to_i == ticket.id
+      format_name_and_travellers(order, ticket)
     end
-    pursuit_name.compact[0]
+    ticket_name.compact[0]
   end
 
-  def format_name_and_travellers(order, pursuit)
-    num_travellers = OrderedTrip.find_by(pursuit_id: pursuit.id, order_id: order.id).travellers
-    "#{pursuit.name} (Travellers: #{num_travellers || 1})"
+  def format_name_and_travellers(order, ticket)
+    num_travellers = OrderedTrip.find_by(ticket_id: ticket.id, order_id: order.id).travellers
+    "#{ticket.name} (Travellers: #{num_travellers || 1})"
   end
 
   def filter_by_status

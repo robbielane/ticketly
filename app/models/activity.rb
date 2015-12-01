@@ -1,3 +1,3 @@
 class Activity < ActiveRecord::Base
-  has_many :pursuits
+  has_many :tickets
 end
