@@ -14,13 +14,14 @@
         .col.s6.m3.l2
           = link_to "Buy Tickets", login_path, method: :get, class: "waves-effect waves-light btn white-text orange"
 
-  - @categories.each do |category|
-    .row.grey.lighten-3.tickets
+
+  .row.grey.lighten-3.tickets
+    - @categories.each do |category|
       .container
         .col.s4
           .card.medium
             .card-image
-              = image_tag("#{category.name}")
+              = image_tag("concert")
             .card-content
               %span.card-title.black-text "#{category.name}"
             .card-action
