@@ -1,0 +1,40 @@
+{
+  "MiniTest": {
+    "coverage": {
+      "/Users/adamjensen/Turing/m3.1/w1/ticketly/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1449008546
+  },
+  "Unit Tests": {
+    "coverage": {
+      "/Users/adamjensen/Turing/m3.1/w1/ticketly/app/models/user.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1449008926
+  }
+}
