@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
   <head>
     <title>GlobalPursuit</title>
@@ -17,12 +17,12 @@
 
 <body>
   <div class = "<%= params[:controller] %>">
-    <header class="nav">
+    <header>
       <nav>
         <div class="nav-wrapper white">
-          <a href="/" class="brand-logo black-text">GlobalPursuit</a>
+          <a href="/" class="brand-logo black-text">Ticketly</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to "Pursuits", pursuits_path %></li>
+            <li><%= link_to "Tickets", tickets_path %></li>
             <li><%= join_dashboard_path %></li>
             <li><%= login_logout_path %></li>
             <li><%= trips_cart_display %></li>
@@ -31,7 +31,7 @@
       </nav>
     </header>
 
-    <div class="row">
+    <!-- <div class="row">
       <div class="col s5 offset-s3 m10 offset-m3">
         <% flash.each do |type, msg| %>
         <div class="card-panel btn-large waves-effect waves-light green" >
@@ -39,12 +39,10 @@
         </div>
         <% end %>
       </div>
-    </div>
-
-    <div class='container'>
+    </div> -->
+    <main>
       <%= yield %>
-    </div>
-    ​
+    </main>​
     <footer class="page-footer white">
       <div class="container">
         <div class="row">

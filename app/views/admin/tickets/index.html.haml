@@ -1,0 +1,6 @@
+%h1.white-text.center-align tickets
+
+- @activities.each do |activity|
+  %h2.center-align= link_to("#{activity.name}", "/#{format_url_name(activity.name)}")
+  .row
+    = render activity.tickets

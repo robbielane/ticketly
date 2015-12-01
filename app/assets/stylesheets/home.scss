@@ -2,6 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body .home {
-  background-image: url("http://robbielane.net/works/mendenhall/photos/MendenhallPan3.jpg");
+.bgimage {
+  margin: 0 !important;
+  background-image: url("concertbg.jpg");
+  background-position: bottom;
+  height: 500px;
+}
+
+.tickets {
+  padding: 40px 0;
 }

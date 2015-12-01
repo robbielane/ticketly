@@ -13,20 +13,6 @@
  *= require_tree .
  *= require_self
  */
-//
-// @font-face {
-//   font-family: "Roboto";
-//   src: url("assets/fonts/roboto/Roboto-Light.ttf");
-// }
-//
-// @font-face {
-//   font-family: "Roboto-bold";
-//   src: url("assets/fonts/Roboto-Bold.ttf");
-// }
-//
-// * {
-//   font-family: Roboto;
-// }
 
 @import "materialize";
 
@@ -34,7 +20,6 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  background-color: #303030;
 }
 
 main {
@@ -68,9 +53,9 @@ h3 {
 	font-size: inherit;
 }
 
-.header-bg{
-  background: image-url('http://iwillmakeyousmile.gq/kar/12325.jpg') no-repeat;
-}
+// .header-bg{
+//   background: image-url('http://iwillmakeyousmile.gq/kar/12325.jpg') no-repeat;
+// }
 
 #nav-mobile {
   margin-right: 20px;

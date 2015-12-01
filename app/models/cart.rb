@@ -5,41 +5,41 @@ class Cart
     @trips = raw_data || {}
   end
 
-  def add_trip(pursuit_id)
-    trips[pursuit_id.to_s] ||= 0
-    trips[pursuit_id.to_s] += 1
+  def add_trip(ticket_id)
+    trips[ticket_id.to_s] ||= 0
+    trips[ticket_id.to_s] += 1
   end
 
   def total_trips
     trips.to_a.count
   end
 
-  def count_of(pursuit_id)
-    trips[pursuit_id.to_s]
+  def count_of(ticket_id)
+    trips[ticket_id.to_s]
   end
 
-  def remove(pursuit)
-    trips.delete(pursuit.id.to_s)
+  def remove(ticket)
+    trips.delete(ticket.id.to_s)
   end
 
-  def update(pursuit_id, travellers)
-    trips[pursuit_id] = travellers.to_i.abs
+  def update(ticket_id, travellers)
+    trips[ticket_id] = travellers.to_i.abs
   end
 
-  def ordered_pursuits
-    trips.map do |pursuit_id, travellers|
-      pursuit = Pursuit.find(pursuit_id.to_i)
-      OrderedPursuit.new(pursuit_id, travellers, pursuit.price)
+  def ordered_tickets
+    trips.map do |ticket_id, travellers|
+      ticket = Ticket.find(ticket_id.to_i)
+      Orderedticket.new(ticket_id, travellers, ticket.price)
     end
   end
 
-  def pursuits_in_cart
-    trips.keys.map { |trip_id| Pursuit.find(trip_id.to_i) }
+  def tickets_in_cart
+    trips.keys.map { |trip_id| Ticket.find(trip_id.to_i) }
   end
 
   def total_cost
-    prices = pursuits_in_cart.reduce([]) do |prices, pursuit|
-      prices << (pursuit.price * trips[pursuit.id.to_s]).abs
+    prices = tickets_in_cart.reduce([]) do |prices, ticket|
+      prices << (ticket.price * trips[ticket.id.to_s]).abs
     end
     prices.sum
   end

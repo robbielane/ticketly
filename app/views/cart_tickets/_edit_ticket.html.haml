@@ -1,0 +1,27 @@
+.cart.white
+  %table
+    - @tickets.each do |ticket|
+      .pursuit_card
+        %tr
+          .row
+            .col.s3
+              = image_tag(ticket.image.url, class: "responsive-img")
+            .col.s6
+              %h2= ticket.name
+              %p= "Price: #{format_currency(ticket.price)}"
+              %p= "Travellers: #{@cart.count_of(ticket.id)}"
+              %p= "Sub-total: #{format_currency(ticket.price * @cart.count_of(ticket.id))}"
+              %p= pursuit.description
+
+              = form_tag(cart_path, method: :put) do
+                = label_tag "Travellers: "
+                = text_field_tag "travellers", @cart.count_of(ticket.id)
+
+                = hidden_field_tag "pursuit_id", ticket.id
+                = submit_tag "Update"
+            .col.s2
+              %br
+              %br
+              %br
+              .waves-effect.waves-light.btn.white-text
+                = button_to "Remove", cart_path( { pursuit_id: ticket.id }), method: :delete

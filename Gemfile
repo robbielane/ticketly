@@ -21,6 +21,7 @@ gem "paperclip"
 gem "aws-sdk-v1"
 gem "figaro"
 gem "faker"
+gem "minitest-emoji"
 
 group :development, :test do
   gem 'byebug'

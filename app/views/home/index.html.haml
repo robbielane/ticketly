@@ -1,23 +1,42 @@
 .home-page
-  %section.row.header-bg
+  %section
 
-  .row.center-align
+  .row.center-align.bgimage
     .col.s12
-      %h1.white-text.bold Global Pursuit
+      %h1.white-text.bold Ticketly
       %h4.white-text.thin Pursue Your Passion
       %br
       %br
 
       - if !current_user
-        .waves-effect.waves-light.btn.white-text
-          = button_to "Apply for Membership", new_user_path, method: :get
-        .waves-effect.waves-light.btn.white-text
-          = button_to "Login to Your Account", login_path, method: :get
+        .col.s6.m3.offset-m3.l2.offset-l4
+          = link_to "Sell Tickets", new_user_path, method: :get, class: "waves-effect waves-light btn white-text orange"
+        .col.s6.m3.l2
+          = link_to "Buy Tickets", login_path, method: :get, class: "waves-effect waves-light btn white-text orange"
 
-      %br
-      %br
-      %br
-      %br
-      %br
-      %br
-      %br
+  .row.grey.lighten-3.tickets
+    .container
+      .col.s4
+        .card.medium
+          .card-image
+            = image_tag("stadium")
+          .card-content
+            %span.card-title.black-text Sports
+          .card-action
+            = link_to "Buy Tickets", root_path
+      .col.s4
+        .card.medium
+          .card-image
+            = image_tag("concert")
+          .card-content
+            %span.card-title.black-text Concerts
+          .card-action
+            = link_to "Buy Tickets", root_path
+      .col.s4
+        .card.medium
+          .card-image
+            = image_tag("event")
+          .card-content
+            %span.card-title.black-text Events
+          .card-action
+            = link_to "Buy Tickets", root_path
