@@ -1,8 +1,8 @@
-class OrderedPursuit
-  attr_reader :pursuit_id, :travellers, :price
+class Orderedticket
+  attr_reader :ticket_id, :travellers, :price
 
-  def initialize(pursuit_id, travellers, price)
-    @pursuit_id = pursuit_id
+  def initialize(ticket_id, travellers, price)
+    @ticket_id = ticket_id
     @travellers = travellers.abs
     @price = price
   end

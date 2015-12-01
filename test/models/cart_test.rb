@@ -32,24 +32,23 @@ class CartTest < ActiveSupport::TestCase
 
   test "cart can return total price of all trips" do
     activity = Activity.create(name: "Hiking")
-    activity.pursuits.create(name: "Hiking in FL", description: "hiking", price: 10)
-    activity.pursuits.create(name: "Hiking in LA", description: "hiking", price: 1)
+    activity.tickets.create(name: "Hiking in FL", price: 10)
+    activity.tickets.create(name: "Hiking in LA", price: 1)
 
-    @cart.add_trip(Pursuit.first.id)
-    @cart.add_trip(Pursuit.last.id)
+    @cart.add_trip(Ticket.first.id)
+    @cart.add_trip(Ticket.last.id)
 
     assert_equal 11, @cart.total_cost
   end
 
   test "cart can remove trips" do
     add_trips_to_cart(1)
-    pursuit = Pursuit.create(name: "Jetskiing",
-                             description: "words",
+    ticket = Ticket.create(name: "Jetskiing",
                              price: 100,
                              id: @cart.trips.keys.first.to_i)
 
     original_total = @cart.total_trips
-    @cart.remove(pursuit)
+    @cart.remove(ticket)
     current_total = @cart.total_trips
 
     assert_equal 1, original_total - current_total
