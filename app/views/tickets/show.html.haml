@@ -1,6 +1,6 @@
 .white-text
   .center-align
-    %h1= @pursuit.name
+    %h1= @ticket.name
 
     .waves-effect.waves-light.btn.white-text
       = purchase_link_or_retired_notice
@@ -11,6 +11,6 @@
 
   .row
     .col.s4
-      = image_tag(@pursuit.image.url, class: "responsive-img")
+      = image_tag(@ticket.image.url, class: "responsive-img")
     .col.s8
-      %p.pursuit-description= @pursuit.description
+      %p.ticket-description= @ticket.description

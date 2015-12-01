@@ -29,6 +29,7 @@ gem 'materialize-sass'
 gem "paperclip"
 gem "aws-sdk-v1"
 gem "figaro"
+gem "minitest-emoji"
 # Use ActiveModel has_secure_password
 
 # Use Unicorn as the app server
