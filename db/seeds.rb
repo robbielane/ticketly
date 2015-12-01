@@ -1,23 +1,36 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+class Seed
+  def initialize
+    generate_users
+    generate_orders
+  end
 
-Ticket.create(name: "Jetskiing", price: 150)
-Ticket.create(name: "Skiing", price: 750)
-Ticket.create(name: "Hiking", price: 1150)
+  def generate_users
+    50.times do |i|
+      user = User.create!(
+        name: Faker::Name.name,
+        username: "#{Faker::Internet.user_name}#{i}",
+        password: "password"
+      )
+      puts "User #{i}:#{user.username} completed!"
+    end
+  end
 
-User.create(username: "aaron", name: "Aaron", password: "pass")
-User.create(username: "torie", name: "Torie", password: "pass")
-User.create(username: "cole", name: "Cole", password: "pass", role: 1)
+  def generate_orders
+    user_count = User.count
+    status_collection = %w(Completed Paid Cancelled Pending)
+    100.times do |i|
+      user = User.offset(Random.new.rand(1..user_count)).limit(1)
+      5.times do |i|
+        order = user.orders << Order.create!(
+                                      user_id: user,
+                                      status: status_collection.sample,
+                                      total: Faker::Commerce.price,
+                                    )
+        puts "Order #{i}: Order for #{user.name} created!"
+      end
+    end
+  end
 
-Order.create(user_id: 1, status: "Completed", total: 1000, created_at: "2015-10-18 21:56:18", updated_at: "2015-10-18 21:56:18")
-Order.create(user_id: 2, status: "Paid", total: 10000, created_at: "2015-09-18 21:56:18", updated_at: "2015-09-18 21:56:18")
-Order.create(user_id: 3, status: "Cancelled", total: 8000, created_at: "2015-11-18 21:56:18", updated_at: "2015-11-18 21:56:18")
+end
 
-Activity.create(name: "Catching Pokemon")
-Activity.create(name: "Beating up Gary Oak")
-Activity.create(name: "Playing the poke flute")
+Seed.new
