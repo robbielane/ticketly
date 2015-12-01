@@ -10,7 +10,7 @@
 
     - @orders.each do |order|
       %tr
-        = content_tag :td, sanitize(order_pursuits_list(order))
+        = content_tag :td, sanitize(order_tickets_list(order))
         = content_tag :td, format_currency(order.total || 0)
         = content_tag :td, format_date(order.created_at)
         = content_tag :td, link_to("View", order_path(order))

@@ -1,7 +1,7 @@
-%h1.white-text.center-align Add a New Pursuit:
+%h1.white-text.center-align Add a New Ticket:
 
 .white-text
-  = form_for(@pursuit, url: admin_pursuits_path)  do |f|
+  = form_for(@ticket, url: admin_tickets_path)  do |f|
     .input-field
       = f.label :name
       = f.text_field :name
@@ -25,4 +25,4 @@
     = f.label :image, "Attach an Image"
     = f.file_field :image
     .waves-effect.waves-light.btn
-      = f.submit "Create Pursuit"
+      = f.submit "Create Ticket"
