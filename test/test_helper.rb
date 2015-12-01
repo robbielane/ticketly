@@ -4,8 +4,10 @@ require "rails/test_help"
 require "capybara/rails"
 require "mocha/mini_test"
 require "minitest/emoji"
+SimpleCov.start "rails"
 
 class ActiveSupport::TestCase
+  fixtures :all
 end
 
 class ActionDispatch::IntegrationTest

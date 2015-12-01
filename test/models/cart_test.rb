@@ -31,9 +31,9 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can return total price of all trips" do
-    activity = Activity.create(name: "Hiking")
-    activity.tickets.create(name: "Hiking in FL", price: 10)
-    activity.tickets.create(name: "Hiking in LA", price: 1)
+    category = Category.create(name: "Hiking")
+    category.tickets.create(name: "Hiking in FL", price: 10)
+    category.tickets.create(name: "Hiking in LA", price: 1)
 
     @cart.add_trip(Ticket.first.id)
     @cart.add_trip(Ticket.last.id)

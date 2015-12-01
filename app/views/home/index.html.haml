@@ -14,29 +14,14 @@
         .col.s6.m3.l2
           = link_to "Buy Tickets", login_path, method: :get, class: "waves-effect waves-light btn white-text orange"
 
-  .row.grey.lighten-3.tickets
-    .container
-      .col.s4
-        .card.medium
-          .card-image
-            = image_tag("stadium")
-          .card-content
-            %span.card-title.black-text Sports
-          .card-action
-            = link_to "Buy Tickets", root_path
-      .col.s4
-        .card.medium
-          .card-image
-            = image_tag("concert")
-          .card-content
-            %span.card-title.black-text Concerts
-          .card-action
-            = link_to "Buy Tickets", root_path
-      .col.s4
-        .card.medium
-          .card-image
-            = image_tag("event")
-          .card-content
-            %span.card-title.black-text Events
-          .card-action
-            = link_to "Buy Tickets", root_path
+  - @categories.each do |category|
+    .row.grey.lighten-3.tickets
+      .container
+        .col.s4
+          .card.medium
+            .card-image
+              = image_tag("#{category.name}")
+            .card-content
+              %span.card-title.black-text "#{category.name}"
+            .card-action
+              = link_to "Buy Tickets", root_path

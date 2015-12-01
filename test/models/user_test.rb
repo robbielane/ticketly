@@ -1,41 +1,26 @@
-require 'test_helper'
+require_relative '../test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  def valid_attributes
-    {
-      name: "Torie",
-      username: "Torie@gmail.com",
-      password: "password"
-    }
+  test "user is invalid" do
+    user = users(:one)
+    assert_equal "bigfred", user.username
   end
 
-  test "user is created with valid attributes" do
-    user = User.new(valid_attributes)
-
-    assert user.valid?
-    assert_equal "Torie", user.name
-    assert_equal "Torie@gmail.com", user.username
-    assert_equal "password", user.password
-  end
-
-  test "user is invalid with missing name" do
-    user = User.new(username: "Torie@gmail.com",
-                    password: "password")
-
+  test "user is invalid without name" do
+    user = users(:one)
+    user.name = nil
     refute user.valid?
   end
 
-  test "user is invalid with missing username" do
-    user = User.new(name: "Torie",
-                    password: "password")
-
+  test "user is invalid without username" do
+    user = users(:one)
+    user.username = nil
     refute user.valid?
   end
 
-  test "user is invalid with missing password" do
-    user = User.new(name: "Torie",
-                    username: "Torie@gmail.com")
-
+  test "user is invalid without password" do
+    user = users(:one)
+    user.password= nil
     refute user.valid?
   end
 end

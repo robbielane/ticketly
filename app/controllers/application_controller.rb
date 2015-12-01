@@ -12,9 +12,9 @@ class ApplicationController < ActionController::Base
     name.downcase.gsub(" ", "_")
   end
 
-  def find_activity_by_name(name)
+  def find_category_by_name(name)
     formatted_name = name.tr("_"," ").titleize
-    Activity.find_by_name(formatted_name)
+    Category.find_by_name(formatted_name)
   end
 
   def count_of_trips
