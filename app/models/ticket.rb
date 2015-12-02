@@ -6,7 +6,6 @@ class Ticket < ActiveRecord::Base
 
   validates :price, :category_id, presence: true
   validates_numericality_of :price, greater_than: 0
-  searchkick
 
   enum status: [ :active, :retired]
 

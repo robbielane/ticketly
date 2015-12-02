@@ -1370,3 +1370,6 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 [2015-12-02 14:24:40,391][INFO ][cluster.metadata         ] [MODOK] [events_test_20151202142440347] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-02 14:24:40,473][INFO ][cluster.metadata         ] [MODOK] [events_test_20151202142440347] create_mapping [event]
 [2015-12-02 14:24:40,539][INFO ][cluster.metadata         ] [MODOK] [events_test_20151202142423938] deleting index
+[2015-12-02 14:26:18,681][INFO ][cluster.metadata         ] [MODOK] [events_test_20151202142618636] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-02 14:26:18,763][INFO ][cluster.metadata         ] [MODOK] [events_test_20151202142618636] create_mapping [event]
+[2015-12-02 14:26:18,823][INFO ][cluster.metadata         ] [MODOK] [events_test_20151202142440347] deleting index
