@@ -1,0 +1,20 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Disney Frozen On Ice
+  price: 70
+  category: kids
+  section: 110
+  row: 23
+  seat: 4
+  event: one
+
+
+two:
+  name: Disney Frozen On Ice
+  price: 70
+  category: kids
+  section: 130
+  row: 1
+  seat: 15
+  event: one
