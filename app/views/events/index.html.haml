@@ -1,4 +1,4 @@
-.container
+.container{ :id => "search-field" }
   = form_tag events_path, class: "form-inline", method: :get do
     .form-group
       = text_field_tag :query, params[:query], class: "form-control"
