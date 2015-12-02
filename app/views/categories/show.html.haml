@@ -1,18 +1,2 @@
 %h2.center Current Events for #{@category.name.titleize}:
-.container
-  %table.events.striped.bordered
-    %thead
-      %tr
-        %th Event Name
-        %th Category
-        %th Venue
-        %th Location
-        %th Tickets Available
-    %tbody
-    - @event.each do |event|
-      %tr
-        %td= link_to event.name, event_path(event)
-        %td= event.category.name
-        %td= event.venue
-        %td= "#{event.location_city}, #{event.location_state}"
-        %td= event.tickets.count
+= render :partial => "layouts/events_index"
