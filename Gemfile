@@ -19,7 +19,6 @@ gem "aws-sdk-v1"
 gem "figaro"
 gem "faker"
 gem "minitest-emoji"
-gem "fuzzily"
 gem "searchkick"
 
 group :development, :test do
