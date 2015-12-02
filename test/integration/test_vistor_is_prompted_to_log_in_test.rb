@@ -11,7 +11,6 @@ class TestVistorIsPromptedToLogInTest < ActionDispatch::IntegrationTest
 
     click_link "Tickets"
 
-
     click_link "Details"
 
     click_link "Proceed To Ticket"
