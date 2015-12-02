@@ -7,7 +7,7 @@
 
   .row
     .col.s2.offset-s5.white-text
-      = form_tag(cart_pursuits_path, method: :post) do
+      = form_tag(cart_tickets_path, method: :post) do
         = hidden_field_tag "pursuit_id", params[:id]
         .input-field
           = label_tag "Number of Travellers"

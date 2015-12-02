@@ -1,13 +1,29 @@
-require 'test_helper'
+require_relative '../test_helper'
 
 class TestVistorIsPromptedToLogInTest < ActionDispatch::IntegrationTest
   test "that a guest is prompted to log in when they are attempthing to purchase" do
-    ticket = Ticket.create!(name:"Pokemon League", price:20, section:"A", row:"B",seat:"D")
+    category = Category.create!(name:"Pokemon")
 
-    visit "/tickets"
+    ticket = Ticket.create!(name:"Pokemon League", price:20, section:"A", row:"B",seat:"D", category_id:category.id)
 
-    click_link "Buy Tickets"
 
+    visit "/"
+
+    click_link "Tickets"
+
+
+    click_link "Details"
+
+    click_link "Ticket Trip"
+
+    fill_in "travellers", with: "1"
+    click_button "Place Order"
+
+    assert tickets_path, current_path
+
+    click_link "Trips"
+
+    click_button "Checkout"
     assert login_path, current_path
   end
 
