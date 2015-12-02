@@ -4,11 +4,8 @@ Rails.application.routes.draw do
   resources :cart_tickets, only: [:new, :create]
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
   resources :orders, only: [:index, :show]
-<<<<<<< HEAD
   resources :categories, only: [:index, :show]
-=======
   resources :events, only: [:index, :show]
->>>>>>> master
 
   get "/admin/dashboard", to: "admin#dashboard"
 

@@ -4,6 +4,5 @@ class VisitorCanFilterThroughTicketCategoryTest < ActionDispatch::IntegrationTes
 
   test "visitor can utilize category dropdown search" do
     visit root_path
-    save_and_open_page
   end
 end
