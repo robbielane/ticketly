@@ -20,6 +20,7 @@ gem "figaro"
 gem "faker"
 gem "minitest-emoji"
 gem "fuzzily"
+gem "searchkick"
 
 group :development, :test do
   gem 'byebug'

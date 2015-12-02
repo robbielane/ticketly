@@ -1,6 +1,11 @@
 {
   "MiniTest": {
     "coverage": {
+      "/Users/acareaga/Turing/mod3/ticketly/app/models/trigram.rb": [
+        1,
+        1,
+        null
+      ],
       "/Users/acareaga/Turing/mod3/ticketly/app/models/user.rb": [
         1,
         1,
@@ -18,6 +23,7 @@
       "/Users/acareaga/Turing/mod3/ticketly/app/models/category.rb": [
         1,
         1,
+        1,
         null
       ],
       "/Users/acareaga/Turing/mod3/ticketly/app/models/ticket.rb": [
@@ -30,12 +36,22 @@
         1,
         null,
         1,
+        null,
+        1,
         0,
         null,
         null,
         1,
         0,
         null,
+        null
+      ],
+      "/Users/acareaga/Turing/mod3/ticketly/app/models/ordered_trip.rb": [
+        1,
+        1,
+        1,
+        null,
+        1,
         null
       ],
       "/Users/acareaga/Turing/mod3/ticketly/app/models/cart.rb": [
@@ -222,17 +238,9 @@
         null,
         null,
         null
-      ],
-      "/Users/acareaga/Turing/mod3/ticketly/app/models/ordered_trip.rb": [
-        1,
-        1,
-        1,
-        null,
-        1,
-        null
       ]
     },
-    "timestamp": 1449017730
+    "timestamp": 1449025579
   },
   "Unit Tests": {
     "coverage": {
