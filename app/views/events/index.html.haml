@@ -1,0 +1,25 @@
+.container
+  = form_tag events_path, class: "form-inline", method: :get do
+    .form-group
+      = text_field_tag :query, params[:query], class: "form-control"
+    = submit_tag "Search", class: "btn btn-primary"
+    - if params[:query].present?
+      = link_to "clear", events_path
+
+.container
+  %table.events.striped.bordered
+    %thead
+      %tr
+        %th Event Name
+        %th Category
+        %th Venue
+        %th Location
+        %th Tickets Available
+    %tbody
+    - @events.each do |event|
+      %tr
+        %td= link_to event.name, event_path(event)
+        %td= event.category.name
+        %td= event.venue
+        %td= "#{event.location_city}, #{event.location_state}"
+        %td= event.tickets.count

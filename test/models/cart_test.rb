@@ -38,7 +38,7 @@ class CartTest < ActiveSupport::TestCase
     @cart.add_trip(Ticket.first.id)
     @cart.add_trip(Ticket.last.id)
 
-    assert_equal 11, @cart.total_cost
+    assert_equal 71, @cart.total_cost
   end
 
   test "cart can remove trips" do

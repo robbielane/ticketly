@@ -1,6 +1,10 @@
 class TicketsController < ApplicationController
   def index
-    @categories = Category.all
+    if params[:query].present?
+      @ticket = Ticket.search(params[:query], id: params[:id])
+    else
+      @categories = Category.all
+    end
   end
 
   def show
