@@ -22,6 +22,6 @@
             .card-image
               = image_tag("#{category.name}")
             .card-content
-              %span.card-title.black-text "#{category.name}"
+              %span.card-title.black-text #{category.name}
             .card-action
               = link_to "Buy Tickets", root_path
