@@ -155,7 +155,7 @@
         null,
         null
       ],
-      "/Users/joshuajhun/Turing/MOD3/ticketly/app/helpers/pursuits_helper.rb": [
+      "/Users/joshuajhun/Turing/MOD3/ticketly/app/helpers/tickets_helper.rb": [
         1,
         1,
         1,
@@ -339,7 +339,7 @@
         null
       ]
     },
-    "timestamp": 1449031392
+    "timestamp": 1449032458
   },
   "Unit Tests": {
     "coverage": {

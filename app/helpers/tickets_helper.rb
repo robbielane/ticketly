@@ -1,4 +1,4 @@
-module PursuitsHelper
+module TicketsHelper
   def purchase_link_or_retired_notice
     if current_user
       if current_user.admin?
@@ -15,7 +15,7 @@ module PursuitsHelper
     if @ticket.retired?
       content_tag :p, "This ticket has been retired and may no longer be purchased."
     else
-      link_to "Ticket Trip", new_cart_ticket_path(id: @ticket.id)
+      link_to "Proceed To Ticket", new_cart_ticket_path(id: @ticket.id)
     end
   end
 end

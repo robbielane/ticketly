@@ -14,14 +14,14 @@ class TestVistorIsPromptedToLogInTest < ActionDispatch::IntegrationTest
 
     click_link "Details"
 
-    click_link "Ticket Trip"
+    click_link "Proceed To Ticket"
 
-    fill_in "travellers", with: "1"
+
     click_button "Place Order"
 
     assert tickets_path, current_path
 
-    click_link "Trips"
+    click_link "Cart"
 
     click_button "Checkout"
     assert login_path, current_path
