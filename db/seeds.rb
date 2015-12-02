@@ -4,6 +4,7 @@ class Seed
     generate_orders
     generate_categories
     generate_events
+    generate_tickets
   end
 
   def generate_users
@@ -53,6 +54,23 @@ class Seed
         category_id: rand(1..category_count)
       )
       puts "Event #{i}: Event created!"
+    end
+  end
+
+  def generate_tickets
+    category_count = Category.count
+    event_count = Event.count
+    1000.times do |i|
+      event_id = rand(1..event_count)
+      Ticket.create!(
+        price: rand(30..1000),
+        category_id: rand(1..category_count),
+        section: rand(1..400),
+        row: rand(1..50),
+        seat: rand(1..30),
+        event_id: event_id
+      )
+      puts "Ticket #{i}: Ticket created for event ##{event_id}"
     end
   end
 

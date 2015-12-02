@@ -18,13 +18,6 @@ class TicketTest < ActiveSupport::TestCase
     assert ticket.valid?
   end
 
-  test "it is invalid with missing name" do
-    ticket = Ticket.new( price: 1001,
-                        category_id: Category.find_by_name("Hiking").id)
-
-    refute ticket.valid?
-  end
-
   test "it is invalid with missing price" do
     ticket = Ticket.new(name: "Hiking in the alps",
                         category_id: Category.find_by_name("Hiking").id)
