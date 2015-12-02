@@ -6,6 +6,8 @@ class Ticket < ActiveRecord::Base
   validates :name, :price, :category_id, presence: true
   validates_numericality_of :price, greater_than: 0
 
+  fuzzily_searchable :name
+
   def retire
     self.update(status: "retired")
   end

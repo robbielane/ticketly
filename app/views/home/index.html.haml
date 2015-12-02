@@ -16,9 +16,9 @@
 
 
   .row.grey.lighten-3.tickets
-    - @categories.each do |category|
-      .container
-        .col.s4
+    .container
+      - @categories.each do |category|
+        .col.s4{ :id => "#{category.name.parameterize}" }
           .card.medium
             .card-image
               = image_tag("concert")

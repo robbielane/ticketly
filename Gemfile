@@ -19,6 +19,7 @@ gem "aws-sdk-v1"
 gem "figaro"
 gem "faker"
 gem "minitest-emoji"
+gem "fuzzily"
 
 group :development, :test do
   gem 'byebug'
