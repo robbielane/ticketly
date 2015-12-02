@@ -13,11 +13,8 @@ class VisitorCanSearchForTicketTest < ActionDispatch::IntegrationTest
   test "Guest can search for tickets based on event type" do
     visit root_path
 
-    # within "#search-bar" do
-    #   fill-in "Pokemon"
-    # end
+    click_link "Buy Tickets"
 
-    assert "/catching-pokemon", current_path
-    assert page.has_content?("Pikachu")
+    assert tickets_path, current_path
   end
 end

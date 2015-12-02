@@ -22,5 +22,5 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#dashboard"
   post "/checkout", to: "orders#create"
 
-  get "/:activity_name", to: "activity#show" # keep at bottom of routes
+  get "/:category_name", to: "category#show" # keep at bottom of routes
 end

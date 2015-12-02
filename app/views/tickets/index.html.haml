@@ -1,4 +1,4 @@
-%h1.white-text.center-align Tickets
+%h1.black-text.center-align Events
 
 - @categories.each do |category|
   %h2.center-align= link_to("#{category.name}", "/#{format_url_name(category.name)}")

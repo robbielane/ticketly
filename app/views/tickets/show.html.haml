@@ -5,7 +5,7 @@
     .waves-effect.waves-light.btn.white-text
       = purchase_link_or_retired_notice
 
-  %p.center-align= "Trip price: #{format_currency(@pursuit.price)}"
+  %p.center-align= "Ticket price: #{format_currency(@ticket.price)}"
 
   %br
 
@@ -13,4 +13,6 @@
     .col.s4
       = image_tag(@ticket.image.url, class: "responsive-img")
     .col.s8
-      %p.ticket-description= @ticket.description
+      %p.ticket-section = @ticket.section
+      %p.ticket-row = @ticket.row
+      %p.ticket-seat = @ticket.seat
