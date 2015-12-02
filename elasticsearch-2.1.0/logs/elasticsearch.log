@@ -1,0 +1,15 @@
+[2015-12-02 12:36:45,364][INFO ][node                     ] [Supreme Intelligence] version[2.1.0], pid[8770], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-02 12:36:45,364][INFO ][node                     ] [Supreme Intelligence] initializing ...
+[2015-12-02 12:36:45,448][INFO ][plugins                  ] [Supreme Intelligence] loaded [], sites []
+[2015-12-02 12:36:45,473][INFO ][env                      ] [Supreme Intelligence] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [174gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2015-12-02 12:36:47,251][INFO ][node                     ] [Supreme Intelligence] initialized
+[2015-12-02 12:36:47,251][INFO ][node                     ] [Supreme Intelligence] starting ...
+[2015-12-02 12:36:47,412][INFO ][transport                ] [Supreme Intelligence] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-02 12:36:47,425][INFO ][discovery                ] [Supreme Intelligence] elasticsearch/gW1QnJoCSUu9a_fZs1Gg5A
+[2015-12-02 12:36:50,473][INFO ][cluster.service          ] [Supreme Intelligence] new_master {Supreme Intelligence}{gW1QnJoCSUu9a_fZs1Gg5A}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-02 12:36:50,487][INFO ][http                     ] [Supreme Intelligence] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-02 12:36:50,488][INFO ][node                     ] [Supreme Intelligence] started
+[2015-12-02 12:36:50,537][INFO ][gateway                  ] [Supreme Intelligence] recovered [0] indices into cluster_state
+[2015-12-02 12:37:01,124][INFO ][cluster.metadata         ] [Supreme Intelligence] [tickets_development_20151202123659878] creating index, cause [api], templates [], shards [5]/[1], mappings [_default_]
+[2015-12-02 12:37:20,942][INFO ][cluster.metadata         ] [Supreme Intelligence] [categories_development_20151202123720875] creating index, cause [api], templates [], shards [5]/[1], mappings [_default_]
+[2015-12-02 12:38:33,776][INFO ][cluster.metadata         ] [Supreme Intelligence] [categories_development_20151202123720875] create_mapping [category]
