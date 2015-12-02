@@ -35,9 +35,12 @@ class Seed
   end
 
   def generate_categories
-    categories = %w(Concerts Sports Kids)
-    categories.each do |category|
-      Category.create!(name: category)
+    category_names = %w(Concerts Sports Kids sporting music film live admission festival special)
+    category_names.each do |category|
+      category = Category.create!(
+        name: category
+      )
+      puts "Category: #{category.name} completed!"
     end
   end
 
