@@ -7,8 +7,8 @@ module ApplicationHelper
     end
   end
 
-  def trips_cart_display
-    link_to "Tickets: #{count_of_trips}", cart_path
+  def cart_display
+    link_to "Cart: #{count_of_trips}", cart_path
   end
 
   def join_dashboard_path

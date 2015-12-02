@@ -5,13 +5,12 @@
         %tr
           .row
             .col.s3
-              = image_tag(ticket.image.url, class: "responsive-img")
             .col.s6
               %h2= ticket.name
               %p= "Price: #{format_currency(ticket.price)}"
               %p= "Travellers: #{@cart.count_of(ticket.id)}"
               %p= "Sub-total: #{format_currency(ticket.price * @cart.count_of(ticket.id))}"
-              %p= pursuit.description
+              %p= ticket.name
 
               = form_tag(cart_path, method: :put) do
                 = label_tag "Travellers: "
