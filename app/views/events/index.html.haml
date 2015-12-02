@@ -1,0 +1,4 @@
+.container
+  %ul.events
+    - @events.each do |event|
+      %li #{event.name} - #{event.venue} - #{event.location_city}, #{event.location_state}

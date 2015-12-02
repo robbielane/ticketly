@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201220306) do
+ActiveRecord::Schema.define(version: 20151202033701) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,20 @@ ActiveRecord::Schema.define(version: 20151201220306) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "location_city"
+    t.string   "location_state"
+    t.string   "venue"
+    t.datetime "date_time"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "category_id"
+  end
+
+  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
 
   create_table "ordered_trips", force: :cascade do |t|
     t.integer  "travellers"
@@ -66,6 +80,7 @@ ActiveRecord::Schema.define(version: 20151201220306) do
     t.integer  "role",            default: 0
   end
 
+  add_foreign_key "events", "categories"
   add_foreign_key "ordered_trips", "orders"
   add_foreign_key "ordered_trips", "tickets"
   add_foreign_key "orders", "users"

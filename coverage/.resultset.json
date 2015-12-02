@@ -1,6 +1,15 @@
 {
   "MiniTest": {
     "coverage": {
+      "/Users/robbielane/turing/mod_3/ticketly/app/models/category.rb": [
+        1,
+        1,
+        null
+      ],
+      "/Users/robbielane/turing/mod_3/ticketly/app/models/event.rb": [
+        1,
+        null
+      ],
       "/Users/robbielane/turing/mod_3/ticketly/app/models/user.rb": [
         1,
         1,
@@ -13,11 +22,6 @@
         1,
         0,
         null,
-        null
-      ],
-      "/Users/robbielane/turing/mod_3/ticketly/app/models/category.rb": [
-        1,
-        1,
         null
       ],
       "/Users/robbielane/turing/mod_3/ticketly/app/models/ticket.rb": [
@@ -43,16 +47,16 @@
         1,
         null,
         1,
+        10,
+        null,
+        null,
+        1,
+        13,
+        13,
+        null,
+        null,
+        1,
         9,
-        null,
-        null,
-        1,
-        13,
-        13,
-        null,
-        null,
-        1,
-        8,
         null,
         null,
         1,
@@ -109,7 +113,7 @@
         null,
         null,
         1,
-        3,
+        4,
         null,
         null,
         1,
@@ -122,15 +126,15 @@
         null,
         null,
         1,
-        3,
+        4,
         null,
         null,
         1,
-        12,
+        15,
         null,
         null,
         1,
-        3,
+        4,
         null,
         null,
         1,
@@ -141,24 +145,24 @@
       "/Users/robbielane/turing/mod_3/ticketly/app/helpers/application_helper.rb": [
         1,
         1,
-        3,
+        4,
         0,
         null,
-        3,
+        4,
         null,
         null,
         null,
         1,
-        3,
+        4,
         null,
         null,
         1,
-        3,
+        4,
         0,
-        3,
+        4,
         0,
         null,
-        3,
+        4,
         null,
         null,
         null,
@@ -230,9 +234,16 @@
         null,
         null,
         null
+      ],
+      "/Users/robbielane/turing/mod_3/ticketly/app/controllers/events_controller.rb": [
+        1,
+        1,
+        1,
+        null,
+        null
       ]
     },
-    "timestamp": 1449022717
+    "timestamp": 1449028052
   },
   "Unit Tests": {
     "coverage": {

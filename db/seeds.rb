@@ -2,6 +2,8 @@ class Seed
   def initialize
     generate_users
     generate_orders
+    generate_categories
+    generate_events
   end
 
   def generate_users
@@ -28,6 +30,29 @@ class Seed
                                     )
         puts "Order #{i}: Order for #{user.name} created!"
       end
+    end
+  end
+
+  def generate_categories
+    categories = %w(Concerts Sports Kids)
+    categories.each do |category|
+      Category.create!(name: category)
+    end
+  end
+
+  def generate_events
+    category_count = Category.count
+    100.times do |i|
+      Event.create!(
+        name: Faker::Hipster.words(2).join(' '),
+        description: Faker::Hipster.words(8).join(' '),
+        location_city: Faker::Address.city,
+        location_state: Faker::Address.state_abbr,
+        venue: Faker::Hipster.words(2).join(' '),
+        date_time: Faker::Time.between(DateTime.now, 150.days.from_now),
+        category_id: rand(1..category_count)
+      )
+      puts "Event #{i}: Event created!"
     end
   end
 

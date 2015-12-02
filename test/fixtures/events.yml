@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: Disney Frozen On Ice
+  description: MyString
+  location_city: Denver
+  location_state: CO
+  venue: Pepsi Center
+  date_time: 2015-12-05 11:00:00
+  category_id: 1
+
+two:
+  name: Justin Bieber
+  description: MyString
+  location_city: Denver
+  location_state: CO
+  venue: Pepsi Center
+  date_time: 2016-04-04 20:00:00
+  category_id: 2
