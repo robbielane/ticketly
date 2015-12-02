@@ -26,11 +26,11 @@ class ActionDispatch::IntegrationTest
     click_button "Login"
   end
 
-  def create_pursuits(num, activity)
+  def create_tickets(num, activity)
     num.times do |i|
       i += 1
       activity = Activity.find_or_create_by(name: activity)
-      activity.pursuits.create(name: "Hiking the Alps #{i}",
+      activity.tickets.create(name: "Hiking the Alps #{i}",
                                description: "Go hike the alps! #{i}",
                                price: 1000 + i)
     end

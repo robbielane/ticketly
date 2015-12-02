@@ -3,6 +3,7 @@ class Seed
     generate_users
     generate_orders
     generate_categories
+    generate_events
     generate_tickets
   end
 
@@ -34,7 +35,7 @@ class Seed
   end
 
   def generate_categories
-    category_names = %w(sporting music film live admission festival special)
+    category_names = %w(Concerts Sports Kids sporting music film live admission festival special)
     category_names.each do |category|
       category = Category.create!(
         name: category
@@ -43,17 +44,39 @@ class Seed
     end
   end
 
-  def generate_tickets
-    category_names = Category.all
-    500.times do |i|
-      ticket = Ticket.create!(
-                     name: Faker::Lorem.word,
-                     price: Faker::Commerce.price,
-                     category_id: category_names.sample.id 
-                    )
-      puts "Ticket #{i}: #{ticket.name} created"
+  def generate_events
+    category_count = Category.count
+    100.times do |i|
+      Event.create!(
+        name: Faker::Hipster.words(2).join(' '),
+        description: Faker::Hipster.words(8).join(' '),
+        location_city: Faker::Address.city,
+        location_state: Faker::Address.state_abbr,
+        venue: Faker::Hipster.words(2).join(' '),
+        date_time: Faker::Time.between(DateTime.now, 150.days.from_now),
+        category_id: rand(1..category_count)
+      )
+      puts "Event #{i}: Event created!"
     end
   end
+
+  def generate_tickets
+    category_count = Category.count
+    event_count = Event.count
+    1000.times do |i|
+      event_id = rand(1..event_count)
+      Ticket.create!(
+        price: rand(30..1000),
+        category_id: rand(1..category_count),
+        section: rand(1..400),
+        row: rand(1..50),
+        seat: rand(1..30),
+        event_id: event_id
+      )
+      puts "Ticket #{i}: Ticket created for event ##{event_id}"
+    end
+  end
+
 end
 
 Seed.new

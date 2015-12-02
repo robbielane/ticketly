@@ -1,0 +1,22 @@
+.container
+  .row
+    .col.m5
+      .center
+        %h2= @event.name
+        %p= @event.venue
+        %p= "#{@event.location_city}, #{@event.location_state}"
+    .col.m7
+      %table.striped.bordered
+        %thead
+          %tr
+            %th Section
+            %th Row
+            %th Seat
+            %th Price
+        %tbody
+          - @event.tickets.each do |ticket|
+            %tr{id: ticket.id}
+              %td= ticket.section
+              %td= ticket.row
+              %td= ticket.seat
+              %td= "$#{ticket.price}"

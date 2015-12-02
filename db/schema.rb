@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151201220306) do
+
+ActiveRecord::Schema.define(version: 20151202061852) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +22,20 @@ ActiveRecord::Schema.define(version: 20151201220306) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "location_city"
+    t.string   "location_state"
+    t.string   "venue"
+    t.datetime "date_time"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "category_id"
+  end
+
+  add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
 
   create_table "ordered_trips", force: :cascade do |t|
     t.integer  "travellers"
@@ -47,15 +62,18 @@ ActiveRecord::Schema.define(version: 20151201220306) do
   create_table "tickets", force: :cascade do |t|
     t.text     "name"
     t.integer  "price"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "category_id"
     t.string   "section"
     t.string   "row"
     t.string   "seat"
+    t.integer  "event_id"
+    t.integer  "status",      default: 0
   end
 
   add_index "tickets", ["category_id"], name: "index_tickets_on_category_id", using: :btree
+  add_index "tickets", ["event_id"], name: "index_tickets_on_event_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -66,8 +84,10 @@ ActiveRecord::Schema.define(version: 20151201220306) do
     t.integer  "role",            default: 0
   end
 
+  add_foreign_key "events", "categories"
   add_foreign_key "ordered_trips", "orders"
   add_foreign_key "ordered_trips", "tickets"
   add_foreign_key "orders", "users"
   add_foreign_key "tickets", "categories"
+  add_foreign_key "tickets", "events"
 end

@@ -2,10 +2,10 @@
   .col.s12.m4
     .card
       .card-content
-        %p= "#{ticket.description}"
+        %p= "#{ticket.name}"
         %br
         = "#{format_currency(ticket.price)}"
-      .card-action
+      .card-action{id: ticket.id}
         = link_to "Details", ticket_path(ticket)
         %br
         %br
