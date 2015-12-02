@@ -14,14 +14,3 @@
         .col.s6.m3.l2
           = link_to "Buy Tickets", events_path, method: :get, class: "waves-effect waves-light btn white-text orange"
 
-  - @categories.each do |category|
-    .row.grey.lighten-3.tickets
-      .container
-        .col.s4
-          .card.medium
-            .card-image
-              = image_tag("#{category.name}")
-            .card-content
-              %span.card-title.black-text #{category.name}
-            .card-action
-              = link_to "View Events", root_path
