@@ -2,6 +2,8 @@ class Seed
   def initialize
     generate_users
     generate_orders
+    generate_categories
+    generate_tickets
   end
 
   def generate_users
@@ -31,6 +33,27 @@ class Seed
     end
   end
 
+  def generate_categories
+    category_names = %w(sporting music film live admission festival special)
+    category_names.each do |category|
+      category = Category.create!(
+        name: category
+      )
+      puts "Category: #{category.name} completed!"
+    end
+  end
+
+  def generate_tickets
+    category_names = Category.all
+    500.times do |i|
+      ticket = Ticket.create!(
+                     name: Faker::Lorem.word,
+                     price: Faker::Commerce.price,
+                     category_id: category_names.sample.id 
+                    )
+      puts "Ticket #{i}: #{ticket.name} created"
+    end
+  end
 end
 
 Seed.new

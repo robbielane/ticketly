@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require materialize-sprockets
+//= require navbar
 //= require_tree .

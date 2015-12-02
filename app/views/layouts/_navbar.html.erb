@@ -1,0 +1,25 @@
+<ul id="dropdown1" class="dropdown-content ">
+  <% category_list.each do |category| %>
+    <li><a href="<%= category_path(category) %>"><%= category.name.titleize %></a></li>
+  <% end %>
+</ul>
+
+<nav>
+  <div class="nav-wrapper white">
+    <a href="/" class="brand-logo black-text">Ticketly</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <li>
+        <a class="dropdown-button" href="#!" data-activates="dropdown1">
+          Categories
+          <i class="material-icons right">
+            arrow_drop_down
+          </i>
+        </a>
+      </li>
+      <li><%= link_to "Tickets", tickets_path %></li>
+      <li><%= join_dashboard_path %></li>
+      <li><%= login_logout_path %></li>
+      <li><%= trips_cart_display %></li>
+    </ul>
+  </div>
+</nav>
