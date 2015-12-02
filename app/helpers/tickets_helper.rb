@@ -2,7 +2,7 @@ module TicketsHelper
   def purchase_link_or_retired_notice
     if current_user
       if current_user.admin?
-        link_to "Edit Pursuit", edit_admin_pursuit_path(@pursuit.id)
+        link_to "Edit Ticket", edit_admin_ticket_path(@ticket.id)
       else
         get_purchase_link_or_retired_notice
       end
