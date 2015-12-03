@@ -1,0 +1,61 @@
+.events-table-wrapper {
+  padding: 35px 35px 0 35px;
+  margin-top: 50px;
+  background-color: #eee;
+}
+
+.events-table {
+    background-color: #fff;
+    padding: 25px !important;
+}
+
+.events-table tr {
+  border: 1px solid #ccc;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.events-table thead {
+  border-bottom: 2px solid #333;
+}
+
+.events-table tr td {
+  padding: 15px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.tickets-table-wrapper {
+  padding: 35px;;
+  margin-top: 40px;
+  background-color: #eee;
+}
+
+.tickets-table {
+  background-color: #fff;
+  padding: 25px !important;
+}
+
+.tickets-table tr {
+  border: 1px solid #ccc;
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.tickets-table thead {
+  border-bottom: 2px solid #333;
+}
+
+.tickets-table tr td {
+  padding: 15px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+.pagination a li.active {
+  color: #fff;
+}
+
+.pagination li a i {
+  position: relative;
+  top: 10px;
+}

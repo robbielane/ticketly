@@ -1,17 +1,24 @@
 .container
-  %table.events.striped.bordered
-    %thead
-      %tr
-        %th Event Name
-        %th Category
-        %th Venue
-        %th Location
-        %th Tickets Available
-    %tbody
-    - @events.each do |event|
-      %tr
-        %td= link_to event.name, event_path(event)
-        %td= event.category.name
-        %td= event.venue
-        %td= "#{event.location_city}, #{event.location_state}"
-        %td= event.tickets.count
+  .events-table-wrapper.z-depth-1
+    %table.events.bordered.z-depth-1.events-table{id: 'eventsTable'}
+      %thead
+        %tr
+          %th{ "data-sort": 'string' }
+            Event Name
+          %th{ "data-sort": 'string' }
+            Category
+          %th{ "data-sort": 'string' }
+            Venue
+          %th{ "data-sort": 'string' }
+            Location
+          %th{ "data-sort": 'int' }
+            Tickets Available
+      %tbody
+      - @events.each do |event|
+        %tr
+          %td= link_to event.name, event_path(event)
+          %td= event.category.name
+          %td= event.venue
+          %td= "#{event.location_city}, #{event.location_state}"
+          %td= event.tickets.count
+    = will_paginate @events
