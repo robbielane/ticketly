@@ -1,6 +1,8 @@
 class Ticket < ActiveRecord::Base
   belongs_to :category
   belongs_to :event
+  belongs_to :vendor
+
   has_many :order_tickets
   has_many :orders, through: :order_ticket
 

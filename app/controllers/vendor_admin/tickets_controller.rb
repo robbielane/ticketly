@@ -4,7 +4,7 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def show
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
   end
 
   def new
@@ -16,37 +16,37 @@ class Admin::TicketsController < Admin::BaseController
     @ticket = category.tickets.new(ticket_params)
     if @ticket.save
       flash[:notice] = "The ticket '#{@ticket.name}' has been created"
-      redirect_to admin_tickets_path
+      redirect_to vendor_admin_tickets_path
     else
       flash[:notice] = @ticket.errors.full_messages.join(", ")
-      redirect_to new_admin_ticket_path
+      redirect_to new_vendor_admin_ticket_path
     end
   end
 
   def edit
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
   end
 
   def update
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
     if @ticket.update(ticket_params)
       flash.notice = "Ticket Updated!"
-      redirect_to admin_tickets_path
+      redirect_to vendor_admin_tickets_path
     else
-      flash.now[:errors] = @pursuit.errors.full_messages.join(" ,")
+      flash.now[:errors] = @ticket.errors.full_messages.join(" ,")
       render :edit
     end
   end
 
   def destroy
-    @ticket = Ticket.find(params[:id])
+    @ticket = current_user.tickets.find(params[:id])
     @ticket.destroy
-    redirect_to admin_tickets_path
+    redirect_to vendor_admin_tickets_path
   end
 
   private
 
   def ticket_params
-    params.require(:pursuit).permit(:name, :row, :section,:seat, :price)
+    params.require(:ticket).permit(:name, :row, :section,:seat, :price)
   end
 end

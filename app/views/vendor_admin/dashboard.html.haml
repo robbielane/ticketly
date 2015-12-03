@@ -1,4 +1,4 @@
-%h1.white-text.center-align Admin Dashboard
+%h1.white-text.center-align Vendor Admin Dashboard
 
 .center-align
   .waves-effect.waves-light.btn
@@ -33,3 +33,19 @@
         = content_tag :td, format_date(order.created_at)
         = content_tag :td, link_to("#{order.status}", admin_order_path(order.id))
         = content_tag :td, format_currency(order.total || 0)
+
+
+%h2.white-text.center-align Vendors
+%br
+.white
+  %table.cart-table.highlight
+    %tr
+      %th Store name
+      %th Status
+      %th Store Admin
+
+    - @vendors.each do |vendor|
+      %tr.vendor{id = vendor.name.parameterize }
+        = content_tag :td, vendor.name
+        = content_tag :td, vendor.status
+        = content_tag :td, vendor.user_id

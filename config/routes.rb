@@ -8,11 +8,6 @@ Rails.application.routes.draw do
 
   get "/admin/dashboard", to: "admin#dashboard"
 
-  namespace :admin do
-    resources :tickets
-    resources :orders
-  end
-
   get "/cart", to: "cart_tickets#show"
   put "/cart", to: "cart_tickets#update"
   delete "/cart", to: "cart_tickets#delete"
@@ -22,6 +17,13 @@ Rails.application.routes.draw do
   get "/logout", to: "sessions#delete"
   get "/dashboard", to: "users#dashboard"
   post "/checkout", to: "orders#create"
+
+  get "/:vendor_admin/dashboard", to: "vendor_admin#dashboard"
+
+  namespace :vendor_admin do
+    resources :tickets
+    resources :orders
+  end
 
   get "/:category_name", to: "category#show" # keep at bottom of routes
 end
