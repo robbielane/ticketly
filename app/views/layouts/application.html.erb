@@ -7,12 +7,6 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <style>
-      nav ul li a {
-        color: black;
-      }
-    </style>
   </head>
 
 <body>
@@ -30,14 +24,11 @@
         </div>
       </nav>
     </header>
-      <% flash.each do |type, msg| %>
-      <div class="card-panel btn-large waves-effect waves-light flash" >
-        <div class="flash_msg">
-            <%= content_tag :h5, sanitize(msg), class: "flash_#{type}" %>
-        </div>
-      </div>
-      <% end %>
     <main>
+      <% flash.each do |type, msg| %>
+          <%= content_tag :div, sanitize(msg), class: " flash flash_#{type}" %>
+      <% end %>
+
       <%= yield %>
     </main>​
     <footer class="page-footer white">

@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
 
   has_many     :user_roles
   has_many     :roles, through: :user_roles
-  belongs_to   :vendors
+  has_many     :vendors
 
 
   def admin?
@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
   end
 
   def registered_user?
-    roles.exists?(name: "regisitered_user")
+    roles.exists?(name: "registered_user")
   end
 
 end

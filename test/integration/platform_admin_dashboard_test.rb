@@ -3,17 +3,30 @@ require_relative '../test_helper'
 class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "Platform admin can access dashboard" do
-
     platform_admin_login
 
-     assert admin_dashboard_path, current_path
+    assert admin_dashboard_path, current_path
   end
 
   test "Platform admin can take a vendor offline" do
+    skip
+    create_vendor_admin
 
-    user = User.create(name:"Aaron", username:"aaron", password:"aaron")
-    user.roles << Role.create(name:"vendor_admin")
+    platform_admin_login
 
+    assert admin_dashboard_path, current_path
+
+    within("#aaron-s-store") do
+      assert page.has_content?("Vendors")
+      assert page.has_content?("Status")
+    end
+
+    click_button("Offline")
+
+    within("#aaron-s-store") do
+      refute page.has_content?("Offline")
+      assert page.has_content?("Online")
+    end
 
 
 # I expect to see an index of existing businesses and their status,

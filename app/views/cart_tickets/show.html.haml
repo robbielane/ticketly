@@ -1,14 +1,14 @@
-- if @tickets.empty?
-  .white-text.center-align.no-items
-    %h3 No items in cart.
-    = link_to "View Tickets", events_path
+.container
+  - if @tickets.empty?
+    .white-text.center-align.no-items
+      %h3 No items in cart.
+      = link_to "View Tickets", events_path
 
-- if !@tickets.empty?
-  %h2.center-align.white-text Checkout
-  = render partial: "edit_ticket", locals: { :tickets => @tickets }
+  - if !@tickets.empty?
+    %h2.center-align.white-text Checkout
+    = render partial: "edit_ticket", locals: { :tickets => @tickets }
 
-  .card-panel.grey.lighten-5.right-align
-    .col.s6.offset-s6
-      = "Total: #{format_currency(@cart.total_cost)}"
-      .waves-effect.waves-light.btn.white-text
-        = button_to "Checkout", checkout_path, method: :post
+    .card-panel.grey.lighten-5.right-align
+      .col.s6.offset-s6
+        = "Total: #{format_currency(@cart.total_cost)}"
+        = link_to "Checkout", checkout_path, method: :post, class: 'waves-effect waves-light btn orange'
