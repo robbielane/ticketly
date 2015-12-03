@@ -87,8 +87,4 @@ class ActionDispatch::IntegrationTest
     Vendor.create(name: "Aaron's Store", user_id: user.id)
   end
 
-  def logout_user
-    byebug
-  end
-
 end
