@@ -11,6 +11,9 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "Platform admin can take a vendor offline" do
 
+    user = User.create(name:"Aaron", username:"aaron", password:"aaron")
+    user.roles << Role.create(name:"vendor_admin")
+
 
 
 # I expect to see an index of existing businesses and their status,
@@ -19,5 +22,5 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 # I expect to see the business status updated,
 # And when I visit that business url,
 # I expect to be redirected to the index of online businesses
-  end 
+  end
 end

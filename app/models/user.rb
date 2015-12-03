@@ -6,9 +6,9 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   validates :password, presence: true
 
-  has_many   :user_roles
-  has_many   :roles, through: :user_roles
-  has_many   :vendors
+  has_many     :user_roles
+  has_many     :roles, through: :user_roles
+  belongs_to   :vendors
 
 
   def admin?
@@ -19,8 +19,8 @@ class User < ActiveRecord::Base
     roles.exists?(name: "platform_admin")
   end
 
-  def store_admin?
-    roles.exists?(name: "store_admin")
+  def vendor_admin?
+    roles.exists?(name: "vendor_admin")
   end
 
   def registered_user?

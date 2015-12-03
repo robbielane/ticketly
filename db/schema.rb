@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203012432) do
+ActiveRecord::Schema.define(version: 20151203024341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,16 +99,24 @@ ActiveRecord::Schema.define(version: 20151203012432) do
     t.integer  "role",            default: 0
   end
 
-  create_table "vendors", force: :cascade do |t|
-    t.string   "name"
+  create_table "vendor_tickets", force: :cascade do |t|
     t.integer  "status"
-    t.integer  "ticket_id"
+    t.string   "name"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "vendors", ["ticket_id"], name: "index_vendors_on_ticket_id", using: :btree
+  add_index "vendor_tickets", ["user_id"], name: "index_vendor_tickets_on_user_id", using: :btree
+
+  create_table "vendors", force: :cascade do |t|
+    t.integer  "status"
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_index "vendors", ["user_id"], name: "index_vendors_on_user_id", using: :btree
 
   add_foreign_key "events", "categories"
@@ -119,6 +127,6 @@ ActiveRecord::Schema.define(version: 20151203012432) do
   add_foreign_key "tickets", "events"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
-  add_foreign_key "vendors", "tickets"
+  add_foreign_key "vendor_tickets", "users"
   add_foreign_key "vendors", "users"
 end
