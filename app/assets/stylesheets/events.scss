@@ -1,7 +1,25 @@
+.search {
+  margin-top: 50px;
+  height: 50px;
+}
+
+.material-icons {
+  margin-top: 8px;
+  font-size: 34px;
+}
+
+form .input-field input[type=search] {
+  line-height: normal;
+}
+
 .events-table-wrapper {
-  padding: 35px 35px 0 35px;
+  padding: 35px;
   margin-top: 50px;
   background-color: #eee;
+}
+
+.row .pagination {
+  margin-bottom: -35px;
 }
 
 .events-table {

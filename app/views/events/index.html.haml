@@ -1,13 +1,17 @@
-.container{ :id => "search-field" }
-  = form_tag events_path, class: "form-inline", method: :get do
-    .form-group
-      = text_field_tag :query, params[:query], class: "form-control"
-    = submit_tag "Search", class: "btn btn-primary"
-    - if params[:query].present?
-      = link_to "clear", events_path
 
 .container
+  .row
+    .col.m4.offset-m4
+      %nav.search{ :id => "search-field" }
+        = form_tag events_path, class: "form-inline", method: :get do
+          .form-group.input-field
+            = text_field_tag :query, params[:query], class: "form-control orange", id: 'search', type: 'search'
+            %label{for: 'search'}
+              %i.material-icons search
+            -# = submit_tag "Search", class: "btn btn-primary"
   .events-table-wrapper.z-depth-1
+    - if params[:query].present?
+      = link_to "clear search", events_path, class:'red-text right'
     %table.events.bordered.z-depth-1.events-table{id: 'eventsTable'}
       %thead
         %tr
