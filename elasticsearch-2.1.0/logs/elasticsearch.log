@@ -2415,3 +2415,171 @@ java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/ela
 [2015-12-03 13:10:56,746][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131056736] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-03 13:10:56,795][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131056736] create_mapping [event]
 [2015-12-03 13:10:56,844][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131042653] deleting index
+[2015-12-03 13:30:20,404][INFO ][node                     ] [Nameless One] version[2.1.0], pid[68693], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-03 13:30:20,404][INFO ][node                     ] [Nameless One] initializing ...
+[2015-12-03 13:30:20,467][INFO ][plugins                  ] [Nameless One] loaded [], sites []
+[2015-12-03 13:30:20,488][INFO ][env                      ] [Nameless One] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [74.6gb], net total_space [111.8gb], spins? [unknown], types [hfs]
+[2015-12-03 13:30:22,135][INFO ][node                     ] [Nameless One] initialized
+[2015-12-03 13:30:22,135][INFO ][node                     ] [Nameless One] starting ...
+[2015-12-03 13:30:22,229][INFO ][transport                ] [Nameless One] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-03 13:30:22,244][INFO ][discovery                ] [Nameless One] elasticsearch/q6Rh4ZowQ26trUvfv6QOhA
+[2015-12-03 13:30:25,289][INFO ][cluster.service          ] [Nameless One] new_master {Nameless One}{q6Rh4ZowQ26trUvfv6QOhA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-03 13:30:25,300][INFO ][http                     ] [Nameless One] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-03 13:30:25,301][INFO ][node                     ] [Nameless One] started
+[2015-12-03 13:30:25,356][INFO ][gateway                  ] [Nameless One] recovered [2] indices into cluster_state
+[2015-12-03 13:30:25,904][WARN ][index.translog           ] [Nameless One] [events_test_20151203131231905][0] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203131231905/0/translog/translog-2385888669953253681.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203131231905/0/translog/translog-2385888669953253681.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 13:30:25,906][WARN ][index.translog           ] [Nameless One] [events_development][2] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-1305560168341415426.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-1305560168341415426.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 13:30:25,906][WARN ][index.translog           ] [Nameless One] [events_development][4] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-1801322330119130092.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-1801322330119130092.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 13:30:25,906][WARN ][index.translog           ] [Nameless One] [events_development][1] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-4892125253052656098.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-4892125253052656098.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 13:30:26,025][WARN ][index.translog           ] [Nameless One] [events_development][3] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-4343354122060719127.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-4343354122060719127.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 13:30:26,063][WARN ][index.translog           ] [Nameless One] [events_development][0] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-5973466549068197606.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-5973466549068197606.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 13:30:45,540][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133045467] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:30:45,663][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133045467] create_mapping [event]
+[2015-12-03 13:30:45,736][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203131231905] deleting index
+[2015-12-03 13:32:14,951][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133214891] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:32:15,064][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133214891] create_mapping [event]
+[2015-12-03 13:32:15,115][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133045467] deleting index
+[2015-12-03 13:35:53,362][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133553299] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:35:53,459][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133553299] create_mapping [event]
+[2015-12-03 13:35:53,517][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133214891] deleting index
+[2015-12-03 13:40:49,612][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134049579] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:40:49,689][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134049579] create_mapping [event]
+[2015-12-03 13:40:49,736][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203133553299] deleting index
+[2015-12-03 13:41:09,150][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134109103] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:41:09,232][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134109103] create_mapping [event]
+[2015-12-03 13:41:09,282][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134049579] deleting index
+[2015-12-03 13:41:48,897][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134148845] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:41:48,965][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134148845] create_mapping [event]
+[2015-12-03 13:41:49,012][INFO ][cluster.metadata         ] [Nameless One] [events_test_20151203134109103] deleting index
