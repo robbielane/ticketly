@@ -30,11 +30,11 @@ class VisitorCanSearchForTicketTest < ActionDispatch::IntegrationTest
     visit events_path
 
     within("#search-field") do
-      fill_in "query", with: "Disney"
+      fill_in "query", with: "Disney" + "\n"
     end
 
-    Event.reindex
     click_button "Search"
+    Event.reindex
 
     assert page.has_content?("Disney")
     refute page.has_content?("Justin")
