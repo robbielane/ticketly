@@ -1,6 +1,6 @@
 class Admin::TicketsController < Admin::BaseController
   def index
-    @activities = Activity.all
+    @categories = Category.all
   end
 
   def show
@@ -12,8 +12,8 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def create
-    activity = Activity.find_or_create_by(name: params[:ticket][:activity])
-    @ticket = activity.tickets.new(ticket_params)
+    category= Category.find_or_create_by(name: params[:ticket][:category])
+    @ticket = category.tickets.new(ticket_params)
     if @ticket.save
       flash[:notice] = "The ticket '#{@ticket.name}' has been created"
       redirect_to admin_tickets_path
@@ -47,6 +47,6 @@ class Admin::TicketsController < Admin::BaseController
   private
 
   def ticket_params
-    params.require(:pursuit).permit(:name, :description, :price, :image)
+    params.require(:pursuit).permit(:name, :row, :section,:seat, :price)
   end
 end

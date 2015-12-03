@@ -2118,3 +2118,300 @@ java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/ela
 [2015-12-03 11:20:28,637][INFO ][cluster.metadata         ] [Grasshopper II] [events_test_20151203112028578] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-03 11:20:28,736][INFO ][cluster.metadata         ] [Grasshopper II] [events_test_20151203112028578] create_mapping [event]
 [2015-12-03 11:20:28,802][INFO ][cluster.metadata         ] [Grasshopper II] [events_test_20151203111936929] deleting index
+[2015-12-03 11:23:08,116][INFO ][node                     ] [Doug Ramsey] version[2.1.0], pid[57673], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-03 11:23:08,116][INFO ][node                     ] [Doug Ramsey] initializing ...
+[2015-12-03 11:23:08,178][INFO ][plugins                  ] [Doug Ramsey] loaded [], sites []
+[2015-12-03 11:23:08,199][INFO ][env                      ] [Doug Ramsey] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [74.4gb], net total_space [111.8gb], spins? [unknown], types [hfs]
+[2015-12-03 11:23:10,045][INFO ][node                     ] [Doug Ramsey] initialized
+[2015-12-03 11:23:10,045][INFO ][node                     ] [Doug Ramsey] starting ...
+[2015-12-03 11:23:10,154][INFO ][transport                ] [Doug Ramsey] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-03 11:23:10,164][INFO ][discovery                ] [Doug Ramsey] elasticsearch/3HdszIemQ1iQw1-pYzMO3w
+[2015-12-03 11:23:13,203][INFO ][cluster.service          ] [Doug Ramsey] new_master {Doug Ramsey}{3HdszIemQ1iQw1-pYzMO3w}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-03 11:23:13,215][INFO ][http                     ] [Doug Ramsey] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-03 11:23:13,215][INFO ][node                     ] [Doug Ramsey] started
+[2015-12-03 11:23:13,294][INFO ][gateway                  ] [Doug Ramsey] recovered [2] indices into cluster_state
+[2015-12-03 11:23:13,838][WARN ][index.translog           ] [Doug Ramsey] [events_development][3] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-5390259480599766963.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-5390259480599766963.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 11:23:13,838][WARN ][index.translog           ] [Doug Ramsey] [events_development][4] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-8735411162107376334.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-8735411162107376334.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 11:23:13,838][WARN ][index.translog           ] [Doug Ramsey] [events_development][2] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-4438149899732901183.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-4438149899732901183.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 11:23:13,838][WARN ][index.translog           ] [Doug Ramsey] [events_test_20151203112028578][0] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203112028578/0/translog/translog-421957323467691510.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203112028578/0/translog/translog-421957323467691510.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 11:23:13,949][WARN ][index.translog           ] [Doug Ramsey] [events_development][1] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-6074491527822120987.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-6074491527822120987.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 11:23:14,004][WARN ][index.translog           ] [Doug Ramsey] [events_development][0] failed to delete temp file /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-2021346523950549851.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-2021346523950549851.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-03 11:23:16,593][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112316512] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:23:16,731][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112316512] create_mapping [event]
+[2015-12-03 11:23:16,859][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112028578] deleting index
+[2015-12-03 11:27:58,489][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112758442] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:27:58,588][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112758442] create_mapping [event]
+[2015-12-03 11:27:58,634][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112316512] deleting index
+[2015-12-03 11:28:21,803][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112821750] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:28:21,899][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112821750] create_mapping [event]
+[2015-12-03 11:28:21,964][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112758442] deleting index
+[2015-12-03 11:29:09,030][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112908940] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:29:09,128][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112908940] create_mapping [event]
+[2015-12-03 11:29:09,190][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112821750] deleting index
+[2015-12-03 11:34:24,283][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203113424223] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:34:24,385][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203113424223] create_mapping [event]
+[2015-12-03 11:34:24,452][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203112908940] deleting index
+[2015-12-03 11:35:12,230][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203113512187] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:35:12,303][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203113512187] create_mapping [event]
+[2015-12-03 11:35:12,355][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203113424223] deleting index
+[2015-12-03 11:47:25,949][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203114725890] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:47:26,033][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203114725890] create_mapping [event]
+[2015-12-03 11:47:26,091][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203113512187] deleting index
+[2015-12-03 11:48:30,247][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203114830208] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:48:30,337][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203114830208] create_mapping [event]
+[2015-12-03 11:48:30,396][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203114725890] deleting index
+[2015-12-03 11:57:40,389][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203115740354] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:57:40,454][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203115740354] create_mapping [event]
+[2015-12-03 11:57:40,509][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203114830208] deleting index
+[2015-12-03 11:59:50,365][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203115950310] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 11:59:50,542][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203115950310] create_mapping [event]
+[2015-12-03 11:59:50,630][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203115740354] deleting index
+[2015-12-03 12:00:17,446][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203120017417] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:00:17,562][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203120017417] create_mapping [event]
+[2015-12-03 12:00:17,644][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203115950310] deleting index
+[2015-12-03 12:30:17,680][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123017659] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:30:17,740][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123017659] create_mapping [event]
+[2015-12-03 12:30:17,795][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203120017417] deleting index
+[2015-12-03 12:37:20,430][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123720397] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:37:20,482][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123720397] create_mapping [event]
+[2015-12-03 12:37:20,525][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123017659] deleting index
+[2015-12-03 12:38:08,719][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123808680] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:38:08,792][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123808680] create_mapping [event]
+[2015-12-03 12:38:08,841][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123720397] deleting index
+[2015-12-03 12:38:47,604][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123847579] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:38:47,661][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123847579] create_mapping [event]
+[2015-12-03 12:38:47,703][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123808680] deleting index
+[2015-12-03 12:39:30,082][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123930053] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:39:30,191][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123930053] create_mapping [event]
+[2015-12-03 12:39:30,286][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123847579] deleting index
+[2015-12-03 12:40:06,905][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124006878] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:40:07,085][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124006878] create_mapping [event]
+[2015-12-03 12:40:07,168][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203123930053] deleting index
+[2015-12-03 12:41:48,084][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124148034] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:41:48,227][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124148034] create_mapping [event]
+[2015-12-03 12:41:48,306][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124006878] deleting index
+[2015-12-03 12:42:18,580][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124218566] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:42:18,625][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124218566] create_mapping [event]
+[2015-12-03 12:42:18,667][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124148034] deleting index
+[2015-12-03 12:42:38,191][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124238166] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:42:38,261][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124238166] create_mapping [event]
+[2015-12-03 12:42:38,331][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124218566] deleting index
+[2015-12-03 12:43:46,831][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124346795] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:43:46,891][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124346795] create_mapping [event]
+[2015-12-03 12:43:46,938][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124238166] deleting index
+[2015-12-03 12:44:17,153][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124417137] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:44:17,190][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124417137] create_mapping [event]
+[2015-12-03 12:44:17,238][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124346795] deleting index
+[2015-12-03 12:44:26,119][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124426091] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:44:26,156][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124426091] create_mapping [event]
+[2015-12-03 12:44:26,207][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124417137] deleting index
+[2015-12-03 12:44:46,933][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124446879] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:44:46,999][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124446879] create_mapping [event]
+[2015-12-03 12:44:47,060][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124426091] deleting index
+[2015-12-03 12:45:31,614][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124531592] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:45:31,663][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124531592] create_mapping [event]
+[2015-12-03 12:45:31,733][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124446879] deleting index
+[2015-12-03 12:46:57,830][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124657790] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:46:57,884][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124657790] create_mapping [event]
+[2015-12-03 12:46:57,931][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124531592] deleting index
+[2015-12-03 12:47:31,480][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124731451] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:47:31,517][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124731451] create_mapping [event]
+[2015-12-03 12:47:31,579][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124657790] deleting index
+[2015-12-03 12:48:36,402][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124836383] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:48:36,483][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124836383] create_mapping [event]
+[2015-12-03 12:48:36,514][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124731451] deleting index
+[2015-12-03 12:49:04,586][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124904571] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:49:04,644][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124904571] create_mapping [event]
+[2015-12-03 12:49:04,702][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124836383] deleting index
+[2015-12-03 12:49:26,124][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124926110] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:49:26,174][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124926110] create_mapping [event]
+[2015-12-03 12:49:26,217][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124904571] deleting index
+[2015-12-03 12:50:25,147][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125025134] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:50:25,186][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125025134] create_mapping [event]
+[2015-12-03 12:50:25,229][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203124926110] deleting index
+[2015-12-03 12:50:35,667][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125035641] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:50:35,721][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125035641] create_mapping [event]
+[2015-12-03 12:50:35,757][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125025134] deleting index
+[2015-12-03 12:51:01,949][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125101900] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:51:01,989][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125101900] create_mapping [event]
+[2015-12-03 12:51:02,047][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125035641] deleting index
+[2015-12-03 12:52:22,519][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125222502] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:52:22,557][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125222502] create_mapping [event]
+[2015-12-03 12:52:22,603][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125101900] deleting index
+[2015-12-03 12:53:33,998][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125333973] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:53:34,043][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125333973] create_mapping [event]
+[2015-12-03 12:53:34,087][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125222502] deleting index
+[2015-12-03 12:54:05,991][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125405973] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:54:06,030][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125405973] create_mapping [event]
+[2015-12-03 12:54:06,073][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125333973] deleting index
+[2015-12-03 12:54:29,558][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125429524] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:54:29,626][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125429524] create_mapping [event]
+[2015-12-03 12:54:29,694][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125405973] deleting index
+[2015-12-03 12:56:03,062][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125603047] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:56:03,109][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125603047] create_mapping [event]
+[2015-12-03 12:56:03,154][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125429524] deleting index
+[2015-12-03 12:56:56,772][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125656752] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:56:56,826][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125656752] create_mapping [event]
+[2015-12-03 12:56:56,874][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125603047] deleting index
+[2015-12-03 12:57:21,967][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125721951] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:57:22,001][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125721951] create_mapping [event]
+[2015-12-03 12:57:22,039][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125656752] deleting index
+[2015-12-03 12:59:20,862][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125920818] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 12:59:20,978][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125920818] create_mapping [event]
+[2015-12-03 12:59:21,039][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125721951] deleting index
+[2015-12-03 13:00:08,223][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130008208] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:00:08,270][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130008208] create_mapping [event]
+[2015-12-03 13:00:08,302][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203125920818] deleting index
+[2015-12-03 13:01:41,468][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130141454] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:01:41,503][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130141454] create_mapping [event]
+[2015-12-03 13:01:41,552][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130008208] deleting index
+[2015-12-03 13:06:26,657][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130626642] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:06:26,706][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130626642] create_mapping [event]
+[2015-12-03 13:06:26,737][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130141454] deleting index
+[2015-12-03 13:08:26,592][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130826565] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:08:26,645][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130826565] create_mapping [event]
+[2015-12-03 13:08:26,719][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130626642] deleting index
+[2015-12-03 13:09:53,945][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130953924] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:09:53,986][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130953924] create_mapping [event]
+[2015-12-03 13:09:54,033][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130826565] deleting index
+[2015-12-03 13:10:19,962][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131019925] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:10:20,033][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131019925] create_mapping [event]
+[2015-12-03 13:10:20,073][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203130953924] deleting index
+[2015-12-03 13:10:42,676][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131042653] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:10:42,730][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131042653] create_mapping [event]
+[2015-12-03 13:10:42,785][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131019925] deleting index
+[2015-12-03 13:10:56,746][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131056736] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 13:10:56,795][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131056736] create_mapping [event]
+[2015-12-03 13:10:56,844][INFO ][cluster.metadata         ] [Doug Ramsey] [events_test_20151203131042653] deleting index
