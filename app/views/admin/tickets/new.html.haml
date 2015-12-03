@@ -7,12 +7,17 @@
       = f.text_field :name
 
     .input-field
-      = f.label :description
-      = f.text_area :description
+      = f.label :section
+      = f.text_area :section
 
     .input-field
-      = f.label :activity
-      = f.text_field :activity
+      = f.label :row
+      = f.text_area :row
+
+    .input-field
+      = f.label :seat
+      = f.text_area :seat
+
 
     .input-field
       = f.label :price
@@ -22,7 +27,5 @@
       = f.label :status
       = f.text_field :status
 
-    = f.label :image, "Attach an Image"
-    = f.file_field :image
     .waves-effect.waves-light.btn
       = f.submit "Create Ticket"
