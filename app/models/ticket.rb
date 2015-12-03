@@ -18,4 +18,7 @@ class Ticket < ActiveRecord::Base
   def retired?
     status == "retired"
   end
+
+  def event_name
+  end
 end

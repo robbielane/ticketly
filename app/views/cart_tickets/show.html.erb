@@ -1,0 +1,18 @@
+<% if @tickets.empty? %>
+  <div class="white-text center-align no-items">
+    <h3>No items in cart.</h3>
+    <%= link_to "View Tickets", events_path %>
+  </div>
+<% end %>
+<% if !@tickets.empty? %>
+  <h2 class="center-align white-text">Checkout</h2>
+  <%= render partial: "edit_ticket", locals: { :tickets => @tickets } %>
+  <div class="card-panel grey lighten-5 right-align">
+    <div class="col s6 offset-s6">
+      <%= "Total: #{format_currency(@cart.total_cost)}" %>
+      <div class="waves-effect waves-light btn white-text">
+        <%= button_to "Checkout", checkout_path, method: :post %>
+      </div>
+    </div>
+  </div>
+<% end %>

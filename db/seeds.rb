@@ -9,7 +9,8 @@ class Seed
   end
 
   def generate_test_users
-    User.create!(username: "aaron",name: "aaron", password: "password")
+    user = User.create!(username: "aaron",name: "aaron", password: "password")
+    user.roles << Role.create!(name: "registered_user")
   end
 
   def generate_users
