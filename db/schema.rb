@@ -73,8 +73,8 @@ ActiveRecord::Schema.define(version: 20151203024341) do
     t.string   "section"
     t.string   "row"
     t.string   "seat"
-    t.integer  "event_id"
     t.integer  "status",      default: 0
+    t.integer  "event_id"
   end
 
   add_index "tickets", ["category_id"], name: "index_tickets_on_category_id", using: :btree
