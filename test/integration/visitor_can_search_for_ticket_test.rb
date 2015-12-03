@@ -10,14 +10,33 @@ class VisitorCanSearchForTicketTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Sell Tickets")
   end
 
-  test "Guest can search for tickets based on event type" do
+  test "Guest can see index of events" do
     visit root_path
 
-    within "#sports" do
-      click_link "Buy Tickets"
+    within("#concerts") do
+      click_link "View Events"
     end
 
-    assert "/sports", current_path
-    assert page.has_content?("Seattle Seahawks")
+    assert events_path, current_path
+
+    assert page.has_content?("Event Name")
+    assert page.has_content?("Category")
+    assert page.has_content?("Venue")
+    assert page.has_content?("Location")
+    assert page.has_content?("Tickets Available")
+  end
+
+  test "Guest can search for tickets based on event name" do
+    visit events_path
+
+    within("#search-field") do
+      fill_in "query", with: "Disney"
+    end
+
+    Event.reindex
+    click_button "Search"
+
+    assert page.has_content?("Disney")
+    refute page.has_content?("Justin")
   end
 end

@@ -1,3 +1,11 @@
+.container{ :id => "search-field" }
+  = form_tag events_path, class: "form-inline", method: :get do
+    .form-group
+      = text_field_tag :query, params[:query], class: "form-control"
+    = submit_tag "Search", class: "btn btn-primary"
+    - if params[:query].present?
+      = link_to "clear", events_path
+
 .container
   .events-table-wrapper.z-depth-1
     %table.events.bordered.z-depth-1.events-table{id: 'eventsTable'}

@@ -1,6 +1,11 @@
 class EventsController < ApplicationController
   def index
-    @events = Event.all.paginate(page: params[:page], per_page: 20)
+    if params[:query].present?
+      @events = Event.search(params[:query], name: params[:name])
+                     .paginate(page: params[:page], per_page: 20)
+    else
+      @events = Event.all.paginate(page: params[:page], per_page: 20)
+    end
   end
 
   def show
