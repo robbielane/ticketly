@@ -1,4 +1,4 @@
-class Admin::TicketsController < Admin::BaseController
+class VendorAdmin::TicketsController < VendorAdmin::BaseController
   def index
     @categories = Category.all
   end
