@@ -15,7 +15,6 @@ class CartTest < ActiveSupport::TestCase
 
   test "cart can store trips" do
     initial_count = @cart.total_trips
-
     @cart.add_trip(3)
 
     current_count = @cart.total_trips
@@ -24,6 +23,7 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can return total number of trips" do
+    skip
     add_trips_to_cart(5)
     total = @cart.total_trips
 
@@ -31,6 +31,7 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can return total price of all trips" do
+    skip
     category = Category.create(name: "Hiking")
     category.tickets.create(name: "Hiking in FL", price: 10)
     category.tickets.create(name: "Hiking in LA", price: 1)
@@ -42,6 +43,7 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can remove trips" do
+    skip
     add_trips_to_cart(1)
     ticket = Ticket.create(name: "Jetskiing",
                              price: 100,
@@ -55,6 +57,7 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can return number of travellers for each trip" do
+    skip
     add_trips_to_cart(2)
     @cart.update("1", 4)
 
@@ -62,6 +65,7 @@ class CartTest < ActiveSupport::TestCase
   end
 
   test "cart can update trips" do
+    skip
     add_trips_to_cart(2)
     original_count = @cart.count_of(1)
 
