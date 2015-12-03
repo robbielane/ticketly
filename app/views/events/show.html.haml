@@ -28,3 +28,18 @@
 
 
 
+      .tickets-table-wrapper.z-depth-1
+        %table.striped.bordered.tickets-table.z-depth-1
+          %thead
+            %tr
+              %th Section
+              %th Row
+              %th Seat
+              %th Price
+          %tbody
+            - @event.tickets.each do |ticket|
+              %tr{id: ticket.id}
+                %td= ticket.section
+                %td= ticket.row
+                %td= ticket.seat
+                %td= "$#{ticket.price}"

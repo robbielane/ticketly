@@ -18,9 +18,9 @@ class Cart
     tickets[ticket_id.to_s]
   end
 
-  #def remove(ticket)
-    #tickets.delete(ticket.id.to_s)
-  #end
+  def remove(ticket)
+    tickets.delete(ticket.id.to_s)
+  end
 
   def update(ticket_id, quantity)
     tickets[ticket_id] = quantity.to_i.abs

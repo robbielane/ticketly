@@ -19,6 +19,8 @@ gem "aws-sdk-v1"
 gem "figaro"
 gem "faker"
 gem "minitest-emoji"
+gem "will_paginate"
+gem 'will_paginate-materialize'
 gem "searchkick"
 
 group :development, :test do
