@@ -33,5 +33,6 @@ class RegisteredUserCanPurchaseTicketsTest < ActionDispatch::IntegrationTest
     result = "You have removed the trip Disney Frozen On Ice from your cart"
     assert page.has_content?("#{result}")
   end
+
 end
 

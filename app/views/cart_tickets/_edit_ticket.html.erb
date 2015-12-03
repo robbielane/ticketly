@@ -7,7 +7,7 @@
             <div class="col s3"></div>
             <div class="col s6">
               <h2>
-                <%= ticket.name %>
+                <%= ticket.event.name %>
               </h2>
               <p>
                 <%= "Price: #{format_currency(ticket.price)}" %>
@@ -15,23 +15,14 @@
               <p>
                 <%= "Sub-total: #{format_currency(ticket.price * @cart.count_of(ticket.id))}" %>
               </p>
-              <p>
-                <%= ticket.name %>
-              </p>
               <%= form_tag(cart_path, method: :put) do %>
-                <%= label_tag "quantity: " %>
-                <%= text_field_tag "quantity", @cart.count_of(ticket.id) %>
                 <%= hidden_field_tag "ticket_id", ticket.id %>
-                <%= submit_tag "Update" %>
               <% end %>
-            </div>
-            <div class="col s2">
-              <br/>
-              <br/>
-              <br/>
+
               <div class="waves-effect waves-light btn white-text">
                 <%= button_to "Remove", cart_path( { ticket_id: ticket.id }), method: :delete %>
               </div>
+
             </div>
           </div>
         </tr>

@@ -60,12 +60,13 @@ class PermissionService
   end
 
   def general_permissions
-    return true if controller == "sessions"   && action.in?(%w(new create delete))
-    return true if controller == "home"       && action == "index"
-    return true if controller == "tickets"    && action.in?(%w(index show))
-    return true if controller == "events"     && action.in?(%w(index show))
-    return true if controller == "category"   && action.in?(%w(show))
-    return true if controller == "users"      && action.in?(%w(new create))
+    return true if controller == "sessions"       && action.in?(%w(new create delete))
+    return true if controller == "home"           && action == "index"
+    return true if controller == "tickets"        && action.in?(%w(index show))
+    return true if controller == "events"         && action.in?(%w(index show))
+    return true if controller == "category"       && action.in?(%w(show))
+    return true if controller == "users"          && action.in?(%w(new create))
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
+    return true if controller == "orders"         && action.in?(%w(create))
   end
 end
