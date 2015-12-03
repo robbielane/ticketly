@@ -78,6 +78,12 @@ class ActionDispatch::IntegrationTest
 
      fill_in "Username", with: "jhun"
      fill_in "Password", with: "jhun"
-  end 
+  end
+
+  def create_vendor_admin
+    user = User.create(name:"Aaron", username:"aaron", password:"aaron")
+    user.roles << Role.create(name:"vendor_admin")
+    Vendor.create(name: "Aaron's Store", user_id: user.id)
+  end
 
 end

@@ -1,4 +1,4 @@
-class Admin::OrdersController < Admin::BaseController
+class VendorAdmin::OrdersController < VendorAdmin::BaseController
   def index
     @orders = Order.all
   end
@@ -15,6 +15,6 @@ class Admin::OrdersController < Admin::BaseController
     else
       flash[:notice] = "Invalid Order Status"
     end
-    redirect_to admin_order_path(@order)
+    redirect_to vendor_admin_order_path(@order)
   end
 end
