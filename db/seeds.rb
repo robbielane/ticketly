@@ -1,10 +1,15 @@
 class Seed
   def initialize
+    generate_test_users
     generate_users
     generate_orders
     generate_categories
     generate_events
     generate_tickets
+  end
+
+  def generate_test_users
+    User.create!(username: "aaron",name: "aaron", password: "password")
   end
 
   def generate_users

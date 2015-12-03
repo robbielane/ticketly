@@ -14,6 +14,7 @@
             %th Seat
             %th Price
             %th Purchase 
+            %th id 
         %tbody
           - @event.tickets.each do |ticket|
             %tr{id: ticket.id}
@@ -21,7 +22,9 @@
               %td= ticket.row
               %td= ticket.seat
               %td= "$#{ticket.price}"
-              = form_tag(cart_tickets_path)
-              = hidden_field_tag "ticket_id", params[:id]
-              %td= submit_tag "Purchase"
+              = form_tag(cart_tickets_path(ticket_id: ticket.id)) do
+                %td= submit_tag "Purchase"
+              %td= ticket.id
+
+
 
