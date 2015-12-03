@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     if params[:query].present?
       @events = Event.search(params[:query], name: params[:name])
     else
-      @events = Event.all
+      @events = Event.all.paginate(page: params[:page], per_page: 20)
     end
   end
 
