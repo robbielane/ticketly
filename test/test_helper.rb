@@ -69,4 +69,15 @@ class ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
     click_button "Login"
   end
+
+  def platform_admin_login
+    user = User.create(name:"jhun", username:"jhun", password:"jhun")
+    user.roles << Role.create(name:"platform_admin")
+     visit root_path
+     click_link "Login"
+
+     fill_in "Username", with: "jhun"
+     fill_in "Password", with: "jhun"
+  end 
+
 end
