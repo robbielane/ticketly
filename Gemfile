@@ -22,6 +22,7 @@ gem "minitest-emoji"
 gem "will_paginate"
 gem 'will_paginate-materialize'
 gem "searchkick"
+gem "rails_12factor"
 
 group :development, :test do
   gem 'byebug'
