@@ -1,7 +1,7 @@
 - if @tickets.empty?
   .white-text.center-align.no-items
     %h3 No items in cart.
-    = link_to "View Tickets", tickets_path
+    = link_to "View Tickets", events_path
 
 - if !@tickets.empty?
   %h2.center-align.white-text Checkout

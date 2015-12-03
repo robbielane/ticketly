@@ -1,7 +1,7 @@
 %br
 %br
 
-.center-align.white-text
+.center-align.black-text
   %h1= "Welcome, #{current_user.name}!"
 
   %p= "Username: #{current_user.username}"
@@ -9,12 +9,12 @@
   %br
   %br
 
-  .waves-effect.waves-light.btn.white-text
+  .waves-effect.waves-light.btn.black-text
     = link_to "Order History", orders_path
   %br
   %br
   %br
-  .waves-effect.waves-light.btn.white-text
+  .waves-effect.waves-light.btn.black-text
     = link_to "Edit Account", edit_user_path(@user)
   .waves-effect.waves-light.btn.white-text
     = link_to "Delete Account", user_path(@user), method: :delete

@@ -22,7 +22,7 @@
         <div class="nav-wrapper white">
           <a href="/" class="brand-logo black-text">Ticketly</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><%= link_to "Tickets", tickets_path %></li>
+            <li><%= link_to "Events", events_path %></li>
             <li><%= join_dashboard_path %></li>
             <li><%= login_logout_path %></li>
             <li><%= cart_display %></li>
@@ -31,7 +31,7 @@
       </nav>
     </header>
 
-    <!-- <div class="row">
+    <div class="row">
       <div class="col s5 offset-s3 m10 offset-m3">
         <% flash.each do |type, msg| %>
         <div class="card-panel btn-large waves-effect waves-light green" >
@@ -39,7 +39,8 @@
         </div>
         <% end %>
       </div>
-    </div> -->
+    </div>
+
     <main>
       <%= yield %>
     </main>​
@@ -54,9 +55,9 @@
           <div class="col l3 s12">
             <h5 class="black-text">About</h5>
             <ul>
-              <li><a class="black-text" href="#!">Company</a></li>
-              <li><a class="black-text" href="#!">Vendors</a></li>
-              <li><a class="black-text" href="#!">Categories</a></li>
+              <li><a class="black-text" href="/">Company</a></li>
+              <li><a class="black-text" href="/users/new">Vendors</a></li>
+              <li><a class="black-text" href="/events">Categories</a></li>
               <li><a class="black-text" href="http://www.turing.io" target="_blank">Contact</a></li>
             </ul>
           </div>
@@ -64,10 +65,10 @@
           <div class="col l3 s12">
             <h5 class="black-text">Events</h5>
             <ul>
-              <li><a class="black-text" href="#!">Concerts</a></li>
-              <li><a class="black-text" href="#!">Sports</a></li>
-              <li><a class="black-text" href="#!">Food</a></li>
-              <li><a class="black-text" href="#!">Gaming</a></li>
+              <li><a class="black-text" href="/events">Concerts</a></li>
+              <li><a class="black-text" href="/events">Kids</a></li>
+              <li><a class="black-text" href="/events">Food</a></li>
+              <li><a class="black-text" href="/events">Sports</a></li>
             </ul>
           </div>
         </div>
