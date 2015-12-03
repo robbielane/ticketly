@@ -99,16 +99,6 @@ ActiveRecord::Schema.define(version: 20151203024341) do
     t.integer  "role",            default: 0
   end
 
-  create_table "vendor_tickets", force: :cascade do |t|
-    t.integer  "status"
-    t.string   "name"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "vendor_tickets", ["user_id"], name: "index_vendor_tickets_on_user_id", using: :btree
-
   create_table "vendors", force: :cascade do |t|
     t.integer  "status"
     t.string   "name"
@@ -127,6 +117,5 @@ ActiveRecord::Schema.define(version: 20151203024341) do
   add_foreign_key "tickets", "events"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
-  add_foreign_key "vendor_tickets", "users"
   add_foreign_key "vendors", "users"
 end
