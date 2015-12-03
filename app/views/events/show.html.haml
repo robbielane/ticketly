@@ -6,18 +6,25 @@
         %p= @event.venue
         %p= "#{@event.location_city}, #{@event.location_state}"
     .col.m7
-      .tickets-table-wrapper.z-depth-1
-        %table.striped.bordered.tickets-table.z-depth-1
-          %thead
-            %tr
-              %th Section
-              %th Row
-              %th Seat
-              %th Price
-          %tbody
-            - @event.tickets.each do |ticket|
-              %tr{id: ticket.id}
-                %td= ticket.section
-                %td= ticket.row
-                %td= ticket.seat
-                %td= "$#{ticket.price}"
+      %table.striped.bordered
+        %thead
+          %tr
+            %th Section
+            %th Row
+            %th Seat
+            %th Price
+            %th Purchase 
+            %th id 
+        %tbody
+          - @event.tickets.each do |ticket|
+            %tr{id: ticket.id}
+              %td= ticket.section
+              %td= ticket.row
+              %td= ticket.seat
+              %td= "$#{ticket.price}"
+              = form_tag(cart_tickets_path(ticket_id: ticket.id)) do
+                %td= submit_tag "Purchase"
+              %td= ticket.id
+
+
+

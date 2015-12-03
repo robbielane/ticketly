@@ -19,6 +19,7 @@ class ActionDispatch::IntegrationTest
 
   def create_and_login_user
     user = create_user
+    user.roles << Role.create!(name: "registered_user")
 
     visit login_path
     fill_in "Username", with: user.username
