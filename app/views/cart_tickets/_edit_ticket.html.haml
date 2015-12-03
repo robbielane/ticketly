@@ -8,15 +8,14 @@
             .col.s6
               %h2= ticket.name
               %p= "Price: #{format_currency(ticket.price)}"
-              %p= "Travellers: #{@cart.count_of(ticket.id)}"
               %p= "Sub-total: #{format_currency(ticket.price * @cart.count_of(ticket.id))}"
               %p= ticket.name
 
               = form_tag(cart_path, method: :put) do
-                = label_tag "Travellers: "
-                = text_field_tag "travellers", @cart.count_of(ticket.id)
+                = label_tag "quantity: "
+                = text_field_tag "quantity", @cart.count_of(ticket.id)
 
-                = hidden_field_tag "pursuit_id", ticket.id
+                = hidden_field_tag "ticket_id", ticket.id
                 = submit_tag "Update"
             .col.s2
               %br

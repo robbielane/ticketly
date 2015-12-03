@@ -23,6 +23,10 @@ gem "will_paginate"
 gem 'will_paginate-materialize'
 gem "searchkick"
 
+group :production do
+  gem "rails_12factor"
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'capybara'

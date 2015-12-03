@@ -17,7 +17,7 @@ module OrdersHelper
   end
 
   def format_name_and_travellers(order, ticket)
-    num_travellers = OrderedTrip.find_by(ticket_id: ticket.id, order_id: order.id).travellers
+    num_travellers = OrderTicket.find_by(ticket_id: ticket.id, order_id: order.id).quantity
     "#{ticket.name} (Tickets: #{num_travellers || 1})"
   end
 
