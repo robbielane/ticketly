@@ -1,13 +1,13 @@
 class CartTicketsController < ApplicationController
   def create
-    trip = Ticket.find(params[:pursuit_id])
+    ticket = Ticket.find(params[:ticket_id])
 
-    @cart.add_trip(trip.id)
-    @cart.update(trip.id, params[:travellers])
+    @cart.add_ticket(ticket.id)
+    #@cart.update(ticket.id, params[:travellers])
 
-    session[:cart] = @cart.trips
-    flash[:notice] = "You have added #{trip.name} to your cart."
-    redirect_to tickets_path
+    #session[:cart] = @cart.tickets
+    #flash[:notice] = "You have added #{ticket.name} to your cart."
+    redirect_to events_path
   end
 
   def new

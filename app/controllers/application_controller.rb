@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   end
 
   def count_of_trips
-    @cart.total_trips
+    @cart.total_tickets
   end
 
   def current_user
