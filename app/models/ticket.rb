@@ -9,7 +9,6 @@ class Ticket < ActiveRecord::Base
 
   enum status: [ :active, :retired]
 
-
   def retire
     self.update(status: "retired")
   end

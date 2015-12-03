@@ -1,7 +1,7 @@
 %br
 
 .row
-  .col.s6.white-text
+  .col.s6.black-text
     %h3 Login to Your Account
     %br
     = form_for(:session, url: login_path) do |f|
@@ -14,7 +14,7 @@
         = f.password_field :password
       %br
       %br
-      .waves-effect.waves-light.btn
+      .waves-effect.waves-dark.btn
         = f.submit "Login"
 
 %br

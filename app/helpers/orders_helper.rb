@@ -18,7 +18,7 @@ module OrdersHelper
 
   def format_name_and_travellers(order, ticket)
     num_travellers = OrderedTrip.find_by(ticket_id: ticket.id, order_id: order.id).travellers
-    "#{ticket.name} (Travellers: #{num_travellers || 1})"
+    "#{ticket.name} (Tickets: #{num_travellers || 1})"
   end
 
   def filter_by_status
