@@ -27,7 +27,7 @@
       %th Status
       %th Total
 
-    - Order.all.each do |order|
+    - @orders.each do |order|
       %tr.order{ data: {status: "#{order.status}"} }
         = content_tag :td, link_to("#{order.id}", "#{current_user.vendors.name}/orders/#{order.id}")
         = content_tag :td, format_date(order.created_at)

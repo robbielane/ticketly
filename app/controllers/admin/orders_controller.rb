@@ -1,7 +1,6 @@
-class VendorAdmin::OrdersController < VendorAdmin::BaseController
+class Admin::OrdersController < Admin::BaseController
   def index
-    user = current_user
-    @orders = user.orders.all
+    @orders = Order.all
   end
 
   def show
@@ -16,6 +15,6 @@ class VendorAdmin::OrdersController < VendorAdmin::BaseController
     else
       flash[:notice] = "Invalid Order Status"
     end
-    redirect_to vendor_admin_order_path(@order)
+    redirect_to admin_order_path(@order)
   end
 end
