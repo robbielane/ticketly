@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  autocomplete :event, :name
+  
   def index
     if params[:query].present?
       @events = Event.search(params[:query], name: params[:name])
