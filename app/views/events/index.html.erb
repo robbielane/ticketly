@@ -4,7 +4,6 @@
       <nav class="search" id="search-field">
         <%= form_tag events_path, class: "form-inline", method: :get do %>
           <div class="form-group input-field">
-            <%#= autocomplete_field_tag 'event', '', autocomplete_event_name_events_path, :size => 75 %>
             <%= autocomplete_field_tag :query, params[:query], autocomplete_event_name_events_path, size: 75, class: "form-control orange", id: 'search', type: 'search' %>
             <label for="search">
               <i class="material-icons">search</i>
