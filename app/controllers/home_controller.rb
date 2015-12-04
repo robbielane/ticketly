@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @categories = Category.all
+    @events = Event.all.limit(6)
   end
 end

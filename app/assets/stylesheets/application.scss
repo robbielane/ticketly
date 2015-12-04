@@ -15,8 +15,10 @@
  */
 
 @import 'materialize';
+@import url(https://fonts.googleapis.com/css?family=Righteous|Doppio+One);
 
 body {
+  font-family: 'Doppio One' sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
