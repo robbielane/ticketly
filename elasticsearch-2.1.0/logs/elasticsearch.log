@@ -3564,3 +3564,21 @@ java.nio.file.NoSuchFileException: /Users/adamjensen/Turing/m3.1/w1/ticketly/ela
 [2015-12-03 23:08:35,028][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203230834996] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-03 23:08:35,107][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203230834996] create_mapping [event]
 [2015-12-03 23:08:35,144][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203230819865] deleting index
+[2015-12-03 23:13:50,919][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231350897] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 23:13:50,982][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231350897] create_mapping [event]
+[2015-12-03 23:13:51,024][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203230834996] deleting index
+[2015-12-03 23:14:41,004][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231440942] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 23:14:41,102][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231440942] create_mapping [event]
+[2015-12-03 23:14:41,185][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231350897] deleting index
+[2015-12-03 23:15:04,896][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231504869] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 23:15:04,953][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231504869] create_mapping [event]
+[2015-12-03 23:15:05,007][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231440942] deleting index
+[2015-12-03 23:15:21,455][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231521408] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 23:15:21,645][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231521408] create_mapping [event]
+[2015-12-03 23:15:21,716][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231504869] deleting index
+[2015-12-03 23:15:41,716][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231541692] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 23:15:41,787][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231541692] create_mapping [event]
+[2015-12-03 23:15:41,845][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231521408] deleting index
+[2015-12-03 23:16:40,901][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231640876] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-03 23:16:40,956][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231640876] create_mapping [event]
+[2015-12-03 23:16:40,997][INFO ][cluster.metadata         ] [Spidercide] [events_test_20151203231541692] deleting index
