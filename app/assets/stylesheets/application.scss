@@ -41,7 +41,7 @@ h5 {
 form input[type=text],
 form input[type=password], {
   border: 1px solid #ccc;
-  padding-left: 10px; 
+  padding-left: 10px;
 }
 
 .btn a {
@@ -61,6 +61,10 @@ form input[type=password], {
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+b .price {
+  margin-right: 25px;
 }
 
 // .header-bg{
@@ -105,4 +109,8 @@ form input[type=password], {
 
 .flash_notice {
   background-color: rgba(34,139,34,0.6)
+}
+
+.table-footer {
+  padding: 35px;
 }

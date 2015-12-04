@@ -1,0 +1,31 @@
+
+  <div class="row">
+    <div class="col s12">
+      <table class="events-table">
+        <thead>
+          <tr>
+            <th>Event</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @tickets.each do |ticket| %>
+          <tr>
+            <td><h5><%= ticket.event.name %></h5></td>
+            <td><%= ticket.event.description %></td>
+            <td><b><%= "#{format_currency(ticket.price)}" %></b></td>
+            <td><%= link_to "Remove", cart_path( { ticket_id: ticket.id }), method: :delete, class: 'waves-effect waves-light btn red' %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+          <!-- <p><%#= "Sub-total: #{format_currency(ticket.price * @cart.count_of(ticket.id))}" %></p> -->
+          <%#= form_tag(cart_path, method: :put) do %>
+            <%#= hidden_field_tag "ticket_id", ticket.id %>
+          <%# end %>

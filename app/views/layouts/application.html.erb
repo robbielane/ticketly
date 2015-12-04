@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
-
+<main>
 <body>
   <div class = "<%= params[:controller] %>">
     <header>
@@ -24,14 +24,14 @@
         </div>
       </nav>
     </header>
-    <main>
+
       <% flash.each do |type, msg| %>
           <%= content_tag :div, sanitize(msg), class: " flash flash_#{type}" %>
       <% end %>
 
       <%= yield %>
     </main>​
-    <footer class="page-footer white">
+    <footer class="page-footer orange lighten-4">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">
