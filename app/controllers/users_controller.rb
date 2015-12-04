@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      @users.roles << Role.find(1)
+      @user.roles << Role.find(1)
       session[:user_id] = @user.id
       redirect_to "/dashboard"
     else
