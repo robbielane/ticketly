@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   def create
     if current_user
       Order.make_new(@cart, current_user)
+      NotificationsMailer.contact(current_user.email).deliver_now
       flash[:notice] = "Order was successfully placed"
       session[:cart].clear
       redirect_to orders_path
@@ -22,5 +23,11 @@ class OrdersController < ApplicationController
     else
       @orders = current_user.orders
     end
+  end
+
+  private
+
+  def email_params
+    params.permit(:name, :email, :message)
   end
 end

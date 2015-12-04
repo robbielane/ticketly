@@ -14,7 +14,10 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   def create_user
-    User.create(username: "cole", name: "Nicole", password: "password")
+    User.create(username: "cole",
+                name: "Nicole",
+                password: "password",
+                email:"cole@turing.io")
   end
 
   def create_and_login_user

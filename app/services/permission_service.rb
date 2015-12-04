@@ -56,6 +56,8 @@ class PermissionService
     return true if controller == "category"       && action.in?(%w(show))
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
     return true if controller == "orders"         && action.in?(%w(create show index))
+
+    return true if controller == "users"                    && action.in?(%w(edit update dashboard))
   end
 
   def general_permissions
