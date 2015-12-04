@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Edit Account</h2>
+  <div class="black-text">
+    <%= form_for @user do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+      <br/>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br/>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <br/>
+      <%= f.submit "Update Account", class: "waves-effect waves-light btn white-text orange" %>
+    <% end %>
+  </div>
+</div>
