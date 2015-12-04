@@ -1,0 +1,8 @@
+
+one:
+  status: Paid
+  total: 100
+    
+two:
+  status: Paid
+  total: 200

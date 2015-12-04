@@ -25,6 +25,7 @@ class ActionDispatch::IntegrationTest
     fill_in "Username", with: user.username
     fill_in "Password", with: "password"
     click_button "Login"
+    user
   end
 
   def create_tickets(num, activity)
