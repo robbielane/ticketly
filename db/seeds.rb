@@ -3,6 +3,7 @@ class Seed
     generate_user_roles
     generates_user_admins
     generate_vendors
+    generate_test_users
     generate_users
     generate_orders
     generate_categories
@@ -30,6 +31,11 @@ class Seed
   def generate_vendors
     user = User.find(2)
     user.vendors.create!(name:"aaron-s-swag-store")
+  end
+
+  def generate_test_users
+    user = User.create!(username: "aaron",name: "aaron", password: "password")
+    user.roles << Role.create!(name: "registered_user")
   end
 
   def generate_users

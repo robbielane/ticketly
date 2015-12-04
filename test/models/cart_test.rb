@@ -7,25 +7,23 @@ class CartTest < ActiveSupport::TestCase
     @cart = Cart.new({})
   end
 
-  def add_trips_to_cart(num)
+  def add_tickets_to_cart(num)
     num.times do |i|
-      @cart.add_trip(i)
+      @cart.add_ticket(i)
     end
   end
 
   test "cart can store trips" do
-    initial_count = @cart.total_trips
-
-    @cart.add_trip(3)
-
-    current_count = @cart.total_trips
+    initial_count = @cart.total_tickets
+    @cart.add_ticket(3)
+    current_count = @cart.total_tickets
 
     assert_equal 1, current_count - initial_count
   end
 
   test "cart can return total number of trips" do
-    add_trips_to_cart(5)
-    total = @cart.total_trips
+    add_tickets_to_cart(5)
+    total = @cart.total_tickets
 
     assert_equal 5, total
   end
@@ -35,34 +33,27 @@ class CartTest < ActiveSupport::TestCase
     category.tickets.create(name: "Hiking in FL", price: 10)
     category.tickets.create(name: "Hiking in LA", price: 1)
 
-    @cart.add_trip(Ticket.first.id)
-    @cart.add_trip(Ticket.last.id)
+    @cart.add_ticket(Ticket.first.id)
+    @cart.add_ticket(Ticket.last.id)
 
     assert_equal 71, @cart.total_cost
   end
 
   test "cart can remove trips" do
-    add_trips_to_cart(1)
+    add_tickets_to_cart(1)
     ticket = Ticket.create(name: "Jetskiing",
                              price: 100,
-                             id: @cart.trips.keys.first.to_i)
+                             id: @cart.tickets.keys.first.to_i)
 
-    original_total = @cart.total_trips
+    original_total = @cart.total_tickets
     @cart.remove(ticket)
-    current_total = @cart.total_trips
+    current_total = @cart.total_tickets
 
     assert_equal 1, original_total - current_total
   end
 
-  test "cart can return number of travellers for each trip" do
-    add_trips_to_cart(2)
-    @cart.update("1", 4)
-
-    assert_equal 4, @cart.count_of(1)
-  end
-
   test "cart can update trips" do
-    add_trips_to_cart(2)
+    add_tickets_to_cart(2)
     original_count = @cart.count_of(1)
 
     assert_equal 1, original_count
