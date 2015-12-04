@@ -18,11 +18,11 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#dashboard"
   post "/checkout", to: "orders#create"
 
-  get "/:vendor_admin/dashboard", to: "vendor_admin#dashboard"
 
-  namespace :vendor_admin do
+  scope ":vendor", module:"vendor_admin"  do
     resources :tickets
     resources :orders
+    get "/dashboard", to: "vendor#dashboard"
   end
 
   get "/:category_name", to: "category#show" # keep at bottom of routes

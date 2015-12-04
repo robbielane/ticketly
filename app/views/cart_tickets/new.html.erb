@@ -1,0 +1,19 @@
+<br/>
+<br/>
+<div class="white-text center-align">
+  <h1 class="center-align">Place Your Order</h1>
+  <br/>
+  <div class="row">
+    <div class="col s2 offset-s5 white-text">
+      <%= form_tag(cart_tickets_path, method: :post) do %>
+        <%= hidden_field_tag "pursuit_id", params[:id] %>
+        <div class="waves-effect waves-light btn white-text">
+          <%= submit_tag "Place Order" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>

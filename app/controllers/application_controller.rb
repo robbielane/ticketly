@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authorize!
   before_action :set_cart
   helper_method :format_url_name, :count_of_trips,
-                :pursuits_in_cart, :current_user, :current_admin
+                :pursuits_in_cart, :current_user, :current_vendor?
 
 
   def current_permission
@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
 
   def set_cart
     @cart = Cart.new(session[:cart])
+  end
+
+  def current_vendor?
+    current_user && current_user.vendor_admin?
   end
 
   def format_url_name(name)
@@ -29,10 +33,6 @@ class ApplicationController < ActionController::Base
 
   def current_user
     @user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
-  def current_admin
-    current_user && current_user.platform_admin?
   end
 
   def require_admin

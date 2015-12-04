@@ -1,5 +1,8 @@
 class Seed
   def initialize
+    generate_user_roles
+    generates_user_admins
+    generate_vendors
     generate_test_users
     generate_users
     generate_orders
@@ -8,8 +11,31 @@ class Seed
     generate_tickets
   end
 
+  def generate_user_roles
+    Role.create!(name:"registered_user")
+    Role.create!(name:"vendor_admin")
+    Role.create!(name:"platform_admin")
+  end
+
+  def generates_user_admins
+    user1 = User.create!(name:"Adam",username:"yung-adam",password:"pass")
+    user1.roles << Role.find(1)
+
+    user2 = User.create!(name:"Aaron", username:"yung-aaron", password:"pass")
+    user2.roles << Role.find(2)
+
+    user3 = User.create!(name:"Jhun", username:"yung-jhun", password:"pass")
+    user3.roles << Role.find(3)
+  end
+
+  def generate_vendors
+    user = User.find(2)
+    user.vendors.create!(name:"aaron-s-swag-store")
+  end
+
   def generate_test_users
-    User.create!(username: "aaron",name: "aaron", password: "password")
+    user = User.create!(username: "aaron",name: "aaron", password: "password")
+    user.roles << Role.create!(name: "registered_user")
   end
 
   def generate_users

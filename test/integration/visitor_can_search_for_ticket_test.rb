@@ -39,4 +39,22 @@ class VisitorCanSearchForTicketTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Disney")
     refute page.has_content?("Justin")
   end
+
+  test "visitor is routed to login page when trying to checkout" do
+    ticket = tickets(:one)
+
+    visit root_path
+    click_link "Events"
+    click_link "Disney Frozen On Ice"
+    within("##{ticket.id}") do
+      click_on "Purchase"
+    end
+    click_on "Cart"
+    assert cart_path, current_path 
+    click_on "Checkout"
+
+    flash = "You must be logged in to checkout"
+    assert page.has_content?(flash)
+    assert login_path, current_path
+  end
 end

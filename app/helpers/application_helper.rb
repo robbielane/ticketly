@@ -12,8 +12,8 @@ module ApplicationHelper
   end
 
   def join_dashboard_path
-    if current_admin
-      link_to "Logged in as #{current_user.name}", admin_dashboard_path
+    if current_vendor?
+      link_to "Logged in as #{current_user.name}", "/#{current_user.vendors.name.parameterize}/dashboard"
     elsif current_user
       link_to "Logged in as #{current_user.name}", dashboard_path
     else
