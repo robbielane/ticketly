@@ -5,6 +5,7 @@ class VendorAdmin::VendorController < ApplicationController
     @vendor_admin = current_user
     @statuses = ["Completed", "Pending", "Paid", "Cancelled"]
     vendor = Vendor.find_by(user_id: current_user.id)
-    @orders = OrderTicket.find_by(vendor_id: vendor.id)
+    vendor_orders = OrderTicket.where(vendor_id: vendor.id)
+    @orders = vendor_orders.map { |order| Order.where(id: order.order_id)}
   end
 end
