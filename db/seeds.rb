@@ -1,5 +1,8 @@
 class Seed
   def initialize
+    generate_user_roles
+    generates_user_admins
+    generate_vendors
     generate_test_users
     generate_users
     generate_orders
@@ -8,9 +11,41 @@ class Seed
     generate_tickets
   end
 
+  def generate_user_roles
+    Role.create!(name:"registered_user")
+    Role.create!(name:"vendor_admin")
+    Role.create!(name:"platform_admin")
+  end
+
+  def generates_user_admins
+    user1 = User.create!(name:"Adam",username:"yung-adam",password:"pass")
+    user1.roles << Role.find(1)
+
+    user2 = User.create!(name:"Aaron", username:"yung-aaron", password:"pass")
+    user2.roles << Role.find(2)
+
+    user3 = User.create!(name:"Jhun", username:"yung-jhun", password:"pass")
+    user3.roles << Role.find(3)
+  end
+
+  def generate_vendors
+    user = User.find(2)
+    user.vendors.create!(name:"aaron-s-swag-store")
+  end
+
   def generate_test_users
     user = User.create!(username: "aaron",name: "aaron", password: "password")
     user.roles << Role.create!(name: "registered_user")
+
+    status_collection = %w(Completed Paid Cancelled Pending)
+    10.times do |i|
+      user.orders << Order.create!(
+                                    user_id: user,
+                                    status: status_collection.sample,
+                                    total: Faker::Commerce.price,
+                                   )
+      puts "#{user.name} is a #{user.role} and got an order! I <3 SEEDS!"
+    end
   end
 
   def generate_users

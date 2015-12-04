@@ -2,23 +2,7 @@
   <div class="row">
     <%= render "user_summary" %>
   </div>
-
-  <h4>Order History:</h4>
-  <div class="container">
-   <table>
-    <thead>
-      <tr>
-        <th data-field="id">order</th>
-        <th data-field="name">order amount</th>
-        <th data-field="price">Item Price</th>
-      </tr>
-    </thead>
-
-  <div class="waves-effect waves-light btn black-text">
-    <%= link_to "Order History", orders_path %>
-  </div>
-  <div class="waves-effect waves-light btn black-text">
-    <%= link_to "Edit Account", edit_user_path(@user) %>
-  </div>
-  </div>
+</div>
+<div class="container center">
+  <%= render "user_action_panel" %>
 </div>
