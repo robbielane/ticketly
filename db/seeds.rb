@@ -36,6 +36,16 @@ class Seed
   def generate_test_users
     user = User.create!(username: "aaron",name: "aaron", password: "password")
     user.roles << Role.create!(name: "registered_user")
+
+    status_collection = %w(Completed Paid Cancelled Pending)
+    10.times do |i|
+      user.orders << Order.create!(
+                                    user_id: user,
+                                    status: status_collection.sample,
+                                    total: Faker::Commerce.price,
+                                   )
+      puts "#{user.name} is a #{user.role} and got an order! I <3 SEEDS!"
+    end
   end
 
   def generate_users

@@ -1,3 +1,0 @@
-[2015-12-04 15:53:10,170][INFO ][cluster.metadata         ] [Quentin Quire] [events_test_20151204155310115] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-04 15:53:10,252][INFO ][cluster.metadata         ] [Quentin Quire] [events_test_20151204155310115] create_mapping [event]
-[2015-12-04 15:53:10,306][INFO ][cluster.metadata         ] [Quentin Quire] [events_test_20151203170635844] deleting index
