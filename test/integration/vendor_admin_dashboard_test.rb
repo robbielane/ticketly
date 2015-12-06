@@ -28,9 +28,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can create a ticket" do
-    skip
     create_vendor_admin
-
 
     assert vendor_admin_dashboard_path, current_path
 
