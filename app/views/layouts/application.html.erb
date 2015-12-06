@@ -3,18 +3,13 @@
   <head>
     <title>Ticketly</title>
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Righteous|Doppio+One' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'application' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
-    <style>
-      nav ul li a {
-        color: black;
-      }
-    </style>
   </head>
-
+<main>
 <body>
   <div class = "<%= params[:controller] %>">
     <header>
@@ -31,20 +26,13 @@
       </nav>
     </header>
 
-    <div class="row">
-      <div class="col s5 offset-s3 m10 offset-m3">
-        <% flash.each do |type, msg| %>
-        <div class="card-panel btn-large waves-effect waves-light green" >
-          <h5><%= content_tag :div, sanitize(msg), class: "flash_#{type}" %></h5>
-        </div>
-        <% end %>
-      </div>
-    </div>
+      <% flash.each do |type, msg| %>
+          <%= content_tag :div, sanitize(msg), class: " flash flash_#{type}" %>
+      <% end %>
 
-    <main>
       <%= yield %>
     </main>​
-    <footer class="page-footer white">
+    <footer class="page-footer orange lighten-4">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">

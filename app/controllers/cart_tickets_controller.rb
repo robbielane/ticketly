@@ -5,7 +5,7 @@ class CartTicketsController < ApplicationController
     @cart.update(ticket.id, 1)
 
     session[:cart] = @cart.tickets
-    flash[:notice] = "You have added #{ticket.name} to your cart."
+    flash[:notice] = "#{ticket.event.name} ticket added to your cart."
     redirect_to events_path
   end
 

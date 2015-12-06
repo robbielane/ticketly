@@ -6,25 +6,23 @@
         %p= @event.venue
         %p= "#{@event.location_city}, #{@event.location_state}"
     .col.m7
-      %table.striped.bordered
-        %thead
-          %tr
-            %th Section
-            %th Row
-            %th Seat
-            %th Price
-            %th Purchase 
-            %th id 
-        %tbody
-          - @event.tickets.each do |ticket|
-            %tr{id: ticket.id}
-              %td= ticket.section
-              %td= ticket.row
-              %td= ticket.seat
-              %td= "$#{ticket.price}"
-              = form_tag(cart_tickets_path(ticket_id: ticket.id)) do
-                %td= submit_tag "Purchase"
-              %td= ticket.id
-
-
-
+      .tickets-table-wrapper
+        %table.bordered.tickets-table
+          %thead
+            %tr
+              %th Ticket ID
+              %th Section
+              %th Row
+              %th Seat
+              %th Price
+              %th.center Purchase
+          %tbody
+            - @event.tickets.each do |ticket|
+              %tr{id: ticket.id}
+                %td= ticket.id
+                %td= ticket.section
+                %td= ticket.row
+                %td= ticket.seat
+                %td= "$#{ticket.price}"
+                = form_tag(cart_tickets_path(ticket_id: ticket.id)) do
+                  %td.center= button_tag "Purchase", class: "waves-effect btn orange"
