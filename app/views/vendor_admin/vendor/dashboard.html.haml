@@ -1,4 +1,4 @@
-%h1.black-text.center-align #{current_user.vendors.name} Dashboard
+%h1.black-text.center-align #{@vendor.name} Dashboard
 
 .center-align
   .waves-effect.waves-light.btn
@@ -8,9 +8,9 @@
   %br
   %br
   .waves-effect.waves-light.btn
-    = link_to "View All Tickets", "#{current_user.vendors.name}/tickets"
+    = link_to "View All Tickets", "#{@vendor.name}/tickets"
   .waves-effect.waves-light.btn
-    = link_to "Add Ticket",  new_ticket_path
+    = link_to "Add Ticket",  new_vendor_ticket_path
 
 %br
 %br
@@ -29,7 +29,7 @@
 
     - @orders.each do |order|
       %tr.order{ data: {status: "#{order.status}"} }
-        = content_tag :td, link_to("#{order.id}", "#{current_user.vendors.name}/orders/#{order.id}")
+        = content_tag :td, link_to("#{order.id}", vendor_order_path(id: order.id, vendor_id: @vendor.id))
         = content_tag :td, format_date(order.created_at)
-        = content_tag :td, link_to("#{order.status}", "#{current_user.vendors.name}/orders/#{order.id}")
+        = content_tag :td, link_to("#{order.status}", vendor_order_path(id: order.id, vendor_id: @vendor.id))
         = content_tag :td, format_currency(order.total || 0)

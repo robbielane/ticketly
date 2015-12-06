@@ -16,6 +16,6 @@ class VendorAdmin::OrdersController < VendorAdmin::BaseController
     else
       flash[:notice] = "Invalid Order Status"
     end
-    redirect_to vendor_admin_order_path(@order)
+    redirect_to vendor_order_path(id: @order.id)
   end
 end

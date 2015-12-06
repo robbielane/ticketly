@@ -3,7 +3,7 @@
 
 .row
   .col.s3.offset-s4
-    = form_tag(admin_order_path, method: :put) do
+    = form_tag(vendor_order_path(id: @order.id), method: :put) do
       .white-text.input-field
         = label_tag :order_status
         = text_field_tag :order_status
@@ -24,7 +24,7 @@
       = content_tag :td, format_date(@order.created_at)
       = content_tag :td, format_time(@order.created_at)
       = content_tag :td, @order.status
-      = content_tag :td, User.find(@order.user_id).name
+      = content_tag :td, @order.user.name
       = content_tag :td, format_currency(@order.total || 0)
 
 %br
@@ -34,14 +34,18 @@
   %table.cart-table.highlight
     %tr
       %th Ticket Name
-      %th Travellers
+      %th Section
+      %th Row
+      %th Seat
       %th Subtotal
 
-    - @order.ordered_trips.each do |trip|
+    - @order.tickets.each do |ticket|
       %tr
-        = content_tag :td, link_to( Ticket.find(trip.pursuit_id).name, admin_ticket_path(trip.pursuit_id))
-        = content_tag :td, trip.travellers
-        = content_tag :td, trip.price
+        = content_tag :td, ticket.event.name
+        = content_tag :td, ticket.section
+        = content_tag :td, ticket.row
+        = content_tag :td, ticket.seat
+        = content_tag :td, ticket.price
 
 %br
 %br

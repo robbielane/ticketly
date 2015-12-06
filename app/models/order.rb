@@ -2,6 +2,8 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_many :order_tickets
   has_many :tickets, through: :order_tickets
+  belongs_to :vendor
+  # scope vendor_orders, -> (vendor){joins()}
 
   def self.make_new(cart, current_user)
     order = current_user.orders.create(total: cart.total_cost)

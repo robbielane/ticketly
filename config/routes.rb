@@ -18,8 +18,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "users#dashboard"
   post "/checkout", to: "orders#create"
 
-
-  scope ":vendor", module:"vendor_admin"  do
+  scope ":vendor", module:"vendor_admin", as: :vendor  do
     resources :tickets
     resources :orders
     get "/dashboard", to: "vendor#dashboard"
