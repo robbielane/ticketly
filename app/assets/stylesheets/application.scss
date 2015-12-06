@@ -10,13 +10,16 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require jquery-ui
  *= require_tree .
  *= require_self
  */
 
-@import "materialize";
+@import 'materialize';
+@import url(https://fonts.googleapis.com/css?family=Righteous|Doppio+One);
 
 body {
+  font-family: 'Doppio One' sans-serif;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -30,8 +33,18 @@ nav {
   color: black;
 }
 
-h3 {
-  font-size: 200%;
+nav ul li a {
+  color: black;
+}
+
+h5 {
+  margin: 30px 0;
+}
+
+form input[type=text],
+form input[type=password], {
+  border: 1px solid #ccc;
+  padding-left: 10px;
 }
 
 .btn a {
@@ -51,6 +64,10 @@ h3 {
 }
 .icon-block .material-icons {
 	font-size: inherit;
+}
+
+b .price {
+  margin-right: 25px;
 }
 
 // .header-bg{
@@ -75,4 +92,28 @@ h3 {
 
 .page-footer {
   font-size: 80%;
+}
+
+.flash {
+  position: absolute;
+  left:0;
+  right:0;
+  margin-left:auto;
+  margin-right:auto;
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.flash_auth {
+  background-color: rgba(220,20,60,0.6)
+}
+
+.flash_notice {
+  background-color: rgba(34,139,34,0.6)
+}
+
+.table-footer {
+  padding: 35px;
 }
