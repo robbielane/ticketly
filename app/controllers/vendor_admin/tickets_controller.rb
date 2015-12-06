@@ -12,8 +12,7 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
   end
 
   def create
-    category= Category.find_or_create_by(name: params[:ticket][:category])
-    @ticket = category.tickets.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
     if @ticket.save
       flash[:notice] = "The ticket '#{@ticket.name}' has been created"
       redirect_to vendor_tickets_path

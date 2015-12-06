@@ -38,7 +38,6 @@
       %th Row
       %th Seat
       %th Subtotal
-    - binding.pry
     - @order.tickets.each do |ticket|
       %tr
         = content_tag :td, ticket.event.name

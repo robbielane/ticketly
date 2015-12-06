@@ -88,7 +88,7 @@ class Seed
     ticket_count = Ticket.count
     50.times do |i|
       OrderTicket.create!(
-      order_id: rand(1..order_count)
+      order_id: rand(1..order_count),
       ticket_id: rand(1..ticket_count)
       )
     end
