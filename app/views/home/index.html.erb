@@ -1,0 +1,37 @@
+<div class="home-page">
+  <section></section>
+  <div class="row center-align bgimage">
+    <div class="col s12">
+      <h1 class="black-text b stroke">Ticketly</h1>
+      <h4 class="black-text stroke">Buy. Sell. Tickets.</h4>
+      <br/>
+      <br/>
+      <% if !current_user %>
+        <div class="col s6 m3 offset-m3 l2 offset-l4">
+          <%= link_to "Sell Tickets", new_user_path, class: "waves-effect waves-light btn white-text orange" %>
+        </div>
+        <div class="col s6 m3 l2">
+          <%= link_to "Buy Tickets", events_path, class: "waves-effect waves-light btn white-text orange" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="row grey lighten-3 tickets">
+    <div class="container tickets">
+      <h2 class="center">Just Added</h2>
+      <% @events.each do |event| %>
+        <div class="col s12 m6 ticket">
+          <h5 class="center">
+            <%= link_to event.name, event_path(event) %>
+          </h5>
+          <p class="center">
+            <%= event.venue %>
+          </p>
+          <p class="center">
+            <%= "#{event.location_city}, #{event.location_state}" %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

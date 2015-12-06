@@ -1,0 +1,14 @@
+<h1 class="white-text center-align">Update ticket</h1>
+<div class="white-text">
+  <%= form_for(@ticket, url: admin_ticket_path) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+    <%= f.label :status %>
+    <%= f.text_field :status %>
+    <div class="waves-effect waves-light btn">
+      <%= f.submit "Update Ticket" %>
+    </div>
+  <% end %>
+</div>

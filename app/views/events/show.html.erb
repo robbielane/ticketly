@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="row">
+    <div class="col m5">
+      <div class="center">
+        <h2>
+          <%= @event.name %>
+        </h2>
+        <p>
+          <%= @event.venue %>
+        </p>
+        <p>
+          <%= "#{@event.location_city}, #{@event.location_state}" %>
+        </p>
+      </div>
+    </div>
+    <div class="col m7">
+      <div class="tickets-table-wrapper">
+        <table class="bordered tickets-table">
+          <thead>
+            <tr>
+              <th>Ticket ID</th>
+              <th>Section</th>
+              <th>Row</th>
+              <th>Seat</th>
+              <th>Price</th>
+              <th class="center">Purchase</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @event.tickets.each do |ticket| %>
+              <tr id="<%= ticket.id %>">
+                <td>
+                  <%= ticket.id %>
+                </td>
+                <td>
+                  <%= ticket.section %>
+                </td>
+                <td>
+                  <%= ticket.row %>
+                </td>
+                <td>
+                  <%= ticket.seat %>
+                </td>
+                <td>
+                  <%= "$#{ticket.price}" %>
+                </td>
+                <%= form_tag(cart_tickets_path(ticket_id: ticket.id)) do %>
+                  <td class="center">
+                    <%= button_tag "Purchase", class: "waves-effect btn orange" %>
+                  </td>
+                <% end %>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<h1 class="black-text center-align">#{current_user.vendors.name} Dashboard</h1>
+<div class="center-align">
+  <div class="waves-effect waves-light btn">
+    <%= link_to "Edit Account", edit_user_path(@user) %>
+  </div>
+  <div class="waves-effect waves-light btn">
+    <%= link_to "Delete Account", user_path(@user), method: :delete %>
+  </div>
+  <br/>
+  <br/>
+  <div class="waves-effect waves-light btn">
+    <%= link_to "View All Tickets", "#{current_user.vendors.name}/tickets" %>
+  </div>
+  <div class="waves-effect waves-light btn">
+    <%= link_to "Add Ticket",  new_ticket_path %>
+  </div>
+</div>
+<br/>
+<br/>
+<h2 class="white-text center-align">Orders</h2>
+<%= render partial: "/vendor_admin/orders/filter" %>
+<br/>
+<div class="white">
+  <table class="cart-table highlight">
+    <tr>
+      <th>Order ID</th>
+      <th>Date Ordered</th>
+      <th>Status</th>
+      <th>Total</th>
+    </tr>
+    <% Order.all.each do |order| %>
+      <tr class="order">{data: {status: "#{order.status}"}}
+        <%= content_tag :td, link_to("#{order.id}", "#{current_user.vendors.name}/orders/#{order.id}") %>
+        <%= content_tag :td, format_date(order.created_at) %>
+        <%= content_tag :td, link_to("#{order.status}", "#{current_user.vendors.name}/orders/#{order.id}") %>
+        <%= content_tag :td, format_currency(order.total || 0) %>
+      </tr>
+    <% end %>
+  </table>
+</div>

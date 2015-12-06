@@ -1,0 +1,28 @@
+<div class="white-text">
+  <div class="center-align">
+    <h1>
+      <%= @ticket.name %>
+    </h1>
+    <div class="waves-effect waves-light btn white-text">
+      <%= purchase_link_or_retired_notice %>
+    </div>
+  </div>
+  <p class="center-align">
+    <%= "Ticket price: #{format_currency(@ticket.price)}" %>
+  </p>
+  <br/>
+  <div class="row">
+    <div class="col s4"></div>
+    <div class="col s8">
+      <p class="ticket-section">
+        <%= @ticket.section %>
+      </p>
+      <p class="ticket-row">
+        <%= @ticket.row %>
+      </p>
+      <p class="ticket-seat">
+        <%= @ticket.seat %>
+      </p>
+    </div>
+  </div>
+</div>
