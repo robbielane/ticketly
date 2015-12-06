@@ -3,4 +3,6 @@ class Event < ActiveRecord::Base
   belongs_to :category
   validates :name, :venue, :location_city, :location_state, presence: true
   searchkick
+
+  scope :just_added, -> { order("created_at DESC").limit(10) }
 end

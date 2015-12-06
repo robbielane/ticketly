@@ -3,8 +3,8 @@
 
   .row.center-align.bgimage
     .col.s12
-      %h1.white-text.bold Ticketly
-      %h4.white-text.thin Pursue Your Passion
+      %h1.black-text.b.stroke Ticketly
+      %h4.black-text.stroke Buy. Sell. Tickets.
       %br
       %br
 
@@ -15,13 +15,10 @@
           = link_to "Buy Tickets", events_path, class: "waves-effect waves-light btn white-text orange"
 
   .row.grey.lighten-3.tickets
-    .container
-      - @categories.each do |category|
-        .col.s4{ :id => "#{category.name.parameterize}" }
-          .card.medium
-            .card-image
-              = image_tag("concert")
-            .card-content
-              %span.card-title.black-text #{category.name}
-            .card-action
-              = link_to "View Events", events_path
+    .container.tickets
+      %h2.center Just Added
+      - @events.each do |event|
+        .col.s12.m6.ticket
+          %h5.center= link_to event.name, event_path(event)
+          %p.center= event.venue
+          %p.center= "#{event.location_city}, #{event.location_state}"
