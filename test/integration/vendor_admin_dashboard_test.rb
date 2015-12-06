@@ -5,7 +5,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   test "vendor admin can access dashboard and edit their account" do
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
-    vendor = user.vendors.create(name:"Aaron's store")
+    vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
     vendor.tickets.create(name: "Frozen on Ice", price: 100, section: "A", row: "B", seat: "1")
 
     visit root_path
@@ -28,11 +28,16 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can create a ticket" do
-    create_vendor_admin
+    skip
 
-    assert vendor_admin_dashboard_path, current_path
+    user = User.create(name: "Aaron", username: "aaron", password: "password")
+    user.roles << Role.create(name: "vendor_admin")
+    vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
+    vendor.tickets.create(name: "Frozen on Ice", price: 100, section: "A", row: "B", seat: "1")
 
-    click_link "New Ticket"
+    assert vendor_dashboard_path(user), current_path
+
+    click_link "Addt"
 
     assert new_vendor_admin_ticket_path, current_path
 

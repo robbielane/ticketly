@@ -83,9 +83,10 @@ class ActionDispatch::IntegrationTest
   end
 
   def create_vendor_admin
-
-    user = User.find()
-    user
+    user = User.create(name: "Aaron", username: "aaron", password: "password")
+    user.roles << Role.create(name: "vendor_admin")
+    vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
+    vendor.tickets.create(name: "Frozen on Ice", price: 100, section: "A", row: "B", seat: "1")
   end
 
   def log_in_vendor
