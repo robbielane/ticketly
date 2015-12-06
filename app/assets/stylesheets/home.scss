@@ -9,6 +9,38 @@
   height: 500px;
 }
 
+.stroke {
+  -webkit-text-stroke: 1px #000;
+  -webkit-text-fill-color: #f06d06;
+}
+
 .tickets {
-  padding: 40px 0;
+  padding:20px;
+  margin-bottom: 0;
+}
+
+.ticket {
+  padding: 35px;
+  margin-bottom: 35px;
+  background-image: image-url('ticketlyborder.svg');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.ticket h5 {
+  margin-bottom: 15px;
+}
+
+.ticket a {
+  margin: 2px;
+  color: #f06d06;
+}
+
+.ticket p {
+  font-size: 1.3rem;
+  margin: 2px;
+}
+
+.ticket p:last-child {
+  padding-bottom: 25px;
 }

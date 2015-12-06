@@ -14,7 +14,7 @@
       </nav>
     </div>
   </div>
-  <div class="events-table-wrapper z-depth-1">
+  <div class="events-table-wrapper z-depth-1 orange lighten-5">
     <% if params[:query].present? %>
       <%= link_to "clear search", events_path, class:'red-text right' %>
     <% end %>
@@ -42,7 +42,7 @@
       <% @events.each do |event| %>
         <tr>
           <td>
-            <%= link_to event.name, event_path(event) %>
+            <b><%= link_to event.name, event_path(event) %></b>
           </td>
           <td>
             <%= event.category.name %>
