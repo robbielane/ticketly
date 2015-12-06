@@ -1,6 +1,6 @@
-%h1.white-text.center-align tickets
+%h1.black-text.center-align tickets
 
-- @categories.each do |category|
-  %h2.center-align= link_to("#{category.name}", "/#{format_url_name(category.name)}")
+- @events.each do |event|
+  %h2.center-align= link_to("#{event.name}", "/#{event.name.parameterize}")
   .row
-    = render category.tickets
+    = render event.tickets, locals: {tickets: event.tickets}

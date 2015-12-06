@@ -28,23 +28,34 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can create a ticket" do
-    skip
-
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
+    user.update!(vendor_id: vendor.id, password:"pass")
     vendor.tickets.create(name: "Frozen on Ice", price: 100, section: "A", row: "B", seat: "1")
 
-    assert vendor_dashboard_path(user), current_path
 
-    click_link "Addt"
+    visit login_path
 
-    assert new_vendor_admin_ticket_path, current_path
+    fill_in "Username", with: "aaron"
+    fill_in "Password", with: "pass"
 
-    create_ticket
+    click_button "Login"
 
-    assert vendor_admin_dashboard_path
-    assert page.has_content?("Frozen on Ice")
+    assert_equal vendor_dashboard_path(user), current_path
+
+    click_link "Add Ticket"
+
+    fill_in "Name", with: "Dix Tix"
+    fill_in "Section", with: "A"
+    fill_in "Row", with: "B"
+    fill_in "Seat", with: "A"
+    fill_in "Price", with: 100
+    fill_in "Status", with: 1
+
+    click_button "Create Ticket"
+
+    assert page.has_content?("Dix Tix")
   end
 
   test "vendor can edit their tickets" do

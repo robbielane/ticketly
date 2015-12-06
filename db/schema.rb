@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151206190526) do
+ActiveRecord::Schema.define(version: 20151206220132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,18 +37,14 @@ ActiveRecord::Schema.define(version: 20151206190526) do
   add_index "events", ["category_id"], name: "index_events_on_category_id", using: :btree
 
   create_table "order_tickets", force: :cascade do |t|
-    t.integer  "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "order_id"
     t.integer  "ticket_id"
-    t.integer  "quantity"
-    t.integer  "vendor_id"
   end
 
   add_index "order_tickets", ["order_id"], name: "index_order_tickets_on_order_id", using: :btree
   add_index "order_tickets", ["ticket_id"], name: "index_order_tickets_on_ticket_id", using: :btree
-  add_index "order_tickets", ["vendor_id"], name: "index_order_tickets_on_vendor_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
@@ -121,7 +117,6 @@ ActiveRecord::Schema.define(version: 20151206190526) do
   add_foreign_key "events", "categories"
   add_foreign_key "order_tickets", "orders"
   add_foreign_key "order_tickets", "tickets"
-  add_foreign_key "order_tickets", "vendors"
   add_foreign_key "orders", "users"
   add_foreign_key "orders", "vendors"
   add_foreign_key "tickets", "categories"

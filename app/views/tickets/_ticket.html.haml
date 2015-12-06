@@ -1,8 +1,9 @@
-.ticket{ :id => "#{format_url_name(ticket.name)}" }
+- tickets.each do |ticket|
+.ticket{ :id => "#{ticket.event.name.parameterize)}" }
   .col.s12.m4
     .card
       .card-content
-        %p= "#{ticket.name}"
+        %p= "#{ticket.event.name}"
         %br
         = "#{format_currency(ticket.price)}"
       .card-action{id: ticket.id}

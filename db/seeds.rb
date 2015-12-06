@@ -5,10 +5,10 @@ class Seed
     generate_vendors
     generate_test_users
     generate_users
+    generate_tickets
     generate_orders
     generate_categories
     generate_events
-    generate_tickets
   end
 
   def generate_user_roles
@@ -76,10 +76,21 @@ class Seed
         order = user.orders << Order.create!(
                                       status: status_collection.sample,
                                       total: Faker::Commerce.price,
-                                      vendor_id: rand(1..2)
+                                      vendor_id: rand(1..2),
                                     )
         puts "Order #{i}: Order for #{user.name} created!"
       end
+    end
+  end
+
+  def generate_order_tickets
+    order_count = Order.count
+    ticket_count = Ticket.count
+    50.times do |i|
+      OrderTicket.create!(
+      order_id: rand(1..order_count)
+      ticket_id: rand(1..ticket_count)
+      )
     end
   end
 

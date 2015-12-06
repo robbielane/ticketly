@@ -1,11 +1,11 @@
-.ticket{ :id => "#{format_url_name(ticket.name)}" }
-  .col.s12.m4
+.ticket-show{ :id => "#{ticket.event.name.parameterize}" }
+  .col.s12.m4.black-text
     .card
       .card-image
-        = image_tag(ticket.image.url)
-        %span.card-title= "#{ ticket.name}"
+        %span.card-title= "#{ticket.event.name}"
       .card-content
-        %p= "#{ticket.description}"
+        %p= "#{ticket.event.name}"
+        %p= "#{ticket.vendor_id}"
         %br
         = "#{format_currency(ticket.price)}"
       .card-action
@@ -15,4 +15,4 @@
         = "Status: #{ticket.status.upcase}"
         %br
         %br
-        = button_to "Edit", edit_admin_ticket_path(ticket), method: :get
+        = button_to "Edit", edit_vendor_ticket_path(id:ticket), method: :get
