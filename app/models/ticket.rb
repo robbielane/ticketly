@@ -3,7 +3,7 @@ class Ticket < ActiveRecord::Base
   belongs_to :vendor
 
   has_many :order_tickets
-  has_many :orders, through: :order_ticket
+  has_many :orders, through: :order_tickets
 
   validates :price, presence: true
   validates_numericality_of :price, greater_than: 0

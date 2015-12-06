@@ -5,10 +5,11 @@ class Seed
     generate_vendors
     generate_test_users
     generate_users
-    generate_tickets
-    generate_orders
     generate_categories
     generate_events
+    generate_tickets
+    generate_orders
+    generate_order_tickets
   end
 
   def generate_user_roles
@@ -52,7 +53,7 @@ class Seed
                                     status: status_collection.sample,
                                     total: Faker::Commerce.price,
                                    )
-      puts "#{user.name} is a #{user.role} and got an order! I <3 SEEDS!"
+      puts "#{user.name} is a #{user.role} and got an order! I <3 YUNG SEEDS!"
     end
   end
 
@@ -71,7 +72,8 @@ class Seed
     user_count = User.count
     status_collection = %w(Completed Paid Cancelled Pending)
     100.times do |i|
-      user = User.offset(Random.new.rand(1..user_count)).limit(1).first
+      user = User.find(rand(1..user_count))
+
       5.times do |i|
         order = user.orders << Order.create!(
                                       status: status_collection.sample,
@@ -118,18 +120,19 @@ class Seed
   end
 
   def generate_tickets
-    category_count = Category.count
     event_count = Event.count
     1000.times do |i|
       event_id = rand(1..event_count)
       Ticket.create!(
         price: rand(30..1000),
-        category_id: rand(1..category_count),
         section: rand(1..400),
         row: rand(1..50),
         seat: rand(1..30),
-        event_id: event_id
+        event_id: rand(1..event_count),
+        vendor_id: rand(1..2)
+
       )
+
       puts "Ticket #{i}: Ticket created for event ##{event_id}"
     end
   end
