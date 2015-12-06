@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151203175848) do
+ActiveRecord::Schema.define(version: 20151206190526) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,10 +43,12 @@ ActiveRecord::Schema.define(version: 20151203175848) do
     t.integer  "order_id"
     t.integer  "ticket_id"
     t.integer  "quantity"
+    t.integer  "vendor_id"
   end
 
   add_index "order_tickets", ["order_id"], name: "index_order_tickets_on_order_id", using: :btree
   add_index "order_tickets", ["ticket_id"], name: "index_order_tickets_on_ticket_id", using: :btree
+  add_index "order_tickets", ["vendor_id"], name: "index_order_tickets_on_vendor_id", using: :btree
 
   create_table "orders", force: :cascade do |t|
     t.integer  "user_id"
@@ -54,9 +56,11 @@ ActiveRecord::Schema.define(version: 20151203175848) do
     t.integer  "total"
     t.datetime "created_at",                     null: false
     t.datetime "updated_at",                     null: false
+    t.integer  "vendor_id"
   end
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+  add_index "orders", ["vendor_id"], name: "index_orders_on_vendor_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
@@ -99,7 +103,10 @@ ActiveRecord::Schema.define(version: 20151203175848) do
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
     t.integer  "role",            default: 0
+    t.integer  "vendor_id"
   end
+
+  add_index "users", ["vendor_id"], name: "index_users_on_vendor_id", using: :btree
 
   create_table "vendors", force: :cascade do |t|
     t.integer  "status"
@@ -114,11 +121,14 @@ ActiveRecord::Schema.define(version: 20151203175848) do
   add_foreign_key "events", "categories"
   add_foreign_key "order_tickets", "orders"
   add_foreign_key "order_tickets", "tickets"
+  add_foreign_key "order_tickets", "vendors"
   add_foreign_key "orders", "users"
+  add_foreign_key "orders", "vendors"
   add_foreign_key "tickets", "categories"
   add_foreign_key "tickets", "events"
   add_foreign_key "tickets", "vendors"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
+  add_foreign_key "users", "vendors"
   add_foreign_key "vendors", "users"
 end

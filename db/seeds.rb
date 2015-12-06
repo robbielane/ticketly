@@ -26,11 +26,19 @@ class Seed
 
     user3 = User.create!(name:"Jhun", username:"yung-jhun", password:"pass")
     user3.roles << Role.find(3)
+
+    user4 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass")
+    user4.roles << Role.find(2)
   end
 
   def generate_vendors
     user = User.find(2)
-    user.vendors.create!(name:"aaron-s-swag-store")
+    Vendor.create!(name:"aaron-s-swag-store", user_id: user.id)
+    user.update!(vendor_id: 1, password: "pass")
+
+    user2 = User.find(4)
+    Vendor.create!(name: "dix-tix", user_id: user2.id)
+    user2.update!(vendor_id: 2, password: "pass")
   end
 
   def generate_test_users
@@ -63,12 +71,12 @@ class Seed
     user_count = User.count
     status_collection = %w(Completed Paid Cancelled Pending)
     100.times do |i|
-      user = User.offset(Random.new.rand(1..user_count)).limit(1)
+      user = User.offset(Random.new.rand(1..user_count)).limit(1).first
       5.times do |i|
         order = user.orders << Order.create!(
-                                      user_id: user,
                                       status: status_collection.sample,
                                       total: Faker::Commerce.price,
+                                      vendor_id: rand(1..2)
                                     )
         puts "Order #{i}: Order for #{user.name} created!"
       end

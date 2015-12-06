@@ -1,0 +1,546 @@
+[2015-12-06 11:38:23,656][INFO ][node                     ] [Skunge the Laxidazian Troll] version[2.1.0], pid[4519], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-06 11:38:23,658][INFO ][node                     ] [Skunge the Laxidazian Troll] initializing ...
+[2015-12-06 11:38:23,723][INFO ][plugins                  ] [Skunge the Laxidazian Troll] loaded [], sites []
+[2015-12-06 11:38:23,773][INFO ][env                      ] [Skunge the Laxidazian Troll] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [7.2gb], net total_space [232.6gb], spins? [unknown], types [hfs]
+[2015-12-06 11:38:27,155][INFO ][node                     ] [Skunge the Laxidazian Troll] initialized
+[2015-12-06 11:38:27,156][INFO ][node                     ] [Skunge the Laxidazian Troll] starting ...
+[2015-12-06 11:38:27,287][INFO ][transport                ] [Skunge the Laxidazian Troll] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-06 11:38:27,299][INFO ][discovery                ] [Skunge the Laxidazian Troll] elasticsearch/jMpmLwCdSxeseD-0hjsJZA
+[2015-12-06 11:38:30,342][INFO ][cluster.service          ] [Skunge the Laxidazian Troll] new_master {Skunge the Laxidazian Troll}{jMpmLwCdSxeseD-0hjsJZA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-06 11:38:30,354][INFO ][http                     ] [Skunge the Laxidazian Troll] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-06 11:38:30,354][INFO ][node                     ] [Skunge the Laxidazian Troll] started
+[2015-12-06 11:38:30,420][INFO ][gateway                  ] [Skunge the Laxidazian Troll] recovered [2] indices into cluster_state
+[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][3] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-1418601042999300630.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-1418601042999300630.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][2] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-173429284351624369.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-173429284351624369.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][1] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-7047000844816708581.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-7047000844816708581.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_test_20151203175002585][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-1938673945577192101.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-1938673945577192101.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:38:31,368][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][4] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-7924625288242945973.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-7924625288242945973.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:38:31,383][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-6077165767912530715.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-6077165767912530715.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:39:00,369][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:39:00,369][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:39:30,399][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:40:00,421][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:40:00,421][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:40:30,440][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:41:00,455][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:41:00,455][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:41:30,480][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:42:00,498][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:42:00,498][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:42:30,516][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:43:00,538][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:43:00,538][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:43:30,554][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:44:00,569][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:44:00,569][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:44:30,581][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:45:00,595][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:45:00,595][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:45:30,612][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:46:00,629][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:46:00,629][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:46:30,645][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:47:00,659][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:47:00,659][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:47:30,672][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:48:00,689][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:48:00,689][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:48:30,705][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
+[2015-12-06 11:48:32,918][INFO ][node                     ] [Skunge the Laxidazian Troll] stopping ...
+[2015-12-06 11:48:32,952][INFO ][node                     ] [Skunge the Laxidazian Troll] stopped
+[2015-12-06 11:48:32,952][INFO ][node                     ] [Skunge the Laxidazian Troll] closing ...
+[2015-12-06 11:48:32,958][INFO ][node                     ] [Skunge the Laxidazian Troll] closed
+[2015-12-06 11:49:32,724][INFO ][node                     ] [Hammerhead] version[2.1.0], pid[5666], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-06 11:49:32,724][INFO ][node                     ] [Hammerhead] initializing ...
+[2015-12-06 11:49:32,794][INFO ][plugins                  ] [Hammerhead] loaded [], sites []
+[2015-12-06 11:49:32,816][INFO ][env                      ] [Hammerhead] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [7.2gb], net total_space [232.6gb], spins? [unknown], types [hfs]
+[2015-12-06 11:49:34,581][INFO ][node                     ] [Hammerhead] initialized
+[2015-12-06 11:49:34,582][INFO ][node                     ] [Hammerhead] starting ...
+[2015-12-06 11:49:34,668][INFO ][transport                ] [Hammerhead] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-06 11:49:34,680][INFO ][discovery                ] [Hammerhead] elasticsearch/e8v6unr_QuSSOcJ8yBQkUg
+[2015-12-06 11:49:37,713][INFO ][cluster.service          ] [Hammerhead] new_master {Hammerhead}{e8v6unr_QuSSOcJ8yBQkUg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-06 11:49:37,724][INFO ][http                     ] [Hammerhead] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-06 11:49:37,724][INFO ][node                     ] [Hammerhead] started
+[2015-12-06 11:49:37,793][INFO ][gateway                  ] [Hammerhead] recovered [2] indices into cluster_state
+[2015-12-06 11:49:38,257][WARN ][index.translog           ] [Hammerhead] [events_development][4] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-3396763033108572688.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-3396763033108572688.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:49:38,260][WARN ][index.translog           ] [Hammerhead] [events_development][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-2464588318450797281.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-2464588318450797281.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:49:38,259][WARN ][index.translog           ] [Hammerhead] [events_test_20151203175002585][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-6921585710234739617.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-6921585710234739617.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:49:38,257][WARN ][index.translog           ] [Hammerhead] [events_development][1] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-3800208561008051014.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-3800208561008051014.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:49:38,347][WARN ][index.translog           ] [Hammerhead] [events_development][2] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-1722119995048803730.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-1722119995048803730.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:49:38,378][WARN ][index.translog           ] [Hammerhead] [events_development][3] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-8053751480238854332.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-8053751480238854332.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 11:50:07,732][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:50:07,732][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:50:37,755][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
+[2015-12-06 11:51:07,776][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:51:07,776][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:51:37,794][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:52:07,814][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:52:07,814][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:52:37,831][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:53:07,852][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:53:07,852][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:53:37,871][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:54:07,889][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:54:07,889][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:54:37,908][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:55:07,933][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:55:07,933][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:55:37,954][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:56:07,974][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:56:07,974][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:56:37,991][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:57:08,008][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:57:08,008][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:57:38,025][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:58:08,042][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:58:08,042][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:58:38,054][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:59:08,070][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 11:59:08,070][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 11:59:38,087][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:00:08,102][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:00:08,102][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:00:38,116][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:01:08,129][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:01:08,129][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:01:38,147][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:02:08,163][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:02:08,163][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:02:38,178][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:03:08,197][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:03:08,197][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:03:38,212][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:04:08,226][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:04:08,226][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:04:38,239][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:05:08,256][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:05:08,256][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:05:38,273][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:06:08,290][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:06:08,291][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:06:38,302][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:07:08,318][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:07:08,318][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:07:38,334][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:08:08,347][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:08:08,347][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:08:38,364][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:09:08,383][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:09:08,383][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:09:38,398][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:10:08,411][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:10:08,412][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:10:38,434][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:11:08,453][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:11:08,453][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:11:38,469][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:12:08,493][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:12:08,493][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:12:38,510][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:13:08,531][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:13:08,531][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:13:38,553][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:14:08,570][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:14:08,570][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:14:38,585][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:15:08,601][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:15:08,601][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:15:38,615][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:16:08,632][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:16:08,632][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:16:38,644][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:17:08,658][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:17:08,658][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:17:38,676][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:18:08,690][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:18:08,690][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:18:38,706][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:19:08,719][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:19:08,719][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:19:38,732][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:20:08,748][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:20:08,748][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:20:38,762][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:21:08,779][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:21:08,779][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:21:38,803][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:22:08,815][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:22:08,815][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:22:38,826][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:23:08,841][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:23:08,841][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:23:38,860][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:24:08,885][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:24:08,885][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:24:38,899][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:25:08,915][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:25:08,915][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:25:38,927][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:26:08,945][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:26:08,945][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:26:38,962][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:27:08,978][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:27:08,978][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:27:38,991][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:28:09,002][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:28:09,002][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:28:39,019][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:29:09,032][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:29:09,032][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:29:39,050][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:30:09,064][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:30:09,065][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:30:39,078][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:31:09,090][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:31:09,090][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:31:39,101][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:32:09,118][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:32:09,118][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:32:39,135][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:33:09,146][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:33:09,146][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:33:39,158][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:34:09,169][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:34:09,169][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:34:39,184][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:35:09,200][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:35:09,200][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:35:39,212][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:36:09,228][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:36:09,228][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:36:39,242][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:37:09,254][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:37:09,254][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:37:39,269][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:38:09,281][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:38:09,281][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:38:39,294][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:39:09,310][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:39:09,310][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:39:39,327][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:40:09,341][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:40:09,341][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:40:39,357][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:41:09,368][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:41:09,369][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:41:39,385][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:42:09,395][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:42:09,395][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:42:39,408][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:43:09,424][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:43:09,424][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:43:39,441][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:44:09,457][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:44:09,457][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:44:39,471][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:45:09,482][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:45:09,482][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:45:39,494][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:46:09,510][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:46:09,510][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:46:39,531][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:47:09,546][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:47:09,546][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:47:39,568][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:48:09,587][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:48:09,588][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:48:39,600][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:49:09,617][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:49:09,617][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:49:39,635][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:50:09,647][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:50:09,647][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:50:39,667][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:51:09,688][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:51:09,688][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:51:39,715][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:52:09,732][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:52:09,732][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:52:39,751][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:53:09,769][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:53:09,769][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:53:39,784][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:54:09,800][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:54:09,800][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:54:39,816][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:55:09,829][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:55:09,829][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:55:39,842][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:56:09,854][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:56:09,854][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:56:39,865][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:57:09,883][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:57:09,883][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:57:39,897][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:58:09,912][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
+[2015-12-06 12:58:09,912][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:58:39,931][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
+[2015-12-06 12:59:09,944][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
+[2015-12-06 12:59:09,944][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 12:59:39,956][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
+[2015-12-06 13:00:09,971][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
+[2015-12-06 13:00:09,971][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
