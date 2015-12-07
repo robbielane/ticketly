@@ -645,3 +645,27 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 [2015-12-07 13:32:56,840][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133256811] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-07 13:32:56,912][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133256811] create_mapping [event]
 [2015-12-07 13:32:56,959][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133222056] deleting index
+[2015-12-07 13:39:15,029][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133915006] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:39:15,092][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133915006] create_mapping [event]
+[2015-12-07 13:39:15,127][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133256811] deleting index
+[2015-12-07 13:53:28,343][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207135328314] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:53:28,402][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207135328314] create_mapping [event]
+[2015-12-07 13:53:28,441][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207133915006] deleting index
+[2015-12-07 13:58:40,695][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207135840661] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:58:40,769][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207135840661] create_mapping [event]
+[2015-12-07 13:58:40,812][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207135328314] deleting index
+[2015-12-07 14:01:12,666][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140112643] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 14:01:12,724][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140112643] create_mapping [event]
+[2015-12-07 14:01:12,761][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207135840661] deleting index
+[2015-12-07 14:02:02,223][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140202193] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 14:02:02,271][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140202193] create_mapping [event]
+[2015-12-07 14:02:02,310][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140112643] deleting index
+[2015-12-07 14:02:47,073][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140247043] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 14:02:47,133][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140247043] create_mapping [event]
+[2015-12-07 14:02:47,179][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140202193] deleting index
+[2015-12-07 14:06:21,921][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140621884] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 14:06:21,975][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140621884] create_mapping [event]
+[2015-12-07 14:06:22,011][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140247043] deleting index
+[2015-12-07 14:07:01,466][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140701446] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 14:07:01,518][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140701446] create_mapping [event]
+[2015-12-07 14:07:01,554][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207140621884] deleting index

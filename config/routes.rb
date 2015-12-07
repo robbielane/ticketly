@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   get "/platform-admin/dashboard", to: "platform_admin/admin#dashboard"
+  get "/platform-admin/vendor/:id", to: "platform_admin/vendor#show", as: :platform_admin_vendor
 
   get "/cart", to: "cart_tickets#show"
   put "/cart", to: "cart_tickets#update"

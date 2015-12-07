@@ -20,7 +20,7 @@
 
       - @vendors.each do |vendor|
         %tr.vendor{ data: {status: "#{vendor.status}"} }
-          = content_tag :td, link_to("#{vendor.id}", vendor_path(vendor))
+          = content_tag :td, link_to("#{vendor.id}", platform_admin_vendor_path(vendor))
           = content_tag :td, vendor.name
-          = content_tag :td, link_to("#{vendor.status}", vendor_path(vendor))
-          = content_tag :td, link_to("#{vendor.user_id}", user_path(id: vendor.user_id))
+          = content_tag :td, link_to("#{vendor.status}", platform_admin_vendor_path(vendor))
+          = content_tag :td, vendor.user_id
