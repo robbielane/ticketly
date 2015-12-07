@@ -1046,3 +1046,52 @@ Caused by: [events_test_20151206182634295][[events_test_20151206182634295][0]] S
 [2015-12-06 18:30:16,012][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-06 18:30:16,109][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] create_mapping [event]
 [2015-12-06 18:30:16,162][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] deleting index
+[2015-12-06 18:35:01,705][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:35:01,791][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] create_mapping [event]
+[2015-12-06 18:35:01,848][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] deleting index
+[2015-12-06 18:35:34,708][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:35:34,773][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] create_mapping [event]
+[2015-12-06 18:35:34,817][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] deleting index
+[2015-12-06 18:35:34,826][DEBUG][action.admin.indices.stats] [Puishannt] [indices:monitor/stats] failed to execute operation for shard [[events_test_20151206183501650][0], node[wG0IenRMRF2jcxJ4Ul1KGg], [P], v[2], s[STARTED], a[id=-ErYXCkxRkKKm349v4Fz2Q]]
+[events_test_20151206183501650][[events_test_20151206183501650][0]] BroadcastShardOperationFailedException[operation indices:monitor/stats failed]; nested: IndexNotFoundException[no such index];
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:405)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:382)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:371)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
+	at org.elasticsearch.indices.IndicesService.indexServiceSafe(IndicesService.java:310)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:97)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:47)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:401)
+	... 7 more
+[2015-12-06 18:36:14,856][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:36:14,928][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] create_mapping [event]
+[2015-12-06 18:36:14,980][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] deleting index
+[2015-12-06 18:36:40,959][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:36:41,030][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] create_mapping [event]
+[2015-12-06 18:36:41,082][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] deleting index
+[2015-12-06 18:37:14,567][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:37:14,628][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] create_mapping [event]
+[2015-12-06 18:37:14,681][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] deleting index
+[2015-12-06 18:37:25,561][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:37:25,613][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] create_mapping [event]
+[2015-12-06 18:37:25,663][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] deleting index
+[2015-12-06 18:37:39,117][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:37:39,188][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] create_mapping [event]
+[2015-12-06 18:37:39,239][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] deleting index
+[2015-12-06 18:38:22,537][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:38:22,604][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] create_mapping [event]
+[2015-12-06 18:38:22,656][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] deleting index
+[2015-12-06 18:38:43,641][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:38:43,702][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] create_mapping [event]
+[2015-12-06 18:38:43,762][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] deleting index
+[2015-12-06 18:38:56,490][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:38:56,541][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] create_mapping [event]
+[2015-12-06 18:38:56,584][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] deleting index
+[2015-12-06 18:39:56,042][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:39:56,102][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] create_mapping [event]
+[2015-12-06 18:39:56,153][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] deleting index
