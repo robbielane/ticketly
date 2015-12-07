@@ -16,16 +16,6 @@ class CartTicketsController < ApplicationController
     @tickets = @cart.tickets_in_cart
   end
 
-  def update
-    @cart.update(params[:ticket_id], params[:travellers])
-    session[:cart] = @cart.trips
-
-    trip_name = Ticket.find(params[:ticket_id]).name
-
-    flash[:notice] = "You have updated Travellers for the trip #{trip_name} in your cart."
-    redirect_to cart_path
-  end
-
   def delete
     trip = Ticket.find(params[:ticket_id])
     @cart.remove(trip)
