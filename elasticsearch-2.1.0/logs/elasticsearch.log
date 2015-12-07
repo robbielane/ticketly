@@ -1021,3 +1021,6 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:24:45,498][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:24:45,645][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] create_mapping [event]
+[2015-12-06 18:24:45,731][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206175556309] deleting index
