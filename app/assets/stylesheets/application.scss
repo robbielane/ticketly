@@ -31,6 +31,7 @@ main {
 
 nav {
   color: black;
+  border-bottom: 1px solid #ddd;
 }
 
 nav ul li a {
@@ -106,14 +107,22 @@ b .price {
   color: #fff;
 }
 
-.flash_auth {
-  background-color: rgba(220,20,60,0.6)
+.flash_auth, .flash_error {
+  background-color: rgba(220,20,60,0.6);
 }
 
 .flash_notice {
-  background-color: rgba(34,139,34,0.6)
+  background-color: rgba(34,139,34,0.6);
 }
 
 .table-footer {
   padding: 35px;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.clickable a {
+  color: #000;
 }

@@ -1,35 +1,36 @@
-%h1.black-text.center-align #{@vendor.name} Dashboard
+.container
+  %h1.black-text.center-align #{@vendor.name} Dashboard
 
-.center-align
-  .waves-effect.waves-light.btn
-    = link_to "Edit Account", edit_user_path(@user)
-  .waves-effect.waves-light.btn
-    = link_to "Delete Account", user_path(@user), method: :delete
+  .center-align
+    .waves-effect.waves-light.btn
+      = link_to "Edit Account", edit_user_path(@user)
+    .waves-effect.waves-light.btn
+      = link_to "Delete Account", user_path(@user), method: :delete
+    %br
+    %br
+    .waves-effect.waves-light.btn
+      = link_to "View All Tickets", vendor_tickets_path
+    .waves-effect.waves-light.btn
+      = link_to "Add Ticket",  new_vendor_ticket_path
+
   %br
   %br
-  .waves-effect.waves-light.btn
-    = link_to "View All Tickets", vendor_tickets_path
-  .waves-effect.waves-light.btn
-    = link_to "Add Ticket",  new_vendor_ticket_path
 
-%br
-%br
+  %h2.white-text.center-align Orders
 
-%h2.white-text.center-align Orders
+  = render partial: "/vendor_admin/orders/filter"
+  %br
+  .white
+    %table.cart-table.highlight.events-table
+      %tr
+        %th Order ID
+        %th Date Ordered
+        %th Status
+        %th Total
 
-= render partial: "/vendor_admin/orders/filter"
-%br
-.white
-  %table.cart-table.highlight
-    %tr
-      %th Order ID
-      %th Date Ordered
-      %th Status
-      %th Total
-
-    - @orders.each do |order|
-      %tr.order{ data: {status: "#{order.status}"} }
-        = content_tag :td, link_to("#{order.id}", vendor_order_path(id: order.id, vendor_id: @vendor.id))
-        = content_tag :td, format_date(order.created_at)
-        = content_tag :td, link_to("#{order.status}", vendor_order_path(id: order.id, vendor_id: @vendor.id))
-        = content_tag :td, format_currency(order.total || 0)
+      - @orders.each do |order|
+        %tr.order.clickable{ data: {status: "#{order.status}", link: "#{vendor_order_path(id: order.id, vendor_id: @vendor.id)}"} }
+          = content_tag :td, link_to("#{order.id}", vendor_order_path(id: order.id, vendor_id: @vendor.id))
+          = content_tag :td, format_date(order.created_at)
+          = content_tag :td, link_to("#{order.status}", vendor_order_path(id: order.id, vendor_id: @vendor.id))
+          = content_tag :td, format_currency(order.total || 0)

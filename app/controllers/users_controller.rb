@@ -10,8 +10,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/dashboard"
     else
-      flash[:notice] = "Invalid user credentials. Please try again."
-      redirect_to login_path
+      flash[:error] = "Invalid user credentials. Please try again."
+      redirect_to new_user_path
     end
   end
 
