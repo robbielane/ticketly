@@ -544,3 +544,557 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 [2015-12-06 12:59:39,956][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
 [2015-12-06 13:00:09,971][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
 [2015-12-06 13:00:09,971][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-06 17:49:31,862][INFO ][node                     ] [Venomm] version[2.1.0], pid[5917], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-06 17:49:31,866][INFO ][node                     ] [Venomm] initializing ...
+[2015-12-06 17:49:31,953][INFO ][plugins                  ] [Venomm] loaded [], sites []
+[2015-12-06 17:49:32,007][INFO ][env                      ] [Venomm] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [177.3gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2015-12-06 17:49:34,700][INFO ][node                     ] [Venomm] initialized
+[2015-12-06 17:49:34,700][INFO ][node                     ] [Venomm] starting ...
+[2015-12-06 17:49:34,856][INFO ][transport                ] [Venomm] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-06 17:49:34,873][INFO ][discovery                ] [Venomm] elasticsearch/DlxEukgFTK2GianbEE2uNw
+[2015-12-06 17:49:37,909][INFO ][cluster.service          ] [Venomm] new_master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-06 17:49:37,924][INFO ][http                     ] [Venomm] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-06 17:49:37,925][INFO ][node                     ] [Venomm] started
+[2015-12-06 17:49:38,065][INFO ][gateway                  ] [Venomm] recovered [4] indices into cluster_state
+[2015-12-06 17:49:38,872][WARN ][index.translog           ] [Venomm] [events_test_20151202185521957][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151202185521957/0/translog/translog-7515097862119685641.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151202185521957/0/translog/translog-7515097862119685641.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 17:49:38,880][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3433843994773679095.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3433843994773679095.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 17:49:38,880][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-9062137195738908781.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-9062137195738908781.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 17:49:38,884][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-5996878763883567592.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-5996878763883567592.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 17:49:39,109][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][1]] marking and sending shard failed due to [failed recovery]
+[categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,111][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []]; ]
+[categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,115][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-4705123290842931477.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-4705123290842931477.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 17:49:39,122][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-4678288425779114229.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-4678288425779114229.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 17:49:39,122][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:49:39,134][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][3]] marking and sending shard failed due to [failed recovery]
+[categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,136][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][3] received shard failed for [categories_development_20151202123720875][3], node[DlxEukgFTK2GianbEE2uNw], [P], v[15], s[INITIALIZING], a[id=Rv81COhmRQCV214hmE53TA], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []]; ]
+[categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,152][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:49:39,153][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][3] received shard failed for [categories_development_20151202123720875][3], node[DlxEukgFTK2GianbEE2uNw], [P], v[15], s[INITIALIZING], a[id=Rv81COhmRQCV214hmE53TA], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:49:39,153][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][4]] marking and sending shard failed due to [failed recovery]
+[categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,155][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][4] received shard failed for [categories_development_20151202123720875][4], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=U7QYT9SzS3yfBP6SWHoKPg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []]; ]
+[categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,165][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][4] received shard failed for [categories_development_20151202123720875][4], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=U7QYT9SzS3yfBP6SWHoKPg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:49:39,165][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:49:39,166][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][3] received shard failed for [categories_development_20151202123720875][3], node[DlxEukgFTK2GianbEE2uNw], [P], v[15], s[INITIALIZING], a[id=Rv81COhmRQCV214hmE53TA], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:49:39,176][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][0]] marking and sending shard failed due to [failed recovery]
+[categories_development_20151202123720875][[categories_development_20151202123720875][0]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][0]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,178][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][0] received shard failed for [categories_development_20151202123720875][0], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=LGAOhGh9R2C_rKZApCXRmg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []]; ]
+[categories_development_20151202123720875][[categories_development_20151202123720875][0]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][0]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-06 17:49:39,186][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][0] received shard failed for [categories_development_20151202123720875][0], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=LGAOhGh9R2C_rKZApCXRmg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-06 17:55:36,949][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175536856] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 17:55:37,084][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175536856] create_mapping [event]
+[2015-12-06 17:55:37,152][INFO ][cluster.metadata         ] [Venomm] [events_test_20151202185521957] deleting index
+[2015-12-06 17:55:56,376][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175556309] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 17:55:56,476][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175556309] create_mapping [event]
+[2015-12-06 17:55:56,535][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175536856] deleting index
+[2015-12-06 18:16:24,535][INFO ][node                     ] [Venomm] stopping ...
+[2015-12-06 18:16:24,618][INFO ][node                     ] [Venomm] stopped
+[2015-12-06 18:16:24,618][INFO ][node                     ] [Venomm] closing ...
+[2015-12-06 18:16:24,622][INFO ][node                     ] [Venomm] closed
+[2015-12-06 18:16:27,846][INFO ][node                     ] [Puishannt] version[2.1.0], pid[7088], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-06 18:16:27,846][INFO ][node                     ] [Puishannt] initializing ...
+[2015-12-06 18:16:27,950][INFO ][plugins                  ] [Puishannt] loaded [], sites []
+[2015-12-06 18:16:27,989][INFO ][env                      ] [Puishannt] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [177.1gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2015-12-06 18:16:30,756][INFO ][node                     ] [Puishannt] initialized
+[2015-12-06 18:16:30,756][INFO ][node                     ] [Puishannt] starting ...
+[2015-12-06 18:16:30,873][INFO ][transport                ] [Puishannt] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-06 18:16:30,890][INFO ][discovery                ] [Puishannt] elasticsearch/wG0IenRMRF2jcxJ4Ul1KGg
+[2015-12-06 18:16:33,941][INFO ][cluster.service          ] [Puishannt] new_master {Puishannt}{wG0IenRMRF2jcxJ4Ul1KGg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-06 18:16:33,953][INFO ][http                     ] [Puishannt] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-06 18:16:33,953][INFO ][node                     ] [Puishannt] started
+[2015-12-06 18:16:34,118][INFO ][gateway                  ] [Puishannt] recovered [4] indices into cluster_state
+[2015-12-06 18:16:34,841][WARN ][index.translog           ] [Puishannt] [events_test_20151206175556309][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151206175556309/0/translog/translog-8170910719637956553.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151206175556309/0/translog/translog-8170910719637956553.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:16:34,844][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-8245430456190202845.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-8245430456190202845.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:16:34,843][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-184363989140865857.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-184363989140865857.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:16:34,841][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3215502075988267604.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3215502075988267604.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:16:35,045][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-4663986635062075437.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-4663986635062075437.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:16:35,069][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-2240668307681815599.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-2240668307681815599.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:24:45,498][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:24:45,645][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] create_mapping [event]
+[2015-12-06 18:24:45,731][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206175556309] deleting index
+[2015-12-06 18:26:34,355][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:26:34,413][DEBUG][action.admin.indices.stats] [Puishannt] [indices:monitor/stats] failed to execute operation for shard [[events_test_20151206182634295][0], node[wG0IenRMRF2jcxJ4Ul1KGg], [P], v[1], s[INITIALIZING], a[id=99Z620WEQcap9Ch_5Bj8-g], unassigned_info[[reason=INDEX_CREATED], at[2015-12-07T01:26:34.355Z]]]
+[events_test_20151206182634295][[events_test_20151206182634295][0]] BroadcastShardOperationFailedException[operation indices:monitor/stats failed]; nested: ShardNotFoundException[no such shard];
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:405)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:382)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:371)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [events_test_20151206182634295][[events_test_20151206182634295][0]] ShardNotFoundException[no such shard]
+	at org.elasticsearch.index.IndexService.shardSafe(IndexService.java:198)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:98)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:47)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:401)
+	... 7 more
+[2015-12-06 18:26:34,456][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] create_mapping [event]
+[2015-12-06 18:26:34,515][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] deleting index
+[2015-12-06 18:30:16,012][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:30:16,109][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] create_mapping [event]
+[2015-12-06 18:30:16,162][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] deleting index
+[2015-12-06 18:35:01,705][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:35:01,791][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] create_mapping [event]
+[2015-12-06 18:35:01,848][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] deleting index
+[2015-12-06 18:35:34,708][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:35:34,773][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] create_mapping [event]
+[2015-12-06 18:35:34,817][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] deleting index
+[2015-12-06 18:35:34,826][DEBUG][action.admin.indices.stats] [Puishannt] [indices:monitor/stats] failed to execute operation for shard [[events_test_20151206183501650][0], node[wG0IenRMRF2jcxJ4Ul1KGg], [P], v[2], s[STARTED], a[id=-ErYXCkxRkKKm349v4Fz2Q]]
+[events_test_20151206183501650][[events_test_20151206183501650][0]] BroadcastShardOperationFailedException[operation indices:monitor/stats failed]; nested: IndexNotFoundException[no such index];
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:405)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:382)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:371)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
+	at org.elasticsearch.indices.IndicesService.indexServiceSafe(IndicesService.java:310)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:97)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:47)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:401)
+	... 7 more
+[2015-12-06 18:36:14,856][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:36:14,928][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] create_mapping [event]
+[2015-12-06 18:36:14,980][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] deleting index
+[2015-12-06 18:36:40,959][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:36:41,030][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] create_mapping [event]
+[2015-12-06 18:36:41,082][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] deleting index
+[2015-12-06 18:37:14,567][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:37:14,628][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] create_mapping [event]
+[2015-12-06 18:37:14,681][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] deleting index
+[2015-12-06 18:37:25,561][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:37:25,613][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] create_mapping [event]
+[2015-12-06 18:37:25,663][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] deleting index
+[2015-12-06 18:37:39,117][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:37:39,188][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] create_mapping [event]
+[2015-12-06 18:37:39,239][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] deleting index
+[2015-12-06 18:38:22,537][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:38:22,604][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] create_mapping [event]
+[2015-12-06 18:38:22,656][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] deleting index
+[2015-12-06 18:38:43,641][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:38:43,702][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] create_mapping [event]
+[2015-12-06 18:38:43,762][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] deleting index
+[2015-12-06 18:38:56,490][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:38:56,541][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] create_mapping [event]
+[2015-12-06 18:38:56,584][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] deleting index
+[2015-12-06 18:39:56,042][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:39:56,102][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] create_mapping [event]
+[2015-12-06 18:39:56,153][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] deleting index
+[2015-12-06 18:56:15,706][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:56:15,779][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] create_mapping [event]
+[2015-12-06 18:56:15,828][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] deleting index
