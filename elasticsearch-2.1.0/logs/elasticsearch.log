@@ -1,17 +1,138 @@
-[2015-12-06 11:38:23,656][INFO ][node                     ] [Skunge the Laxidazian Troll] version[2.1.0], pid[4519], build[72cd1f1/2015-11-18T22:40:03Z]
-[2015-12-06 11:38:23,658][INFO ][node                     ] [Skunge the Laxidazian Troll] initializing ...
-[2015-12-06 11:38:23,723][INFO ][plugins                  ] [Skunge the Laxidazian Troll] loaded [], sites []
-[2015-12-06 11:38:23,773][INFO ][env                      ] [Skunge the Laxidazian Troll] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [7.2gb], net total_space [232.6gb], spins? [unknown], types [hfs]
-[2015-12-06 11:38:27,155][INFO ][node                     ] [Skunge the Laxidazian Troll] initialized
-[2015-12-06 11:38:27,156][INFO ][node                     ] [Skunge the Laxidazian Troll] starting ...
-[2015-12-06 11:38:27,287][INFO ][transport                ] [Skunge the Laxidazian Troll] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
-[2015-12-06 11:38:27,299][INFO ][discovery                ] [Skunge the Laxidazian Troll] elasticsearch/jMpmLwCdSxeseD-0hjsJZA
-[2015-12-06 11:38:30,342][INFO ][cluster.service          ] [Skunge the Laxidazian Troll] new_master {Skunge the Laxidazian Troll}{jMpmLwCdSxeseD-0hjsJZA}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2015-12-06 11:38:30,354][INFO ][http                     ] [Skunge the Laxidazian Troll] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
-[2015-12-06 11:38:30,354][INFO ][node                     ] [Skunge the Laxidazian Troll] started
-[2015-12-06 11:38:30,420][INFO ][gateway                  ] [Skunge the Laxidazian Troll] recovered [2] indices into cluster_state
-[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][3] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-1418601042999300630.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-1418601042999300630.tlog
+[2015-12-07 08:21:09,895][INFO ][node                     ] [Perfection] version[2.1.0], pid[3080], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-07 08:21:09,898][INFO ][node                     ] [Perfection] initializing ...
+[2015-12-07 08:21:10,000][INFO ][plugins                  ] [Perfection] loaded [], sites []
+[2015-12-07 08:21:10,067][INFO ][env                      ] [Perfection] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [176.5gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2015-12-07 08:21:17,081][INFO ][node                     ] [Perfection] initialized
+[2015-12-07 08:21:17,081][INFO ][node                     ] [Perfection] starting ...
+[2015-12-07 08:21:17,310][INFO ][transport                ] [Perfection] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-07 08:21:17,345][INFO ][discovery                ] [Perfection] elasticsearch/YyzLvuE8Q2aP2GIlmwcolQ
+[2015-12-07 08:21:20,396][INFO ][cluster.service          ] [Perfection] new_master {Perfection}{YyzLvuE8Q2aP2GIlmwcolQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-07 08:21:20,437][INFO ][http                     ] [Perfection] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-07 08:21:20,437][INFO ][node                     ] [Perfection] started
+[2015-12-07 08:21:20,651][DEBUG][action.search.type       ] [Perfection] All shards failed for phase: [query_fetch]
+[events_test_20151206194635095][[events_test_20151206194635095][0]] NoShardAvailableActionException[null]
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:151)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction.doExecute(TransportSearchQueryAndFetchAction.java:58)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction.doExecute(TransportSearchQueryAndFetchAction.java:47)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:103)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:570)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 08:21:20,658][INFO ][rest.suppressed          ] /events_test/_search Params: {index=events_test}
+Failed to execute phase [query_fetch], all shards failed
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.onFirstPhaseResult(TransportSearchTypeAction.java:228)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.start(TransportSearchTypeAction.java:151)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction.doExecute(TransportSearchQueryAndFetchAction.java:58)
+	at org.elasticsearch.action.search.type.TransportSearchQueryAndFetchAction.doExecute(TransportSearchQueryAndFetchAction.java:47)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:103)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:570)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 08:21:20,682][INFO ][gateway                  ] [Perfection] recovered [4] indices into cluster_state
+[2015-12-07 08:21:22,228][WARN ][index.translog           ] [Perfection] [events_test_20151206194635095][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151206194635095/0/translog/translog-8723121752376943477.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151206194635095/0/translog/translog-8723121752376943477.tlog
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -33,8 +154,8 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][2] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-173429284351624369.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-173429284351624369.tlog
+[2015-12-07 08:21:22,232][WARN ][index.translog           ] [Perfection] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-6554765282401526906.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-6554765282401526906.tlog
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -56,8 +177,8 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][1] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-7047000844816708581.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-7047000844816708581.tlog
+[2015-12-07 08:21:22,233][WARN ][index.translog           ] [Perfection] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3271786180253929940.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3271786180253929940.tlog
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -79,8 +200,8 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:38:31,236][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_test_20151203175002585][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-1938673945577192101.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-1938673945577192101.tlog
+[2015-12-07 08:21:22,233][WARN ][index.translog           ] [Perfection] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-6787798577662747580.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-6787798577662747580.tlog
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -102,8 +223,8 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:38:31,368][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][4] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-7924625288242945973.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-7924625288242945973.tlog
+[2015-12-07 08:21:22,407][WARN ][index.translog           ] [Perfection] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-6599005626393455113.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-6599005626393455113.tlog
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -125,530 +246,7 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:38:31,383][WARN ][index.translog           ] [Skunge the Laxidazian Troll] [events_development][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-6077165767912530715.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-6077165767912530715.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:39:00,369][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:39:00,369][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:39:30,399][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:40:00,421][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:40:00,421][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:40:30,440][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:41:00,455][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:41:00,455][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:41:30,480][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:42:00,498][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:42:00,498][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:42:30,516][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:43:00,538][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:43:00,538][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:43:30,554][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:44:00,569][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:44:00,569][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:44:30,581][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:45:00,595][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:45:00,595][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:45:30,612][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:46:00,629][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:46:00,629][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:46:30,645][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:47:00,659][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:47:00,659][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:47:30,672][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:48:00,689][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:48:00,689][INFO ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:48:30,705][WARN ][cluster.routing.allocation.decider] [Skunge the Laxidazian Troll] high disk watermark [90%] exceeded on [jMpmLwCdSxeseD-0hjsJZA][Skunge the Laxidazian Troll][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3.1%], shards will be relocated away from this node
-[2015-12-06 11:48:32,918][INFO ][node                     ] [Skunge the Laxidazian Troll] stopping ...
-[2015-12-06 11:48:32,952][INFO ][node                     ] [Skunge the Laxidazian Troll] stopped
-[2015-12-06 11:48:32,952][INFO ][node                     ] [Skunge the Laxidazian Troll] closing ...
-[2015-12-06 11:48:32,958][INFO ][node                     ] [Skunge the Laxidazian Troll] closed
-[2015-12-06 11:49:32,724][INFO ][node                     ] [Hammerhead] version[2.1.0], pid[5666], build[72cd1f1/2015-11-18T22:40:03Z]
-[2015-12-06 11:49:32,724][INFO ][node                     ] [Hammerhead] initializing ...
-[2015-12-06 11:49:32,794][INFO ][plugins                  ] [Hammerhead] loaded [], sites []
-[2015-12-06 11:49:32,816][INFO ][env                      ] [Hammerhead] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [7.2gb], net total_space [232.6gb], spins? [unknown], types [hfs]
-[2015-12-06 11:49:34,581][INFO ][node                     ] [Hammerhead] initialized
-[2015-12-06 11:49:34,582][INFO ][node                     ] [Hammerhead] starting ...
-[2015-12-06 11:49:34,668][INFO ][transport                ] [Hammerhead] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
-[2015-12-06 11:49:34,680][INFO ][discovery                ] [Hammerhead] elasticsearch/e8v6unr_QuSSOcJ8yBQkUg
-[2015-12-06 11:49:37,713][INFO ][cluster.service          ] [Hammerhead] new_master {Hammerhead}{e8v6unr_QuSSOcJ8yBQkUg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2015-12-06 11:49:37,724][INFO ][http                     ] [Hammerhead] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
-[2015-12-06 11:49:37,724][INFO ][node                     ] [Hammerhead] started
-[2015-12-06 11:49:37,793][INFO ][gateway                  ] [Hammerhead] recovered [2] indices into cluster_state
-[2015-12-06 11:49:38,257][WARN ][index.translog           ] [Hammerhead] [events_development][4] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-3396763033108572688.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/4/translog/translog-3396763033108572688.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:49:38,260][WARN ][index.translog           ] [Hammerhead] [events_development][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-2464588318450797281.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/0/translog/translog-2464588318450797281.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:49:38,259][WARN ][index.translog           ] [Hammerhead] [events_test_20151203175002585][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-6921585710234739617.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151203175002585/0/translog/translog-6921585710234739617.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:49:38,257][WARN ][index.translog           ] [Hammerhead] [events_development][1] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-3800208561008051014.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/1/translog/translog-3800208561008051014.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:49:38,347][WARN ][index.translog           ] [Hammerhead] [events_development][2] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-1722119995048803730.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/2/translog/translog-1722119995048803730.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:49:38,378][WARN ][index.translog           ] [Hammerhead] [events_development][3] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-8053751480238854332.tlog
-java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development/3/translog/translog-8053751480238854332.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 11:50:07,732][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:50:07,732][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:50:37,755][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.2gb[3%], shards will be relocated away from this node
-[2015-12-06 11:51:07,776][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:51:07,776][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:51:37,794][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:52:07,814][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:52:07,814][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:52:37,831][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:53:07,852][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:53:07,852][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:53:37,871][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:54:07,889][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:54:07,889][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:54:37,908][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:55:07,933][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:55:07,933][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:55:37,954][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:56:07,974][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:56:07,974][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:56:37,991][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:57:08,008][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:57:08,008][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:57:38,025][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:58:08,042][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:58:08,042][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:58:38,054][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:59:08,070][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 11:59:08,070][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 11:59:38,087][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:00:08,102][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:00:08,102][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:00:38,116][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:01:08,129][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:01:08,129][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:01:38,147][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:02:08,163][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:02:08,163][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:02:38,178][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:03:08,197][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:03:08,197][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:03:38,212][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:04:08,226][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:04:08,226][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:04:38,239][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:05:08,256][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:05:08,256][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:05:38,273][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:06:08,290][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:06:08,291][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:06:38,302][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:07:08,318][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:07:08,318][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:07:38,334][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:08:08,347][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:08:08,347][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:08:38,364][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:09:08,383][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:09:08,383][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:09:38,398][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:10:08,411][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:10:08,412][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:10:38,434][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:11:08,453][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:11:08,453][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:11:38,469][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:12:08,493][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:12:08,493][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:12:38,510][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:13:08,531][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:13:08,531][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:13:38,553][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:14:08,570][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:14:08,570][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:14:38,585][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:15:08,601][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:15:08,601][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:15:38,615][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:16:08,632][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:16:08,632][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:16:38,644][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:17:08,658][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:17:08,658][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:17:38,676][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:18:08,690][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:18:08,690][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:18:38,706][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:19:08,719][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:19:08,719][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:19:38,732][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:20:08,748][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:20:08,748][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:20:38,762][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:21:08,779][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:21:08,779][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:21:38,803][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:22:08,815][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:22:08,815][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:22:38,826][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:23:08,841][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:23:08,841][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:23:38,860][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:24:08,885][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:24:08,885][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:24:38,899][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:25:08,915][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:25:08,915][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:25:38,927][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:26:08,945][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:26:08,945][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:26:38,962][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:27:08,978][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:27:08,978][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:27:38,991][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:28:09,002][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:28:09,002][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:28:39,019][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:29:09,032][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:29:09,032][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:29:39,050][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:30:09,064][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:30:09,065][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:30:39,078][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:31:09,090][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:31:09,090][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:31:39,101][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:32:09,118][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:32:09,118][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:32:39,135][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:33:09,146][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:33:09,146][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:33:39,158][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:34:09,169][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:34:09,169][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:34:39,184][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:35:09,200][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:35:09,200][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:35:39,212][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:36:09,228][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:36:09,228][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:36:39,242][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:37:09,254][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:37:09,254][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:37:39,269][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:38:09,281][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:38:09,281][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:38:39,294][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:39:09,310][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:39:09,310][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:39:39,327][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:40:09,341][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:40:09,341][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:40:39,357][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:41:09,368][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:41:09,369][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:41:39,385][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:42:09,395][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:42:09,395][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:42:39,408][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:43:09,424][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:43:09,424][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:43:39,441][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:44:09,457][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:44:09,457][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:44:39,471][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:45:09,482][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:45:09,482][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:45:39,494][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:46:09,510][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:46:09,510][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:46:39,531][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:47:09,546][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:47:09,546][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:47:39,568][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:48:09,587][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:48:09,588][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:48:39,600][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:49:09,617][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:49:09,617][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:49:39,635][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:50:09,647][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:50:09,647][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:50:39,667][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:51:09,688][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:51:09,688][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:51:39,715][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:52:09,732][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:52:09,732][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:52:39,751][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:53:09,769][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:53:09,769][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:53:39,784][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:54:09,800][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:54:09,800][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:54:39,816][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:55:09,829][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:55:09,829][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:55:39,842][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:56:09,854][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:56:09,854][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:56:39,865][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:57:09,883][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:57:09,883][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:57:39,897][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:58:09,912][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7.1gb[3%], shards will be relocated away from this node
-[2015-12-06 12:58:09,912][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:58:39,931][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
-[2015-12-06 12:59:09,944][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
-[2015-12-06 12:59:09,944][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 12:59:39,956][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
-[2015-12-06 13:00:09,971][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
-[2015-12-06 13:00:09,971][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
-[2015-12-06 17:49:31,862][INFO ][node                     ] [Venomm] version[2.1.0], pid[5917], build[72cd1f1/2015-11-18T22:40:03Z]
-[2015-12-06 17:49:31,866][INFO ][node                     ] [Venomm] initializing ...
-[2015-12-06 17:49:31,953][INFO ][plugins                  ] [Venomm] loaded [], sites []
-[2015-12-06 17:49:32,007][INFO ][env                      ] [Venomm] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [177.3gb], net total_space [464.7gb], spins? [unknown], types [hfs]
-[2015-12-06 17:49:34,700][INFO ][node                     ] [Venomm] initialized
-[2015-12-06 17:49:34,700][INFO ][node                     ] [Venomm] starting ...
-[2015-12-06 17:49:34,856][INFO ][transport                ] [Venomm] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
-[2015-12-06 17:49:34,873][INFO ][discovery                ] [Venomm] elasticsearch/DlxEukgFTK2GianbEE2uNw
-[2015-12-06 17:49:37,909][INFO ][cluster.service          ] [Venomm] new_master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2015-12-06 17:49:37,924][INFO ][http                     ] [Venomm] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
-[2015-12-06 17:49:37,925][INFO ][node                     ] [Venomm] started
-[2015-12-06 17:49:38,065][INFO ][gateway                  ] [Venomm] recovered [4] indices into cluster_state
-[2015-12-06 17:49:38,872][WARN ][index.translog           ] [Venomm] [events_test_20151202185521957][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151202185521957/0/translog/translog-7515097862119685641.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151202185521957/0/translog/translog-7515097862119685641.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 17:49:38,880][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3433843994773679095.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3433843994773679095.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 17:49:38,880][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-9062137195738908781.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-9062137195738908781.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 17:49:38,884][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-5996878763883567592.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-5996878763883567592.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 17:49:39,109][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][1]] marking and sending shard failed due to [failed recovery]
+[2015-12-07 08:21:22,556][WARN ][indices.cluster          ] [Perfection] [[categories_development_20151202123720875][1]] marking and sending shard failed due to [failed recovery]
 [categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
@@ -668,7 +266,7 @@ Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file fou
 	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
 	... 5 more
-[2015-12-06 17:49:39,111][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []]; ]
+[2015-12-07 08:21:22,559][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=3y4wWFyJTCuF82bQdTBa0A], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []]; ]
 [categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
@@ -688,8 +286,8 @@ Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file fou
 	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
 	... 5 more
-[2015-12-06 17:49:39,115][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-4705123290842931477.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-4705123290842931477.tlog
+[2015-12-07 08:21:22,562][WARN ][index.translog           ] [Perfection] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-2966461022303298217.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-2966461022303298217.tlog
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -711,116 +309,8 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 17:49:39,122][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-4678288425779114229.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-4678288425779114229.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 17:49:39,122][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:49:39,134][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][3]] marking and sending shard failed due to [failed recovery]
-[categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
-	... 5 more
-Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
-	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
-	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
-	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
-	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
-	... 5 more
-[2015-12-06 17:49:39,136][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][3] received shard failed for [categories_development_20151202123720875][3], node[DlxEukgFTK2GianbEE2uNw], [P], v[15], s[INITIALIZING], a[id=Rv81COhmRQCV214hmE53TA], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []]; ]
-[categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
-	... 5 more
-Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
-	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
-	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
-	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
-	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
-	... 5 more
-[2015-12-06 17:49:39,152][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:49:39,153][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][3] received shard failed for [categories_development_20151202123720875][3], node[DlxEukgFTK2GianbEE2uNw], [P], v[15], s[INITIALIZING], a[id=Rv81COhmRQCV214hmE53TA], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:49:39,153][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][4]] marking and sending shard failed due to [failed recovery]
-[categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
-	... 5 more
-Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
-	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
-	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
-	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
-	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
-	... 5 more
-[2015-12-06 17:49:39,155][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][4] received shard failed for [categories_development_20151202123720875][4], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=U7QYT9SzS3yfBP6SWHoKPg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []]; ]
-[categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
-	... 5 more
-Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
-	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
-	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
-	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
-	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
-	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
-	... 5 more
-[2015-12-06 17:49:39,165][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][4] received shard failed for [categories_development_20151202123720875][4], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=U7QYT9SzS3yfBP6SWHoKPg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:49:39,165][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:49:39,166][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][3] received shard failed for [categories_development_20151202123720875][3], node[DlxEukgFTK2GianbEE2uNw], [P], v[15], s[INITIALIZING], a[id=Rv81COhmRQCV214hmE53TA], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:49:39,176][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][0]] marking and sending shard failed due to [failed recovery]
+[2015-12-07 08:21:22,595][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=3y4wWFyJTCuF82bQdTBa0A], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Perfection}{YyzLvuE8Q2aP2GIlmwcolQ}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-07 08:21:22,602][WARN ][indices.cluster          ] [Perfection] [[categories_development_20151202123720875][0]] marking and sending shard failed due to [failed recovery]
 [categories_development_20151202123720875][[categories_development_20151202123720875][0]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []];
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
@@ -840,7 +330,7 @@ Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file fou
 	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
 	... 5 more
-[2015-12-06 17:49:39,178][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][0] received shard failed for [categories_development_20151202123720875][0], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=LGAOhGh9R2C_rKZApCXRmg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []]; ]
+[2015-12-07 08:21:22,604][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][0] received shard failed for [categories_development_20151202123720875][0], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=iiLZmtYbQMS9zxrkLHuJ8w], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []]; ]
 [categories_development_20151202123720875][[categories_development_20151202123720875][0]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/0/index))): files: []];
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
@@ -860,241 +350,115 @@ Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file fou
 	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
 	... 5 more
-[2015-12-06 17:49:39,186][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][0] received shard failed for [categories_development_20151202123720875][0], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=LGAOhGh9R2C_rKZApCXRmg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
-[2015-12-06 17:55:36,949][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175536856] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 17:55:37,084][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175536856] create_mapping [event]
-[2015-12-06 17:55:37,152][INFO ][cluster.metadata         ] [Venomm] [events_test_20151202185521957] deleting index
-[2015-12-06 17:55:56,376][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175556309] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 17:55:56,476][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175556309] create_mapping [event]
-[2015-12-06 17:55:56,535][INFO ][cluster.metadata         ] [Venomm] [events_test_20151206175536856] deleting index
-[2015-12-06 18:16:24,535][INFO ][node                     ] [Venomm] stopping ...
-[2015-12-06 18:16:24,618][INFO ][node                     ] [Venomm] stopped
-[2015-12-06 18:16:24,618][INFO ][node                     ] [Venomm] closing ...
-[2015-12-06 18:16:24,622][INFO ][node                     ] [Venomm] closed
-[2015-12-06 18:16:27,846][INFO ][node                     ] [Puishannt] version[2.1.0], pid[7088], build[72cd1f1/2015-11-18T22:40:03Z]
-[2015-12-06 18:16:27,846][INFO ][node                     ] [Puishannt] initializing ...
-[2015-12-06 18:16:27,950][INFO ][plugins                  ] [Puishannt] loaded [], sites []
-[2015-12-06 18:16:27,989][INFO ][env                      ] [Puishannt] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [177.1gb], net total_space [464.7gb], spins? [unknown], types [hfs]
-[2015-12-06 18:16:30,756][INFO ][node                     ] [Puishannt] initialized
-[2015-12-06 18:16:30,756][INFO ][node                     ] [Puishannt] starting ...
-[2015-12-06 18:16:30,873][INFO ][transport                ] [Puishannt] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
-[2015-12-06 18:16:30,890][INFO ][discovery                ] [Puishannt] elasticsearch/wG0IenRMRF2jcxJ4Ul1KGg
-[2015-12-06 18:16:33,941][INFO ][cluster.service          ] [Puishannt] new_master {Puishannt}{wG0IenRMRF2jcxJ4Ul1KGg}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
-[2015-12-06 18:16:33,953][INFO ][http                     ] [Puishannt] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
-[2015-12-06 18:16:33,953][INFO ][node                     ] [Puishannt] started
-[2015-12-06 18:16:34,118][INFO ][gateway                  ] [Puishannt] recovered [4] indices into cluster_state
-[2015-12-06 18:16:34,841][WARN ][index.translog           ] [Puishannt] [events_test_20151206175556309][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151206175556309/0/translog/translog-8170910719637956553.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151206175556309/0/translog/translog-8170910719637956553.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+[2015-12-07 08:21:22,625][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=3y4wWFyJTCuF82bQdTBa0A], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Perfection}{YyzLvuE8Q2aP2GIlmwcolQ}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-07 08:21:22,626][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][0] received shard failed for [categories_development_20151202123720875][0], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=iiLZmtYbQMS9zxrkLHuJ8w], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Perfection}{YyzLvuE8Q2aP2GIlmwcolQ}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-07 08:21:22,626][WARN ][indices.cluster          ] [Perfection] [[categories_development_20151202123720875][4]] marking and sending shard failed due to [failed recovery]
+[categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
 	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 18:16:34,844][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-8245430456190202845.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-8245430456190202845.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-07 08:21:22,628][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][4] received shard failed for [categories_development_20151202123720875][4], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=IgmhqBr8SQK4jUCRIfqUTQ], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []]; ]
+[categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
 	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 18:16:34,843][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-184363989140865857.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-184363989140865857.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][4]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/4/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-07 08:21:22,631][WARN ][indices.cluster          ] [Perfection] [[categories_development_20151202123720875][2]] marking and sending shard failed due to [failed recovery]
+[categories_development_20151202123720875][[categories_development_20151202123720875][2]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
 	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 18:16:34,841][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3215502075988267604.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3215502075988267604.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][2]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-07 08:21:22,634][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][2] received shard failed for [categories_development_20151202123720875][2], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=b-HSXBn3T6K3rtJRqg_9rQ], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [failed recovery], failure [IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []]; ]
+[categories_development_20151202123720875][[categories_development_20151202123720875][2]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
 	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
 	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 18:16:35,045][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-4663986635062075437.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-4663986635062075437.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 18:16:35,069][WARN ][index.translog           ] [Puishannt] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-2240668307681815599.tlog
-java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-2240668307681815599.tlog
-	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
-	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
-	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
-	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
-	at java.nio.file.Files.delete(Files.java:1126)
-	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
-	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
-	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
-	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
-	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
-	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
-	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
-	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
-	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
-	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
-	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
-	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-[2015-12-06 18:24:45,498][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:24:45,645][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] create_mapping [event]
-[2015-12-06 18:24:45,731][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206175556309] deleting index
-[2015-12-06 18:26:34,355][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:26:34,413][DEBUG][action.admin.indices.stats] [Puishannt] [indices:monitor/stats] failed to execute operation for shard [[events_test_20151206182634295][0], node[wG0IenRMRF2jcxJ4Ul1KGg], [P], v[1], s[INITIALIZING], a[id=99Z620WEQcap9Ch_5Bj8-g], unassigned_info[[reason=INDEX_CREATED], at[2015-12-07T01:26:34.355Z]]]
-[events_test_20151206182634295][[events_test_20151206182634295][0]] BroadcastShardOperationFailedException[operation indices:monitor/stats failed]; nested: ShardNotFoundException[no such shard];
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:405)
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:382)
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:371)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: [events_test_20151206182634295][[events_test_20151206182634295][0]] ShardNotFoundException[no such shard]
-	at org.elasticsearch.index.IndexService.shardSafe(IndexService.java:198)
-	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:98)
-	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:47)
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:401)
-	... 7 more
-[2015-12-06 18:26:34,456][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] create_mapping [event]
-[2015-12-06 18:26:34,515][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] deleting index
-[2015-12-06 18:30:16,012][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:30:16,109][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] create_mapping [event]
-[2015-12-06 18:30:16,162][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] deleting index
-[2015-12-06 18:35:01,705][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:35:01,791][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] create_mapping [event]
-[2015-12-06 18:35:01,848][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] deleting index
-[2015-12-06 18:35:34,708][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:35:34,773][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] create_mapping [event]
-[2015-12-06 18:35:34,817][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183501650] deleting index
-[2015-12-06 18:35:34,826][DEBUG][action.admin.indices.stats] [Puishannt] [indices:monitor/stats] failed to execute operation for shard [[events_test_20151206183501650][0], node[wG0IenRMRF2jcxJ4Ul1KGg], [P], v[2], s[STARTED], a[id=-ErYXCkxRkKKm349v4Fz2Q]]
-[events_test_20151206183501650][[events_test_20151206183501650][0]] BroadcastShardOperationFailedException[operation indices:monitor/stats failed]; nested: IndexNotFoundException[no such index];
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:405)
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:382)
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:371)
-	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
-	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
-	at java.lang.Thread.run(Thread.java:745)
-Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
-	at org.elasticsearch.indices.IndicesService.indexServiceSafe(IndicesService.java:310)
-	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:97)
-	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:47)
-	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:401)
-	... 7 more
-[2015-12-06 18:36:14,856][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:36:14,928][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] create_mapping [event]
-[2015-12-06 18:36:14,980][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183534672] deleting index
-[2015-12-06 18:36:40,959][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:36:41,030][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] create_mapping [event]
-[2015-12-06 18:36:41,082][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183614810] deleting index
-[2015-12-06 18:37:14,567][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:37:14,628][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] create_mapping [event]
-[2015-12-06 18:37:14,681][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183640933] deleting index
-[2015-12-06 18:37:25,561][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:37:25,613][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] create_mapping [event]
-[2015-12-06 18:37:25,663][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183714535] deleting index
-[2015-12-06 18:37:39,117][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:37:39,188][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] create_mapping [event]
-[2015-12-06 18:37:39,239][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183725536] deleting index
-[2015-12-06 18:38:22,537][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:38:22,604][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] create_mapping [event]
-[2015-12-06 18:38:22,656][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183739091] deleting index
-[2015-12-06 18:38:43,641][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:38:43,702][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] create_mapping [event]
-[2015-12-06 18:38:43,762][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183822508] deleting index
-[2015-12-06 18:38:56,490][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:38:56,541][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] create_mapping [event]
-[2015-12-06 18:38:56,584][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183843616] deleting index
-[2015-12-06 18:39:56,042][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:39:56,102][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] create_mapping [event]
-[2015-12-06 18:39:56,153][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] deleting index
-[2015-12-06 18:56:15,706][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
-[2015-12-06 18:56:15,779][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] create_mapping [event]
-[2015-12-06 18:56:15,828][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] deleting index
+Caused by: [categories_development_20151202123720875][[categories_development_20151202123720875][2]] IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []];
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:208)
+	... 5 more
+Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/2/index))): files: []
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:726)
+	at org.apache.lucene.index.SegmentInfos$FindSegmentsFile.run(SegmentInfos.java:683)
+	at org.apache.lucene.index.SegmentInfos.readLatestCommit(SegmentInfos.java:490)
+	at org.elasticsearch.common.lucene.Lucene.readSegmentInfos(Lucene.java:98)
+	at org.elasticsearch.index.store.Store.readSegmentsInfo(Store.java:163)
+	at org.elasticsearch.index.store.Store.readLastCommittedSegmentsInfo(Store.java:148)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:199)
+	... 5 more
+[2015-12-07 08:21:22,638][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][4] received shard failed for [categories_development_20151202123720875][4], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=IgmhqBr8SQK4jUCRIfqUTQ], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Perfection}{YyzLvuE8Q2aP2GIlmwcolQ}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-07 08:21:22,639][WARN ][cluster.action.shard     ] [Perfection] [categories_development_20151202123720875][2] received shard failed for [categories_development_20151202123720875][2], node[YyzLvuE8Q2aP2GIlmwcolQ], [P], v[13], s[INITIALIZING], a[id=b-HSXBn3T6K3rtJRqg_9rQ], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T15:21:20.466Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Perfection}{YyzLvuE8Q2aP2GIlmwcolQ}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
+[2015-12-07 08:22:01,036][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207082200954] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:22:01,181][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207082200954] create_mapping [event]
+[2015-12-07 08:22:01,310][INFO ][cluster.metadata         ] [Perfection] [events_test_20151206194635095] deleting index
+[2015-12-07 08:25:17,325][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207082517257] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:25:17,397][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207082517257] create_mapping [event]
+[2015-12-07 08:25:17,457][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207082200954] deleting index
+[2015-12-07 08:32:02,411][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083202373] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:32:02,500][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083202373] create_mapping [event]
+[2015-12-07 08:32:02,559][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207082517257] deleting index
+[2015-12-07 08:33:12,944][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083312897] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:33:13,040][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083312897] create_mapping [event]
+[2015-12-07 08:33:13,092][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083202373] deleting index
+[2015-12-07 08:38:05,893][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083805859] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:38:05,978][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083805859] create_mapping [event]
+[2015-12-07 08:38:06,036][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083312897] deleting index
+[2015-12-07 08:40:31,866][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084031827] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:40:31,944][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084031827] create_mapping [event]
+[2015-12-07 08:40:31,994][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207083805859] deleting index
+[2015-12-07 08:44:16,101][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084416061] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:44:16,173][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084416061] create_mapping [event]
+[2015-12-07 08:44:16,238][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084031827] deleting index
+[2015-12-07 08:46:24,405][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084624374] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 08:46:24,485][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084624374] create_mapping [event]
+[2015-12-07 08:46:24,553][INFO ][cluster.metadata         ] [Perfection] [events_test_20151207084416061] deleting index
+[2015-12-07 09:00:33,849][INFO ][node                     ] [Perfection] stopping ...
+[2015-12-07 09:00:33,907][INFO ][node                     ] [Perfection] stopped
+[2015-12-07 09:00:33,908][INFO ][node                     ] [Perfection] closing ...
+[2015-12-07 09:00:33,912][INFO ][node                     ] [Perfection] closed

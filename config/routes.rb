@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     get :autocomplete_event_name, :on => :collection
   end
 
-  get "/admin/dashboard", to: "admin#dashboard"
+  get "/platform-admin/dashboard", to: "platform_admin/admin#dashboard"
 
   get "/cart", to: "cart_tickets#show"
   put "/cart", to: "cart_tickets#update"

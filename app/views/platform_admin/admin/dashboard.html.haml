@@ -1,0 +1,9 @@
+%h1.black-text.center-align Admin Dashboard
+
+.center-align
+  .waves-effect.waves-light.btn
+    = link_to "Edit Account", edit_user_path(@user)
+  .waves-effect.waves-light.btn
+    = link_to "Delete Account", user_path(@user), method: :delete
+  %br
+  %br
