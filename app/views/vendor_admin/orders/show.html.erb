@@ -1,0 +1,58 @@
+<div class="container">
+  <h2 class="center-align">Order #<%= @order.id %> Details</h2>
+  <div class="row">
+      <div class="card z-depth-0 uos">
+        <h5>Update Order Status</h5>
+        <div class="card-action">
+          <%= link_to "Cancelled", vendor_order_path(id: @order.id, status: 'Cancelled'), method: :patch, class: 'red-text' %>
+          <%= link_to "Paid", vendor_order_path(id: @order.id, status: 'Paid'), method: :patch, class: 'green-text' %>
+          <%= link_to "Completed", vendor_order_path(id: @order.id, status: 'Completed'), method: :patch, class: 'blue-text' %>
+          <%= link_to "Pending", vendor_order_path(id: @order.id, status: 'Pending'), method: :patch, class: 'orange-text' %>
+        </div>
+      </div>
+  </div>
+  <table class="cart-table highlight events-table">
+    <thead>
+      <tr>
+        <th>Date Ordered</th>
+        <th>Time</th>
+        <th>Status</th>
+        <th>Purchaser</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <%= content_tag :td, format_date(@order.created_at) %>
+        <%= content_tag :td, format_time(@order.created_at) %>
+        <%= content_tag :td, @order.status, class: @order.status %>
+        <%= content_tag :td, @order.user.name %>
+        <%= content_tag :td, format_currency(@order.total || 0) %>
+      </tr>
+    </tbody>
+  </table>
+
+  <h5>Tickets</h5>
+  <table class="cart-table highlight events-table">
+    <thead>
+      <tr>
+        <th>Ticket Name</th>
+        <th>Section</th>
+        <th>Row</th>
+        <th>Seat</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.tickets.each do |ticket| %>
+        <tr>
+          <%= content_tag :td, ticket.event.name %>
+          <%= content_tag :td, ticket.section %>
+          <%= content_tag :td, ticket.row %>
+          <%= content_tag :td, ticket.seat %>
+          <%= content_tag :td, ticket.price %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

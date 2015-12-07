@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="card z-depth-0">
+    <h1 class="black-text center"> <%= @vendor.name.capitalize %> <small>Dashboard</small></h1>
+    <div class="center-align card-action">
+      <%= link_to "Edit Account", edit_user_path(@user), class: "btn orange white-text waves-effect waves-light" %>
+      <%= link_to "Delete Account", user_path(@user), method: :delete, class: "btn orange white-text waves-effect waves-light" %>
+      <%= link_to "View All Tickets", vendor_tickets_path, class: "btn orange white-text waves-effect waves-light" %>
+      <%= link_to "Add Ticket",  new_vendor_ticket_path, class: "btn orange white-text waves-effect waves-light" %>
+    </div>
+  </div>
+  <h2 class="black-text">Orders</h2>
+  <%= render partial: "/vendor_admin/orders/filter" %>
+  <div class="white">
+    <div class="events-table-wrapper z-depth-1">
+      <table class="cart-table highlight events-table z-depth-1">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date Ordered</th>
+            <th>Status</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody>
+        <% @orders.each do |order| %>
+          <tr class="order clickable" data-status="<%= order.status %>" data-link="<%= vendor_order_path(id: order.id, vendor_id: @vendor.id) %>">
+            <%= content_tag :td, link_to("#{order.id}", vendor_order_path(id: order.id, vendor_id: @vendor.id)) %>
+            <%= content_tag :td, format_date(order.created_at) %>
+            <%= content_tag :td, link_to("#{order.status}", vendor_order_path(id: order.id, vendor_id: @vendor.id)) %>
+            <%= content_tag :td, format_currency(order.total || 0) %>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
