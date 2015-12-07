@@ -8,6 +8,19 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     assert_equal platform_admin_dashboard_path, current_path
   end
 
+  test "Platform admin can edit their account" do
+    platform_admin_login
+
+    click_link "Edit Account"
+
+    fill_in "Username", with: "jhun"
+    fill_in "Password", with: "pass"
+
+    click_button "Update Account"
+
+    assert_equal platform_admin_dashboard_path, current_path
+  end
+
   test "Platform admin can take a vendor offline" do
     skip
     create_vendor_admin

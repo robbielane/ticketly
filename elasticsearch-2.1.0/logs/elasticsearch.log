@@ -624,3 +624,12 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 [2015-12-07 13:22:07,755][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132207711] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-07 13:22:07,847][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132207711] create_mapping [event]
 [2015-12-07 13:22:07,896][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132118853] deleting index
+[2015-12-07 13:25:06,423][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132506387] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:25:06,504][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132506387] create_mapping [event]
+[2015-12-07 13:25:06,546][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132207711] deleting index
+[2015-12-07 13:25:23,172][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132523129] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:25:23,238][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132523129] create_mapping [event]
+[2015-12-07 13:25:23,276][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132506387] deleting index
+[2015-12-07 13:25:38,893][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132538855] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:25:38,991][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132538855] create_mapping [event]
+[2015-12-07 13:25:39,035][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132523129] deleting index
