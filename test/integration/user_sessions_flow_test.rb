@@ -22,4 +22,13 @@ class UserSessionsFlowTest < ActionDispatch::IntegrationTest
     click_on "Logout"
     assert root_path, current_path
   end
+
+  test "user can not access priveleged areas of app" do
+    user = create_and_login_user
+    visit 'my-string/dashboard'
+
+    assert page.has_content?("you are not authorized to view this content.")
+    assert root_path, current_path
+  end
+
 end
