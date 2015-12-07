@@ -1024,3 +1024,25 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 [2015-12-06 18:24:45,498][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-06 18:24:45,645][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] create_mapping [event]
 [2015-12-06 18:24:45,731][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206175556309] deleting index
+[2015-12-06 18:26:34,355][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:26:34,413][DEBUG][action.admin.indices.stats] [Puishannt] [indices:monitor/stats] failed to execute operation for shard [[events_test_20151206182634295][0], node[wG0IenRMRF2jcxJ4Ul1KGg], [P], v[1], s[INITIALIZING], a[id=99Z620WEQcap9Ch_5Bj8-g], unassigned_info[[reason=INDEX_CREATED], at[2015-12-07T01:26:34.355Z]]]
+[events_test_20151206182634295][[events_test_20151206182634295][0]] BroadcastShardOperationFailedException[operation indices:monitor/stats failed]; nested: ShardNotFoundException[no such shard];
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:405)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:382)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.messageReceived(TransportBroadcastByNodeAction.java:371)
+	at org.elasticsearch.transport.TransportService$4.doRun(TransportService.java:350)
+	at org.elasticsearch.common.util.concurrent.AbstractRunnable.run(AbstractRunnable.java:37)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: [events_test_20151206182634295][[events_test_20151206182634295][0]] ShardNotFoundException[no such shard]
+	at org.elasticsearch.index.IndexService.shardSafe(IndexService.java:198)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:98)
+	at org.elasticsearch.action.admin.indices.stats.TransportIndicesStatsAction.shardOperation(TransportIndicesStatsAction.java:47)
+	at org.elasticsearch.action.support.broadcast.node.TransportBroadcastByNodeAction$BroadcastByNodeTransportRequestHandler.onShardOperation(TransportBroadcastByNodeAction.java:401)
+	... 7 more
+[2015-12-06 18:26:34,456][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] create_mapping [event]
+[2015-12-06 18:26:34,515][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182445418] deleting index
+[2015-12-06 18:30:16,012][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:30:16,109][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183015972] create_mapping [event]
+[2015-12-06 18:30:16,162][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206182634295] deleting index
