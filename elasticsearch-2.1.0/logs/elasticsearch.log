@@ -1095,3 +1095,6 @@ Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
 [2015-12-06 18:39:56,042][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-06 18:39:56,102][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] create_mapping [event]
 [2015-12-06 18:39:56,153][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183856464] deleting index
+[2015-12-06 18:56:15,706][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-06 18:56:15,779][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] create_mapping [event]
+[2015-12-06 18:56:15,828][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] deleting index
