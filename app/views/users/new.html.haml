@@ -6,7 +6,7 @@
     .row
       .col.s12.m6.offset-m3.black-text
         %h5.black-text Create Account
-        = form_for @new_user do |f|
+        = form_for(@new_user, html: {multipart: true}) do |f|
           .input-field
             = f.label :name
             = f.text_field :name
@@ -16,6 +16,8 @@
           .input-field
             = f.label :password
             = f.password_field :password
+            %p
+            = f.file_field :image
             %br
             %br
             = f.button "Create Account", class: "waves-effect waves-light btn orange"
