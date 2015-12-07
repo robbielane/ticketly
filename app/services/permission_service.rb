@@ -47,7 +47,7 @@ class PermissionService
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
-    return true if controller == "users"                    && action.in?(%w(edit update))
+    return true if controller == "users"                    && action.in?(%w(dashboard edit update))
 
   end
 

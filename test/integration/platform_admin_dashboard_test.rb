@@ -3,18 +3,9 @@ require_relative '../test_helper'
 class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "Platform admin can access dashboard" do
-    # platform_admin_login
-    user = User.create(name:"jhun", username:"jhun", password:"jhun")
-    user.roles << Role.create(name:"platform_admin")
-    visit root_path
-    click_link "Login"
+    platform_admin_login
 
-    fill_in "Username", with: "jhun"
-    fill_in "Password", with: "jhun"
-
-    click_button "Login"
-
-    assert_equal admin_dashboard_path, current_path
+    assert_equal platform_admin_dashboard_path, current_path
   end
 
   test "Platform admin can take a vendor offline" do

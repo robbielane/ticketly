@@ -72,7 +72,7 @@ class Seed
     user_count = User.count
     status_collection = %w(Completed Paid Cancelled Pending)
     100.times do |i|
-      user = User.find(rand(1..user_count))
+      user = User.find(rand(1..(user_count-1)))
 
       5.times do |i|
         order = user.orders << Order.create!(

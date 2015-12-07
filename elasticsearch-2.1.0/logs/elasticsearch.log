@@ -462,3 +462,165 @@ Caused by: org.apache.lucene.index.IndexNotFoundException: no segments* file fou
 [2015-12-07 09:00:33,907][INFO ][node                     ] [Perfection] stopped
 [2015-12-07 09:00:33,908][INFO ][node                     ] [Perfection] closing ...
 [2015-12-07 09:00:33,912][INFO ][node                     ] [Perfection] closed
+[2015-12-07 13:00:59,955][INFO ][node                     ] [Katherine Reynolds] version[2.1.0], pid[10389], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-07 13:00:59,956][INFO ][node                     ] [Katherine Reynolds] initializing ...
+[2015-12-07 13:01:00,065][INFO ][plugins                  ] [Katherine Reynolds] loaded [], sites []
+[2015-12-07 13:01:00,184][INFO ][env                      ] [Katherine Reynolds] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [176.3gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2015-12-07 13:01:07,295][INFO ][node                     ] [Katherine Reynolds] initialized
+[2015-12-07 13:01:07,296][INFO ][node                     ] [Katherine Reynolds] starting ...
+[2015-12-07 13:01:07,554][INFO ][transport                ] [Katherine Reynolds] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-07 13:01:07,581][INFO ][discovery                ] [Katherine Reynolds] elasticsearch/wdBKbRlnQNqxyz7S5YeADw
+[2015-12-07 13:01:10,625][INFO ][cluster.service          ] [Katherine Reynolds] new_master {Katherine Reynolds}{wdBKbRlnQNqxyz7S5YeADw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-07 13:01:10,646][INFO ][http                     ] [Katherine Reynolds] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-07 13:01:10,646][INFO ][node                     ] [Katherine Reynolds] started
+[2015-12-07 13:01:10,798][INFO ][gateway                  ] [Katherine Reynolds] recovered [4] indices into cluster_state
+[2015-12-07 13:01:12,306][WARN ][index.translog           ] [Katherine Reynolds] [events_test_20151207084624374][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151207084624374/0/translog/translog-1370910294291037720.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151207084624374/0/translog/translog-1370910294291037720.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 13:01:12,310][WARN ][index.translog           ] [Katherine Reynolds] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-1895323913909688484.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-1895323913909688484.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 13:01:12,310][WARN ][index.translog           ] [Katherine Reynolds] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-4932469855366384374.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-4932469855366384374.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 13:01:12,310][WARN ][index.translog           ] [Katherine Reynolds] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-7865667440870808141.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-7865667440870808141.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 13:01:12,531][WARN ][index.translog           ] [Katherine Reynolds] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-715613680126607584.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-715613680126607584.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 13:01:12,581][WARN ][index.translog           ] [Katherine Reynolds] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-4832372494622257531.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-4832372494622257531.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-07 13:05:30,308][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207130530205] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:05:30,450][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207130530205] create_mapping [event]
+[2015-12-07 13:05:30,512][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207084624374] deleting index
+[2015-12-07 13:20:57,307][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132057259] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:20:57,405][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132057259] create_mapping [event]
+[2015-12-07 13:20:57,446][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207130530205] deleting index
+[2015-12-07 13:21:18,894][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132118853] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:21:18,979][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132118853] create_mapping [event]
+[2015-12-07 13:21:19,019][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132057259] deleting index
+[2015-12-07 13:22:07,755][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132207711] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-07 13:22:07,847][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132207711] create_mapping [event]
+[2015-12-07 13:22:07,896][INFO ][cluster.metadata         ] [Katherine Reynolds] [events_test_20151207132118853] deleting index
