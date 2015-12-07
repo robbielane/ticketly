@@ -4,8 +4,7 @@ class TicketTest < ActiveSupport::TestCase
 
   def valid_attributes
     {
-      name: "Hiking in the Alps",
-      price: 1001,
+      price: 1001
     }
   end
 
@@ -15,14 +14,13 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test "it is invalid with missing price" do
-    ticket = Ticket.new(name: "Hiking in the alps")
+    ticket = Ticket.new( seat:"a" , section:"b", row:"c" )
 
     refute ticket.valid?
   end
 
   test "it must have a price that is greater than zero" do
-    ticket = Ticket.new({ name: "Hiking in the Alps",
-                          price: -1})
+    ticket = Ticket.new(price:-1, seat:"a" , section:"b", row:"c" )
 
     refute ticket.valid?
   end

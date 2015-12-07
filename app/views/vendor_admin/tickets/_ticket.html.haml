@@ -1,4 +1,5 @@
 .ticket-show{ :id => "#{ticket.event.name.parameterize}" }
+
   .col.s12.m4.black-text
     .card
       .card-image
@@ -16,3 +17,4 @@
         %br
         %br
         = button_to "Edit", edit_vendor_ticket_path(id:ticket), method: :get
+        = button_to "Delete", vendor_ticket_path(id:ticket), method: :delete

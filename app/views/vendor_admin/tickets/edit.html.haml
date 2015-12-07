@@ -1,9 +1,14 @@
-%h1.white-text.center-align Update ticket
+%h1.black-text.center-align Update ticket
 
-.white-text
-  = form_for(@ticket, url: admin_ticket_path) do |f|
-    = f.label :name
-    = f.text_field :name
+.black-text
+
+  = form_for(@ticket, url: vendor_ticket_path(vendor: current_user.vendor.name)) do |f|
+    = f.label :section
+    = f.text_area :section
+    = f.label :row
+    = f.text_area :row
+    = f.label :seat
+    = f.text_area :seat
     = f.label :price
     = f.text_field :price
     = f.label :status

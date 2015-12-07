@@ -29,7 +29,7 @@ class PermissionService
     return true if controller == "vendor_admin/vendor"      && action.in?(%w(dashboard))
     return true if controller == "vendor_admin/orders"      && action.in?(%w(show update index))
     return true if controller == "orders"                   && action.in?(%w(show create index))
-    return true if controller == "vendor_admin/tickets"     && action.in?(%w(index create edit new update show delete))
+    return true if controller == "vendor_admin/tickets"     && action.in?(%w(index create edit new update show destroy))
     return true if controller == "tickets"                  && action.in?(%w(index show))
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))

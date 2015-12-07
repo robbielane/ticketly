@@ -14,7 +14,7 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
   def create
     @ticket = Ticket.new(ticket_params)
     if @ticket.save
-      flash[:notice] = "The ticket '#{@ticket.name}' has been created"
+      flash[:notice] = "The ticket for '#{@ticket.event.name}' has been created"
       redirect_to vendor_tickets_path
     else
       flash[:notice] = @ticket.errors.full_messages.join(", ")
@@ -23,14 +23,14 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
   end
 
   def edit
-    @ticket = current_user.tickets.find(params[:id])
+    @ticket = Ticket.find(params[:id])
   end
 
   def update
-    @ticket = current_user.tickets.find(params[:id])
+    @ticket = Ticket.find(params[:id])
     if @ticket.update(ticket_params)
-      flash.notice = "Ticket Updated!"
-      redirect_to vendor_admin_tickets_path
+      flash[:notice] = "Ticket Updated!"
+      redirect_to vendor_tickets_path(current_user.vendor.slug)
     else
       flash.now[:errors] = @ticket.errors.full_messages.join(" ,")
       render :edit
@@ -38,14 +38,14 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
   end
 
   def destroy
-    @ticket = current_user.tickets.find(params[:id])
+    @ticket = Ticket.destroy(params[:id])
     @ticket.destroy
-    redirect_to vendor_admin_tickets_path
+    redirect_to vendor_tickets_path
   end
 
   private
 
   def ticket_params
-    params.require(:ticket).permit(:name, :row, :section,:seat, :price)
+    params.require(:ticket).permit(:row, :section,:seat, :price, :event_)
   end
 end

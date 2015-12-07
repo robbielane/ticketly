@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authorize!
   before_action :set_cart
-  helper_method :count_of_trips, :current_user, :current_vendor?
+  helper_method :count_of_trips, :current_user, :current_vendor_admin?, :current_vendor
 
 
   def current_permission
@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     @cart = Cart.new(session[:cart])
   end
 
-  def current_vendor?
+  def current_vendor_admin?
     current_user && current_user.vendor_admin?
   end
 
