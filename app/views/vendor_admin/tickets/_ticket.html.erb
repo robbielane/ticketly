@@ -1,0 +1,28 @@
+<div class="ticket" id="<%= format_url_name(ticket.name) %>">
+  <div class="col s12 m4">
+    <div class="card">
+      <div class="card-image">
+        <%= image_tag(ticket.image.url) %>
+        <span class="card-title">
+          <%= "#{ ticket.name}" %>
+        </span>
+      </div>
+      <div class="card-content">
+        <p>
+          <%= "#{ticket.description}" %>
+        </p>
+        <br/>
+        <%= "#{format_currency(ticket.price)}" %>
+      </div>
+      <div class="card-action">
+        <%= link_to "Details", ticket_path(ticket) %>
+        <br/>
+        <br/>
+        <%= "Status: #{ticket.status.upcase}" %>
+        <br/>
+        <br/>
+        <%= button_to "Edit", edit_admin_ticket_path(ticket), method: :get %>
+      </div>
+    </div>
+  </div>
+</div>

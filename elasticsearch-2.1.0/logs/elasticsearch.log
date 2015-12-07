@@ -1,3 +1,19 @@
+<<<<<<< HEAD
+[2015-12-06 14:16:19,124][INFO ][node                     ] [Jack Flag] version[2.1.0], pid[11294], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-06 14:16:19,125][INFO ][node                     ] [Jack Flag] initializing ...
+[2015-12-06 14:16:19,192][INFO ][plugins                  ] [Jack Flag] loaded [], sites []
+[2015-12-06 14:16:19,213][INFO ][env                      ] [Jack Flag] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [74.3gb], net total_space [111.8gb], spins? [unknown], types [hfs]
+[2015-12-06 14:16:20,657][INFO ][node                     ] [Jack Flag] initialized
+[2015-12-06 14:16:20,657][INFO ][node                     ] [Jack Flag] starting ...
+[2015-12-06 14:16:20,788][INFO ][transport                ] [Jack Flag] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-06 14:16:20,799][INFO ][discovery                ] [Jack Flag] elasticsearch/BqlCGGCWTcamh2scxIQDVw
+[2015-12-06 14:16:23,855][INFO ][cluster.service          ] [Jack Flag] new_master {Jack Flag}{BqlCGGCWTcamh2scxIQDVw}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-06 14:16:23,871][INFO ][http                     ] [Jack Flag] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-06 14:16:23,871][INFO ][node                     ] [Jack Flag] started
+[2015-12-06 14:16:23,910][INFO ][gateway                  ] [Jack Flag] recovered [0] indices into cluster_state
+[2015-12-06 14:16:27,222][INFO ][cluster.metadata         ] [Jack Flag] [events_development_20151206141626942] creating index, cause [api], templates [], shards [5]/[1], mappings [_default_]
+[2015-12-06 14:16:27,692][INFO ][cluster.metadata         ] [Jack Flag] [events_development_20151206141626942] create_mapping [event]
+=======
 [2015-12-06 11:38:23,656][INFO ][node                     ] [Skunge the Laxidazian Troll] version[2.1.0], pid[4519], build[72cd1f1/2015-11-18T22:40:03Z]
 [2015-12-06 11:38:23,658][INFO ][node                     ] [Skunge the Laxidazian Troll] initializing ...
 [2015-12-06 11:38:23,723][INFO ][plugins                  ] [Skunge the Laxidazian Troll] loaded [], sites []
@@ -1098,3 +1114,4 @@ Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
 [2015-12-06 18:56:15,706][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-06 18:56:15,779][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] create_mapping [event]
 [2015-12-06 18:56:15,828][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] deleting index
+>>>>>>> master

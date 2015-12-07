@@ -1,0 +1,9 @@
+<h1 class="white-text center-align">tickets</h1>
+<% @categories.each do |category| %>
+  <h2 class="center-align">
+    <%= link_to("#{category.name}", "/#{format_url_name(category.name)}") %>
+  </h2>
+  <div class="row">
+    <%= render category.tickets %>
+  </div>
+<% end %>

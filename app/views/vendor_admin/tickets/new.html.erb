@@ -1,0 +1,32 @@
+<h1 class="white-text center-align">Add a New Ticket:</h1>
+<div class="white-text">
+  <%= form_for(@ticket, url: admin_tickets_path)  do |f| %>
+    <div class="input-field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+    <div class="input-field">
+      <%= f.label :section %>
+      <%= f.text_area :section %>
+    </div>
+    <div class="input-field">
+      <%= f.label :row %>
+      <%= f.text_area :row %>
+    </div>
+    <div class="input-field">
+      <%= f.label :seat %>
+      <%= f.text_area :seat %>
+    </div>
+    <div class="input-field">
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
+    <div class="input-field">
+      <%= f.label :status %>
+      <%= f.text_field :status %>
+    </div>
+    <div class="waves-effect waves-light btn">
+      <%= f.submit "Create Ticket" %>
+    </div>
+  <% end %>
+</div>
