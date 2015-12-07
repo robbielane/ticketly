@@ -24,6 +24,7 @@ Rails.application.routes.draw do
     resources :tickets
     resources :orders
     get "/dashboard", to: "vendor#dashboard"
+    get "/", to: "vendor#show"
   end
 
   get "/:category_name", to: "category#show" # keep at bottom of routes

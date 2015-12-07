@@ -2,7 +2,7 @@ class PlatformAdmin::AdminController < PlatformAdmin::BaseController
   before_action :platform_admin?
 
   def dashboard
-    @statuses = ["Completed", "Pending", "Paid", "Cancelled"]
+    @statuses = ["Active", "Inactive"]
     @vendors = Vendor.all
   end
 end

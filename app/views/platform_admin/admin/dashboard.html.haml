@@ -7,3 +7,20 @@
     = link_to "Delete Account", user_path(@user), method: :delete
   %br
   %br
+
+  = render partial: "/platform_admin/vendors/filter"
+  %br
+  .white
+    %table.cart-table.highlight
+      %tr
+        %th Vendor ID
+        %th Name
+        %th Status
+        %th User ID
+
+      - @vendors.each do |vendor|
+        %tr.vendor{ data: {status: "#{vendor.status}"} }
+          = content_tag :td, link_to("#{vendor.id}", vendor_path(vendor))
+          = content_tag :td, vendor.name
+          = content_tag :td, link_to("#{vendor.status}", vendor_path(vendor))
+          = content_tag :td, link_to("#{vendor.user_id}", user_path(id: vendor.user_id))
