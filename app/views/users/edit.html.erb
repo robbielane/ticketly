@@ -1,0 +1,21 @@
+<div class="container">
+  <h2>Edit Account</h2>
+  <div class="black-text">
+    <%= form_for(@user, html: {multipart: true}) do |f| %>
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+      <br/>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <br/>
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+      <br/>
+      <%= f.label :image, "Update Image" %><br />
+      <%= f.file_field :image %>
+      <br/>
+      <br/>
+      <%= f.submit "Update Account", class: "waves-effect waves-light btn white-text orange" %>
+    <% end %>
+  </div>
+</div>

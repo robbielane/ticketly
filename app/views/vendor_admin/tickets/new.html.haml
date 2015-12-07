@@ -1,7 +1,7 @@
 %h1.white-text.center-align Add a New Ticket:
 
-.white-text
-  = form_for(@ticket, url: admin_tickets_path)  do |f|
+.black-text
+  = form_for(@ticket, url: vendor_tickets_path(vendor: current_user.vendor.name))  do |f|
     .input-field
       = f.label :name
       = f.text_field :name

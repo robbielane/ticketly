@@ -5,10 +5,11 @@ class Seed
     generate_vendors
     generate_test_users
     generate_users
-    generate_orders
     generate_categories
     generate_events
     generate_tickets
+    generate_orders
+    generate_order_tickets
   end
 
   def generate_user_roles
@@ -35,11 +36,19 @@ class Seed
                          password:"pass",
                          email: "yung-jhun@jhunbug.com")
     user3.roles << Role.find(3)
+
+    user4 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass")
+    user4.roles << Role.find(2)
   end
 
   def generate_vendors
     user = User.find(2)
-    user.vendors.create!(name:"aaron-s-swag-store")
+    Vendor.create!(name:"aaron-s-swag-store", user_id: user.id)
+    user.update!(vendor_id: 1, password: "pass")
+
+    user2 = User.find(4)
+    Vendor.create!(name: "dix-tix", user_id: user2.id)
+    user2.update!(vendor_id: 2, password: "pass")
   end
 
   def generate_test_users
@@ -48,6 +57,16 @@ class Seed
                         password: "password",
                         email: "yung-aaron@yungski.com")
     user.roles << Role.create!(name: "registered_user")
+
+    status_collection = %w(Completed Paid Cancelled Pending)
+    10.times do |i|
+      user.orders << Order.create!(
+                                    user_id: user,
+                                    status: status_collection.sample,
+                                    total: Faker::Commerce.price,
+                                   )
+      puts "#{user.name} is a #{user.role} and got an order! I <3 YUNG SEEDS!"
+    end
   end
 
   def generate_users
@@ -66,15 +85,27 @@ class Seed
     user_count = User.count
     status_collection = %w(Completed Paid Cancelled Pending)
     100.times do |i|
-      user = User.offset(Random.new.rand(1..user_count)).limit(1)
+      user = User.find(rand(1..user_count))
+
       5.times do |i|
         order = user.orders << Order.create!(
-                                      user_id: user,
                                       status: status_collection.sample,
                                       total: Faker::Commerce.price,
+                                      vendor_id: rand(1..2),
                                     )
         puts "Order #{i}: Order for #{user.name} created!"
       end
+    end
+  end
+
+  def generate_order_tickets
+    order_count = Order.count
+    ticket_count = Ticket.count
+    50.times do |i|
+      OrderTicket.create!(
+      order_id: rand(1..order_count),
+      ticket_id: rand(1..ticket_count)
+      )
     end
   end
 
@@ -102,18 +133,19 @@ class Seed
   end
 
   def generate_tickets
-    category_count = Category.count
     event_count = Event.count
     1000.times do |i|
       event_id = rand(1..event_count)
       Ticket.create!(
         price: rand(30..1000),
-        category_id: rand(1..category_count),
         section: rand(1..400),
         row: rand(1..50),
         seat: rand(1..30),
-        event_id: event_id
+        event_id: rand(1..event_count),
+        vendor_id: rand(1..2)
+
       )
+
       puts "Ticket #{i}: Ticket created for event ##{event_id}"
     end
   end

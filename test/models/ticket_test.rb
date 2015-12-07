@@ -1,15 +1,11 @@
 require "test_helper"
 
 class TicketTest < ActiveSupport::TestCase
-  def setup
-    Category.create(name: "Hiking")
-  end
 
   def valid_attributes
     {
       name: "Hiking in the Alps",
       price: 1001,
-      category_id: Category.find_by_name("Hiking").id
     }
   end
 
@@ -19,26 +15,14 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test "it is invalid with missing price" do
-    ticket = Ticket.new(name: "Hiking in the alps",
-                        category_id: Category.find_by_name("Hiking").id)
+    ticket = Ticket.new(name: "Hiking in the alps")
 
     refute ticket.valid?
   end
-
-  test "it must belong to an category" do
-    ticket = Ticket.new(name: "Hiking in the alps",
-                        price: 1000)
-
-    refute ticket.valid?
-  end
-
-
 
   test "it must have a price that is greater than zero" do
     ticket = Ticket.new({ name: "Hiking in the Alps",
-                          price: -1,
-                          category_id: Category.find_by_name("Hiking").id
-                          })
+                          price: -1})
 
     refute ticket.valid?
   end

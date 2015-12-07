@@ -1,6 +1,6 @@
 class VendorAdmin::TicketsController < VendorAdmin::BaseController
   def index
-    @categories = Category.all
+    @events = Event.all
   end
 
   def show
@@ -12,11 +12,10 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
   end
 
   def create
-    category= Category.find_or_create_by(name: params[:ticket][:category])
-    @ticket = category.tickets.new(ticket_params)
+    @ticket = Ticket.new(ticket_params)
     if @ticket.save
       flash[:notice] = "The ticket '#{@ticket.name}' has been created"
-      redirect_to vendor_admin_tickets_path
+      redirect_to vendor_tickets_path
     else
       flash[:notice] = @ticket.errors.full_messages.join(", ")
       redirect_to new_vendor_admin_ticket_path
