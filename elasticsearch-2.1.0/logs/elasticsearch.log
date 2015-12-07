@@ -544,6 +544,22 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 [2015-12-06 12:59:39,956][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
 [2015-12-06 13:00:09,971][WARN ][cluster.routing.allocation.decider] [Hammerhead] high disk watermark [90%] exceeded on [e8v6unr_QuSSOcJ8yBQkUg][Hammerhead][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 7gb[3%], shards will be relocated away from this node
 [2015-12-06 13:00:09,971][INFO ][cluster.routing.allocation.decider] [Hammerhead] rerouting shards: [high disk watermark exceeded on one or more nodes]
+<<<<<<< HEAD
+[2015-12-06 18:31:00,249][INFO ][node                     ] [Mark Raxton] version[2.1.0], pid[13834], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-06 18:31:00,251][INFO ][node                     ] [Mark Raxton] initializing ...
+[2015-12-06 18:31:00,316][INFO ][plugins                  ] [Mark Raxton] loaded [], sites []
+[2015-12-06 18:31:00,338][INFO ][env                      ] [Mark Raxton] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [74.3gb], net total_space [111.8gb], spins? [unknown], types [hfs]
+[2015-12-06 18:31:02,236][INFO ][node                     ] [Mark Raxton] initialized
+[2015-12-06 18:31:02,236][INFO ][node                     ] [Mark Raxton] starting ...
+[2015-12-06 18:31:02,359][INFO ][transport                ] [Mark Raxton] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-06 18:31:02,371][INFO ][discovery                ] [Mark Raxton] elasticsearch/WcFBcoLSR_KgsSAq_-ilVQ
+[2015-12-06 18:31:05,403][INFO ][cluster.service          ] [Mark Raxton] new_master {Mark Raxton}{WcFBcoLSR_KgsSAq_-ilVQ}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-06 18:31:05,415][INFO ][http                     ] [Mark Raxton] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-06 18:31:05,416][INFO ][node                     ] [Mark Raxton] started
+[2015-12-06 18:31:05,484][INFO ][gateway                  ] [Mark Raxton] recovered [1] indices into cluster_state
+[2015-12-06 18:31:06,292][WARN ][index.translog           ] [Mark Raxton] [events_development_20151206141626942][3] failed to delete temp file /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/3/translog/translog-6227615538936115489.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/3/translog/translog-6227615538936115489.tlog
+=======
 [2015-12-06 17:49:31,862][INFO ][node                     ] [Venomm] version[2.1.0], pid[5917], build[72cd1f1/2015-11-18T22:40:03Z]
 [2015-12-06 17:49:31,866][INFO ][node                     ] [Venomm] initializing ...
 [2015-12-06 17:49:31,953][INFO ][plugins                  ] [Venomm] loaded [], sites []
@@ -558,6 +574,7 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 [2015-12-06 17:49:38,065][INFO ][gateway                  ] [Venomm] recovered [4] indices into cluster_state
 [2015-12-06 17:49:38,872][WARN ][index.translog           ] [Venomm] [events_test_20151202185521957][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151202185521957/0/translog/translog-7515097862119685641.tlog
 java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151202185521957/0/translog/translog-7515097862119685641.tlog
+>>>>>>> master
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -579,8 +596,13 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+<<<<<<< HEAD
+[2015-12-06 18:31:06,292][WARN ][index.translog           ] [Mark Raxton] [events_development_20151206141626942][2] failed to delete temp file /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/2/translog/translog-3684203378694249815.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/2/translog/translog-3684203378694249815.tlog
+=======
 [2015-12-06 17:49:38,880][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3433843994773679095.tlog
 java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-3433843994773679095.tlog
+>>>>>>> master
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -602,8 +624,13 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+<<<<<<< HEAD
+[2015-12-06 18:31:06,292][WARN ][index.translog           ] [Mark Raxton] [events_development_20151206141626942][4] failed to delete temp file /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/4/translog/translog-8676353613152510045.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/4/translog/translog-8676353613152510045.tlog
+=======
 [2015-12-06 17:49:38,880][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-9062137195738908781.tlog
 java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-9062137195738908781.tlog
+>>>>>>> master
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -625,8 +652,13 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+<<<<<<< HEAD
+[2015-12-06 18:31:06,292][WARN ][index.translog           ] [Mark Raxton] [events_development_20151206141626942][0] failed to delete temp file /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/0/translog/translog-2234517774034329769.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/0/translog/translog-2234517774034329769.tlog
+=======
 [2015-12-06 17:49:38,884][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-5996878763883567592.tlog
 java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-5996878763883567592.tlog
+>>>>>>> master
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -648,6 +680,10 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+<<<<<<< HEAD
+[2015-12-06 18:31:06,459][WARN ][index.translog           ] [Mark Raxton] [events_development_20151206141626942][1] failed to delete temp file /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/1/translog/translog-6368723679156997689.tlog
+java.nio.file.NoSuchFileException: /Users/adamjensen/turing/m3.1/w1/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206141626942/1/translog/translog-6368723679156997689.tlog
+=======
 [2015-12-06 17:49:39,109][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][1]] marking and sending shard failed due to [failed recovery]
 [categories_development_20151202123720875][[categories_development_20151202123720875][1]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/1/index))): files: []];
 	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:224)
@@ -713,6 +749,7 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.lang.Thread.run(Thread.java:745)
 [2015-12-06 17:49:39,122][WARN ][index.translog           ] [Venomm] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-4678288425779114229.tlog
 java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-4678288425779114229.tlog
+>>>>>>> master
 	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
 	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
@@ -734,6 +771,271 @@ java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elastics
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+<<<<<<< HEAD
+[2015-12-06 18:31:10,669][INFO ][rest.suppressed          ] /events_test/_search Params: {index=events_test}
+[events_test] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:566)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:133)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:113)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.<init>(TransportSearchTypeAction.java:121)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:73)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:67)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:64)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:53)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:99)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:570)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:32:11,004][INFO ][cluster.metadata         ] [Mark Raxton] [events_development_20151206183210927] creating index, cause [api], templates [], shards [5]/[1], mappings [_default_]
+[2015-12-06 18:32:11,297][INFO ][cluster.metadata         ] [Mark Raxton] [events_development_20151206183210927] create_mapping [event]
+[2015-12-06 18:32:11,668][INFO ][cluster.metadata         ] [Mark Raxton] [events_development_20151206141626942] deleting index
+[2015-12-06 18:32:22,055][INFO ][rest.suppressed          ] /events_test/_search Params: {index=events_test}
+[events_test] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:566)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:133)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:113)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.<init>(TransportSearchTypeAction.java:121)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:73)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:67)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:64)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:53)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:99)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:570)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:33:41,743][INFO ][rest.suppressed          ] /events_test/_search Params: {index=events_test}
+[events_test] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:566)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:133)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:113)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.<init>(TransportSearchTypeAction.java:121)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:73)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:67)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:64)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:53)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:99)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:570)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-06 18:33:55,454][INFO ][rest.suppressed          ] /events_test/_search Params: {index=events_test}
+[events_test] IndexNotFoundException[no such index]
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver$WildcardExpressionResolver.resolve(IndexNameExpressionResolver.java:566)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:133)
+	at org.elasticsearch.cluster.metadata.IndexNameExpressionResolver.concreteIndices(IndexNameExpressionResolver.java:113)
+	at org.elasticsearch.action.search.type.TransportSearchTypeAction$BaseAsyncAction.<init>(TransportSearchTypeAction.java:121)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:73)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction$AsyncAction.<init>(TransportSearchQueryThenFetchAction.java:67)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:64)
+	at org.elasticsearch.action.search.type.TransportSearchQueryThenFetchAction.doExecute(TransportSearchQueryThenFetchAction.java:53)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:99)
+	at org.elasticsearch.action.search.TransportSearchAction.doExecute(TransportSearchAction.java:44)
+	at org.elasticsearch.action.support.TransportAction.execute(TransportAction.java:70)
+	at org.elasticsearch.client.node.NodeClient.doExecute(NodeClient.java:58)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.FilterClient.doExecute(FilterClient.java:52)
+	at org.elasticsearch.rest.BaseRestHandler$HeadersAndContextCopyClient.doExecute(BaseRestHandler.java:83)
+	at org.elasticsearch.client.support.AbstractClient.execute(AbstractClient.java:347)
+	at org.elasticsearch.client.support.AbstractClient.search(AbstractClient.java:570)
+	at org.elasticsearch.rest.action.search.RestSearchAction.handleRequest(RestSearchAction.java:84)
+	at org.elasticsearch.rest.BaseRestHandler.handleRequest(BaseRestHandler.java:54)
+	at org.elasticsearch.rest.RestController.executeHandler(RestController.java:207)
+	at org.elasticsearch.rest.RestController.dispatchRequest(RestController.java:166)
+	at org.elasticsearch.http.HttpServer.internalDispatchRequest(HttpServer.java:128)
+	at org.elasticsearch.http.HttpServer$Dispatcher.dispatchRequest(HttpServer.java:86)
+	at org.elasticsearch.http.netty.NettyHttpServerTransport.dispatchRequest(NettyHttpServerTransport.java:348)
+	at org.elasticsearch.http.netty.HttpRequestHandler.messageReceived(HttpRequestHandler.java:63)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.http.netty.pipelining.HttpPipeliningHandler.messageReceived(HttpPipeliningHandler.java:60)
+	at org.jboss.netty.channel.SimpleChannelHandler.handleUpstream(SimpleChannelHandler.java:88)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpChunkAggregator.messageReceived(HttpChunkAggregator.java:145)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.handler.codec.http.HttpContentDecoder.messageReceived(HttpContentDecoder.java:108)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:296)
+	at org.jboss.netty.handler.codec.frame.FrameDecoder.unfoldAndFireMessageReceived(FrameDecoder.java:459)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.callDecode(ReplayingDecoder.java:536)
+	at org.jboss.netty.handler.codec.replay.ReplayingDecoder.messageReceived(ReplayingDecoder.java:435)
+	at org.jboss.netty.channel.SimpleChannelUpstreamHandler.handleUpstream(SimpleChannelUpstreamHandler.java:70)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline$DefaultChannelHandlerContext.sendUpstream(DefaultChannelPipeline.java:791)
+	at org.elasticsearch.common.netty.OpenChannelsHandler.handleUpstream(OpenChannelsHandler.java:75)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:564)
+	at org.jboss.netty.channel.DefaultChannelPipeline.sendUpstream(DefaultChannelPipeline.java:559)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:268)
+	at org.jboss.netty.channel.Channels.fireMessageReceived(Channels.java:255)
+	at org.jboss.netty.channel.socket.nio.NioWorker.read(NioWorker.java:88)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.process(AbstractNioWorker.java:108)
+	at org.jboss.netty.channel.socket.nio.AbstractNioSelector.run(AbstractNioSelector.java:337)
+	at org.jboss.netty.channel.socket.nio.AbstractNioWorker.run(AbstractNioWorker.java:89)
+	at org.jboss.netty.channel.socket.nio.NioWorker.run(NioWorker.java:178)
+	at org.jboss.netty.util.ThreadRenamingRunnable.run(ThreadRenamingRunnable.java:108)
+	at org.jboss.netty.util.internal.DeadLockProofWorker$1.run(DeadLockProofWorker.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+=======
 [2015-12-06 17:49:39,122][WARN ][cluster.action.shard     ] [Venomm] [categories_development_20151202123720875][1] received shard failed for [categories_development_20151202123720875][1], node[DlxEukgFTK2GianbEE2uNw], [P], v[13], s[INITIALIZING], a[id=SJfz3s24RUaT2zhzer_cNg], unassigned_info[[reason=CLUSTER_RECOVERED], at[2015-12-07T00:49:37.958Z]], indexUUID [H_q0p-O1R2SVGAZM2kHENg], message [master {Venomm}{DlxEukgFTK2GianbEE2uNw}{127.0.0.1}{127.0.0.1:9300} marked shard as initializing, but shard is marked as failed, resend shard failure], failure [Unknown]
 [2015-12-06 17:49:39,134][WARN ][indices.cluster          ] [Venomm] [[categories_development_20151202123720875][3]] marking and sending shard failed due to [failed recovery]
 [categories_development_20151202123720875][[categories_development_20151202123720875][3]] IndexShardRecoveryException[failed to fetch index version after copying it over]; nested: IndexShardRecoveryException[shard allocated for local recovery (post api), should exist, but doesn't, current files: []]; nested: IndexNotFoundException[no segments* file found in store(default(mmapfs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index),niofs(/Users/acareaga/Turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/categories_development_20151202123720875/3/index))): files: []];
@@ -1098,3 +1400,4 @@ Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
 [2015-12-06 18:56:15,706][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
 [2015-12-06 18:56:15,779][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] create_mapping [event]
 [2015-12-06 18:56:15,828][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] deleting index
+>>>>>>> master
