@@ -31,6 +31,7 @@ main {
 
 nav {
   color: black;
+  border-bottom: 1px solid #ddd;
 }
 
 nav ul li a {
@@ -106,14 +107,53 @@ b .price {
   color: #fff;
 }
 
-.flash_auth {
-  background-color: rgba(220,20,60,0.6)
+.flash_auth, .flash_error {
+  background-color: rgba(220,20,60,0.6);
 }
 
 .flash_notice {
-  background-color: rgba(34,139,34,0.6)
+  background-color: rgba(34,139,34,0.6);
 }
 
 .table-footer {
   padding: 35px;
+}
+
+.clickable:hover {
+  cursor: pointer;
+}
+
+.clickable a {
+  color: #000;
+}
+table .highlight tbody tr {
+  transition: background-color 0.25s ease;
+}
+
+small {
+  color: #42a5f5;
+}
+
+.filter select {
+  border: 1px solid #999;
+}
+
+.uos h5 {
+  margin-bottom: 5px;
+}
+
+.Paid {
+  color: #4caf50;
+}
+
+.Cancelled {
+  color: #f44336;
+}
+
+.Completed {
+  color: #2196f3;
+}
+
+.Pending {
+  color: #ff9800;
 }

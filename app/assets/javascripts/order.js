@@ -8,9 +8,11 @@ $(document).ready(function() {
       $order = $(order);
       if ($order.data('status') === currentStatus) {
         $order.show();
+      } else if (currentStatus === '') {
+        $order.show();
       } else {
         $order.hide();
-      }
+      };
     });
   });
 });

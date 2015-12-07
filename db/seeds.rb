@@ -88,11 +88,12 @@ class Seed
   def generate_order_tickets
     order_count = Order.count
     ticket_count = Ticket.count
-    50.times do |i|
+    500.times do |i|
       OrderTicket.create!(
       order_id: rand(1..order_count),
       ticket_id: rand(1..ticket_count)
       )
+      puts "Ticket added to order"
     end
   end
 
