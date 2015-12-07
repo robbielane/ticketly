@@ -11,6 +11,7 @@ class Ticket < ActiveRecord::Base
   enum status: [:active, :retired]
 
   scope :vendor_order_tickets, ->(vendor) { where("vendor_id = ?", vendor) }
+  scope :active, -> { where(status: 0) }
 
   def retire
     self.update(status: "retired")
