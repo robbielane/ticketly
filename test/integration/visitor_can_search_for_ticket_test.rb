@@ -61,4 +61,22 @@ class VisitorCanSearchForTicketTest < ActionDispatch::IntegrationTest
     assert page.has_content?(flash)
     assert login_path, current_path
   end
+
+
+  test "visitor can join ticketly and upload a profile picture" do
+    visit root_path
+
+    click_link "Join"
+
+    fill_in "Name", with: "Jhun"
+    fill_in "Username", with: "yung-jhun"
+    fill_in "Password", with: "pass"
+
+    assert page.has_content?("Upload Image")
+
+    click_link "Create Account"
+
+    assert_equal user_dashboard_path, current_path
+    assert page.has_content?("Logged in as Jhun")
+  end
 end
