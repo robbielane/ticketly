@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VisitorCanViewIndexOfEvents < ActionDispatch::IntegrationTest
+class VisitorCanViewIndexOfEventsTest < ActionDispatch::IntegrationTest
   def disney
     Event.last
   end

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 m6 offset-m3">
+      <h4 class="center">Add a New Ticket</h4>
+      <%= form_for(@ticket, url: vendor_tickets_path(vendor: current_user.vendor.name))  do |f| %>
+        <div class="input-field">
+          <%= f.label :section %>
+          <%= f.text_field :section %>
+        </div>
+        <div class="input-field">
+          <%= f.label :row %>
+          <%= f.text_field :row %>
+        </div>
+        <div class="input-field">
+          <%= f.label :seat %>
+          <%= f.text_field :seat %>
+        </div>
+        <div class="input-field">
+          <%= f.label :price %>
+          <%= f.text_field :price %>
+        </div>
+        <div class="input-field">
+          <%= f.label :status %>
+          <%= f.text_field :status %>
+        </div>
+          <%= f.button "Create Ticket", class: "waves-effect waves-light btn orange" %>
+      <% end %>
+    </div>
+  </div>
+</div>
