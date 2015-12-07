@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class VisitorCanSignUpTest < ActionDispatch::IntegrationTest
-  
+
   test "visitor signs up" do
     user_count = User.count
     assert_equal 2, user_count

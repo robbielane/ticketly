@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash[:notive] = "Account Created!"
       redirect_to "/dashboard"
     else
-      flash[:error] = "Invalid user credentials. Please try again."
+      flash[:error] = "Something went wrong, Please try again."
       redirect_to login_path
     end
   end
