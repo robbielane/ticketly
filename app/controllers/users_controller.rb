@@ -8,10 +8,10 @@ class UsersController < ApplicationController
     if @user.save
       @user.roles << Role.find_by(name: "registered_user")
       session[:user_id] = @user.id
-      flash[:success] = "Account Created!"
+      flash[:notive] = "Account Created!"
       redirect_to "/dashboard"
     else
-      flash[:notice] = "Invalid user credentials. Please try again."
+      flash[:notice] = "Something went wrong, Please try again."
       redirect_to login_path
     end
   end
@@ -36,8 +36,10 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    current_user.user_roles = []
     current_user.destroy
     session.clear
+    flash.notice = "Account Deleted!"
     redirect_to root_path
   end
 
