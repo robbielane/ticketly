@@ -1,0 +1,6 @@
+%h1.black-text.center-align tickets
+
+- @events.each do |event|
+  %h2.center-align= link_to("#{event.name}", "/#{event.name.parameterize}")
+  .row
+    = render event.tickets, locals: {tickets: event.tickets}

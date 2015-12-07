@@ -1,0 +1,18 @@
+- tickets.each do |ticket|
+.ticket{ :id => "#{ticket.event.name.parameterize)}" }
+  .col.s12.m4
+    .card
+      .card-content
+        %p= "#{ticket.event.name}"
+        %br
+        = "#{format_currency(ticket.price)}"
+      .card-action{id: ticket.id}
+        = link_to "Details", ticket_path(ticket)
+        %br
+        %br
+
+        - if current_admin
+          = "Status: #{ticket.status.upcase}"
+          %br
+          %br
+          = button_to "Edit", edit_admin_ticket_path(ticket), method: :get

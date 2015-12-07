@@ -2,8 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authorize!
   before_action :set_cart
-  helper_method :format_url_name, :count_of_trips,
-                :pursuits_in_cart, :current_user, :current_vendor?
+  helper_method :count_of_trips, :current_user, :current_vendor?
 
 
   def current_permission
@@ -16,10 +15,6 @@ class ApplicationController < ActionController::Base
 
   def current_vendor?
     current_user && current_user.vendor_admin?
-  end
-
-  def format_url_name(name)
-    name.downcase.gsub(" ", "_")
   end
 
   def find_category_by_name(name)
