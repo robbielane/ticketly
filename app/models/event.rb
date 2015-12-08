@@ -5,4 +5,5 @@ class Event < ActiveRecord::Base
   searchkick
 
   scope :just_added, -> { order("created_at DESC").limit(10) }
+  scope :current, -> { where("date_time > ?", Time.now) }
 end
