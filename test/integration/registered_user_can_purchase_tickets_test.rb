@@ -12,7 +12,7 @@ class RegisteredUserCanPurchaseTicketsTest < ActionDispatch::IntegrationTest
       click_on "Purchase"
     end
     click_on "Cart"
-    assert cart_path, current_path 
+    assert cart_path, current_path
     click_on "Checkout"
     assert page.has_content?("Order was successfully placed")
   end
@@ -28,11 +28,10 @@ class RegisteredUserCanPurchaseTicketsTest < ActionDispatch::IntegrationTest
       click_on "Purchase"
     end
     click_on "Cart"
-    assert cart_path, current_path 
-    click_on "Remove"
-    result = "You have removed the trip Disney Frozen On Ice from your cart"
-    assert page.has_content?("#{result}")
+    assert cart_path, current_path
+    click_link "Remove"
+    result = "You have removed the ticket Disney Frozen On Ice from your cart"
+    assert page.has_content?(result)
   end
 
 end
-

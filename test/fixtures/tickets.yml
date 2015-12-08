@@ -1,9 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-
   price: 70
   section: 110
   row: 23
   seat: 4
+  event: one
+
+two:
+  price: 70
+  section: 130
+  row: 1
+  seat: 15
   event: one

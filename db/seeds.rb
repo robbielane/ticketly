@@ -34,11 +34,11 @@ class Seed
 
   def generate_vendors
     user = User.find(2)
-    Vendor.create!(name:"aaron-s-swag-store", user_id: user.id)
+    Vendor.create!(name:"aaron-s-swag-store", user_id: user.id, status: 0)
     user.update!(vendor_id: 1, password: "pass")
 
     user2 = User.find(4)
-    Vendor.create!(name: "dix-tix", user_id: user2.id)
+    Vendor.create!(name: "dix-tix", user_id: user2.id, status: 1)
     user2.update!(vendor_id: 2, password: "pass")
   end
 
@@ -72,7 +72,7 @@ class Seed
     user_count = User.count
     status_collection = %w(Completed Paid Cancelled Pending)
     100.times do |i|
-      user = User.find(rand(1..user_count))
+      user = User.find(rand(1..(user_count-1)))
 
       5.times do |i|
         order = user.orders << Order.create!(

@@ -19,7 +19,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert "/aaron-s-store/dashboard", current_path
 
-
     click_link("Edit Account")
     fill_in ("Username"), with: "acareaga"
     click_button "Update Account"
@@ -32,7 +31,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
     user.update!(vendor_id: vendor.id, password:"pass")
-
 
     visit login_path
 
@@ -51,8 +49,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert_equal new_vendor_ticket_path, current_path
 
-
-
     fill_in "Section", with: "A"
     fill_in "Row", with: "B"
     fill_in "Seat", with: "A"
@@ -66,12 +62,12 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can edit their tickets" do
-
+    event = events(:one)
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
     user.update!(vendor_id: vendor.id, password:"pass")
-
+    Ticket.create(section: "a", row: "b", seat: "d", price: 10, vendor_id: vendor.id, status: 0, event_id: event.id)
 
     visit login_path
 
@@ -83,7 +79,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     click_link "View All Tickets"
 
     within("#disney-frozen-on-ice") do
-      click_button "Edit"
+      click_link "Edit"
     end
 
     fill_in "Section", with: 100
@@ -99,12 +95,12 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can delete their ticket" do
-
+    event = events(:one)
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
-    Ticket.create(section:"a",)
     user.update!(vendor_id: vendor.id, password:"pass")
+    Ticket.create(section: "a", row: "b", seat: "d", price: 10, vendor_id: vendor.id, status: 0, event_id: event.id)
 
 
     visit login_path
@@ -116,7 +112,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     click_link "View All Tickets"
 
-    save_and_open_page
+
     within("#disney-frozen-on-ice") do
       click_link "Delete"
     end
