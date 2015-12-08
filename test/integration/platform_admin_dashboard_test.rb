@@ -19,14 +19,6 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     assert_equal platform_admin_dashboard_path, current_path
   end
 
-  test "Platform admin can delete their account" do
-    platform_admin_login
-    click_link "Delete Account"
-
-    assert page.has_content?("Account Deleted!")
-    assert_equal root_path, current_path
-  end
-
   test "Platform admin can take a vendor offline" do
     create_vendor_admin
     platform_admin_login
