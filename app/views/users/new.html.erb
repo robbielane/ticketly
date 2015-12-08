@@ -7,27 +7,33 @@
     <div class="row">
       <div class="col s12 m6 offset-m3 black-text">
         <h5 class="black-text">Create Account</h5>
-        <%= form_for(@new_user, html: {multipart: true}) do |f| %>
+
+        <%= form_tag '/users#create', method: :update, :multipart => true do %>
           <div class="input-field">
-            <%= f.label :name %>
-            <%= f.text_field :name %>
+            <%= label_tag :name %>
+            <%= text_field_tag :name %>
           </div>
           <div class="input-field">
-            <%= f.label :username %>
-            <%= f.text_field :username %>
+            <%= label_tag :email %>
+            <%= text_field_tag :email %>
           </div>
           <div class="input-field">
-            <%= f.label :email %>
-            <%= f.email_field :email %>
+            <%= label_tag :username %>
+            <%= text_field_tag :username %>
           </div>
           <div class="input-field">
-            <%= f.label :password %>
-            <%= f.password_field :password %>
-            <p></p>
-            <%= f.file_field :image %>
-            <br/>
-            <br/>
-            <%= f.button "Create Account", class: "waves-effect waves-light btn orange" %>
+            <%= label_tag :password %>
+            <%= password_field_tag :password %>
+          </div>
+          <div class="input-field">
+            <%= check_box_tag(:role) %>
+            <%= label_tag(:role, "Sign up as a Vendor") %>
+          </div>
+          <div class="input-field">
+            <%= file_field_tag :image %>
+          </div>
+          <div class="input-field">
+            <%= button_tag "Create Account", class: "waves-effect waves-light btn orange" %>
           </div>
         <% end %>
       </div>

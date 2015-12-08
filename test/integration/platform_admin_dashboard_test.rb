@@ -5,35 +5,45 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
   test "Platform admin can access dashboard" do
     platform_admin_login
 
-    assert admin_dashboard_path, current_path
+    assert_equal platform_admin_dashboard_path, current_path
+  end
+
+  test "Platform admin can edit their account" do
+    platform_admin_login
+
+    click_link "Edit Account"
+
+    fill_in "Username", with: "jhun"
+    fill_in "Name", with: "jhun"
+    fill_in "Password", with: "pass"
+
+    click_button "Update Account"
+
+    assert_equal platform_admin_dashboard_path, current_path
   end
 
   test "Platform admin can take a vendor offline" do
-    skip
     create_vendor_admin
-
     platform_admin_login
 
-    assert admin_dashboard_path, current_path
+    assert platform_admin_dashboard_path, current_path
 
     within("#aaron-s-store") do
-      assert page.has_content?("Vendors")
-      assert page.has_content?("Status")
+      click_link("active")
     end
 
-    click_button("Offline")
+    assert page.has_content?("Name")
+    assert page.has_content?("Status")
 
-    within("#aaron-s-store") do
-      refute page.has_content?("Offline")
-      assert page.has_content?("Online")
+    select "active", :from => "vendor[status]"
+    fill_in "Name", with: "aaron-swag"
+
+    click_button "Update Vendor"
+
+    within("#aaron-swag") do
+      assert page.has_content?("active")
     end
 
-
-# I expect to see an index of existing businesses and their status,
-# I expect to see a button to take the business offline or online,
-# And when I click offline,
-# I expect to see the business status updated,
-# And when I visit that business url,
-# I expect to be redirected to the index of online businesses
+    assert_equal platform_admin_dashboard_path, current_path
   end
 end

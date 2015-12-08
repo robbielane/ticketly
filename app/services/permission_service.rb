@@ -34,11 +34,14 @@ class PermissionService
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
-    return true if controller == "users"                    && action.in?(%w(edit update))
+    return true if controller == "users"                    && action.in?(%w(edit update create))
+    return true if controller == "cart_tickets"             && action.in?(%w(create show update delete))
   end
 
 
   def platform_admin_permissions
+    return true if controller == "platform_admin/admin"     && action.in?(%w(dashboard))
+    return true if controller == "platform_admin/vendor"    && action.in?(%w(show edit update))
     return true if controller == "sessions"                 && action.in?(%w(new create delete))
     return true if controller == "home"                     && action.in?(%w(index show))
     return true if controller == "orders"                   && action.in?(%w(show create index))
@@ -46,8 +49,8 @@ class PermissionService
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
-    return true if controller == "users"                    && action.in?(%w(edit update))
-
+    return true if controller == "users"                    && action.in?(%w(dashboard edit update))
+    return true if controller == "cart_tickets"             && action.in?(%w(create show update delete))
   end
 
   def registered_user_permission
@@ -58,7 +61,7 @@ class PermissionService
     return true if controller == "category"       && action.in?(%w(show))
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
     return true if controller == "orders"         && action.in?(%w(create show index))
-    return true if controller == "users"          && action.in?(%w(dashboard edit update))
+    return true if controller == "users"          && action.in?(%w(dashboard edit update destroy))
   end
 
   def general_permissions

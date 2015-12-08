@@ -1,6 +1,7 @@
 class VendorAdmin::TicketsController < VendorAdmin::BaseController
   def index
-    @events = Event.all
+    vendor = Vendor.find_by(name: params[:vendor].parameterize)
+    @tickets = vendor.tickets.paginate(page: params[:page], per_page: 21)
   end
 
   def show

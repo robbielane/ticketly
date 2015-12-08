@@ -8,12 +8,14 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       if current_vendor?
         redirect_to vendor_dashboard_path(@user)
+      elsif platform_admin?
+        redirect_to platform_admin_dashboard_path
       else
         redirect_to dashboard_path
       end
     else
-      flash[:errors] = "Invalid login credentials"
-      redirect_to login_path
+      flash.now[:error] = "Invalid login credentials"
+      render :new
     end
   end
 

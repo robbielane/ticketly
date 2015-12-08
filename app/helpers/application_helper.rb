@@ -14,6 +14,8 @@ module ApplicationHelper
   def join_dashboard_path
     if current_vendor?
       link_to "Logged in as #{current_user.name}", vendor_dashboard_path(current_user)
+    elsif platform_admin?
+      link_to "Logged in as #{current_user.name}", platform_admin_dashboard_path(current_user)
     elsif current_user
       link_to "Logged in as #{current_user.name}", dashboard_path
     else
@@ -35,5 +37,23 @@ module ApplicationHelper
 
   def format_date_and_time(date)
     "#{format_date(date)} at #{format_time(date)}"
+  end
+
+  def role_assignment(params, user)
+    if params[:role] == nil 
+      user.roles << Role.find_by(name: "registered_user")
+    end
+    if params[:role] == "1"
+      user.roles << Role.find_by(name: "vendor_admin")
+      Vendor.create!(user_id: user.id, name: user.name)
+    end
+  end
+
+  def redirect_router(user)
+    if user.vendor_admin?
+      redirect_to vendor_dashboard_path(user)
+    else
+      redirect_to dashboard_path 
+    end
   end
 end

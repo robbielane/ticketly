@@ -18,35 +18,8 @@
 //= require_tree .
 
 
-var $el = $(".ticket");
-var elHeight = $el.outerHeight();
-var elWidth = $el.outerWidth();
-
-var $wrapper = $("#scaleable-wrapper");
-
-$wrapper.resizable({
-  resize: doResize
-});
-
-function doResize(event, ui) {
-
-  var scale, origin;
-
-  scale = Math.min(
-    ui.size.width / elWidth,
-    ui.size.height / elHeight
-  );
-
-  $el.css({
-    transform: "translate(-50%, -50%) " + "scale(" + scale + ")"
+$(document).ready(function() {
+  $('.clickable').click(function() {
+    window.document.location = $(this).data('link');
   });
-
-}
-
-var starterData = {
-  size: {
-    width: $wrapper.width(),
-    height: $wrapper.height()
-  }
-}
-doResize(null, starterData);
+});

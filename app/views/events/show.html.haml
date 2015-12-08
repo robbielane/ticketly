@@ -6,8 +6,8 @@
         %p= @event.venue
         %p= "#{@event.location_city}, #{@event.location_state}"
     .col.m7
-      .tickets-table-wrapper
-        %table.bordered.tickets-table
+      .events-table-wrapper
+        %table.bordered.events-table
           %thead
             %tr
               %th Ticket ID
@@ -17,7 +17,11 @@
               %th Price
               %th.center Purchase
           %tbody
-            - @event.tickets.each do |ticket|
+          - if @event.tickets.active.empty?
+            %tr
+              %td.center{ colspan: 6} No Tickets Available at this time.
+          - else
+            - @event.tickets.active.each do |ticket|
               %tr{id: ticket.id}
                 %td= ticket.id
                 %td= ticket.section

@@ -8,7 +8,10 @@ class Ticket < ActiveRecord::Base
   validates :price, presence: true
   validates_numericality_of :price, greater_than: 0
 
-  enum status: [ :active, :retired]
+  enum status: [:active, :retired]
+
+  scope :vendor_order_tickets, ->(vendor) { where("vendor_id = ?", vendor) }
+  scope :active, -> { where(status: 0) }
 
   def retire
     self.update(status: "retired")
@@ -18,6 +21,4 @@ class Ticket < ActiveRecord::Base
     status == "retired"
   end
 
-  def event_name
-  end
 end
