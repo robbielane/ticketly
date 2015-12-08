@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col s12 m6 offset-m3">
       <h4 class="center">Add a New Ticket</h4>
-      <%= form_for(@ticket, url: vendor_tickets_path(vendor: current_user.vendor.name))  do |f| %>
+      <%= form_for(@ticket, url: vendor_tickets_path(vendor: current_user.vendor.id))  do |f| %>
         <div class="input-field">
           <%= f.label :name %>
           <%= f.text_field :name %>
