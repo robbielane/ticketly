@@ -43,7 +43,8 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     click_link("Edit Account")
 
     fill_in "Password", with: "password"
-    check "Vendor"
+
+    uncheck "Vendor"
     click_button "Update Account"
 
     assert "/dashboard", current_path
