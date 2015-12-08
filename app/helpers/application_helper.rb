@@ -40,20 +40,22 @@ module ApplicationHelper
   end
 
   def role_assignment(params, user)
-    if params[:role] == nil 
+    if params[:role] == nil
       user.roles << Role.find_by(name: "registered_user")
     end
     if params[:role] == "1"
       user.roles << Role.find_by(name: "vendor_admin")
-      Vendor.create!(user_id: user.id, name: user.name)
+      vendor = Vendor.create!(user_id: user.id, name: user.name)
+      user.update(vendor_id: vendor.id )
+
     end
   end
 
   def redirect_router(user)
     if user.vendor_admin?
-      redirect_to vendor_dashboard_path(user)
+      redirect_to vendor_dashboard_path(user.vendor.slug)
     else
-      redirect_to dashboard_path 
+      redirect_to dashboard_path
     end
   end
 end

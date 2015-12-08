@@ -1199,3 +1199,258 @@ Caused by: [events_test_20151206183501650] IndexNotFoundException[no such index]
 [2015-12-06 18:56:15,779][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206185615666] create_mapping [event]
 [2015-12-06 18:56:15,828][INFO ][cluster.metadata         ] [Puishannt] [events_test_20151206183956017] deleting index
 >>>>>>> master
+[2015-12-08 08:08:00,475][INFO ][node                     ] [Power Princess] version[2.1.0], pid[3497], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-08 08:08:00,475][INFO ][node                     ] [Power Princess] initializing ...
+[2015-12-08 08:08:00,538][INFO ][plugins                  ] [Power Princess] loaded [], sites []
+[2015-12-08 08:08:00,598][INFO ][env                      ] [Power Princess] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [6.9gb], net total_space [232.6gb], spins? [unknown], types [hfs]
+[2015-12-08 08:08:03,769][INFO ][node                     ] [Power Princess] initialized
+[2015-12-08 08:08:03,769][INFO ][node                     ] [Power Princess] starting ...
+[2015-12-08 08:08:03,899][INFO ][transport                ] [Power Princess] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-08 08:08:03,913][INFO ][discovery                ] [Power Princess] elasticsearch/YzRuqiJeQpqt23bON9tz9A
+[2015-12-08 08:08:06,956][INFO ][cluster.service          ] [Power Princess] new_master {Power Princess}{YzRuqiJeQpqt23bON9tz9A}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-08 08:08:06,969][INFO ][http                     ] [Power Princess] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-08 08:08:06,970][INFO ][node                     ] [Power Princess] started
+[2015-12-08 08:08:07,044][INFO ][gateway                  ] [Power Princess] recovered [2] indices into cluster_state
+[2015-12-08 08:08:07,967][WARN ][index.translog           ] [Power Princess] [events_test_20151207205812342][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151207205812342/0/translog/translog-2130827100002640092.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151207205812342/0/translog/translog-2130827100002640092.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 08:08:07,969][WARN ][index.translog           ] [Power Princess] [events_development_20151206142102350][2] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/2/translog/translog-6862979578762182045.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/2/translog/translog-6862979578762182045.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 08:08:07,969][WARN ][index.translog           ] [Power Princess] [events_development_20151206142102350][3] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/3/translog/translog-3434055756909950503.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/3/translog/translog-3434055756909950503.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 08:08:07,968][WARN ][index.translog           ] [Power Princess] [events_development_20151206142102350][0] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/0/translog/translog-3964611108217473604.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/0/translog/translog-3964611108217473604.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 08:08:08,100][WARN ][index.translog           ] [Power Princess] [events_development_20151206142102350][1] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/1/translog/translog-2475741650328165484.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/1/translog/translog-2475741650328165484.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 08:08:08,100][WARN ][index.translog           ] [Power Princess] [events_development_20151206142102350][4] failed to delete temp file /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/4/translog/translog-7906268948581629354.tlog
+java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151206142102350/4/translog/translog-7906268948581629354.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 08:08:36,976][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[3%], shards will be relocated away from this node
+[2015-12-08 08:08:36,976][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:09:07,000][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[3%], shards will be relocated away from this node
+[2015-12-08 08:09:37,018][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:09:37,018][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:10:07,036][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:10:37,053][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:10:37,053][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:11:07,070][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:11:37,085][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[3%], shards will be relocated away from this node
+[2015-12-08 08:11:37,085][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:12:07,101][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:12:37,119][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:12:37,119][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:13:07,136][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:13:37,155][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:13:37,155][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:14:07,180][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:14:37,196][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:14:37,196][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:15:07,213][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:15:37,227][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:15:37,228][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:16:07,247][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.8gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:16:37,267][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:16:37,268][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:17:07,289][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:17:37,307][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:17:37,307][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:18:07,338][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:18:37,360][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:18:37,360][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:19:07,382][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:19:31,150][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208081931088] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:19:31,248][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208081931088] create_mapping [event]
+[2015-12-08 08:19:31,293][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151207205812342] deleting index
+[2015-12-08 08:19:37,403][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:19:37,403][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:20:07,422][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:20:37,126][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208082037085] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:20:37,219][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208082037085] create_mapping [event]
+[2015-12-08 08:20:37,265][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208081931088] deleting index
+[2015-12-08 08:20:37,439][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:20:37,439][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:21:07,454][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:21:37,471][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:21:37,471][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:22:07,491][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:22:37,507][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:22:37,508][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:23:07,524][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:23:37,536][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:23:37,537][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:24:07,550][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:24:37,569][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:24:37,569][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:24:51,934][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208082451886] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:24:52,008][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208082451886] create_mapping [event]
+[2015-12-08 08:24:52,054][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208082037085] deleting index
+[2015-12-08 08:25:07,581][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:25:37,596][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:25:37,596][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:26:07,613][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:26:37,637][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:26:37,638][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:27:07,655][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:27:37,670][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:27:37,670][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:28:07,688][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:28:37,703][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:28:37,703][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:29:07,716][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:29:37,733][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:29:37,733][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:30:08,668][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:30:38,679][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:30:38,679][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:31:08,697][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:31:38,709][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:31:38,709][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:32:08,727][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:32:38,743][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:32:38,743][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:32:49,858][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083249822] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:32:49,947][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083249822] create_mapping [event]
+[2015-12-08 08:32:50,008][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208082451886] deleting index
+[2015-12-08 08:33:08,759][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:33:30,121][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083330097] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:33:30,197][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083330097] create_mapping [event]
+[2015-12-08 08:33:30,255][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083249822] deleting index
+[2015-12-08 08:33:38,771][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:33:38,771][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:34:08,790][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:34:13,843][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083413822] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:34:13,902][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083413822] create_mapping [event]
+[2015-12-08 08:34:13,937][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083330097] deleting index
+[2015-12-08 08:34:38,093][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083438073] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:34:38,160][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083438073] create_mapping [event]
+[2015-12-08 08:34:38,218][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083413822] deleting index
+[2015-12-08 08:34:38,806][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:34:38,806][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 08:35:08,820][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
+[2015-12-08 08:35:27,986][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083527954] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 08:35:28,034][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083527954] create_mapping [event]
+[2015-12-08 08:35:28,097][INFO ][cluster.metadata         ] [Power Princess] [events_test_20151208083438073] deleting index

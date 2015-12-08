@@ -10,7 +10,7 @@ class VendorAdmin::EventsController < VendorAdmin::BaseController
       flash[:notice]= "Your event has been created."
       redirect_to new_vendor_ticket_path(event_id: @event.id)
     else
-      flash.now[:errors]= "ya bish"
+      flash.now[:errors]= ":[]"
       render :new
     end
   end
@@ -18,6 +18,6 @@ class VendorAdmin::EventsController < VendorAdmin::BaseController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location_city, :location_state, :date_time, :venue)
+    params.require(:event).permit(:name, :description, :location_city, :location_state, :date_time, :venue, :category_id)
   end
 end
