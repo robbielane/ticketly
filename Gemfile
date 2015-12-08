@@ -24,6 +24,7 @@ gem 'will_paginate-materialize'
 gem "searchkick"
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
+gem 'rqrcode_png'
 
 group :production do
   gem "rails_12factor"
