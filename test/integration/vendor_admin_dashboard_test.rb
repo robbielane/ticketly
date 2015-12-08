@@ -62,7 +62,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert page.has_content?("Disney Frozen On Ice")
     assert page.has_content?(100)
-    
+
   end
 
   test "vendor can edit their tickets" do
@@ -99,9 +99,11 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can delete their ticket" do
+
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
+    Ticket.create(section:"a",)
     user.update!(vendor_id: vendor.id, password:"pass")
 
 
@@ -114,8 +116,9 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     click_link "View All Tickets"
 
+    save_and_open_page
     within("#disney-frozen-on-ice") do
-      click_button "Delete"
+      click_link "Delete"
     end
 
     refute page.has_content?("Frozen on Ice")

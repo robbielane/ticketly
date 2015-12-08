@@ -20,7 +20,7 @@ class CartTicketsController < ApplicationController
     trip = Ticket.find(params[:ticket_id])
     @cart.remove(trip)
 
-    flash[:notice] = "You have removed the trip #{view_context.link_to(trip.name, ticket_path(trip))} from your cart."
+    flash[:notice] = "You have removed the trip #{view_context.link_to(ticket.event.name, ticket_path(trip))} from your cart."
     redirect_to cart_path
   end
 end
