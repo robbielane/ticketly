@@ -29,4 +29,18 @@ class VisitorCanSignUpTest < ActionDispatch::IntegrationTest
     assert dashboard_path, current_path
     assert page.has_content?("Something went wrong, Please try again.")
   end
+
+  test "visitor can sign up as vendor" do
+    visit root_path
+    click_on "Join"
+    fill_in "Name", with: "Donald Trump"
+    fill_in "Username", with: "Trumpster"
+    fill_in "Password", with: "password"
+    check("Vendor")
+    click_button "Create Account"
+
+    greeting = "Donald trump Dashboard"
+    assert page.has_content?(greeting)
+    assert page.has_content?("Account Created!")
+  end
 end
