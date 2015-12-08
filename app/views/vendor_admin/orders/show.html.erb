@@ -44,7 +44,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @order.tickets.vendor_order_tickets(params[:vendor]).each do |ticket| %>
+      <% @order.tickets.vendor_order_tickets(@order.vendor_id).each do |ticket| %>
         <tr>
           <%= content_tag :td, ticket.event.name %>
           <%= content_tag :td, ticket.section %>
