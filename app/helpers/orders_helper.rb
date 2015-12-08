@@ -9,7 +9,7 @@ module OrdersHelper
   end
 
   def ticket_name_and_travellers(order, target_ticket)
-    ticket_name = order.ticketse.map do |ticket|
+    ticket_name = order.tickets.map do |ticket|
       next unless target_ticket.id.to_i == ticket.id
       format_name_and_travellers(order, ticket)
     end
