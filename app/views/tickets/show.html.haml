@@ -1,17 +1,8 @@
-.white-text
+.black-text
   .center-align
-    %h1= @ticket.name
+    %h1= Event.find(@ticket.event_id).name
 
-    .waves-effect.waves-light.btn.white-text
-      = purchase_link_or_retired_notice
-
-  %p.center-align= "Ticket price: #{format_currency(@ticket.price)}"
-
-  %br
-
-  .row
-    .col.s4
-    .col.s8
-      %p.ticket-section = @ticket.section
-      %p.ticket-row = @ticket.row
-      %p.ticket-seat = @ticket.seat
+  %p.center-align= "Price: #{format_currency(@ticket.price)}"
+  %p.center-align= "Section: #{@ticket.section}"
+  %p.center-align= "Row: #{@ticket.row}"
+  %p.center-align= "Seat: #{@ticket.seat}"
