@@ -1,0 +1,31 @@
+.container
+  .row
+    .col.m5
+      .center
+        %h2= @vendor.name
+        %p= @vendor.status
+    .col.m7
+      .vendors-table-wrapper
+        %table.bordered.vendors-table
+          %thead
+            %tr
+              %th Ticket ID
+              %th Section
+              %th Row
+              %th Seat
+              %th Price
+              %th.center Purchase
+          %tbody
+          - if @vendor.tickets.active.empty?
+            %tr
+              %td.center{ colspan: 6} No Tickets Available at this time.
+          - else
+            - @vendor.tickets.active.each do |ticket|
+              %tr{id: ticket.id}
+                %td= ticket.id
+                %td= ticket.section
+                %td= ticket.row
+                %td= ticket.seat
+                %td= "$#{ticket.price}"
+                = form_tag(cart_tickets_path(ticket_id: ticket.id)) do
+                  %td.center= button_tag "Purchase", class: "waves-effect btn orange"
