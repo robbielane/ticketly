@@ -22,17 +22,6 @@ class VisitorCanViewIndexOfVendorsTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Row")
     assert page.has_content?("Price")
     assert page.has_content?("Seat")
-  end
-
-  test 'vendor show lists available tickets' do
-    skip
-    visit vendor_path()
-
-    within "##{disney.id}" do
-      assert page.has_content?("110")
-      assert page.has_content?("23")
-      assert page.has_content?("4")
-      assert page.has_content?("$70")
-    end
+    assert page.has_content?("Purchase")
   end
 end
