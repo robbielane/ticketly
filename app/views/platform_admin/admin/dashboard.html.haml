@@ -19,7 +19,7 @@
         %th User ID
 
       - @vendors.each do |vendor|
-        %tr.vendor{ data: {status: "#{vendor.status}"} }
+        %tr.vendor{id: "#{vendor.name.parameterize}"}
           = content_tag :td, link_to("#{vendor.id}", platform_admin_vendor_path(id: vendor.id))
           = content_tag :td, vendor.name
           = content_tag :td, link_to("#{vendor.status}", platform_admin_vendor_path(id: vendor.id))

@@ -9,7 +9,6 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "Platform admin can edit their account" do
-    skip
     platform_admin_login
 
     click_link "Edit Account"
@@ -28,8 +27,7 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert platform_admin_dashboard_path, current_path
 
-    within("#aaron-s-swag-store") do
-      assert page.has_content?("aaron-s-swag-store")
+    within("#aaron-s-store") do
       assert page.has_content?("Active")
     end
 
