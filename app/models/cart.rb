@@ -29,6 +29,7 @@ class Cart
   def ordered_tickets
     tickets.map do |ticket_id, quantity|
       ticket = Ticket.find(ticket_id.to_i)
+      ticket.retire
       FinalTicket.new(ticket_id, quantity, ticket.price)
     end
   end

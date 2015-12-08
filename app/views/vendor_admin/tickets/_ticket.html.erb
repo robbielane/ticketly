@@ -1,0 +1,38 @@
+<div class="ticket-show" id="<%= ticket.event.name.parameterize %>">
+  <div class="col s12 m4 black-text">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title black-text">
+          <%= "#{ticket.event.name}" %>
+        </span>
+        <div class="row">
+          <div class="col s3">
+            <bold>Row</bold>
+            <p class="red-text"> <%= ticket.row %> </p>
+          </div>
+
+          <div class="col s3">
+            <bold>Section</bold>
+            <p class="red-text"> <%= ticket.section %> </p>
+          </div>
+
+          <div class="col s3">
+            <bold>Seat</bold>
+            <p class="red-text"> <%= ticket.seat %> </p>
+          </div>
+
+          <div class="col s3">
+            <bold>Price</bold>
+            <p class="red-text">$ <%= ticket.price %> </p>
+          </div>
+        </div>
+
+      </div>
+      <div class="card-action">
+        <%= link_to "Details", ticket_path(ticket) %>
+        <%= link_to "Edit", edit_vendor_ticket_path(id:ticket) %>
+        <a class="right black-text">Status: <span class="red-text"><%= ticket.status.upcase %></span></a>
+      </div>
+    </div>
+  </div>
+</div>

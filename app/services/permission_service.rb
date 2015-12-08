@@ -35,6 +35,7 @@ class PermissionService
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
     return true if controller == "users"                    && action.in?(%w(edit update))
+    return true if controller == "cart_tickets"             && action.in?(%w(create show update delete))
   end
 
 
@@ -49,6 +50,7 @@ class PermissionService
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
     return true if controller == "users"                    && action.in?(%w(dashboard edit update))
+    return true if controller == "cart_tickets"             && action.in?(%w(create show update delete))
   end
 
   def registered_user_permission
@@ -59,7 +61,7 @@ class PermissionService
     return true if controller == "category"       && action.in?(%w(show))
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
     return true if controller == "orders"         && action.in?(%w(create show index))
-    return true if controller == "users"          && action.in?(%w(dashboard edit update))
+    return true if controller == "users"          && action.in?(%w(dashboard edit update destroy))
   end
 
   def general_permissions
