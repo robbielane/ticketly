@@ -19,7 +19,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert "/aaron-s-store/dashboard", current_path
 
-
     click_link("Edit Account")
     fill_in ("Username"), with: "acareaga"
     click_button "Update Account"
@@ -34,7 +33,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
     user.update!(vendor_id: vendor.id, password:"pass")
     vendor.tickets.create(name: "Frozen on Ice", price: 100, section: "A", row: "B", seat: "1")
-
 
     visit login_path
 
@@ -63,7 +61,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     skip
     create_vendor_admin
 
-
     assert vendor_admin_dashboard_path, current_path
 
     within("#frozen-on-ice") do
@@ -89,7 +86,6 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   test "vendor can delete their ticket" do
     skip
     create_vendor_admin
-
 
     assert vendor_admin_dashboard_path, current_path
 

@@ -3,10 +3,9 @@ class CartTicketsController < ApplicationController
     ticket = Ticket.find(params[:ticket_id])
     @cart.add_ticket(ticket.id)
     @cart.update(ticket.id, 1)
-
     session[:cart] = @cart.tickets
     flash[:notice] = "#{ticket.event.name} ticket added to your cart."
-    redirect_to events_path
+    redirect_to :back
   end
 
   def new

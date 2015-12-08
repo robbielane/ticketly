@@ -1,0 +1,26 @@
+%h1.black-text.center-align Admin Dashboard
+
+.center-align
+  .waves-effect.waves-light.btn
+    = link_to "Edit Account", edit_user_path(@user)
+  .waves-effect.waves-light.btn
+    = link_to "Delete Account", user_path(@user), method: :delete
+  %br
+  %br
+
+  = render partial: "/platform_admin/vendor/filter"
+  %br
+  .white
+    %table.cart-table.highlight
+      %tr
+        %th Vendor ID
+        %th Name
+        %th Status
+        %th User ID
+
+      - @vendors.each do |vendor|
+        %tr.vendor{ data: {status: "#{vendor.status}"}, id: "#{vendor.name.parameterize}" }
+          = content_tag :td, link_to("#{vendor.id}", platform_admin_vendor_path(id: vendor.id))
+          = content_tag :td, vendor.name
+          = content_tag :td, link_to("#{vendor.status}", platform_admin_vendor_path(id: vendor.id))
+          = content_tag :td, vendor.user_id

@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = current_user
     if @user.update(user_params)
       flash.notice = "Account Updated!"
-      redirect_to dashboard_path
+      user_dashboard_router(@user)
     else
       flash.now[:errors] = @user.errors.full_messages.join(" ,")
       render :edit
@@ -51,4 +51,11 @@ class UsersController < ApplicationController
     params.permit(:username, :password, :name, :image, :role)
   end
 
+  def user_dashboard_router(user)
+    if user.platform_admin?
+      redirect_to platform_admin_dashboard_path
+    else
+      redirect_to dashboard_path
+    end
+  end
 end

@@ -107,11 +107,11 @@ ActiveRecord::Schema.define(version: 20151207005843) do
   add_index "users", ["vendor_id"], name: "index_users_on_vendor_id", using: :btree
 
   create_table "vendors", force: :cascade do |t|
-    t.integer  "status"
+    t.integer  "status",     default: 0
     t.string   "name"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   add_index "vendors", ["user_id"], name: "index_vendors_on_user_id", using: :btree
