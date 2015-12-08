@@ -126,7 +126,7 @@ class Seed
         location_city: Faker::Address.city,
         location_state: Faker::Address.state_abbr,
         venue: Faker::Hipster.words(2).join(' '),
-        date_time: Faker::Time.between(DateTime.now, 150.days.from_now),
+        date_time: Faker::Time.between(DateTime.now - 30, 150.days.from_now),
         category_id: rand(1..category_count)
       )
       puts "Event #{i}: Event created!"
