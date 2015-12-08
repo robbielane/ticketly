@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class VisitorCanSignUpTest < ActionDispatch::IntegrationTest
-  
+
   test "visitor signs up" do
     user_count = User.count
     assert_equal 2, user_count
@@ -27,6 +27,6 @@ class VisitorCanSignUpTest < ActionDispatch::IntegrationTest
     click_button "Create Account"
 
     assert dashboard_path, current_path
-    assert page.has_content?("Something went wrong, Please try again.")
+    assert page.has_content?("Invalid user credentials. Please try again.")
   end
 end

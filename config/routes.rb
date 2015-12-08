@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     get :autocomplete_event_name, :on => :collection
   end
 
-  get "/admin/dashboard", to: "admin#dashboard"
+  get "/platform-admin/dashboard", to: "platform_admin/admin#dashboard"
+  get "/platform-admin/vendor/:id", to: "platform_admin/vendor#edit", as: :platform_admin_vendor
+  patch "/platform-admin/vendor/:id", to: "platform_admin/vendor#update"
 
   get "/cart", to: "cart_tickets#show"
   put "/cart", to: "cart_tickets#update"
@@ -24,6 +26,7 @@ Rails.application.routes.draw do
     resources :tickets
     resources :orders
     get "/dashboard", to: "vendor#dashboard"
+    get "/", to: "vendor#show"
   end
 
   get "/:category_name", to: "category#show" # keep at bottom of routes

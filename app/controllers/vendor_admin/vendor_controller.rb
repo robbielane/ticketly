@@ -6,4 +6,8 @@ class VendorAdmin::VendorController < ApplicationController
     @vendor = Vendor.find_by(user_id: current_user.id)
     @orders = @vendor.orders
   end
+
+  def show
+    @vendor = Vendor.find_by(user_id: current_user.id)
+  end
 end
