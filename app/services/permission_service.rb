@@ -35,8 +35,9 @@ class PermissionService
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
-    return true if controller == "users"                    && action.in?(%w(edit update create))
+    return true if controller == "users"                    && action.in?(%w(destroy edit update create))
     return true if controller == "cart_tickets"             && action.in?(%w(create show update delete))
+    return true if controller == "vendors"                  && action.in?(%w(index show))
   end
 
 
@@ -50,8 +51,9 @@ class PermissionService
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))
     return true if controller == "admin"                    && action.in?(%w(dashboard))
-    return true if controller == "users"                    && action.in?(%w(dashboard edit update))
+    return true if controller == "users"                    && action.in?(%w(destroy dashboard edit update))
     return true if controller == "cart_tickets"             && action.in?(%w(create show update delete))
+    return true if controller == "vendors"                  && action.in?(%w(index show))
   end
 
   def registered_user_permission
@@ -63,6 +65,7 @@ class PermissionService
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
     return true if controller == "orders"         && action.in?(%w(create show index))
     return true if controller == "users"          && action.in?(%w(dashboard edit update destroy))
+    return true if controller == "vendors"        && action.in?(%w(index show))
   end
 
   def general_permissions
@@ -74,5 +77,6 @@ class PermissionService
     return true if controller == "users"          && action.in?(%w(new create))
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
     return true if controller == "orders"         && action.in?(%w(create new))
+    return true if controller == "vendors"        && action.in?(%w(index show))
   end
 end

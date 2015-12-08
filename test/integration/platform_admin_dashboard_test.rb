@@ -4,7 +4,6 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
   test "Platform admin can access dashboard" do
     platform_admin_login
-
     assert_equal platform_admin_dashboard_path, current_path
   end
 
@@ -12,11 +11,9 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     platform_admin_login
 
     click_link "Edit Account"
-
     fill_in "Username", with: "jhun"
     fill_in "Name", with: "jhun"
     fill_in "Password", with: "pass"
-
     click_button "Update Account"
 
     assert_equal platform_admin_dashboard_path, current_path

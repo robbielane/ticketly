@@ -1,0 +1,30 @@
+<div class="container">
+  <br>
+  <br>
+  <div class="vendors-table-wrapper z-depth-1">
+    <table class="vendors bordered z-depth-1 events-table" id="vendorsTable">
+      <thead>
+        <tr>
+          <th>
+            Vendor
+          </th>
+          <th>
+            Status
+          </th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <% @vendors.each do |vendor| %>
+        <tr>
+          <td>
+            <b><%= link_to vendor.name, vendor_path(vendor) %></b>
+          </td>
+          <td>
+            <%= vendor.status %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= will_paginate @vendors %>
+  </div>
+</div>
