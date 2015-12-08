@@ -45,10 +45,10 @@ module ApplicationHelper
       user.roles << Role.find_by(name: "registered_user")
     end
     if params[:role] == "1"
-      user.roles = []
+      user.roles =[]
       user.roles << Role.find_by(name: "vendor_admin")
-      vendor = Vendor.find_or_create_by(user_id: user.id)
-      vendor.update_attributes(name: user.name)
+      vendor = Vendor.find_or_create_by(user_id: user.id, name: user.name)
+      user.update(vendor_id: vendor.id)
     end
   end
 

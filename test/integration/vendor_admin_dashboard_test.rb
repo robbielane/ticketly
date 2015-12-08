@@ -31,6 +31,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
+    user.update!(vendor_id: vendor.id, password: "password")
 
     visit root_path
     click_link "Login"
