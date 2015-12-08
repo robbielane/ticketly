@@ -6,10 +6,10 @@ class Order < ActiveRecord::Base
 
   def self.make_new(cart, current_user)
     order = current_user.orders.create(total: cart.total_cost)
-
     cart.ordered_tickets.each do |ticket|
       order.order_tickets.create(ticket_id: ticket.ticket_id)
     end
+
   end
 
   def update_status(status)
