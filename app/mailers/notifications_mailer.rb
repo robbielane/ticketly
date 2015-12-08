@@ -3,8 +3,8 @@ class NotificationsMailer < ApplicationMailer
    @message = "Thanks for your recent order with Ticketly!" 
 
    mail(
-     to: email_params,
-     subject: "Message from Ticketly"
-   )
+         to: email_params,
+         subject: "Message from Ticketly"
+       )
   end
 end

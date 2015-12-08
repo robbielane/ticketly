@@ -3,7 +3,6 @@ class NotificationsController < ApplicationController
   end
 
   def create
-    byebug
     NotificationsMailer.contact(email_params).deliver_now
 
     redirect_to :back, notice: "Your Email was Sent"
