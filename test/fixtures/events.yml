@@ -6,7 +6,7 @@ one:
   location_city: Denver
   location_state: CO
   venue: Pepsi Center
-  date_time: 2015-12-05 11:00:00
+  date_time: 2016-12-05 11:00:00
   category: kids
 
 two:
@@ -16,4 +16,13 @@ two:
   location_state: CO
   venue: Pepsi Center
   date_time: 2016-04-04 20:00:00
+  category: concerts
+
+three:
+  name: Star Wars
+  description: blah blah blah
+  location_city: Madison
+  location_state: WI
+  venue: The Majestic
+  date_time: 2015-07-24 20:00:00
   category: concerts
