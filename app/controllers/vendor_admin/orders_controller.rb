@@ -5,7 +5,6 @@ class VendorAdmin::OrdersController < VendorAdmin::BaseController
   end
 
   def show
-    binding.pry
     @order = Order.find(params[:id])
   end
 
