@@ -2,19 +2,32 @@
   <div class="row">
     <div class="black-text col s12 m6 offset-m3">
       <h3 class="center">Edit Account</h3>
-      <%= form_for @user, html: {multipart: true} do |f| %>
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-        <%= f.label :email %>
-        <%= f.text_field :email %>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-        <%= f.label :image, "Update Image" %><br />
-        <%= f.file_field :image %>
-        <%= f.button "Update Account", class: "waves-effect waves-light btn orange" %>
+
+      <%= form_tag user_path, :method => :put, :multipart => true do %>
+
+        <%= label_tag :name %>
+        <%= text_field_tag :name, @user.name%>
+
+        <%= label_tag :email %>
+        <%= text_field_tag :email, @user.email %>
+
+        <%= label_tag :username %>
+        <%= text_field_tag :username, @user.username %>
+
+        <%= label_tag :password %>
+        <%= password_field_tag :password, @user.password %>
+
+        <%= check_box_tag(:role) %>
+        <%= label_tag(:role, "Become a Vendor") %>
+
+        <br/>
+        <br/>
+        <%= file_field_tag :image %>
+
+        <br/>
+        <%= button_tag "Update Account", class: "waves-effect waves-light btn orange" %>
       <% end %>
+
     </div>
   </div>
 </div>
