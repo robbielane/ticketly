@@ -1477,3 +1477,216 @@ java.nio.file.NoSuchFileException: /Users/joshuajhun/Turing/MOD3/ticketly/elasti
 [2015-12-08 08:42:09,037][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
 [2015-12-08 08:42:39,051][WARN ][cluster.routing.allocation.decider] [Power Princess] high disk watermark [90%] exceeded on [YzRuqiJeQpqt23bON9tz9A][Power Princess][/Users/joshuajhun/Turing/MOD3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0] free: 6.9gb[2.9%], shards will be relocated away from this node
 [2015-12-08 08:42:39,051][INFO ][cluster.routing.allocation.decider] [Power Princess] rerouting shards: [high disk watermark exceeded on one or more nodes]
+[2015-12-08 12:38:11,756][INFO ][node                     ] [Ms. Steed] version[2.1.0], pid[33624], build[72cd1f1/2015-11-18T22:40:03Z]
+[2015-12-08 12:38:11,762][INFO ][node                     ] [Ms. Steed] initializing ...
+[2015-12-08 12:38:11,857][INFO ][plugins                  ] [Ms. Steed] loaded [], sites []
+[2015-12-08 12:38:11,976][INFO ][env                      ] [Ms. Steed] using [1] data paths, mounts [[/ (/dev/disk1)]], net usable_space [177.2gb], net total_space [464.7gb], spins? [unknown], types [hfs]
+[2015-12-08 12:38:18,003][INFO ][node                     ] [Ms. Steed] initialized
+[2015-12-08 12:38:18,004][INFO ][node                     ] [Ms. Steed] starting ...
+[2015-12-08 12:38:18,279][INFO ][transport                ] [Ms. Steed] publish_address {127.0.0.1:9300}, bound_addresses {127.0.0.1:9300}, {[fe80::1]:9300}, {[::1]:9300}
+[2015-12-08 12:38:18,304][INFO ][discovery                ] [Ms. Steed] elasticsearch/ucATznVrRZ20pfIuRPS-8w
+[2015-12-08 12:38:21,354][INFO ][cluster.service          ] [Ms. Steed] new_master {Ms. Steed}{ucATznVrRZ20pfIuRPS-8w}{127.0.0.1}{127.0.0.1:9300}, reason: zen-disco-join(elected_as_master, [0] joins received)
+[2015-12-08 12:38:21,373][INFO ][http                     ] [Ms. Steed] publish_address {127.0.0.1:9200}, bound_addresses {127.0.0.1:9200}, {[fe80::1]:9200}, {[::1]:9200}
+[2015-12-08 12:38:21,374][INFO ][node                     ] [Ms. Steed] started
+[2015-12-08 12:38:21,593][INFO ][gateway                  ] [Ms. Steed] recovered [4] indices into cluster_state
+[2015-12-08 12:38:22,998][WARN ][index.translog           ] [Ms. Steed] [events_development_20151202141815869][2] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-4781001216276021714.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/2/translog/translog-4781001216276021714.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 12:38:22,999][WARN ][index.translog           ] [Ms. Steed] [events_development_20151202141815869][3] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-154821945031005904.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/3/translog/translog-154821945031005904.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 12:38:22,998][WARN ][index.translog           ] [Ms. Steed] [events_test_20151208084555571][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151208084555571/0/translog/translog-3350394932424120675.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_test_20151208084555571/0/translog/translog-3350394932424120675.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 12:38:22,998][WARN ][index.translog           ] [Ms. Steed] [events_development_20151202141815869][4] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-9209359523775692012.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/4/translog/translog-9209359523775692012.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 12:38:23,299][WARN ][index.translog           ] [Ms. Steed] [events_development_20151202141815869][1] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-1625484109101526705.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/1/translog/translog-1625484109101526705.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 12:38:23,385][WARN ][index.translog           ] [Ms. Steed] [events_development_20151202141815869][0] failed to delete temp file /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-3493267188605525008.tlog
+java.nio.file.NoSuchFileException: /Users/acareaga/turing/mod3/ticketly/elasticsearch-2.1.0/data/elasticsearch/nodes/0/indices/events_development_20151202141815869/0/translog/translog-3493267188605525008.tlog
+	at sun.nio.fs.UnixException.translateToIOException(UnixException.java:86)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:102)
+	at sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:107)
+	at sun.nio.fs.UnixFileSystemProvider.implDelete(UnixFileSystemProvider.java:244)
+	at sun.nio.fs.AbstractFileSystemProvider.delete(AbstractFileSystemProvider.java:103)
+	at java.nio.file.Files.delete(Files.java:1126)
+	at org.elasticsearch.index.translog.Translog.recoverFromFiles(Translog.java:324)
+	at org.elasticsearch.index.translog.Translog.<init>(Translog.java:166)
+	at org.elasticsearch.index.engine.InternalEngine.openTranslog(InternalEngine.java:209)
+	at org.elasticsearch.index.engine.InternalEngine.<init>(InternalEngine.java:152)
+	at org.elasticsearch.index.engine.InternalEngineFactory.newReadWriteEngine(InternalEngineFactory.java:25)
+	at org.elasticsearch.index.shard.IndexShard.newEngine(IndexShard.java:1408)
+	at org.elasticsearch.index.shard.IndexShard.createNewEngine(IndexShard.java:1403)
+	at org.elasticsearch.index.shard.IndexShard.internalPerformTranslogRecovery(IndexShard.java:906)
+	at org.elasticsearch.index.shard.IndexShard.performTranslogRecovery(IndexShard.java:883)
+	at org.elasticsearch.index.shard.StoreRecoveryService.recoverFromStore(StoreRecoveryService.java:245)
+	at org.elasticsearch.index.shard.StoreRecoveryService.access$100(StoreRecoveryService.java:56)
+	at org.elasticsearch.index.shard.StoreRecoveryService$1.run(StoreRecoveryService.java:129)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+[2015-12-08 12:39:14,214][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208123914136] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 12:39:14,377][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208123914136] create_mapping [event]
+[2015-12-08 12:39:14,529][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208084555571] deleting index
+[2015-12-08 13:04:27,554][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130427513] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:04:27,647][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130427513] create_mapping [event]
+[2015-12-08 13:04:27,705][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208123914136] deleting index
+[2015-12-08 13:05:20,667][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130520292] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:05:21,098][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130520292] create_mapping [event]
+[2015-12-08 13:05:21,194][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130427513] deleting index
+[2015-12-08 13:07:49,208][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130749110] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:07:49,378][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130749110] create_mapping [event]
+[2015-12-08 13:07:49,455][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130520292] deleting index
+[2015-12-08 13:09:26,615][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130926563] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:09:26,709][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130926563] create_mapping [event]
+[2015-12-08 13:09:26,788][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130749110] deleting index
+[2015-12-08 13:14:27,836][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131427796] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:14:27,916][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131427796] create_mapping [event]
+[2015-12-08 13:14:27,968][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208130926563] deleting index
+[2015-12-08 13:15:18,639][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131518606] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:15:18,720][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131518606] create_mapping [event]
+[2015-12-08 13:15:18,781][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131427796] deleting index
+[2015-12-08 13:15:36,162][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131536120] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:15:36,226][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131536120] create_mapping [event]
+[2015-12-08 13:15:36,277][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131518606] deleting index
+[2015-12-08 13:16:22,582][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131622558] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:16:22,635][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131622558] create_mapping [event]
+[2015-12-08 13:16:22,699][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131536120] deleting index
+[2015-12-08 13:16:42,634][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131642597] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:16:42,708][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131642597] create_mapping [event]
+[2015-12-08 13:16:42,761][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131622558] deleting index
+[2015-12-08 13:17:04,625][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131704576] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:17:04,723][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131704576] create_mapping [event]
+[2015-12-08 13:17:04,816][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131642597] deleting index
+[2015-12-08 13:17:32,809][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131732781] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:17:32,884][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131732781] create_mapping [event]
+[2015-12-08 13:17:32,937][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131704576] deleting index
+[2015-12-08 13:18:19,732][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131819707] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:18:19,790][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131819707] create_mapping [event]
+[2015-12-08 13:18:19,835][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131732781] deleting index
+[2015-12-08 13:18:40,742][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131840709] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:18:40,816][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131840709] create_mapping [event]
+[2015-12-08 13:18:40,862][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131819707] deleting index
+[2015-12-08 13:23:47,365][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132347323] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:23:47,474][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132347323] create_mapping [event]
+[2015-12-08 13:23:47,527][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208131840709] deleting index
+[2015-12-08 13:24:01,198][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132401165] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:24:01,260][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132401165] create_mapping [event]
+[2015-12-08 13:24:01,312][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132347323] deleting index
+[2015-12-08 13:25:27,737][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132527710] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:25:27,804][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132527710] create_mapping [event]
+[2015-12-08 13:25:27,868][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132401165] deleting index
+[2015-12-08 13:25:48,225][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132548200] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:25:48,280][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132548200] create_mapping [event]
+[2015-12-08 13:25:48,330][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132527710] deleting index
+[2015-12-08 13:26:19,821][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132619798] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:26:19,887][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132619798] create_mapping [event]
+[2015-12-08 13:26:19,943][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132548200] deleting index
+[2015-12-08 13:26:38,815][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132638759] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:26:39,024][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132638759] create_mapping [event]
+[2015-12-08 13:26:39,091][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132619798] deleting index
+[2015-12-08 13:34:30,385][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208133430366] creating index, cause [api], templates [], shards [1]/[0], mappings [_default_]
+[2015-12-08 13:34:30,437][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208133430366] create_mapping [event]
+[2015-12-08 13:34:30,479][INFO ][cluster.metadata         ] [Ms. Steed] [events_test_20151208132638759] deleting index

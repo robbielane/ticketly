@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :tickets, only: [:index, :show]
   resources :cart_tickets, only: [:new, :create]
   resources :users, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :vendors, only: [:index, :show]
   resources :orders, only: [:index, :show]
   resources :events, only: [:index, :show] do
     get :autocomplete_event_name, :on => :collection
