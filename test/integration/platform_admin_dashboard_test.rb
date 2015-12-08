@@ -14,6 +14,7 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     click_link "Edit Account"
 
     fill_in "Username", with: "jhun"
+    fill_in "Name", with: "jhun"
     fill_in "Password", with: "pass"
 
     click_button "Update Account"
