@@ -29,4 +29,19 @@ class VisitorCanSignUpTest < ActionDispatch::IntegrationTest
     assert dashboard_path, current_path
     assert page.has_content?("Invalid user credentials. Please try again.")
   end
+
+  test "visitor can sign up as vendor" do
+    visit root_path
+    click_on "Join"
+    fill_in "Name", with: "Donald Trump"
+    fill_in "Username", with: "Trumpster"
+    fill_in "Password", with: "password"
+    fill_in "Email", with: "don@thetrumpnation.com"
+    check("Vendor")
+    click_button "Create Account"
+
+    greeting = "Donald trump Dashboard"
+    assert page.has_content?(greeting)
+    assert page.has_content?("Account Created!")
+  end
 end

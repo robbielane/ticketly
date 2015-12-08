@@ -1,16 +1,17 @@
 class UsersController < ApplicationController
+  include ApplicationHelper
 
   def new
     @new_user = User.new
   end
 
   def create
-    @user = User.new(user_params)
+    @user = User.new(user_creation_params)
     if @user.save
-      @user.roles << Role.find_by(name: "registered_user")
+      role_assignment(user_creation_params, @user)
       session[:user_id] = @user.id
       flash[:notive] = "Account Created!"
-      redirect_to "/dashboard"
+      redirect_router(@user)
     else
       flash[:error] = "Invalid user credentials. Please try again."
       redirect_to login_path
@@ -46,8 +47,12 @@ class UsersController < ApplicationController
 
   private
 
+  def user_creation_params
+    params.permit(:username, :password, :name, :image, :role, :email)
+  end
+
   def user_params
-    params.require(:user).permit(:username, :password, :name, :image)
+    params.require(:user).permit(:username, :password, :name, :email, :image)
   end
 
   def user_dashboard_router(user)

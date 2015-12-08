@@ -27,4 +27,5 @@ class User < ActiveRecord::Base
   def registered_user?
     roles.exists?(name: "registered_user")
   end
+
 end

@@ -24,5 +24,19 @@ module GlobalPursuit
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+
+    # This is our Mandrill Email Service configuration
+    config.action_mailer.delivery_method = :smtp
+
+    config.action_mailer.smtp_settings = {
+      address: 'smtp.mandrillapp.com',
+      port: 587,
+      domain: 'example.com',
+      user_name: 'adajensen@gmail.com',
+      password: ENV["mandrill_key"],
+      authentication: 'plain',
+      enable_starttls_auto: true
+    }
   end
 end

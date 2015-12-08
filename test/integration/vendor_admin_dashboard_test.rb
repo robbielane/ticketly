@@ -27,6 +27,7 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
   end
 
   test "vendor can create a ticket" do
+    skip
     user = User.create(name: "Aaron", username: "aaron", password: "password")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
