@@ -48,11 +48,11 @@ class UsersController < ApplicationController
   private
 
   def user_creation_params
-    params.permit(:username, :password, :name, :image, :role)
+    params.permit(:username, :password, :name, :image, :role, :email)
   end
 
   def user_params
-    params.require(:user).permit(:username, :name, :password, :image)
+    params.require(:user).permit(:username, :password, :name, :email, :image)
   end
 
   def user_dashboard_router(user)

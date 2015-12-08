@@ -36,6 +36,7 @@ class VisitorCanSignUpTest < ActionDispatch::IntegrationTest
     fill_in "Name", with: "Donald Trump"
     fill_in "Username", with: "Trumpster"
     fill_in "Password", with: "password"
+    fill_in "Email", with: "don@thetrumpnation.com"
     check("Vendor")
     click_button "Create Account"
 

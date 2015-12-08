@@ -14,7 +14,10 @@ class ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   def create_user
-    User.create(username: "cole", name: "Nicole", password: "password")
+    User.create(username: "cole",
+                name: "Nicole",
+                password: "password",
+                email:"cole@turing.io")
   end
 
   def create_and_login_user
@@ -64,7 +67,7 @@ class ActionDispatch::IntegrationTest
   end
 
   def login_admin
-    User.create(username: "admin", name: "Admin", password: "password", role: 1)
+    User.create(username: "admin", name: "Admin", password: "password", role: 1, email: "user@test.com")
 
     visit login_path
     fill_in "Username", with: "admin"
@@ -73,7 +76,7 @@ class ActionDispatch::IntegrationTest
   end
 
   def platform_admin_login
-    user = User.create(name:"jhun", username:"jhun", password:"jhun")
+    user = User.create(name:"jhun", username:"jhun", password:"jhun", email: "user@test.com")
     user.roles << Role.create(name:"platform_admin")
     visit root_path
     click_link "Login"
@@ -85,7 +88,7 @@ class ActionDispatch::IntegrationTest
   end
 
   def create_vendor_admin
-    user = User.create(name: "Aaron", username: "aaron", password: "password")
+    user = User.create(name: "Aaron", username: "aaron", password: "password", email: "user@test.com")
     user.roles << Role.create(name: "vendor_admin")
     vendor = Vendor.create(name:"Aaron's store", user_id: user.id, status: 0)
     vendor.tickets.create(name: "Frozen on Ice", price: 100, section: "A", row: "B", seat: "1")

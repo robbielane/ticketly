@@ -22,6 +22,7 @@ class RegisteredUserDashboardTest < ActionDispatch::IntegrationTest
     fill_in "Name", with: "newName"
     fill_in "Username", with: "newUsername"
     fill_in "Password", with: "password"
+    fill_in "Email", with: "cole@turing.io"
     click_on "Update Account"
     assert page.has_content?("Account Updated!")
   end

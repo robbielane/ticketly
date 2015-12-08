@@ -19,13 +19,22 @@ class Seed
   end
 
   def generates_user_admins
-    user1 = User.create!(name:"Adam",username:"yung-adam",password:"pass")
+    user1 = User.create!(name:"Adam",
+                         username:"yung-adam",
+                         password:"pass",
+                         email: "adajensen@gmail.com")
     user1.roles << Role.find(1)
 
-    user2 = User.create!(name:"Aaron", username:"yung-aaron", password:"pass")
+    user2 = User.create!(name:"Aaron",
+                         username:"yung-aaron",
+                         password:"pass",
+                         email: "yung-aaron@yungski.com")
     user2.roles << Role.find(2)
 
-    user3 = User.create!(name:"Jhun", username:"yung-jhun", password:"pass")
+    user3 = User.create!(name:"Jhun",
+                         username:"yung-jhun",
+                         password:"pass",
+                         email: "yung-jhun@jhunbug.com")
     user3.roles << Role.find(3)
 
     user4 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass")
@@ -43,7 +52,10 @@ class Seed
   end
 
   def generate_test_users
-    user = User.create!(username: "aaron",name: "aaron", password: "password")
+    user = User.create!(username: "aaron",
+                        name: "aaron",
+                        password: "password",
+                        email: "yung-aaron@yungski.com")
     user.roles << Role.create!(name: "registered_user")
 
     status_collection = %w(Completed Paid Cancelled Pending)
@@ -62,7 +74,8 @@ class Seed
       user = User.create!(
         name: Faker::Name.name,
         username: "#{Faker::Internet.user_name}#{i}",
-        password: "password"
+        password: "password",
+        email: Faker::Internet.safe_email
       )
       puts "User #{i}:#{user.username} completed!"
     end
