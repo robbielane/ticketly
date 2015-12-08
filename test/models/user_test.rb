@@ -23,4 +23,31 @@ class UserTest < ActiveSupport::TestCase
     user.password= nil
     refute user.valid?
   end
+
+  test " you can make a user a vendor_admin" do
+    user = users(:one)
+    role = Role.create(name: "vendor_admin")
+
+    user.roles << role
+
+    assert_equal true, user.vendor_admin?
+  end
+
+  test 'you can make a user a platform_admin' do
+    user = users(:one)
+    role = Role.create(name: "platform_admin")
+
+    user.roles << role
+
+    assert_equal true, user.platform_admin?
+  end
+
+  test 'you can make a guest a registered user' do
+    user = users(:one)
+    role = Role.create(name: "registered_user")
+
+    user.roles << role
+
+    assert_equal true, user.registered_user?
+  end 
 end

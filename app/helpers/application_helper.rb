@@ -40,7 +40,7 @@ module ApplicationHelper
   end
 
   def role_assignment(params, user)
-    if !user.platform_admin? && params[:role] == nil 
+    if !user.platform_admin? && params[:role] == nil
       user.roles = []
       user.roles << Role.find_by(name: "registered_user")
     end
