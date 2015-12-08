@@ -43,7 +43,6 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     within("#aaron-swag") do
       assert page.has_content?("active")
     end
-
     assert_equal platform_admin_dashboard_path, current_path
   end
 end

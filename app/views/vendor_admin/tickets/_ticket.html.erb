@@ -1,6 +1,6 @@
-<div class="ticket-show" id="<%= ticket.event.name.parameterize %>">
+<div class="ticket-show">
   <div class="col s12 m4 black-text">
-    <div class="card">
+    <div class="card" id="<%= ticket.event.name.parameterize %>">
       <div class="card-content">
         <span class="card-title black-text">
           <%= "#{ticket.event.name}" %>
@@ -31,6 +31,7 @@
       <div class="card-action">
         <%= link_to "Details", ticket_path(ticket) %>
         <%= link_to "Edit", edit_vendor_ticket_path(id:ticket) %>
+        <%= link_to "Delete", vendor_ticket_path(id:ticket), method: :delete  %>
         <a class="right black-text">Status: <span class="red-text"><%= ticket.status.upcase %></span></a>
       </div>
     </div>

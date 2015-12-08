@@ -14,12 +14,10 @@ class VisitorCanSearchForTicketTest < ActionDispatch::IntegrationTest
   end
 
   test "Guest can see index of events" do
-    skip
+
     visit root_path
 
-    within("#concerts") do
-      click_link "View Events"
-    end
+    click_link "Events"
 
     assert events_path, current_path
 

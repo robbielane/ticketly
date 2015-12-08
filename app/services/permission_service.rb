@@ -26,10 +26,11 @@ class PermissionService
   def vendor_admin_permissions
     return true if controller == "sessions"                 && action.in?(%w(new create delete))
     return true if controller == "home"                     && action.in?(%w(index show))
-    return true if controller == "vendor_admin/vendor"      && action.in?(%w(dashboard))
+    return true if controller == "vendor_admin/vendor"      && action.in?(%w(dashboard select_event))
+    return true if controller == "vendor_admin/events"      && action.in?(%w(new create))
     return true if controller == "vendor_admin/orders"      && action.in?(%w(show update index))
     return true if controller == "orders"                   && action.in?(%w(show create index))
-    return true if controller == "vendor_admin/tickets"     && action.in?(%w(index create edit new update show delete))
+    return true if controller == "vendor_admin/tickets"     && action.in?(%w(index create edit new update show destroy))
     return true if controller == "tickets"                  && action.in?(%w(index show))
     return true if controller == "events"                   && action.in?(%w(index show autocomplete_event_name))
     return true if controller == "category"                 && action.in?(%w(show))
