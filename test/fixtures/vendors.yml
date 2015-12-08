@@ -2,10 +2,8 @@
 
 one:
   status: 1
-  name: MyString
-  user_id: 
+  name: Jhun's Swag
 
 two:
-  status: 1
-  name: MyString
-  user_id: 
+  status: 0
+  name: Disney Adventures
