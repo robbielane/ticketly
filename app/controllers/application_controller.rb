@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   helper_method :count_of_trips, :current_user, :current_vendor?,
                 :platform_admin?
 
-
   def current_permission
     @current_permission ||= PermissionService.new(current_user)
   end

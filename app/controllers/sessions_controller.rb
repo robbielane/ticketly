@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(params[:session][:password])
       session[:user_id] = @user.id
       if current_vendor?
-        redirect_to vendor_dashboard_path(@user)
+        redirect_to vendor_dashboard_path(@user.vendor.slug)
       elsif platform_admin?
         redirect_to platform_admin_dashboard_path
       else

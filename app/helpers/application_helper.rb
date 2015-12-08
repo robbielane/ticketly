@@ -13,7 +13,7 @@ module ApplicationHelper
 
   def join_dashboard_path
     if current_vendor?
-      link_to "Logged in as #{current_user.name}", vendor_dashboard_path(current_user)
+      link_to "Logged in as #{current_user.name}", vendor_dashboard_path(current_user.vendor.slug)
     elsif platform_admin?
       link_to "Logged in as #{current_user.name}", platform_admin_dashboard_path(current_user)
     elsif current_user
@@ -58,7 +58,7 @@ module ApplicationHelper
     elsif user.vendor_admin?
       redirect_to vendor_dashboard_path(user)
     else
-      redirect_to dashboard_path 
+      redirect_to dashboard_path
     end
   end
 

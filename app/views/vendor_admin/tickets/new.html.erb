@@ -4,10 +4,6 @@
       <h4 class="center">Add a New Ticket</h4>
       <%= form_for(@ticket, url: vendor_tickets_path(vendor: current_user.vendor.id))  do |f| %>
         <div class="input-field">
-          <%= f.label :name %>
-          <%= f.text_field :name %>
-        </div>
-        <div class="input-field">
           <%= f.label :section %>
           <%= f.text_field :section %>
         </div>
@@ -27,6 +23,7 @@
           <%= f.label :status %>
           <%= f.text_field :status %>
         </div>
+          <%= f.hidden_field :event_id %>
           <%= f.button "Create Ticket", class: "waves-effect waves-light btn orange" %>
       <% end %>
     </div>
