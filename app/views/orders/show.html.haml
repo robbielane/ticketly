@@ -10,9 +10,6 @@
   = "Order submitted on #{format_date_and_time(@order.created_at)}"
   %br
   = "Last order status update: #{format_date_and_time(@order.updated_at)}"
-  %br
-  %br
-  %br
 
   .white.black-text
     %table.cart-table.highlight
@@ -23,8 +20,9 @@
 
       - @order.tickets.each do |ticket|
         %tr
-          = content_tag :td, link_to(ticket_name_and_travellers(@order, ticket), ticket_path(ticket))
-          = content_tag :td, format_currency(ticket.price * @order.ordered_trips.find_by(ticket_id: ticket.id).travellers)
+          = content_tag :td, link_to(ticket_name_and_quantity(@order, ticket), ticket_path(ticket))
+          = content_tag :td, format_currency(ticket.price)
+          = content_tag :td, @order.status
           -# number of travellers method
   %br
   %br
