@@ -25,9 +25,10 @@ Rails.application.routes.draw do
   scope ":vendor", module:"vendor_admin", as: :vendor  do
     resources :tickets
     resources :orders
-    resources :events, only: [:new, :create]
+    resources :events, only: [:new, :create] do
+      get :autocomplete_event_name, :on => :collection
+    end
     get "/dashboard", to: "vendor#dashboard"
-    get "/", to: "vendor#show"
     get "/event/select", to: "vendor#select_event"
   end
 

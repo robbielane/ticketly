@@ -10,8 +10,8 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
 
   def new
     vendor = Vendor.find_by(slug: params[:vendor])
-    event = Event.find(params[:event_id])
-    @ticket = event.tickets.new
+    @event = Event.find(params[:event_id])
+    @ticket = @event.tickets.new
   end
 
   def create
