@@ -1,0 +1,5 @@
+<% @events.each do |event| %>
+  <%=link_to event.name,new_vendor_ticket_path(vendor: current_user.vendor.slug, event_id: event.id) %>
+<%end %>
+
+<%= link_to "Create New Event", new_vendor_event_path %>

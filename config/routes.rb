@@ -25,8 +25,10 @@ Rails.application.routes.draw do
   scope ":vendor", module:"vendor_admin", as: :vendor  do
     resources :tickets
     resources :orders
+    resources :events, only: [:new, :create]
     get "/dashboard", to: "vendor#dashboard"
     get "/", to: "vendor#show"
+    get "/event/select", to: "vendor#select_event"
   end
 
   get "/:category_name", to: "category#show" # keep at bottom of routes

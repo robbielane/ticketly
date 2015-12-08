@@ -5,4 +5,9 @@ class Event < ActiveRecord::Base
   searchkick
 
   scope :just_added, -> { order("created_at DESC").limit(10) }
+
+  def parse_date_time(date)
+    date = Date.strptime(date, "%m/%d/%Y")
+    self.date_time = DateTime.parse(date.to_s)
+  end
 end

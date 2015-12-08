@@ -9,4 +9,8 @@ class VendorAdmin::VendorController < ApplicationController
   def show
     @vendor = Vendor.find_by(user_id: current_user.id)
   end
+
+  def select_event
+    @events = Event.all
+  end
 end
