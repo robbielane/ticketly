@@ -5,6 +5,7 @@
     = f.label :name
     = f.text_field :name
     = f.label :status
-    = f.text_field :status
+    = f.select :status, Vendor.statuses.keys, {}, {class: "browser-default"}
+    %br
     .waves-effect.waves-light.btn
       = f.submit "Update Vendor"
