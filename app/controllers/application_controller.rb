@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize!
-      unless authorized?
+    unless authorized?
       flash[:auth] = "you are not authorized to view this content."
       redirect_to root_url
     end

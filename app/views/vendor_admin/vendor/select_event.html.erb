@@ -1,5 +1,55 @@
-<% @events.each do |event| %>
-  <%=link_to event.name,new_vendor_ticket_path(vendor: current_user.vendor.slug, event_id: event.id) %>
-<%end %>
-
-<%= link_to "Create New Event", new_vendor_event_path %>
+<div class="container">
+  <div class="row">
+    <div class="col m4 offset-m4">
+      <nav class="search" id="search-field">
+        <%= form_tag vendor_event_select_path, class: "form-inline", method: :get do %>
+          <div class="form-group input-field">
+            <%= autocomplete_field_tag :query, params[:query], autocomplete_event_name_vendor_events_path, size: 75, class: "form-control orange", id: 'search', type: 'search' %>
+            <label for="search">
+              <i class="material-icons">search</i>
+            </label>
+            <%= submit_tag "Search", class: "hidden" %>
+          </div>
+        <% end %>
+      </nav>
+    </div>
+  </div>
+  <p class="medium red-text center">Select an event for new ticket, or <%= link_to "Create New Event", new_vendor_event_path %> </p>
+  <div class="events-table-wrapper">
+    <% if params[:query].present? %>
+      <%= link_to "clear search", events_path, class:'red-text right' %>
+    <% end %>
+    <table class="events bordered z-depth-1 events-table highlight" id="eventsTable">
+      <thead>
+        <tr>
+          <th>Event Name</th>
+          <th>Category</th>
+          <th>Venue</th>
+          <th>Location</th>
+          <th>Tickets Available</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+      <% @events.each do |event| %>
+        <tr class="clickable" data-link="<%= new_vendor_ticket_path(vendor: current_user.vendor.slug, event_id: event.id) %>">
+          <td>
+            <b><%= link_to event.name, new_vendor_ticket_path(vendor: current_user.vendor.slug, event_id: event.id), class: 'black-text' %></b>
+          </td>
+          <td>
+            <%= event.category.name %>
+          </td>
+          <td>
+            <%= event.venue %>
+          </td>
+          <td>
+            <%= "#{event.location_city}, #{event.location_state}" %>
+          </td>
+          <td>
+            <%= event.tickets.count %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+    <%= will_paginate @events %>
+  </div>
+</div>

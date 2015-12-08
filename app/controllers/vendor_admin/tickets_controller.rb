@@ -1,7 +1,7 @@
 class VendorAdmin::TicketsController < VendorAdmin::BaseController
   def index
     vendor = Vendor.find_by(slug: params[:vendor])
-    @tickets = vendor.tickets.paginate(page: params[:page], per_page: 21)
+    @tickets = vendor.tickets.desc_order.paginate(page: params[:page], per_page: 21)
   end
 
   def show
@@ -10,8 +10,8 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
 
   def new
     vendor = Vendor.find_by(slug: params[:vendor])
-    event = Event.find(params[:event_id])
-    @ticket = event.tickets.new
+    @event = Event.find(params[:event_id])
+    @ticket = @event.tickets.new
   end
 
   def create
@@ -21,8 +21,8 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
       flash[:notice] = "The ticket for '#{@ticket.event.name}' has been created"
       redirect_to vendor_tickets_path(current_user.vendor.slug)
     else
-      flash[:notice] = @ticket.errors.full_messages.join(", ")
-      redirect_to new_vendor_admin_ticket_path
+      flash[:error] = @ticket.errors.full_messages.join(", ")
+      redirect_to :back
     end
   end
 
@@ -36,7 +36,7 @@ class VendorAdmin::TicketsController < VendorAdmin::BaseController
       flash[:notice] = "Ticket Updated!"
       redirect_to vendor_tickets_path(current_user.vendor.slug)
     else
-      flash.now[:errors] = @ticket.errors.full_messages.join(" ,")
+      flash.now[:error] = @ticket.errors.full_messages.join(" ,")
       render :edit
     end
   end
