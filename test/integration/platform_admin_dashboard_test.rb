@@ -28,16 +28,21 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     assert platform_admin_dashboard_path, current_path
 
     within("#aaron-s-store") do
-      assert page.has_content?("Active")
+      click_link("active")
     end
 
-    click_button("Active")
+    assert page.has_content?("Name")
+    assert page.has_content?("Status")
 
-    assert_equal vendor_path, current_path
+    select "active", :from => "vendor[status]"
+    fill_in "Name", with: "aaron-swag"
 
-    within("#aaron-s-store") do
-      refute page.has_content?("Offline")
-      assert page.has_content?("Online")
+    click_button "Update Vendor"
+
+    within("#aaron-swag") do
+      assert page.has_content?("active")
     end
+
+    assert_equal platform_admin_dashboard_path, current_path
   end
 end
