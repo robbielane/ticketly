@@ -1,11 +1,11 @@
 class EventsController < ApplicationController
   autocomplete :event, :name
-  
+
   def index
     if params[:query].present?
-      @events = Event.search(params[:query], name: params[:name])
+      @events = Event.current.search(params[:query], name: params[:name])
     else
-      @events = Event.all.paginate(page: params[:page], per_page: 20)
+      @events = Event.current.paginate(page: params[:page], per_page: 20)
     end
   end
 
