@@ -46,8 +46,7 @@ module ApplicationHelper
     if params[:role] == "1"
       user.roles << Role.find_by(name: "vendor_admin")
       vendor = Vendor.create!(user_id: user.id, name: user.name)
-      user.update(vendor_id: vendor.id )
-
+      user.update!(vendor_id: vendor.id )
     end
   end
 
