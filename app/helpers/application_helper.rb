@@ -40,22 +40,26 @@ module ApplicationHelper
   end
 
   def role_assignment(params, user)
-    if params[:role] == nil
+    if !user.platform_admin? && params[:role] == nil 
+      user.roles = []
       user.roles << Role.find_by(name: "registered_user")
     end
     if params[:role] == "1"
+      user.roles =[]
       user.roles << Role.find_by(name: "vendor_admin")
-      vendor = Vendor.create!(user_id: user.id, name: user.name)
-      user.update(vendor_id: vendor.id )
-
+      vendor = Vendor.find_or_create_by(user_id: user.id, name: user.name)
+      user.update(vendor_id: vendor.id)
     end
   end
 
   def redirect_router(user)
-    if user.vendor_admin?
-      redirect_to vendor_dashboard_path(user.vendor.slug)
+    if user.platform_admin?
+      redirect_to platform_admin_dashboard_path
+    elsif user.vendor_admin?
+      redirect_to vendor_dashboard_path(user)
     else
       redirect_to dashboard_path
     end
   end
+
 end
