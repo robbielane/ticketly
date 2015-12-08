@@ -18,6 +18,8 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
     click_button "Update Account"
 
+    save_and_open_page
+    assert page.has_content?("Account Updated")
     assert_equal platform_admin_dashboard_path, current_path
   end
 
