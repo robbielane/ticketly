@@ -6,6 +6,7 @@ one:
   row: 23
   seat: 4
   event: one
+  vendor: one
 
 two:
   price: 70
@@ -13,3 +14,4 @@ two:
   row: 1
   seat: 15
   event: one
+  vendor: one
