@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get :autocomplete_event_name, :on => :collection
   end
 
+  get "unmatched_route", to: "application#raise_not_found"
+
   get "/platform-admin/dashboard", to: "platform_admin/admin#dashboard"
   get "/platform-admin/vendor/:id", to: "platform_admin/vendor#edit", as: :platform_admin_vendor
   patch "/platform-admin/vendor/:id", to: "platform_admin/vendor#update"
