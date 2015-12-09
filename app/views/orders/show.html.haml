@@ -1,31 +1,37 @@
-.black-text.center-align
-  %br
-  %h2 Order Details
-
-  = sanitize("Order status: #{content_tag :td, @order.status || 'N/A'}")
-  %br
-  %br
-  = sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
-  %br
-  = "Order submitted on #{format_date_and_time(@order.created_at)}"
-  %br
-  = "Last order status update: #{format_date_and_time(@order.updated_at)}"
-  %br
-  = image_tag @qr
-
-  .white.black-text
-    %table.cart-table.highlight
-      %tr
-        %th Name
-        %th Sub-total
-        %th Status
-
-      - @order.tickets.each do |ticket|
-        %tr
-          = content_tag :td, link_to(ticket_name_and_quantity(@order, ticket), ticket_path(ticket))
-          = content_tag :td, format_currency(ticket.price)
-          = content_tag :td, @order.status
-          -# number of travellers method
-  %br
-  %br
-  %br
+.container
+  .row
+    .col.s12.m8
+      %h5.no-bottom-margin Order Details
+      %table.events-table
+        %thead
+          %tr
+            %th Order Status
+            %th Total price
+            %th Submitted on
+            %th Updated on
+        %tbody
+          %tr
+            %td= @order.status
+            %td= "$#{@order.total}"
+            %td= format_date_and_time(@order.created_at)
+            %td= format_date_and_time(@order.updated_at)
+      %h5.no-bottom-margin Tickets
+      %table.events-table.highlight
+        %thead
+          %tr
+            %th Name
+            %th Sub-total
+        %tbody
+        - @order.tickets.each do |ticket|
+          %tr
+            = content_tag :td, link_to(ticket_name_and_quantity(@order, ticket), ticket_path(ticket))
+            = content_tag :td, format_currency(ticket.price)
+    .col.s12.m4
+      %h5.no-bottom-margin.white-text QR
+      %table.events-table
+        %thead
+          %tr
+            %th QR Code
+        %tbody
+          %tr
+            %td.center= image_tag @qr

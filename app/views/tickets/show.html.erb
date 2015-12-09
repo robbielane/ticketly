@@ -1,0 +1,23 @@
+<div class="black-text">
+  <div class="center-align">
+    <h1>
+      <%= @ticket.event.name %>
+    </h1>
+  </div>
+  <p class="center-align">
+    <%= "Price: #{format_currency(@ticket.price)}" %>
+  </p>
+  <p class="center-align">
+    <%= "Section: #{@ticket.section}" %>
+  </p>
+  <p class="center-align">
+    <%= "Row: #{@ticket.row}" %>
+  </p>
+  <p class="center-align">
+    <%= "Seat: #{@ticket.seat}" %>
+  </p>
+</div>
+
+<div class='map-container'>
+  <div id="map" class='map' data-lat="<%= @ticket.event.latitude %>" data-lon="<%= @ticket.event.longitude %>"></div>
+</div>

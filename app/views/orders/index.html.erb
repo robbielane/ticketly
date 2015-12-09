@@ -1,17 +1,21 @@
 <h1 class="center-align">Order History</h1>
 <div class="white container center">
-  <table class="cart-table highlight">
-    <tr>
-      <th>Total Price</th>
-      <th>Date Ordered</th>
-      <th>Order Details</th>
-    </tr>
-    <% @orders.each do |order| %>
+  <table class="events-table highlight">
+    <thead>
       <tr>
-        <%= content_tag :td, format_currency(order.total || 0) %>
-        <%= content_tag :td, format_date(order.created_at) %>
-        <%= content_tag :td, link_to("View", order_path(order)) %>
+        <th>Total Price</th>
+        <th>Date Ordered</th>
+        <th>Order Details</th>
       </tr>
-    <% end %>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr class="clickable" data-link="<%= order_path(order) %>">
+          <%= content_tag :td, format_currency(order.total || 0) %>
+          <%= content_tag :td, format_date(order.created_at) %>
+          <td><%= link_to("View", order_path(order)) %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 </div>
