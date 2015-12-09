@@ -3,8 +3,7 @@ class NotificationsController < ApplicationController
   end
 
   def create
-    NotificationsMailer.contact(email_params).deliver_now
-
+    NotificationsMailer.contact(email_params, @qr).deliver_now
     redirect_to :back, notice: "Your Email was Sent"
   end
 
