@@ -12,6 +12,10 @@ class Seed
     generate_order_tickets
   end
 
+  def locations
+    ["New York NY", "Los Angeles CA", "Chicago IL", "Houston TX", "Phoenix AZ", "Philadelphia PA", "San Antonio TX", "Dallas TX", "San Diego CA", "San Jose CA", "Detroit MI", "San Francisco CA", "Jacksonville FL", "Indianapolis IN", "Austin TX", "Columbus OH", "Fort Worth TX", "Charlotte NC", "Memphis TN", "Baltimore MD", "El Paso TX", "Boston MA", "Milwaukee WI", "Denver CO", "Seattle WA", "Nashville TN", "Washington DC", "Las Vegas NV", "Portland OR", "Louisville KY", "Oklahoma City OK", "Tucson AZ", "Atlanta GA", "Albuquerque NM", "Fresno CA", "Sacramento CA", "Long Beach CA", "Mesa AZ", "Kansas City MO", "Omaha NE", "Cleveland OH", "Virginia Beach VA", "Miami FL", "Oakland CA", "Raleigh NC", "Tulsa OK", "Minneapolis MN", "Colorado Springs CO", "Honolulu HI", "Arlington TX", "Wichita KS", "St. Louis MO", "Tampa FL", "Santa Ana CA", "Anaheim CA", "Cincinnati OH", "Bakersfield CA"," Aurora CO", "New Orleans LA", "Pittsburgh PA", "Riverside CA", "Toledo OH", "Stockton CA", "Corpus Christi TX", "Lexington KY", "St. Paul MN", "Anchorage AK", "Newark NJ", "Buffalo NY", "Plano TX", "Henderson NV", "Lincoln NE", "Fort Wayne IN", "Glendale AZ", "Greensboro NC", "Chandler AZ", "St. Petersburg FL", "Jersey City NJ"]
+  end
+
   def generate_user_roles
     Role.create!(name:"registered_user")
     Role.create!(name:"vendor_admin")
@@ -120,11 +124,12 @@ class Seed
   def generate_events
     category_count = Category.count
     100.times do |i|
+      location = locations.sample
       Event.create!(
         name: Faker::Hipster.words(2).join(' '),
         description: Faker::Hipster.words(8).join(' '),
-        location_city: Faker::Address.city,
-        location_state: Faker::Address.state_abbr,
+        location_city: location[0..-4],
+        location_state: location[-2..-1],
         venue: Faker::Hipster.words(2).join(' '),
         date_time: Faker::Time.between(DateTime.now - 30, 150.days.from_now),
         category_id: rand(1..category_count)

@@ -26,14 +26,15 @@ $(document).ready(function() {
   });
 
   handler = Gmaps.build('Google');
-  handler.buildMap({ internal: {id: 'map'}, zoom: 8}, function(){
+  handler.buildMap({ provider: {}, internal: {id: 'map'} }, function(){
     markers = handler.addMarkers([
       {
-        "lat": 39.770863,
-        "lng": -105
+        "lat": $('#map').data('lat'),
+        "lng": $('#map').data('lon'),
       }
-    ]).setZoom(8);
-    handler.bounds.extendWith(markers);
+    ]);
     handler.fitMapToBounds();
+    handler.map.centerOn([$('#map').data('lat'), $('#map').data('lon')]);
+    handler.getMap().setZoom(13);
   });
 });

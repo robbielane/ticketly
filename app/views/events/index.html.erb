@@ -18,7 +18,7 @@
     <% if params[:query].present? %>
       <%= link_to "clear search", events_path, class:'red-text right' %>
     <% end %>
-    <table class="events bordered z-depth-1 events-table" id="eventsTable">
+    <table class="events bordered highlight z-depth-1 events-table" id="eventsTable">
       <thead>
         <tr>
           <th>
@@ -40,7 +40,7 @@
       </thead>
       <tbody></tbody>
       <% @events.each do |event| %>
-        <tr>
+        <tr class="clickable" data-link="<%= event_path(event) %>">
           <td>
             <b><%= link_to event.name, event_path(event) %></b>
           </td>
