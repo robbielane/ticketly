@@ -2,9 +2,9 @@ class Seed
   def initialize
     generate_user_roles
     generates_user_admins
-    generate_vendors
-    generate_test_users
     generate_users
+    generate_test_users
+    generate_vendors
     generate_categories
     generate_events
     generate_tickets
@@ -53,14 +53,21 @@ class Seed
     user2 = User.find(4)
     Vendor.create!(name: "dix-tix", user_id: user2.id, status: 1)
     user2.update!(vendor_id: 2, password: "pass")
+
+    20.times do |i|
+      rand_user = User.find(i + 20)
+      name = Faker::Company.name + " tickets"
+      vendor = Vendor.create!(name: name, user_id: rand_user.id, status: 1)
+      rand_user.update!(vendor_id: vendor.id, password: "password")
+    end
   end
 
   def generate_test_users
     user = User.create!(username: "aaron",
-                        name: "aaron",
+                        name: "aaron1",
                         password: "password",
                         email: "yung-aaron@yungski.com")
-    user.roles << Role.create!(name: "registered_user")
+    user.roles << Role.find(1)
 
     status_collection = %w(Completed Paid Cancelled Pending)
     10.times do |i|
@@ -95,7 +102,7 @@ class Seed
         order = user.orders << Order.create!(
                                       status: status_collection.sample,
                                       total: Faker::Commerce.price,
-                                      vendor_id: rand(1..2),
+                                      vendor_id: rand(1..22),
                                     )
         puts "Order #{i}: Order for #{user.name} created!"
       end
@@ -148,8 +155,7 @@ class Seed
         row: rand(1..50),
         seat: rand(1..30),
         event_id: rand(1..event_count),
-        vendor_id: rand(1..2)
-
+        vendor_id: rand(1..22)
       )
 
       puts "Ticket #{i}: Ticket created for event ##{event_id}"
