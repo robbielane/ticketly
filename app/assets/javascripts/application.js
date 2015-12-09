@@ -15,11 +15,25 @@
 //= require jquery-ui
 //= require autocomplete-rails
 //= require materialize-sprockets
+//= require underscore
+//= require gmaps/google
 //= require_tree .
 
 
 $(document).ready(function() {
   $('.clickable').click(function() {
     window.document.location = $(this).data('link');
+  });
+
+  handler = Gmaps.build('Google');
+  handler.buildMap({ internal: {id: 'map'}, zoom: 8}, function(){
+    markers = handler.addMarkers([
+      {
+        "lat": 39.770863,
+        "lng": -105
+      }
+    ]).setZoom(8);
+    handler.bounds.extendWith(markers);
+    handler.fitMapToBounds();
   });
 });

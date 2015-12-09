@@ -84,6 +84,7 @@ GEM
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    gmaps4rails (2.1.2)
     haml (4.0.7)
       tilt
     hashie (3.4.3)
@@ -203,6 +204,7 @@ GEM
     uglifier (2.7.2)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    underscore-rails (1.8.3)
     web-console (2.2.1)
       activemodel (>= 4.0)
       binding_of_caller (>= 0.7.2)
@@ -225,6 +227,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   faker
   figaro
+  gmaps4rails
   haml
   jbuilder (~> 2.0)
   jquery-rails
@@ -246,6 +249,7 @@ DEPENDENCIES
   spring
   turbolinks
   uglifier (>= 1.3.0)
+  underscore-rails
   web-console (~> 2.0)
   will_paginate
   will_paginate-materialize
