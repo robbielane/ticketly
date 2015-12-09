@@ -27,7 +27,7 @@ class VisitorCanViewIndexOfEventsTest < ActionDispatch::IntegrationTest
 
   test 'event page lists available tickets' do
     visit event_path(disney)
-
+    
     within "##{disney.id}" do
       assert page.has_content?("110")
       assert page.has_content?("23")

@@ -8,6 +8,8 @@ one:
   venue: Pepsi Center
   date_time: 2016-12-05 11:00:00
   category: kids
+  latitude: 0
+  longitude: 0
 
 two:
   name: Justin Bieber
@@ -17,6 +19,8 @@ two:
   venue: Pepsi Center
   date_time: 2016-04-04 20:00:00
   category: concerts
+  latitude: 0
+  longitude: 0
 
 three:
   name: Star Wars
@@ -26,3 +30,5 @@ three:
   venue: The Majestic
   date_time: 2015-07-24 20:00:00
   category: concerts
+  latitude: 0
+  longitude: 0

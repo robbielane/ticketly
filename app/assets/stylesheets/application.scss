@@ -13,6 +13,7 @@
  *= require jquery-ui
  *= require_tree .
  *= require_self
+ *= require video-js
  */
 
 @import 'materialize';
@@ -34,6 +35,9 @@ nav {
   border-bottom: 1px solid #ddd;
 }
 
+.navbar {
+  z-index: 4;
+}
 nav ul li a {
   color: black;
 }
@@ -181,4 +185,13 @@ small {
 
 strong {
   font-weight: 700;
+}
+
+.no-bottom-margin {
+  margin-bottom: 2px
+}
+
+footer {
+  margin-top: 0;
+  padding-top: 0;
 }

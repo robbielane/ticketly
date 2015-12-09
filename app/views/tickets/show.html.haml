@@ -1,8 +1,0 @@
-.black-text
-  .center-align
-    %h1= Event.find(@ticket.event_id).name
-
-  %p.center-align= "Price: #{format_currency(@ticket.price)}"
-  %p.center-align= "Section: #{@ticket.section}"
-  %p.center-align= "Row: #{@ticket.row}"
-  %p.center-align= "Seat: #{@ticket.seat}"

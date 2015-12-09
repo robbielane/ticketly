@@ -1,14 +1,27 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+//
 .bgimage {
   margin: 0 !important;
-  background-image: image-url("concertbg.jpg");
+  // background-image: image-url("concertbg.jpg");
   background-position: bottom;
-  height: 500px;
+  height: 650px;
+  video {
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    top: 50 px;
+    width: 100%;
+    height: 110%;
+    z-index: -1;
+  }
 }
 
+.greeting{
+  position: absolute;
+  top: 240px;
+}
 .stroke {
   -webkit-text-stroke: 1px #000;
   -webkit-text-fill-color: #f06d06;
