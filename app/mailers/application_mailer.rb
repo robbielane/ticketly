@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "test@ticketly.com"
+  default from: "orders@ticketly.com"
   layout 'mailer'
 end

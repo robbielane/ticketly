@@ -11,7 +11,7 @@ class Ticket < ActiveRecord::Base
   enum status: [:active, :retired]
 
   scope :vendor_order_tickets, ->(vendor) { where("vendor_id = ?", vendor) }
-  scope :active, -> { where(status: 0) }
+  scope :active, -> { where(status: 0).joins(:vendor).where("vendors.status = ?", 1) }
   scope :desc_order, -> { order("created_at DESC")}
 
   def retire

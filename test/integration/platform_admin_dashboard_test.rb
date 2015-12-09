@@ -42,4 +42,17 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     end
     assert_equal platform_admin_dashboard_path, current_path
   end
+
+  test "platform admin is routed to dshboard when attempting to sell tix" do
+    create_vendor_admin
+    platform_admin_login
+    visit root_path
+    click_on "Sell Tickets"
+
+    assert_equal vendors_path, current_path
+
+    click_link "sign up"
+
+    assert_equal new_user_path, current_path
+  end
 end

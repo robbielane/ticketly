@@ -1,4 +1,35 @@
-<p>
-  <%= @message %>
-  <%= image_tag order_qr_image_url(@order.url_hash) %>
-</p>
+<h1>Ticketly</h1>
+<h3>Buy. Sell. Tickets.</h3>
+<br>
+  <div class="container">
+  <h3><%= @message %></h3>
+  <table>
+    <tr>
+      <th>Section</th>
+      <th>Row</th>
+      <th>Seat</th>
+      <th>Price</th>
+    </tr>
+    <% @order.tickets.each do |f| %>
+      <tr>
+        <td><%= f.section %></td>
+        <td><%= f.row %></td>
+        <td><%= f.seat %></td>
+        <td><%= f.price %></td>
+      </tr>
+    <% end %>
+  </table>
+  <br>
+    <%= image_tag order_qr_image_url(@order.url_hash) %>
+    <h4>Questions?</h4>
+    <p><%= link_to "Contact us", "https://ticketly.herokuapp.com/" %> or find your answer in our <%= link_to "FAQs", "https://ticketly.herokuapp.com/" %></p>
+    <p>Or write to us: Ticketly, Attn: Fan Support | 1510 Blake Street | Denver, CO 80202</p>
+    <br>
+    <br>
+    <p><%= link_to "Ticketly", "https://ticketly.herokuapp.com/" %> |
+      <%= link_to "About", "https://ticketly.herokuapp.com/" %> |
+      <%= link_to "Terms of Use", "https://ticketly.herokuapp.com/" %> |
+      <%= link_to "Privacy", "https://ticketly.herokuapp.com/" %> |
+      <%= link_to "International", "https://ticketly.herokuapp.com/" %> | © 2015 Ticketly. All rights reserved.</p>
+  </p>
+</div>
