@@ -1,0 +1,39 @@
+<div class="home-page">
+  <section></section>
+  <div class="row center-align bgimage">
+    <%= videojs_rails sources: { webm: "https://s3.amazonaws.com/ticketyl/video.mp4"},controls: false, loop: true, autoplay: true, width:"400" %>
+    <div class="col s12 greeting" >
+      <h1 class="black-text b stroke">Ticketly</h1>
+      <h4 class="black-text stroke">Buy. Sell. Tickets.</h4>
+      <br/>
+      <br/>
+      <div class="col s6 m3 offset-m3 l2 offset-l4">
+        <%= link_to "Sell Tickets", vendors_path, class: "waves-effect waves-light btn white-text orange" %>
+      </div>
+      <div class="col s6 m3 l2">
+        <%= link_to "Buy Tickets", events_path, class: "waves-effect waves-light btn white-text orange" %>
+      </div>
+    </div>
+  </div>
+  <div class="row grey lighten-3 tickets">
+    <div class="container tickets">
+      <h2 class="center">Just Added</h2>
+      <% @events.each do |event| %>
+        <div class="col s12 m6 ticket">
+          <h5 class="center">
+            <%= link_to event.name, event_path(event) %>
+          </h5>
+          <p class="center">
+            <%= event.venue %>
+          </p>
+          <p class="center">
+            <%= event.date_time.strftime('%B %-d, %Y - %H:00') %>
+          </p>
+          <p class="center">
+            <%= "#{event.location_city}, #{event.location_state}" %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

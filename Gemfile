@@ -27,6 +27,7 @@ gem 'gmaps4rails'
 gem 'underscore-rails'
 gem 'geocoder'
 gem 'rqrcode_png'
+gem 'videojs_rails'
 
 group :production do
   gem "rails_12factor"
