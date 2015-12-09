@@ -1,1 +1,4 @@
-<p><%= @message %></p>
+<p>
+  <%= @message %>
+  <%= image_tag order_qr_image_url(@order.url_hash) %>
+</p>
