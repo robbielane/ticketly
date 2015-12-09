@@ -1,0 +1,47 @@
+<div class="container">
+  <div class="row">
+      <h1 class="center"><%= @ticket.event.name %></h1>
+    <div class="col s12 m6">
+      <table class="events-table">
+        <thead>
+          <tr>
+            <th>Price</th>
+            <th>Section</th>
+            <th>Row</th>
+            <th>Seat</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$<%= @ticket.price %></td>
+            <td><%= @ticket.section %></td>
+            <td><%= @ticket.row %></td>
+            <td><%= @ticket.seat %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col s12 m6">
+      <table class="events-table">
+        <thead>
+          <tr>
+            <th>Venue</th>
+            <th>Location</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @ticket.event.venue %></td>
+            <td><%= "#{@ticket.event.location_city}, #{@ticket.event.location_state}" %></td>
+            <td><%= @ticket.event.date_time.strftime('%B %-d, %Y - %H:00') %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class='map-container'>
+  <div id="map" class='map' data-lat="<%= @ticket.event.latitude %>" data-lon="<%= @ticket.event.longitude %>"></div>
+</div>
