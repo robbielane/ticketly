@@ -1,6 +1,10 @@
+require 'rqrcode_png'
+
 class OrdersController < ApplicationController
   def show
     @order = current_user.orders.find_by(id: params[:id])
+    qr_path = "http://localhost:3000/my_order/#{@order.id}"
+    @qr = RQRCode::QRCode.new(qr_path).to_img.resize(200, 200).to_data_url
     render file: "./test/public/404" if @order.nil?
   end
 

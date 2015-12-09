@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '4.2.4'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
@@ -24,6 +23,7 @@ gem 'will_paginate-materialize'
 gem "searchkick"
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
+gem 'rqrcode_png'
 
 group :production do
   gem "rails_12factor"
