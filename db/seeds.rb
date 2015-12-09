@@ -2,15 +2,19 @@ class Seed
   def initialize
     generate_user_roles
     generates_user_admins
-    generate_vendors
-    generate_test_users
     generate_users
+    generate_test_users
+    generate_vendors
     generate_categories
     generate_events
     generate_tickets
     generate_orders
     generate_order_tickets
     generate_robbie
+  end
+
+  def locations
+    ["New York NY", "Los Angeles CA", "Chicago IL", "Houston TX", "Phoenix AZ", "Philadelphia PA", "San Antonio TX", "Dallas TX", "San Diego CA", "San Jose CA", "Detroit MI", "San Francisco CA", "Jacksonville FL", "Indianapolis IN", "Austin TX", "Columbus OH", "Fort Worth TX", "Charlotte NC", "Memphis TN", "Baltimore MD", "El Paso TX", "Boston MA", "Milwaukee WI", "Denver CO", "Seattle WA", "Nashville TN", "Washington DC", "Las Vegas NV", "Portland OR", "Louisville KY", "Oklahoma City OK", "Tucson AZ", "Atlanta GA", "Albuquerque NM", "Fresno CA", "Sacramento CA", "Long Beach CA", "Mesa AZ", "Kansas City MO", "Omaha NE", "Cleveland OH", "Virginia Beach VA", "Miami FL", "Oakland CA", "Raleigh NC", "Tulsa OK", "Minneapolis MN", "Colorado Springs CO", "Honolulu HI", "Arlington TX", "Wichita KS", "St. Louis MO", "Tampa FL", "Santa Ana CA", "Anaheim CA", "Cincinnati OH", "Bakersfield CA"," Aurora CO", "New Orleans LA", "Pittsburgh PA", "Riverside CA", "Toledo OH", "Stockton CA", "Corpus Christi TX", "Lexington KY", "St. Paul MN", "Anchorage AK", "Newark NJ", "Buffalo NY", "Plano TX", "Henderson NV", "Lincoln NE", "Fort Wayne IN", "Glendale AZ", "Greensboro NC", "Chandler AZ", "St. Petersburg FL", "Jersey City NJ"]
   end
 
   def generate_user_roles
@@ -38,8 +42,17 @@ class Seed
                          email: "yung-jhun@jhunbug.com")
     user3.roles << Role.find(3)
 
-    user4 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass")
+    user3 = User.create!(name:"Jorge",
+                         username:"jorge@turing.io",
+                         password:"password",
+                         email: "jorge@turing.io")
+    user3.roles << Role.find(3)
+
+    user4 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass", email: "lane.robbie@gmail.com")
     user4.roles << Role.find(2)
+
+    user5 = User.create!(name:"Andrew", username:"andrew@turing.io", password:"password", email: "andrew@turing.io")
+    user5.roles << Role.find(2)
   end
 
   def generate_vendors
@@ -50,14 +63,33 @@ class Seed
     user2 = User.find(4)
     Vendor.create!(name: "dix-tix", user_id: user2.id, status: 1)
     user2.update!(vendor_id: 2, password: "pass")
+
+    user3 = User.find(5)
+    Vendor.create!(name: "Tickets-R-Us", user_id: user3.id, status: 1)
+    user2.update!(vendor_id: 3, password: "pass")
+
+
+    20.times do |i|
+      rand_user = User.find(i + 20)
+      name = Faker::Company.name + " tickets"
+      vendor = Vendor.create!(name: name, user_id: rand_user.id, status: 1)
+      rand_user.update!(vendor_id: vendor.id, password: "password")
+    end
+
   end
 
   def generate_test_users
     user = User.create!(username: "aaron",
-                        name: "aaron",
+                        name: "aaron1",
                         password: "password",
                         email: "yung-aaron@yungski.com")
-    user.roles << Role.create!(name: "registered_user")
+    user.roles << Role.find(1)
+
+    user = User.create!(username: "josh@turing.io",
+                        name: "Josh",
+                        password: "password",
+                        email: "yung-josh@yungski.com")
+    user.roles << Role.find(1)
 
     status_collection = %w(Completed Paid Cancelled Pending)
     10.times do |i|
@@ -71,7 +103,7 @@ class Seed
   end
 
   def generate_users
-    50.times do |i|
+    100.times do |i|
       user = User.create!(
         name: Faker::Name.name,
         username: "#{Faker::Internet.user_name}#{i}",
@@ -92,7 +124,7 @@ class Seed
         order = user.orders << Order.create!(
                                       status: status_collection.sample,
                                       total: Faker::Commerce.price,
-                                      vendor_id: rand(1..2),
+                                      vendor_id: rand(1..22),
                                     )
         puts "Order #{i}: Order for #{user.name} created!"
       end
@@ -112,7 +144,7 @@ class Seed
   end
 
   def generate_categories
-    categories = %w(Concerts Sports Kids)
+    categories = %w(Concerts Baseball Football Hockey Cricket American Basketball Kids Adult Tween Family )
     categories.each do |category|
       Category.create!(name: category)
     end
@@ -121,11 +153,12 @@ class Seed
   def generate_events
     category_count = Category.count
     100.times do |i|
+      location = locations.sample
       Event.create!(
         name: Faker::Hipster.words(2).join(' '),
         description: Faker::Hipster.words(8).join(' '),
-        location_city: Faker::Address.city,
-        location_state: Faker::Address.state_abbr,
+        location_city: location[0..-4],
+        location_state: location[-2..-1],
         venue: Faker::Hipster.words(2).join(' '),
         date_time: Faker::Time.between(DateTime.now - 30, 150.days.from_now),
         category_id: rand(1..category_count)
@@ -144,8 +177,7 @@ class Seed
         row: rand(1..50),
         seat: rand(1..30),
         event_id: rand(1..event_count),
-        vendor_id: rand(1..2)
-
+        vendor_id: rand(1..22)
       )
 
       puts "Ticket #{i}: Ticket created for event ##{event_id}"

@@ -19,4 +19,5 @@
         .col.s12.m6.ticket
           %h5.center= link_to event.name, event_path(event)
           %p.center= event.venue
+          %p.center= event.date_time.strftime('%B %-d, %Y - %H:00')
           %p.center= "#{event.location_city}, #{event.location_state}"

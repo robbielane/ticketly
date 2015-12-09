@@ -23,6 +23,9 @@ gem 'will_paginate-materialize'
 gem "searchkick"
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
+gem 'gmaps4rails'
+gem 'underscore-rails'
+gem 'geocoder'
 gem 'rqrcode_png'
 
 group :production do
