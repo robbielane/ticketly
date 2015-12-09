@@ -33,7 +33,7 @@ class Seed
     user2 = User.create!(name:"Aaron",
                          username:"yung-aaron",
                          password:"pass",
-                         email: "yung-aaron@yungski.com")
+                         email: "aaroncareaga@gmail.com")
     user2.roles << Role.find(2)
 
     user3 = User.create!(name:"Jhun",
