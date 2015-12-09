@@ -74,6 +74,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  #manditory for the yung video js to work.
+  config.assets.precompile += %w( video-js.swf vjs.eot vjs.svg vjs.ttf vjs.woff )
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 

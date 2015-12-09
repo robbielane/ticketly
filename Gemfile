@@ -24,6 +24,7 @@ gem "searchkick"
 gem 'rails4-autocomplete'
 gem 'jquery-ui-rails'
 gem 'rqrcode_png'
+gem 'videojs_rails'
 
 group :production do
   gem "rails_12factor"
