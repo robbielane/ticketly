@@ -1,4 +1,4 @@
-.white-text.center-align
+.black-text.center-align
   %br
   %h2 Order Details
 
@@ -10,6 +10,8 @@
   = "Order submitted on #{format_date_and_time(@order.created_at)}"
   %br
   = "Last order status update: #{format_date_and_time(@order.updated_at)}"
+  %br
+  = image_tag @qr
 
   .white.black-text
     %table.cart-table.highlight

@@ -78,5 +78,6 @@ class PermissionService
     return true if controller == "cart_tickets"   && action.in?(%w(create show update delete))
     return true if controller == "orders"         && action.in?(%w(create new))
     return true if controller == "vendors"        && action.in?(%w(index show))
+    return true if controller == "qr"             && action.in?(%w(show))
   end
 end

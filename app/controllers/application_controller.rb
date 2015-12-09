@@ -1,6 +1,4 @@
 class ApplicationController < ActionController::Base
-  require 'rqrcode_png'  
-
   protect_from_forgery with: :exception
   before_action :authorize!
   before_action :set_cart
