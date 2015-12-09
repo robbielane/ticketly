@@ -4,6 +4,7 @@ require "rails/test_help"
 require "capybara/rails"
 require "mocha/mini_test"
 require "minitest/emoji"
+require "pry"
 SimpleCov.start "rails"
 
 class ActiveSupport::TestCase
