@@ -39,7 +39,6 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    byebug
     current_user.user_roles = []
     current_user.vendor_id = nil
     current_user.destroy
