@@ -2,8 +2,8 @@ class Seed
   def initialize
     generate_user_roles
     generates_user_admins
-    generate_users
     generate_test_users
+    generate_users
     generate_vendors
     generate_categories
     generate_events
@@ -41,17 +41,17 @@ class Seed
                          email: "yung-jhun@jhunbug.com")
     user3.roles << Role.find(3)
 
-    user3 = User.create!(name:"Jorge",
+    user4 = User.create!(name:"Jorge",
                          username:"jorge@turing.io",
                          password:"password",
                          email: "jorge@turing.io")
-    user3.roles << Role.find(3)
+    user4.roles << Role.find(3)
 
-    user4 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass", email: "lane.robbie@gmail.com")
-    user4.roles << Role.find(2)
-
-    user5 = User.create!(name:"Andrew", username:"andrew@turing.io", password:"password", email: "andrew@turing.io")
+    user5 = User.create!(name:"Robbie", username:"yung-robbie", password:"pass", email: "lane.robbie@gmail.com")
     user5.roles << Role.find(2)
+
+    user6 = User.create!(name:"Andrew", username:"andrew@turing.io", password:"password", email: "andrew@turing.io")
+    user6.roles << Role.find(2)
   end
 
   def generate_vendors
@@ -59,13 +59,13 @@ class Seed
     Vendor.create!(name:"aaron-s-swag-store", user_id: user.id, status: 0)
     user.update!(vendor_id: 1, password: "pass")
 
-    user2 = User.find(4)
+    user2 = User.find(5)
     Vendor.create!(name: "dix-tix", user_id: user2.id, status: 1)
     user2.update!(vendor_id: 2, password: "pass")
 
-    user3 = User.find(5)
-    Vendor.create!(name: "Tickets-R-Us", user_id: user3.id, status: 1)
-    user2.update!(vendor_id: 3, password: "pass")
+    user3 = User.find(6)
+    Vendor.create!(name: "tickets-r-us", user_id: user3.id, status: 1)
+    user3.update!(vendor_id: 3, password: "password")
 
 
     20.times do |i|
