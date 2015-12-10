@@ -21,33 +21,9 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
 
     click_link("Edit Account")
     fill_in ("Username"), with: "acareaga"
-    check "Vendor"
     click_button "Update Account"
 
     assert "/aaron-s-store/dashboard", current_path
-  end
-
-  test "vendor admin can revert back to registered user" do
-    user = User.create(name: "Aaron", username: "aaron", password: "password")
-    user.roles << Role.create(name: "vendor_admin")
-    vendor = Vendor.create(name:"Aaron's store", user_id: user.id)
-    user.update!(vendor_id: vendor.id, password: "password")
-
-    visit root_path
-    click_link "Login"
-    fill_in "Username", with: "aaron"
-    fill_in "Password", with: "password"
-    click_button "Login"
-
-    assert "/aaron-s-store/dashboard", current_path
-    click_link("Edit Account")
-
-    fill_in "Password", with: "password"
-
-    uncheck "Vendor"
-    click_button "Update Account"
-
-    assert "/dashboard", current_path
   end
 
   test "vendor can create a ticket" do
