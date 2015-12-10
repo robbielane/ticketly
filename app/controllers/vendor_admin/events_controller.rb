@@ -18,6 +18,6 @@ class VendorAdmin::EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location_city, :location_state, :date_time, :venue, :category_id)
+    params.require(:event).permit(:name, :description, :location_city, :location_state, :date_time, :venue, :category_id, :street_address)
   end
 end

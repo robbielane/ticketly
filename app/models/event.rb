@@ -14,6 +14,6 @@ class Event < ActiveRecord::Base
   end
 
   def full_address
-    "#{self.location_city}, #{self.location_state}"
+    "#{self.street_address}, #{self.location_city}, #{self.location_state}"
   end
 end
