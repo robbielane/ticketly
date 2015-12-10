@@ -13,6 +13,8 @@
         <%= f.text_field :location_city %>
         <%= f.label :location_state, "State" %>
         <%= f.text_field :location_state %>
+        <%= f.label :street_address, "Street Address" %>
+        <%= f.text_field :street_address %>
         <%= f.label :date_time, "Date" %>
         <%= f.text_field :date_time %>
         <%= f.collection_select :category_id, Category.all, :id, :name, { prompt: "Choose a category" }, class: "browser-default" %>
