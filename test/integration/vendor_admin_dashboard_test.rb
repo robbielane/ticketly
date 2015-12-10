@@ -20,7 +20,10 @@ class VendorAdminDashboardTest < ActionDispatch::IntegrationTest
     assert "/aaron-s-store/dashboard", current_path
 
     click_link("Edit Account")
+
+    fill_in ("Password"), with: "pass"
     fill_in ("Username"), with: "acareaga"
+
     click_button "Update Account"
 
     assert "/aaron-s-store/dashboard", current_path

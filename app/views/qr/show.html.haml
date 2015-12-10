@@ -2,18 +2,17 @@
   %br
   %h2 Order Details
 
-  = sanitize("Order status: #{content_tag :td, @order.status || 'N/A'}")
+  = sanitize("Status: #{content_tag :td, @order.status || 'N/A'}")
   %br
-  = sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
+  = sanitize("Price: #{content_tag :td, format_currency(@order.total)}")
   %br
-  = "Order submitted on #{format_date_and_time(@order.created_at)}"
+  = "Ordered on #{format_date_and_time(@order.created_at)}"
   %br
-  = "Last order status update: #{format_date_and_time(@order.updated_at)}"
+  = "Status updated on #{format_date_and_time(@order.updated_at)}"
   %br
   %br
-  = image_tag @qr
-
-  .white.black-text
+  
+  .white.black-text.container
     %table.cart-table.highlight
       %tr
         %th Name
@@ -25,6 +24,9 @@
           = content_tag :td, link_to(ticket_name_and_quantity(@order, ticket), ticket_path(ticket))
           = content_tag :td, format_currency(ticket.price)
           = content_tag :td, @order.status
-  %br
+
+  .map-container
+    #map.map{"data-lat" => @order.tickets.first.event.latitude, "data-lon" => @order.tickets.first.event.longitude}
+
   %br
   %br
