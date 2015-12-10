@@ -1,8 +1,4 @@
-class PlatformAdmin::VendorController < PlatformAdmin::BaseController
-  def show
-    @vendor = Vendor.find(params[:id])
-  end
-
+class PlatformAdmin::VendorController < ApplicationController
   def edit
     @vendor = Vendor.find(params[:id])
   end
