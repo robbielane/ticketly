@@ -36968,10 +36968,6 @@ $(document).ready(function() {
     });
   });
 });
-(function() {
-
-
-}).call(this);
 $(document).ready(function() {
 
   var $vendors = $('.vendor');
@@ -36988,10 +36984,6 @@ $(document).ready(function() {
     });
   });
 });
-(function() {
-
-
-}).call(this);
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
 //
@@ -37029,6 +37021,6 @@ $(document).ready(function() {
     ]);
     handler.fitMapToBounds();
     handler.map.centerOn([$('#map').data('lat'), $('#map').data('lon')]);
-    handler.getMap().setZoom(13);
+    handler.getMap().setZoom(17);
   });
 });
