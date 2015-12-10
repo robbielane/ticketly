@@ -24,12 +24,12 @@
         </div>
       </nav>
     </header>
-
       <% flash.each do |type, msg| %>
           <%= content_tag :div, sanitize(msg), class: " flash flash_#{type}" %>
       <% end %>
-
+      <br>
       <%= yield %>
+      <br>
     </main>​
     <footer class="page-footer orange lighten-4">
       <div class="container">
