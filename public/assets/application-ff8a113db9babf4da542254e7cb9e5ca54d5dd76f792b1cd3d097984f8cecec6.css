@@ -1671,39 +1671,38 @@ form .input-field input[type=search] {
 /* line 5, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .bgimage {
   margin: 0 !important;
-  background-position: bottom;
   height: 650px;
 }
-/* line 10, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 9, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .bgimage video {
   background-color: white;
   position: absolute;
+  top: -200px;
   left: 0px;
-  top: 50 px;
   width: 100%;
   height: 110%;
   z-index: -1;
 }
 
-/* line 21, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 20, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .greeting {
   position: absolute;
   top: 240px;
 }
 
-/* line 25, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 24, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .stroke {
   -webkit-text-stroke: 1px #000;
   -webkit-text-fill-color: #f06d06;
 }
 
-/* line 30, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 29, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .tickets {
   padding: 20px;
   margin-bottom: 0;
 }
 
-/* line 35, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 34, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .ticket {
   padding: 35px;
   margin-bottom: 35px;
@@ -1712,24 +1711,24 @@ form .input-field input[type=search] {
   background-size: 100%;
 }
 
-/* line 43, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 42, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .ticket h5 {
   margin-bottom: 15px;
 }
 
-/* line 47, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 46, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .ticket a {
   margin: 2px;
   color: #f06d06;
 }
 
-/* line 52, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 51, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .ticket p {
   font-size: 1.3rem;
   margin: 2px;
 }
 
-/* line 57, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
+/* line 56, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/home.scss */
 .ticket p:last-child {
   padding-bottom: 25px;
 }
@@ -14416,91 +14415,90 @@ main {
 /* line 33, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 nav {
   color: black;
-  border-bottom: 1px solid #ddd;
 }
 
-/* line 38, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 37, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .navbar {
   z-index: 4;
 }
 
-/* line 41, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 40, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 nav ul li a {
   color: black;
 }
 
-/* line 45, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 44, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 h5 {
   margin: 30px 0;
 }
 
-/* line 49, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 48, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 form input[type=text],
 form input[type=password] {
   border: 1px solid #ccc;
   padding-left: 10px;
 }
 
-/* line 55, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 54, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .btn a, .btn-large a {
   color: white;
 }
 
-/* line 59, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 58, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .brand-logo {
   margin-left: 25px;
 }
 
-/* line 62, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 61, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 ​
 .footer-copyright {
   font-size: 18px;
 }
 
-/* line 66, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 65, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 ​
 .icon-block {
   padding: 0 15px;
 }
 
-/* line 70, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 69, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .icon-block .material-icons {
   font-size: inherit;
 }
 
-/* line 74, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 73, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 b .price {
   margin-right: 25px;
 }
 
-/* line 82, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 81, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 #nav-mobile {
   margin-right: 20px;
 }
 
-/* line 85, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 84, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 ​
 #background-card-margin {
   margin-bottom: 15px;
 }
 
-/* line 89, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 88, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 ​
 #app-detail-padding {
   padding-bottom: 15px;
 }
 
-/* line 94, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 93, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .card-panel h3 {
   font-size: 110%;
 }
 
-/* line 98, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 97, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .page-footer {
   font-size: 80%;
 }
 
-/* line 102, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 101, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .flash {
   position: absolute;
   left: 0;
@@ -14513,108 +14511,97 @@ b .price {
   color: #fff;
 }
 
-/* line 114, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 113, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .flash_auth, .flash_error {
   background-color: rgba(220, 20, 60, 0.6);
 }
 
-/* line 118, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 117, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .flash_notice {
   background-color: rgba(34, 139, 34, 0.6);
 }
 
-/* line 122, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 121, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .table-footer {
   padding: 35px;
 }
 
-/* line 126, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 125, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .clickable:hover {
   cursor: pointer;
 }
 
-/* line 130, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 129, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .clickable a {
   color: #000;
 }
 
-/* line 133, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 132, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 table .highlight tbody tr {
   transition: background-color 0.25s ease;
 }
 
-/* line 137, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 136, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 small {
   color: #42a5f5;
 }
 
-/* line 141, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 140, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .filter select {
   border: 1px solid #999;
 }
 
-/* line 145, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 144, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .uos h5 {
   margin-bottom: 5px;
 }
 
-/* line 149, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 148, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .Paid {
   color: #4caf50;
 }
 
-/* line 153, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 152, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .Cancelled {
   color: #f44336;
 }
 
-/* line 157, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 156, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .Completed {
   color: #2196f3;
 }
 
-/* line 161, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 160, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .Pending {
   color: #ff9800;
 }
 
-/* line 165, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 164, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .medium {
   font-size: 2em;
   margin-bottom: -50px;
 }
 
-/* line 170, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 169, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .push-down {
   margin-top: 40px;
 }
 
-/* line 174, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 173, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .map-container {
   margin-top: 50px;
   width: 100%;
   max-height: 400px;
 }
 
-/* line 180, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 179, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 .map {
   width: 100%;
   height: 100%;
   max-height: 400px;
 }
 
-/* line 186, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
+/* line 185, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
 strong {
   font-weight: 700;
-}
-
-/* line 190, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
-.no-bottom-margin {
-  margin-bottom: 2px;
-}
-
-/* line 194, /Users/robbielane/turing/mod_3/ticketly/app/assets/stylesheets/application.scss */
-footer {
-  margin-top: 0;
-  padding-top: 0;
 }
