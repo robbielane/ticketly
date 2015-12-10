@@ -17,9 +17,13 @@
         <%= label_tag :password %>
         <%= password_field_tag :password, @user.password %>
 
-        <%= check_box_tag(:role) %>
-        <%= label_tag(:role, "Become a Vendor") %>
-
+        <% if current_vendor? %>
+          <input type="checkbox" name="role" id="role" value="1" checked="checked" disabled="disabled"/>
+          <%= label_tag(:role, "Sign up as a Vendor", checked: "checked", disabled: true) %>
+        <% else %>
+          <%= check_box_tag(:role) %>
+          <%= label_tag(:role, "Become a Vendor") %>
+        <% end %>
         <br/>
         <br/>
         <%= file_field_tag :image %>
