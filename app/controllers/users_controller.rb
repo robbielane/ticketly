@@ -33,7 +33,7 @@ class UsersController < ApplicationController
       flash.notice = "Account Updated!"
       redirect_router(@user)
     else
-      flash.now[:errors] = @user.errors.full_messages.join(" ,")
+      flash.now[:error] = @user.errors.full_messages.join(" ,")
       render :edit
     end
   end
