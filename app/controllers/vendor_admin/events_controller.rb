@@ -1,4 +1,4 @@
-class VendorAdmin::EventsController < VendorAdmin::BaseController
+class VendorAdmin::EventsController < ApplicationController
   def new
     @event = Event.new
   end

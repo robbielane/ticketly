@@ -1,4 +1,4 @@
-class VendorAdmin::OrdersController < VendorAdmin::BaseController
+class VendorAdmin::OrdersController < ApplicationController
   def index
     user = current_user
     @orders = user.orders.all
