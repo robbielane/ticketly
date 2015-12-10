@@ -2,17 +2,16 @@
   %br
   %h2 Order Details
 
-  = sanitize("Order status: #{content_tag :td, @order.status || 'N/A'}")
+  = sanitize("Status: #{content_tag :td, @order.status || 'N/A'}")
   %br
-  = sanitize("Total price: #{content_tag :td, format_currency(@order.total)}")
+  = sanitize("Price: #{content_tag :td, format_currency(@order.total)}")
   %br
-  = "Order submitted on #{format_date_and_time(@order.created_at)}"
+  = "Ordered on #{format_date_and_time(@order.created_at)}"
   %br
-  = "Last order status update: #{format_date_and_time(@order.updated_at)}"
+  = "Status updated on #{format_date_and_time(@order.updated_at)}"
   %br
   %br
-  = image_tag @qr
-
+  
   .white.black-text.container
     %table.cart-table.highlight
       %tr
