@@ -35,6 +35,6 @@ $(document).ready(function() {
     ]);
     handler.fitMapToBounds();
     handler.map.centerOn([$('#map').data('lat'), $('#map').data('lon')]);
-    handler.getMap().setZoom(13);
+    handler.getMap().setZoom(17);
   });
 });

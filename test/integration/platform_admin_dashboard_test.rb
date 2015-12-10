@@ -19,6 +19,21 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
     assert_equal platform_admin_dashboard_path, current_path
   end
 
+
+  test "Platform admin cannot edit vendor without valid form" do
+    platform_admin_login
+
+    within("#jhun-s-swag") do
+      click_link "active"
+    end
+
+    fill_in "Name", with: ""
+    click_button "Update Vendor"
+
+    refute_equal platform_admin_dashboard_path, current_path
+  end
+
+
   test "Platform admin can take a vendor offline" do
     create_vendor_admin
     platform_admin_login
@@ -55,4 +70,5 @@ class PlatformAdminDashboardTest < ActionDispatch::IntegrationTest
 
     assert_equal new_user_path, current_path
   end
+
 end

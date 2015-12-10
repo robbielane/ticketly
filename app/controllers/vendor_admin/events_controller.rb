@@ -1,4 +1,4 @@
-class VendorAdmin::EventsController < VendorAdmin::BaseController
+class VendorAdmin::EventsController < ApplicationController
   def new
     @event = Event.new
   end
@@ -18,6 +18,6 @@ class VendorAdmin::EventsController < VendorAdmin::BaseController
   private
 
   def event_params
-    params.require(:event).permit(:name, :description, :location_city, :location_state, :date_time, :venue, :category_id)
+    params.require(:event).permit(:name, :description, :location_city, :location_state, :date_time, :venue, :category_id, :street_address)
   end
 end

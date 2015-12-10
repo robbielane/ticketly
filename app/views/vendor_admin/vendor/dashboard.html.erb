@@ -3,7 +3,6 @@
     <h1 class="black-text center"> <%= @vendor.name.capitalize %> <small>Dashboard</small></h1>
     <div class="center-align card-action">
       <%= link_to "Edit Account", edit_user_path(@user), class: "btn orange white-text waves-effect waves-light" %>
-      <%= link_to "Delete Account", user_path(@user), method: :delete, class: "btn orange white-text waves-effect waves-light" %>
       <%= link_to "View All Tickets", vendor_tickets_path, class: "btn orange white-text waves-effect waves-light" %>
       <%= link_to "Add Ticket",  vendor_event_select_path(vendor:@vendor.slug), class: "btn orange white-text waves-effect waves-light" %>
     </div>

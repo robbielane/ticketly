@@ -12,6 +12,4 @@ class Vendor < ActiveRecord::Base
   def generate_slug
     self.slug = name.parameterize if !name.nil?
   end
-
-
 end

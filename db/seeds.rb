@@ -14,7 +14,15 @@ class Seed
   end
 
   def locations
-    ["New York NY", "Los Angeles CA", "Chicago IL", "Houston TX", "Phoenix AZ", "Philadelphia PA", "San Antonio TX", "Dallas TX", "San Diego CA", "San Jose CA", "Detroit MI", "San Francisco CA", "Jacksonville FL", "Indianapolis IN", "Austin TX", "Columbus OH", "Fort Worth TX", "Charlotte NC", "Memphis TN", "Baltimore MD", "El Paso TX", "Boston MA", "Milwaukee WI", "Denver CO", "Seattle WA", "Nashville TN", "Washington DC", "Las Vegas NV", "Portland OR", "Louisville KY", "Oklahoma City OK", "Tucson AZ", "Atlanta GA", "Albuquerque NM", "Fresno CA", "Sacramento CA", "Long Beach CA", "Mesa AZ", "Kansas City MO", "Omaha NE", "Cleveland OH", "Virginia Beach VA", "Miami FL", "Oakland CA", "Raleigh NC", "Tulsa OK", "Minneapolis MN", "Colorado Springs CO", "Honolulu HI", "Arlington TX", "Wichita KS", "St. Louis MO", "Tampa FL", "Santa Ana CA", "Anaheim CA", "Cincinnati OH", "Bakersfield CA"," Aurora CO", "New Orleans LA", "Pittsburgh PA", "Riverside CA", "Toledo OH", "Stockton CA", "Corpus Christi TX", "Lexington KY", "St. Paul MN", "Anchorage AK", "Newark NJ", "Buffalo NY", "Plano TX", "Henderson NV", "Lincoln NE", "Fort Wayne IN", "Glendale AZ", "Greensboro NC", "Chandler AZ", "St. Petersburg FL", "Jersey City NJ"]
+    ["New York NY", "Los Angeles CA", "Chicago IL", "Houston TX", "Phoenix AZ", "Philadelphia PA", "San Antonio TX", "Dallas TX", "San Diego CA", "San Jose CA", "Detroit MI", "San Francisco CA", "Jacksonville FL", "Indianapolis IN", "Austin TX", "Columbus OH", "Charlotte NC", "Memphis TN", "Baltimore MD", "El Paso TX", "Boston MA", "Milwaukee WI", "Denver CO", "Seattle WA", "Las Vegas NV", "Portland OR", "Louisville KY", "Oklahoma City OK", "Atlanta GA", "Albuquerque NM", "Omaha NE", "Virginia Beach VA", "Miami FL", "Minneapolis MN", "Colorado Springs CO", "Honolulu HI", "St. Louis MO", "New Orleans LA", "Pittsburgh PA", "Anchorage AK"]
+  end
+
+  def venues
+    ["Madison Square Garden", "The Satellite", "The Vic Theatre", "The Silo", "Symphony Hall", "Union Transfer", "Fitzgerald's Bar & Live Music", "House of Blues", "Viejas Arena", "SAP Center at San Jose", "Fox Theatre", "Bill Graham Civic Auditorium", "Florida Theatre", "Hinkle Fieldhouse", "Emo's", "Nationwide Arena", "Ovens Auditorium", "Orpheum Theatre", "M&T Bank Stadium", "Don Haskins Center", "Paradise Rock Club", "Eagles Ballroom", "Fillmore Auditorium", "The Showbox", "The Joint", "State Theatre", "Freedom Hall", "Chesapeake Energy Arena", "Georgia Dome", "Isleta Amphitheater", "CenturyLink Center", "Farm Bureau Live", "American Airlines Arena", "First Avenue", "Pikes Peak Center", "Neal S. Blaisdell Center", "Fox Theatre", "The Howlin' Wolf", "PNC Park", "Tap Root"]
+  end
+
+  def addresses
+    ["4 Pennsylvania Plaza", "1717 Silver Lake Blvd", "3145 N Sheffield Ave", "4601 Clinton Dr", "75 N 2nd St", "1026 Spring Garden", "437 McCarty Rd #101", "2200 N Lamar St", "5500 Canyon Crest Drive", "525 West Santa Clara Street", "2211 Woodward Avenue", "99 Grove Street", "128 East Forsyth Street", "510 West 49th Street", "2015 E Riverside Drive", "200 West Nationwide Boulevard", "2700 East Independence Blvd", "203 South Main Street", "1101 Russell Street", "500 West University Avenue", "967 Commonwealth Avenue", "2401 W Wisconsin Avenue", "1510 Clarkson Street", "1426 1st Avenue", "4455 Paradise Road", "609 Congress Street", "937 Phillips Lane", "100 West Reno Avenue", "1 Georgia Dome Drive Northwest", "5601 University Blvd SE", "455 North 10th Street", "3550 Cellar Door Way", "601 Biscayne Boulevard", "701 First Avenue North", "190 S. Cascade Ave", "777 Ward Ave", "527 N. Grand Blvd", "907 S. Peters St", "	115 Federal Street", "3300 Spenard Rd"]
   end
 
   def generate_user_roles
@@ -153,13 +161,17 @@ class Seed
   def generate_events
     category_count = Category.count
     100.times do |i|
-      location = locations.sample
+      rand_num = rand(0..39)
+      location = locations[rand_num]
+      venue = venues[rand_num]
+      address = addresses[rand_num]
       Event.create!(
         name: Faker::Hipster.words(2).join(' '),
         description: Faker::Hipster.words(8).join(' '),
         location_city: location[0..-4],
         location_state: location[-2..-1],
-        venue: Faker::Hipster.words(2).join(' '),
+        venue: venue,
+        street_address: address,
         date_time: Faker::Time.between(DateTime.now - 30, 150.days.from_now),
         category_id: rand(1..category_count)
       )

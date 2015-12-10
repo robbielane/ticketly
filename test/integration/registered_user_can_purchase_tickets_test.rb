@@ -34,4 +34,22 @@ class RegisteredUserCanPurchaseTicketsTest < ActionDispatch::IntegrationTest
     assert page.has_content?(result)
   end
 
+  test "can visit order summary page" do
+    
+    ticket = tickets(:one)
+    create_and_login_user
+    visit root_path
+    click_link "Events"
+    click_link "Disney Frozen On Ice"
+    within("##{ticket.id}") do
+      click_on "Purchase"
+    end
+    click_on "Cart"
+    assert cart_path, current_path
+    click_on "Checkout"
+    assert page.has_content?("Order was successfully placed")
+
+    click_on "View"
+    assert page.has_content?("#{ticket.event.name}")
+  end
 end
