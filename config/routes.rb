@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   put "/cart", to: "cart_tickets#update"
   delete "/cart", to: "cart_tickets#delete"
 
-  get "/m/orders/:order_hash", to: "qr#show"
+  get "/m/orders/:order_hash", to: "qr#show", as: "order_qr"
   get "/m/orders/image/:order_hash", to: "qr#image", as: "order_qr_image"
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"

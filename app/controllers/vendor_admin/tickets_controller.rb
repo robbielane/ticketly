@@ -1,4 +1,4 @@
-class VendorAdmin::TicketsController < VendorAdmin::BaseController
+class VendorAdmin::TicketsController < ApplicationController
   def index
     vendor = Vendor.find_by(slug: params[:vendor])
     @tickets = vendor.tickets.desc_order.paginate(page: params[:page], per_page: 21)

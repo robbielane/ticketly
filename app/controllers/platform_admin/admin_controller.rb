@@ -1,4 +1,4 @@
-class PlatformAdmin::AdminController < PlatformAdmin::BaseController
+class PlatformAdmin::AdminController < ApplicationController
   def dashboard
     @statuses = ["active", "inactive"]
     @vendors = Vendor.all
