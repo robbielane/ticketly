@@ -41,3 +41,5 @@ The Pivot is the first project in Module 3 at the Turing School. Each group are 
 * The group member that merges the PR should
 * delete the branch on GitHub
 * notify the group members on Slack to pull from master
+
+![Ticketly](http://www.aaroncareaga.com/wp-content/uploads/2016/01/Screen-Shot-2016-01-21-at-10.51.03-AM.png "Ticketly")
